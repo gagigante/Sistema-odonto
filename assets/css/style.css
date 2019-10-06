@@ -1,0 +1,23 @@
+.gallery {        
+    margin: 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;    
+}
+
+.gallery > .gallery-item {    
+    padding: 10px;        
+}
+
+.gallery .gallery-item img {
+    display: block;
+    max-width: 100%;
+}
+
+.gallery .gallery-item .item-options {
+    height: 50px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
