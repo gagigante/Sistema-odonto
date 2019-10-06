@@ -58,7 +58,7 @@
                         </a>
                     </nav>
                 </div>
-       
+
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -219,35 +219,95 @@
                                                     <td>Anestesia </td>
                                                     <td>50</td>
                                                     <td>R$ 15,99</td>
-                                                    <td><a href="#" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Editar/Adicionar</a></td>
+                                                    <td>
+                                                        <button type="button" class="mb-2 btn btn-sm btn-success mr-1" style="color: white" data-toggle="modal" data-target="#exampleModal">Editar/Adicionar</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Anestesia </td>
                                                     <td>50</td>
                                                     <td>R$ 15,99</td>
-                                                    <td><a href="#" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Editar/Adicionar</a></td>
+                                                    <td>
+                                                        <button type="button" class="mb-2 btn btn-sm btn-success mr-1" style="color: white" data-toggle="modal" data-target="#exampleModal">Editar/Adicionar</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Anestesia </td>
                                                     <td>50</td>
                                                     <td>R$ 15,99</td>
-                                                    <td><a href="#" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Editar/Adicionar</a></td>
+                                                    <td>
+                                                        <button type="button" class="mb-2 btn btn-sm btn-success mr-1" style="color: white" data-toggle="modal" data-target="#exampleModal">Editar/Adicionar</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Anestesia </td>
                                                     <td>50</td>
                                                     <td>R$ 15,99</td>
-                                                    <td><a href="#" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Editar/Adicionar</a></td>
+                                                    <td>
+                                                        <button type="button" class="mb-2 btn btn-sm btn-success mr-1" style="color: white" data-toggle="modal" data-target="#exampleModal">Editar/Adicionar</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Anestesia </td>
                                                     <td>50</td>
                                                     <td>R$ 15,99</td>
-                                                    <td><a href="#" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Editar/Adicionar</a></td>
+                                                    <td>
+                                                        <button type="button" class="mb-2 btn btn-sm btn-success mr-1" style="color: white" data-toggle="modal" data-target="#exampleModal">Editar/Adicionar</button>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
+
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Editar ou adicionar item</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+
+                                                        <div class="form-row">
+                                                            <strong class="text-muted d-block mb-2">Forms</strong>
+                                                            <div class="form-group col-md-12">
+                                                                <input type="text" class="form-control" name="edit-name" id="edit-name" placeholder="Nome do produto" value="Anestesia" required>
+                                                            </div>
+                                                        </div>
+
+                                                        
+                                                        <div class="form-row">
+                                                            
+                                                            <div class="form-group col-md-6">                                                   
+                                                                <input type="number" class="form-control" name="qtd" id="qtd" value="50" readonly>
+                                                            </div>
+
+                                                            <div class="input-group col-md-6">
+                                                                <div class="input-group-prepend" style="height: 32px">
+                                                                    <div class="input-group-text">+</div>
+                                                                </div>
+                                                                <input style="height: 32px" type="number" class="form-control" id="add" name="add" placeholder="Adicionar quantidade">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" name="edit-price" id="edit-price" placeholder="Preço unitário" value="15,99" required>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                    <button type="button" class="btn btn-success">Salvar alterações</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
