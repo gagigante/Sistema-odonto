@@ -7,21 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>DECADA ODONTO</title>
-    
+
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/shards-dashboards.1.1.0.min.css">
     <link rel="stylesheet" href="assets/css/extras.1.1.0.min.css">
-    
+
     <!--Jquery CDN-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" 
-    crossorigin="anonymous"></script>  
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!--Bootstrap Script-->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>  
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <!--Bootstrap PopperJs CND-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <!--Framework required Scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
@@ -29,17 +28,18 @@
     <script src="scripts/extras.1.1.0.min.js"></script>
     <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
-    <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>  
+    <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>
     <!--MaskJs Script-->
-    <script type="text/javascript" src="assets/js/jquery.mask.js"></script> 
+    <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
     <!--Fields Formating Script-->
     <script>
-        $(document).ready(function() {  
-            $('#phone').mask('(00) 0 0000-0000');      
+        $(document).ready(function() {
+            $('#phone').mask('(00) 0 0000-0000');
             $('#rg').mask('00.000.000-00');
             $('#cpf').mask('000.000.000-00');
-            $('#dateOfBirth').mask('00/00/0000'); 
-        });        
+            $('#dateOfBirth').mask('00/00/0000');
+        });
+
     </script>
 
     <!--Optionals Scripts-->
@@ -116,76 +116,76 @@
 
             <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
                 <div class="main-navbar sticky-top bg-white">
-                    
+
                     <!-- Main Navbar -->
                     <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
-                            <span class="main-navbar__search w-100 d-none d-md-flex d-lg-flex"></span>
-    
-                            <ul class="navbar-nav border-left flex-row ">
-                                <li class="nav-item border-right dropdown notifications">
-                                    <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <div class="nav-link-icon__wrapper">
-                                            <i class="material-icons">&#xE7F4;</i>
-                                            <span class="badge badge-pill badge-danger">2</span>
+                        <span class="main-navbar__search w-100 d-none d-md-flex d-lg-flex"></span>
+
+                        <ul class="navbar-nav border-left flex-row ">
+                            <li class="nav-item border-right dropdown notifications">
+                                <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="nav-link-icon__wrapper">
+                                        <i class="material-icons">&#xE7F4;</i>
+                                        <span class="badge badge-pill badge-danger">2</span>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-small" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">
+                                        <div class="notification__icon-wrapper">
+                                            <div class="notification__icon">
+                                                <i class="material-icons">schedule</i>
+                                            </div>
+                                        </div>
+                                        <div class="notification__content">
+                                            <span class="notification__category">Agenda</span>
+                                            <p>Não se esqueça de checar a agenda, você tem
+                                                <span class="text-success text-semibold">2</span> consultas hoje!</p>
                                         </div>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-small" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">
-                                            <div class="notification__icon-wrapper">
-                                                <div class="notification__icon">
-                                                    <i class="material-icons">schedule</i>
-                                                </div>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="notification__icon-wrapper">
+                                            <div class="notification__icon">
+                                                <i class="material-icons">monetization_on</i>
                                             </div>
-                                            <div class="notification__content">
-                                                <span class="notification__category">Agenda</span>
-                                                <p>Não se esqueça de checar a agenda, você tem
-                                                    <span class="text-success text-semibold">2</span> consultas hoje!</p>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="notification__icon-wrapper">
-                                                <div class="notification__icon">
-                                                    <i class="material-icons">monetization_on</i>
-                                                </div>
-                                            </div>
-                                            <div class="notification__content">
-                                                <span class="notification__category">Financeiro</span>
-                                                <p>Confira o painel de finanças</p>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item notification__all text-center" href="#"> Ver todas as notificações </a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <img class="user-avatar rounded-circle mr-2" src="assets/images/avatars/0.jpg" alt="User Avatar">
-                                        <span class="d-none d-md-inline-block">Dra. Sierra Brooks</span>
+                                        </div>
+                                        <div class="notification__content">
+                                            <span class="notification__category">Financeiro</span>
+                                            <p>Confira o painel de finanças</p>
+                                        </div>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-small">
-                                        <a class="dropdown-item" href="#">
-                                            <i class="material-icons">&#xE7FD;</i> Perfil
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="material-icons">settings_applications</i> Configurações
-                                        </a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item text-danger" href="#">
-                                            <i class="material-icons text-danger">&#xE879;</i> Sair
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <nav class="nav">
-                                <a href="#" class="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
-                                    <i class="material-icons">&#xE5D2;</i>
+                                    <a class="dropdown-item notification__all text-center" href="#"> Ver todas as notificações </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <img class="user-avatar rounded-circle mr-2" src="assets/images/avatars/0.jpg" alt="User Avatar">
+                                    <span class="d-none d-md-inline-block">Dra. Sierra Brooks</span>
                                 </a>
-                            </nav>
+                                <div class="dropdown-menu dropdown-menu-small">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="material-icons">&#xE7FD;</i> Perfil
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="material-icons">settings_applications</i> Configurações
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item text-danger" href="#">
+                                        <i class="material-icons text-danger">&#xE879;</i> Sair
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <nav class="nav">
+                            <a href="#" class="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
+                                <i class="material-icons">&#xE5D2;</i>
+                            </a>
+                        </nav>
                     </nav>
                     <!-- End Main Navbar -->
                 </div>
-                
+
                 <div class="main-content-container container-fluid px-4">
-                    
+
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-8 text-center text-sm-left mb-0">
@@ -196,46 +196,51 @@
                     <div class="row">
                         <div class="col-md-8" style="margin: 30px auto;">
                             <div class="card card-small mb-4">
-                                
+
                                 <div class="card-header border-bottom">
                                     <h3 style="margin-top: 10px">Cadastro de paciente</h3>
                                 </div>
-                                
+
                                 <div class="card-body p-0 pb-3 text-center">
                                     <form style="padding: 30px;">
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
-                                                <input type="text" class="form-control" name="name" id="name" placeholder="Nome completo" required>                                                
-                                            </div>                                            
+                                                <input type="text" class="form-control" name="name" id="name" placeholder="Nome completo" required>
+                                            </div>
                                         </div>
-                                        
+
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <input type="text" class="form-control" name="rg" id="rg" placeholder="RG">        
-                                            </div>       
+                                                <input type="text" class="form-control" name="rg" id="rg" placeholder="RG">
+                                            </div>
                                             <div class="form-group col-md-6">
                                                 <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" required>
-                                            </div>       
+                                            </div>
                                         </div>
 
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefone" required>
-                                            </div>       
+                                            </div>
                                             <div class="form-group col-md-6">
-                                                <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required>                                                
-                                            </div>       
+                                                <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required>
+                                            </div>
                                         </div>
 
                                         <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <input type="text" class="form-control" name="dateOfBirth" id="dateOfBirth" placeholder="Data de nascimento" required>      
+                                            <div class="col-md-6 form-group">
+                                                <input type="text" class="form-control" name="dateOfBirth" id="dateOfBirth" placeholder="Data de nascimento" required>
                                             </div>
-                                            <div class="col-md-6">
-                                                <button type="submit" class="btn btn-outline-success" style="width: 125px;">Adicionar</button>
-                                            </div>                                                      
+                                            <div class="col-md-6 form-group">
+                                                <label for="photo" style="margin-bottom: 0;">Adicionar foto de perfil</label>
+                                                <input type="file" id="photo" name="photo" class="btn">
+                                            </div>
                                         </div>
-                                        
+                                        <div class="form-row">
+                                            <div class="col-md-6 form-group" style="margin: 0; padding: 0;">
+                                                <button type="submit" class="btn btn-outline-success" style="width: 125px;">Adicionar</button>
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
