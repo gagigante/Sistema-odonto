@@ -1,3 +1,11 @@
+/* .open-alert {
+    display: inherit;
+}
+
+.close-alert {
+    display: none;
+} */
+
 .gallery {        
     margin: 0 30px;
     display: flex;
