@@ -1,7 +1,7 @@
 <?php
     include_once "conexao.php";
 
-    $queryselect = "select * from estoque order by produto";
+    $queryselect = "select * from tb02_estoque order by tb02_produto";
     $resultadoselect = $conexao->query($queryselect);
 
     if($resultadoselect->num_rows>0) { 
@@ -20,15 +20,15 @@
 
         while ($linha = $resultadoselect->fetch_assoc()){                
             echo "<tr>";
-                echo "<td>".$linha["produto"]."</td>";
-                echo "<td>".$linha["quantidade"]."</td>";
-                echo "<td>".$linha["preco"]."</td>";
+                echo "<td>".$linha["tb02_produto"]."</td>";
+                echo "<td>".$linha["tb02_quantidade"]."</td>";
+                echo "<td>".$linha["tb02_preco"]."</td>";
                 echo "<td>";
-                echo "<button type='button' class='mb-2 btn btn-sm btn-success mr-1 view-modal' id='".$linha["idproduto"]."'
-                    data-id='".$linha["idproduto"]."'
-                    data-name='".$linha["produto"]."'
-                    data-price='".$linha["preco"]."'
-                    data-amount='".$linha["quantidade"]."'
+                echo "<button type='button' class='mb-2 btn btn-sm btn-success mr-1 view-modal' id='".$linha["tb02_idProduto"]."'
+                    data-id='".$linha["tb02_idProduto"]."'
+                    data-name='".$linha["tb02_produto"]."'
+                    data-price='".$linha["tb02_preco"]."'
+                    data-amount='".$linha["tb02_quantidade"]."'
                     style='color: white'>Editar/Adicionar/Remover</button>";
                 echo "</td>";
             echo "</tr>";  

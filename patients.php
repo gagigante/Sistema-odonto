@@ -7,48 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>DECADA ODONTO</title>
-
+    
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/shards-dashboards.1.1.0.min.css">
     <link rel="stylesheet" href="assets/css/extras.1.1.0.min.css">
-
-    <!--Jquery CDN-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!--Bootstrap Script-->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <!--Bootstrap PopperJs CND-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <!--Framework required Scripts-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-    <script src="scripts/extras.1.1.0.min.js"></script>
-    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
-    <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>
-    <script src="scripts/verificaExtensao.js"></script>
-    <!--MaskJs Script-->
-    <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
-    <!--Fields Formating Script-->
-    <script>
-        $(document).ready(function() {
-            $('#phone').mask('(00) 0 0000-0000');
-            $('#rg').mask('00.000.000-00');
-            $('#cpf').mask('000.000.000-00');
-            $('#dateOfBirth').mask('00/00/0000');
-        });
-
-    </script>
-
-    <!--Optionals Scripts-->
-    <!-- <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css"> -->
+    
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css">
 </head>
 
 <body class="h-100">
+    <?php include_once "php/conexao.php"; ?>
 
     <div class="container-fluid">
         <div class="row">
@@ -75,7 +47,7 @@
                                 <i class="fas fa-search"></i>
                             </div>
                         </div>
-                        <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search">
+                        <input class="navbar-search form-control" type="text" placeholder="Pesquisar por nome do paciente" aria-label="Search">
                     </div>
                 </form>
                 <div class="nav-wrapper">
@@ -93,13 +65,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="patients.php">
+                            <a class="nav-link active" href="patients.html">
                                 <i class="material-icons">supervisor_account</i>
                                 <span>Pacientes</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="stock.php">
+                            <a class="nav-link " href="stock.html">
                                 <i class="material-icons">table_chart</i>
                                 <span>Estoque</span>
                             </a>
@@ -110,12 +82,6 @@
                                 <span>Financeiro</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="treatments.html">
-                                <i class="material-icons">drag_indicator</i>
-                                <span>Catálogo de tratamentos</span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </aside>
@@ -123,11 +89,19 @@
 
             <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
                 <div class="main-navbar sticky-top bg-white">
-
+                    
                     <!-- Main Navbar -->
                     <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
-                        <span class="main-navbar__search w-100 d-none d-md-flex d-lg-flex"></span>
-
+                        <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+                            <div class="input-group input-group-seamless ml-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                </div>
+                                <input class="navbar-search form-control" type="text" placeholder="Pesquisar por nome do paciente" aria-label="Search">
+                            </div>
+                        </form>
                         <ul class="navbar-nav border-left flex-row ">
                             <li class="nav-item border-right dropdown notifications">
                                 <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -169,14 +143,14 @@
                                     <span class="d-none d-md-inline-block">Dra. Sierra Brooks</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-small">
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="profile.php">
                                         <i class="material-icons">&#xE7FD;</i> Perfil
                                     </a>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="settings.php">
                                         <i class="material-icons">settings_applications</i> Configurações
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-danger" href="#">
+                                    <a class="dropdown-item text-danger" href="logout.php">
                                         <i class="material-icons text-danger">&#xE879;</i> Sair
                                     </a>
                                 </div>
@@ -190,65 +164,57 @@
                     </nav>
                     <!-- End Main Navbar -->
                 </div>
-
+                
                 <div class="main-content-container container-fluid px-4">
-
+                    
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
-                        <div class="col-12 col-sm-8 text-center text-sm-left mb-0">
-                            <h3 class="page-title"> <a href="patients.html"><i class="material-icons">supervisor_account</i>Pacientes </a> / <i class="material-icons">add_circle_outline</i>Adicionar paciente</h3>
+                        <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+                            <h3 class="page-title"> <i class="material-icons">supervisor_account</i>Pacientes</h3>
                         </div>
                     </div>
-
                     <div class="row">
-                        <div class="col-md-8" style="margin: 30px auto;">
+                        <div class="col">
                             <div class="card card-small mb-4">
-
                                 <div class="card-header border-bottom">
-                                    <h3 style="margin-top: 10px">Cadastro de paciente</h3>
+                                    <a href="add-patient.html" class="btn btn-success">Adicionar paciente</a>
                                 </div>
-
                                 <div class="card-body p-0 pb-3 text-center">
-                                    <form style="padding: 30px;" action="php/add-patient-cadastro.php" method="POST" enctype="multipart/form-data">
-                                        <div class="form-row">
-                                            <div class="form-group col-md-12">
-                                                <input type="text" class="form-control" name="name" id="name" placeholder="Nome completo" required>
-                                            </div>
-                                        </div>
+                                    <table class="table mb-0">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th scope="col" class="border-0">Foto</th>
+                                                <th scope="col" class="border-0">Nome</th>
+                                                <th scope="col" class="border-0">CPF</th>
+                                                <th scope="col" class="border-0">Telefone</th>
+                                                <th scope="col" class="border-0">E-mail</th>
+                                                <th scope="col" class="border-0">Ações</th>             
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $queryselect = "select * from tb01_paciente order by tb01_nome";
+                                                $resultadoselect = $conexao->query($queryselect);
 
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <input type="text" class="form-control" name="rg" id="rg" placeholder="RG">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" required>
-                                            </div>
-                                        </div>
+                                                if($resultadoselect->num_rows>0){
+                                                    while ($linha = $resultadoselect->fetch_assoc()){
 
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefone" required>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="col-md-6 form-group">
-                                                <input type="text" class="form-control" name="dateOfBirth" id="dateOfBirth" placeholder="Data de nascimento" required>
-                                            </div>
-                                            <div class="col-md-6 form-group">
-                                                <label for="photo" style="margin-bottom: 0;">Adicionar foto de perfil</label>
-                                                <input type="file" accept="image/png, image/jpeg, image/jpg" onchange="verificaExtensao(this)" id="photo" name="photo" class="btn">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-6 form-group" style="margin: 0; padding: 0;">
-                                                <button type="submit" class="btn btn-outline-success" style="width: 125px;">Adicionar</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                                        if(empty($linha["tb01_imagem"])){
+                                                            $linha["tb01_imagem"] = "images\avatars\avatar.png";
+                                                        }
+                                                        echo "<tr> ";
+                                                        echo "<td><img class='user-avatar rounded-circle mr-2' src='images/patients/".$linha["tb01_imagem"]."' alt='User Avatar' width='50px'></td>";
+                                                        echo "<td>".$linha["tb01_nome"]. "</td>";
+                                                        echo "<td>".$linha["tb01_cpf"]. "</td>";
+                                                        echo "<td>".$linha["tb01_telefone"]."</td>";
+                                                        echo "<td>".$linha["tb01_email"] ."</td>";
+                                                        echo "<td><a href='patient-profile.php?id=".$linha["tb01_idpaciente"]."' class='mb-2 btn btn-sm btn-success mr-1' style='color: white'>Ver perfil</a></td>";
+                                                        echo "</tr>";
+                                                    }
+                                                }        
+                                            ?>                                                      
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -262,6 +228,16 @@
             </main>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="scripts/extras.1.1.0.min.js"></script>
+    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
+    <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>
 </body>
 
 </html>
