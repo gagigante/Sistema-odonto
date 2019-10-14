@@ -42,7 +42,7 @@
     }else {
         echo "<div style='padding: 10px;' >";
         echo "<img style='width: 80%;' src='assets/images/empty-treatments-placeholder.png' />";
-        echo "<h5 style='margin-top: 15px;'>Ainda não há nada cadastrado no estoque</h5>";
+        echo "<h5 style='margin-top: 15px;'>Ainda não há nada cadastrado no catálogo</h5>";
         echo "</div>";
     }        
 
