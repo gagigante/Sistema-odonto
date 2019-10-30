@@ -167,8 +167,7 @@
                 <div class="screen-alert" style="position: absolute; width: 100%;"></div>
                 
                 <!-- / .main-navbar -->
-                <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">                                        
-                    
+                <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">                                                           
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
@@ -179,7 +178,7 @@
                         <div class="col">
                             <div class="card card-small mb-4">
                                 <div class="card-header border-bottom">
-                                    <form class="form-row" id="formTreatment" style="margin-top: 15px;" method="POST">
+                                    <form class="form-row" id="formTreatment" style="margin-top: 15px;">
                                         <div class="form-group col-md-3">
                                             <input type="text" class="form-control" name="name" id="name" placeholder="Nome do tratamento" required>
                                         </div>
@@ -191,7 +190,6 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                             <button type="submit" class="btn btn-success">Adicionar tratamento</button>
-
                                         </div>
                                     </form>
                                 </div>
@@ -208,8 +206,8 @@
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <div class="modal-body">
-                                                    <form id="formEditTreatment" method="POST">
+                                                <form id="formEditTreatment">
+                                                    <div class="modal-body">
                                                         <p style="text-align: left; margin: 10px; padding: 0;">Nome do tratamento</p>
                                                         <div class="form-row">
                                                             <div class="form-group col-md-12">
@@ -220,7 +218,7 @@
                                                         <p style="text-align: left; margin: 10px; padding: 0;">Descrição</p>
                                                         <div class="form-row">
                                                             <div class="form-group col-md-12">
-                                                                <textarea type="text" class="form-control" name="edit-description" id="edit-description"></textarea>
+                                                                <textarea type="text" class="form-control" name="edit-description" id="edit-description" required></textarea>
                                                             </div>                                                            
                                                         </div>
                                                         
@@ -230,13 +228,13 @@
                                                                 <input type="text" class="form-control" name="edit-price" id="edit-price" placeholder="Preço unitário" value="15,99" required>
                                                             </div>
                                                         </div>
-                                                    </form>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
-                                                    <button type="submit" class="btn btn-danger delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                                </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
+                                                        <button type="submit" class="btn btn-danger delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

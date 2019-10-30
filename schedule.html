@@ -51,6 +51,16 @@
     <script src='assets/fullcalendar-4.3.1/packages/list/main.js'></script>
     <script src="assets/fullcalendar-4.3.1/packages/core/locales/pt-br.js"></script>
     
+    <!--MaskJs Script-->
+    <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
+    <!--Fields Formating Script-->
+    <script>
+      $(document).ready(function() {
+          $('#add-start').mask('00/00/0000 00:00:00');
+          $('#add-end').mask('00/00/0000 00:00:00');
+      });
+    </script>
+
     <script src="assets/js/scheduleFunctions.js"></script>
     
 </head>
@@ -199,41 +209,65 @@
                     </div>
                     <!-- End Page Header -->
                     <div class="row">
-                        <div class="col-sm-12" style="margin-bottom: 30px">                           
-                            <div class="card" style="padding: 15px;" id='calendar'></div>
+                        <div class="col-sm-12" style="margin-bottom: 30px">  
+
+                            <div class="card">
+                                <div class="card-header border-bottom">
+                                    <div class="form-row"style="margin-top: 15px;">
+                                        <div class="form-group col-md-3">
+                                            <button type="button" onclick="$('#registerModal').modal('show');" class="btn btn-success">Adicionar evento à agenda</button>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                                <div class="card-body p-0 pb-3 text-center" style="padding: 15px;">
+                                    <div style="margin: 15px;" id="calendar"></div>
+                                </div>
+                            </div>
 
                             <div class="modal fade" id="scheduleModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="ModalLabel">Editar ou adicionar item</h5>
+                                            <h5 class="modal-title" id="ModalLabel">Detalhes</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form id="formEditTreatment" method="POST">
-                                                <p style="text-align: left; margin: 10px; padding: 0;">Nome do tratamento</p>
+                                            <div id="content"></div>
+                                            <div>
+                                                <p style="text-align: left; margin: 10px; padding: 0;">Paciente</p>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
-                                                        <input type="text" class="form-control" name="edit-name" id="edit-name" placeholder="Nome do produto" value="Anestesia" required>
+                                                        <input type="text" class="form-control" name="event-patient" id="event-patient" readonly>
+                                                    </div>
+                                                </div>
+
+                                                <p style="text-align: left; margin: 10px; padding: 0;">Título</p>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-12">
+                                                        <input type="text" class="form-control" name="event-title" id="event-title" readonly>
                                                     </div>
                                                 </div>
                                                 
                                                 <p style="text-align: left; margin: 10px; padding: 0;">Descrição</p>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
-                                                        <textarea type="text" class="form-control" name="edit-description" id="edit-description"></textarea>
-                                                    </div>                                                            
+                                                        <textarea type="text" class="form-control" name="event-description" id="event-description" readonly></textarea>
+                                                    </div>                 
                                                 </div>
                                                 
-                                                <p style="text-align: left; margin: 10px; padding: 0;">Preço</p>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <input type="text" class="form-control" name="edit-price" id="edit-price" placeholder="Preço unitário" value="15,99" required>
+                                                        <p style="text-align: left; margin: 10px; padding: 0;">Início</p>
+                                                        <input type="text" class="form-control" name="event-start" id="event-start" readonly>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <p style="text-align: left; margin: 10px; padding: 0;">Fim</p>
+                                                        <input type="text" class="form-control" name="event-end" id="event-end" readonly>
                                                     </div>
                                                 </div>
-                                            </form>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
@@ -244,6 +278,74 @@
                                 </div>
                             </div>
 
+                            <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="ModalLabel">Adicionar evento à agenda</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <form>
+                                            <div class="modal-body">                                             
+                                                <p style="text-align: left; margin: 10px; padding: 0;">Paciente</p>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-12">
+                                                        <input type="text" class="form-control" name="add-patient" id="add-patient" required>
+                                                    </div>
+                                                </div>
+
+                                                <p style="text-align: left; margin: 10px; padding: 0;">Título</p>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-12">
+                                                        <input type="text" class="form-control" name="add-title" id="add-title" required>
+                                                    </div>
+                                                </div>
+                                                
+                                                <p style="text-align: left; margin: 10px; padding: 0;">Descrição</p>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-12">
+                                                        <textarea type="text" class="form-control" name="add-description" id="add-description"></textarea>
+                                                    </div>                 
+                                                </div>
+                                                
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <p style="text-align: left; margin: 10px; padding: 0;">Início</p>
+                                                        <input type="text" class="form-control" name="add-start" id="add-start" required autocomplete="off">
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <p style="text-align: left; margin: 10px; padding: 0;">Fim</p>
+                                                        <input type="text" class="form-control" name="add-end" id="add-end" required autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                
+                                                <p style="text-align: left; margin: 10px; padding: 0;">Cor do evento</p>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-12">           
+                                                        <select id="color" name="color" class="form-control">
+                                                            <option value="#ffd700" style="color: #ffd700" selected>Amarelo</option>
+                                                            <option value="#0071c5" style="color: #0071c5">Azul</option>
+                                                            <option value="#ff4500" style="color: #ff4500;">Laranja</option>
+                                                            <option value="#8b4513" style="color: #8b4513">Marrom</option>
+                                                            <option value="#1c1c1c" style="color: #1c1c1c">Preto</option>
+                                                            <option value="#a020f0" style="color: #a020f0;">Roxo</option>
+                                                            <option value="#40e0d0" style="color: #40e0d0;">Turquesa</option>
+                                                            <option value="#228b22" style="color: #228b22;">Verde</option>
+                                                            <option value="#8b0000" style="color: #8b0000;">Vermelho</option>
+                                                        </select>
+                                                    </div>                                                    
+                                                </div>   
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>                                          
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
 
 
                         </div>

@@ -11,9 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         locale: 'pt-br',
         timeZone: 'BRT',        
-        slotDuration: '00:15',
+        slotDuration: '00:10',
         minTime: '07:00',
         maxTime: '22:00',
+        selectable: true,
         editable: true,
         navLinks: true, // can click day/week names to navigate views
         eventLimit: true, // allow "more" link when too many events
@@ -39,10 +40,15 @@ document.addEventListener('DOMContentLoaded', function () {
         //        alert('deu erro');
         //    }
         },
-       
-        dateClick: function () {
-            alert('a day has been clicked!');
+        select: function(info) {
+            //alert(info.start.toLocaleString());
+            $('#registerModal #add-start').val(info.start.toLocaleString());
+            $('#registerModal #add-end').val(info.end.toLocaleString());
+            $('#registerModal').modal('show');
         },
+        // dateClick: function () {
+        //     alert('a day has been clicked!');
+        // },
         eventDrop: function (info) {
             //alert(info.event.title + " was dropped on " + info.event.start.toISOString());
             if (!confirm("Are you sure about this change?")) {
@@ -56,9 +62,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 info.revert();
             }
         },
-        eventClick: function (info) {            
-            $('#scheduleModal').modal('show');
-            //$('#scheduleModal').modal('show');
+
+        eventClick: function (info) {    
+            info.jsEvent.preventDefault(); 
+
+            console.log(info.event.description);
+
+            $('#scheduleModal #content').text(info.event.title);
+            // $('#scheduleModal #id').text(info.event.id);    
+            
+            $('#event-patient').val(info.event.title);
+            $('#event-title').val(info.event.id);
+            $('#event-description').val(info.event.patient);
+            $('#event-start').val(info.event.start);
+            $('#event-end').val(info.event.end);
+                        
+            $('#scheduleModal').modal('show');            
         },
     });
     calendar.render();

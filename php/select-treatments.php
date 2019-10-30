@@ -29,7 +29,7 @@
                     data-name='".$linha["tb03_nome"]."'
                     data-price='".$linha["tb03_preco"]."'
                     data-description='".$linha["tb03_descricao"]."'
-                    style='color: white'>Editar/Adicionar/Remover</button>";
+                    style='color: white'>Editar/Remover</button>";
                 echo "</td>";
             echo "</tr>";  
         }
