@@ -187,6 +187,9 @@
                     </nav>
                 </div>
 
+                <div class="screen-alert" style="position: absolute; width: 100%;"></div>
+                
+                <!-- / .main-navbar -->
                 <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
