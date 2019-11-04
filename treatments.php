@@ -180,7 +180,7 @@
                         <div class="col">
                             <div class="card card-small mb-4">
                                 <div class="card-header border-bottom">
-                                    <form class="form-row" id="formTreatment" style="margin-top: 15px;">
+                                    <form class="form-row" method="post" id="formTreatment" style="margin-top: 15px;">
                                         <div class="form-group col-md-3">
                                             <input type="text" class="form-control" name="name" id="name" placeholder="Nome do tratamento" required>
                                         </div>
