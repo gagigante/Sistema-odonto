@@ -1,4 +1,14 @@
-<!doctype html>
+<?php 
+
+    include_once "php/conexao.php"; 
+    include 'php/verificaLogin.php';
+    
+    if (!empty($_GET["id"])) {
+        $id = $_GET["id"];
+        
+?>
+
+
 <html class="no-js h-100">
 
 <head>
@@ -81,15 +91,19 @@
 </head>
 
 <body class="h-100" style="overflow-x: hidden;">
-    <?php 
-        include_once "php/conexao.php";
+    <?php        
+
         $id = $_GET["id"];
 
         $queryselect = "select * from tb01_paciente where tb01_idpaciente = $id";
         $resultadoselect = $conexao->query($queryselect);
 
             if($resultadoselect->num_rows>0){
-                while ($linha = $resultadoselect->fetch_assoc()){                                              
+                while ($linha = $resultadoselect->fetch_assoc()){   
+
+                if(empty($linha["tb01_imagem"])){
+                    $linha["tb01_imagem"] = "0.jpg";
+                }                                           
 
     ?>
 
@@ -102,7 +116,7 @@
                         <a class="navbar-brand w-100 mr-0" style="line-height: 25px;">
                             <div class="d-table m-auto">
                                 <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;"
-                                    src="images/shards-dashboards-logo.svg" alt="Shards Dashboard">
+                                    src="assets/images/shards-dashboards-logo.svg">
                                 <span class="d-none d-md-inline ml-1">ODONTO FRONT-END</span>
                             </div>
                         </a>
@@ -247,7 +261,7 @@
                             <div class="card card-small mb-4">
                                 <div class="card-header">
                                     <div style="display: flex; flex-direction: row;height: 100%;padding-left: 10px;">
-                                        <img class="user-avatar rounded-circle mr-2" <?php echo "src='images/patients/".$linha["tb01_imagem"]."'"; ?>
+                                        <img class="user-avatar rounded-circle mr-2" <?php echo "src='assets/images/avatars/".$linha["tb01_imagem"]."'"; ?>
                                             alt="User Avatar" width="60px">
                                         <p style="margin: auto 10px"><?php echo $linha["tb01_nome"]; ?></p>
                                     </div>
@@ -648,3 +662,13 @@
 </body>
 
 </html>
+
+<?php 
+
+    }elseif (!isset($_SESSION)) {
+        header("Location: login.php");
+        
+    }else{
+        header("Location: patients.php");
+    }
+?>

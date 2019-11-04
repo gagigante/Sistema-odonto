@@ -1,7 +1,9 @@
 <?php
     require "conexao.php";
+    
+    $idLogin = $_SESSION['idUsuario'];
 
-    $queryselect = "select * from tb02_estoque order by tb02_produto";
+    $queryselect = "select * from tb02_estoque where tb02_idUsuario = '$idLogin' order by tb02_produto";
     $resultadoselect = $conexao->query($queryselect);
 
     if($resultadoselect->num_rows>0) { 

@@ -20,7 +20,10 @@
 </head>
 
 <body class="h-100">
-    <?php include_once "php/conexao.php"; ?>
+    <?php 
+        include_once "php/conexao.php"; 
+        
+    ?>
 
     <div class="container-fluid">
         <div class="row">
@@ -31,7 +34,7 @@
                     <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
                         <a class="navbar-brand w-100 mr-0" style="line-height: 25px;">
                             <div class="d-table m-auto">
-                                <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="images/shards-dashboards-logo.svg">
+                                <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="assets/images/shards-dashboards-logo.svg">
                                 <span class="d-none d-md-inline ml-1">ODONTO FRONT-END</span>
                             </div>
                         </a>
@@ -65,23 +68,29 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="patients.html">
+                            <a class="nav-link active" href="patients.php">
                                 <i class="material-icons">supervisor_account</i>
                                 <span>Pacientes</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="stock.html">
+                            <a class="nav-link " href="stock.php">
                                 <i class="material-icons">table_chart</i>
                                 <span>Estoque</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="financial.html">
+                            <a class="nav-link " href="financial.php">
                                 <i class="material-icons">monetization_on</i>
                                 <span>Financeiro</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="treatments.php">
+                                <i class="material-icons">drag_indicator</i>
+                                <span>Catálogo de tratamentos</span>
+                            </a>
+                        </li>     
                     </ul>
                 </div>
             </aside>
@@ -165,7 +174,7 @@
                     <!-- End Main Navbar -->
                 </div>
                 
-                <div class="main-content-container container-fluid px-4">
+                <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
                     
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
@@ -193,17 +202,20 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $queryselect = "select * from tb01_paciente order by tb01_nome";
+
+                                                $idLogin = $_SESSION['idUsuario'];
+
+                                                $queryselect = "select * from tb01_paciente where tb01_idUsuario = '$idLogin' order by tb01_nome";
                                                 $resultadoselect = $conexao->query($queryselect);
 
                                                 if($resultadoselect->num_rows>0){
                                                     while ($linha = $resultadoselect->fetch_assoc()){
 
                                                         if(empty($linha["tb01_imagem"])){
-                                                            $linha["tb01_imagem"] = "images\avatars\avatar.png";
+                                                            $linha["tb01_imagem"] = "0.jpg";
                                                         }
                                                         echo "<tr> ";
-                                                        echo "<td><img class='user-avatar rounded-circle mr-2' src='images/patients/".$linha["tb01_imagem"]."' alt='User Avatar' width='50px'></td>";
+                                                        echo "<td><img class='user-avatar rounded-circle mr-2' src='assets/images/avatars/".$linha["tb01_imagem"]."' alt='User Avatar' width='50px'></td>";
                                                         echo "<td>".$linha["tb01_nome"]. "</td>";
                                                         echo "<td>".$linha["tb01_cpf"]. "</td>";
                                                         echo "<td>".$linha["tb01_telefone"]."</td>";

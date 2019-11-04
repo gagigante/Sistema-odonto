@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="assets/css/shards-dashboards.1.1.0.min.css">
     <link rel="stylesheet" href="assets/css/extras.1.1.0.min.css">
 
-
     <!--Jquery CDN-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!--Bootstrap Script-->
@@ -34,14 +33,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
     <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>
 
-
-    <!--Optionals Scripts-->
-    <!-- <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css"> -->
+    <script src="assets/js/stockFunctions.js"></script>
+    
 </head>
 
+<?php 
+    include 'php/conexao.php';
+    $idLogin = $_SESSION['idUsuario'];
+
+    $queryselect = "select * from tb04_login where tb04_idLogin = '$idLogin'"; //select * from tb04_login where tb01_idUsuario = '$idLogin'
+    $resultadoselect = $conexao->query($queryselect);
+
+    if($resultadoselect->num_rows>0){
+        while ($linha = $resultadoselect->fetch_assoc()){          
+
+
+?>
+
 <body class="h-100">
-	<?php include_once "php/conexao.php"; ?>
     <div class="container-fluid">
         <div class="row">
             <!-- Main Sidebar -->
@@ -50,7 +59,7 @@
                     <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
                         <a class="navbar-brand w-100 mr-0" style="line-height: 25px;">
                             <div class="d-table m-auto">
-                                <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="images/shards-dashboards-logo.svg" alt="Shards Dashboard">
+                                <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="assets/images/shards-dashboards-logo.svg">
                                 <span class="d-none d-md-inline ml-1">ODONTO FRONT-END</span>
                             </div>
                         </a>
@@ -75,35 +84,29 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="patients.html">
+                            <a class="nav-link " href="patients.php">
                                 <i class="material-icons">supervisor_account</i>
                                 <span>Pacientes</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="stock.html">
+                            <a class="nav-link active" href="stock.php">
                                 <i class="material-icons">table_chart</i>
                                 <span>Estoque</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="financial.html">
+                            <a class="nav-link " href="financial.php">
                                 <i class="material-icons">monetization_on</i>
                                 <span>Financeiro</span>
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                <a class="nav-link " href="user-profile-lite.html">
-                  <i class="material-icons">person</i>
-                  <span>User Profile</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="errors.html">
-                  <i class="material-icons">error</i>
-                  <span>Errors</span>
-                </a>
-              </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link " href="treatments.php">
+                                <i class="material-icons">drag_indicator</i>
+                                <span>Catálogo de tratamentos</span>
+                            </a>
+                        </li>                    
                     </ul>
                 </div>
             </aside>
@@ -112,9 +115,7 @@
                 <div class="main-navbar sticky-top bg-white">
                     <!-- Main Navbar -->
                     <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
-                        <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
-                            <div class="input-group input-group-seamless ml-3"></div>
-                        </form>
+                        <div class="main-navbar__search w-100 d-none d-md-flex d-lg-flex"></div>
                         <ul class="navbar-nav border-left flex-row ">
                             <li class="nav-item border-right dropdown notifications">
                                 <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -153,7 +154,8 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                     <img class="user-avatar rounded-circle mr-2" src="assets/images/avatars/0.jpg" alt="User Avatar">
-                                    <span class="d-none d-md-inline-block">Dra. Sierra Brooks</span>
+                                     <!--<img class="user-avatar rounded-circle mr-2" src="assets/images/avatars///<?php echo $linha['tb04_imagem'] ?>" alt="User Avatar">-->
+                                    <span class="d-none d-md-inline-block"><?php echo $linha["tb04_login"]; ?></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-small">
                                     <a class="dropdown-item" href="#">
@@ -176,9 +178,11 @@
                         </nav>
                     </nav>
                 </div>
-
                 <!-- / .main-navbar -->
-                <div class="main-content-container container-fluid px-4">
+                <div class="screen-alert" style="position: absolute; width: 100%;"></div>
+                
+                <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
+                    
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
@@ -189,7 +193,7 @@
                         <div class="col">
                             <div class="card card-small mb-4">
                                 <div class="card-header border-bottom">
-                                    <form class="form-row" style="margin-top: 15px;" action="php/add-stock.php" method="POST">
+                                    <form class="form-row" id="formStock" style="margin-top: 15px;" method="POST">
                                         <div class="form-group col-md-3">
                                             <input type="text" class="form-control" name="product" id="product" placeholder="Produto" required>
                                         </div>
@@ -205,79 +209,53 @@
                                     </form>
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
-                                    <div class="table-responsive">
-                                        <table class="table mb-0">
-                                            <thead class="bg-light">
-                                                <tr>
-                                                    <th scope="col" class="border-0">Produto</th>
-                                                    <th scope="col" class="border-0">Quantidade</th>
-                                                    <th scope="col" class="border-0">Preço unitário</th>
-                                                    <th scope="col" class="border-0">Ações</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                    $queryselect = "select * from estoque";
-                                                    $resultadoselect = $conexao->query($queryselect);
 
-                                                    if($resultadoselect->num_rows>0){
-                                                        while ($linha = $resultadoselect->fetch_assoc()){
-                                                            echo "<tr> <td></td>";
-                                                            echo "</td><td>".$linha["produto"]. "</td>";
-                                                            echo "<td>".$linha["quantidade"]. "</td>";
-                                                            echo "<td>".$linha["preco"]."</td>";
-                                                            echo "<td><a href='patient-profile.php?id=' class='mb-2 btn btn-sm btn-success mr-1' style='color: white'>Ver perfil</a></td>";
-                                                        }
-                                                    }        
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="ajax-response"></div>
+                                   
+                                    <div class="modal fade" id="stockModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Editar ou adicionar item</h5>
+                                                    <h5 class="modal-title" id="ModalLabel">Editar ou adicionar item</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form>
-
+                                                    <form method="POST" id="formEditStock">
                                                         <div class="form-row">
-                                                            <strong class="text-muted d-block mb-2">Forms</strong>
+                                                            <p style="text-align: left; margin: 10px; padding: 0;">Nome do produto</p>
                                                             <div class="form-group col-md-12">
-                                                                <input type="text" class="form-control" name="edit-name" id="edit-name" placeholder="Nome do produto" value="Anestesia" required>
+                                                                <input type="text" class="form-control" name="edit-name" id="edit-name" placeholder="Nome do produto" required>
                                                             </div>
                                                         </div>
-
                                                         
-                                                        <div class="form-row">
-                                                            
-                                                            <div class="form-group col-md-6">                                                   
-                                                                <input type="number" class="form-control" name="qtd" id="qtd" value="50" readonly>
-                                                            </div>
-
-                                                            <div class="input-group col-md-6">
-                                                                <div class="input-group-prepend" style="height: 32px">
-                                                                    <div class="input-group-text">+</div>
-                                                                </div>
-                                                                <input style="height: 32px" type="number" class="form-control" id="add" name="add" placeholder="Adicionar quantidade">
-                                                            </div>
-                                                        </div>
-
+                                                        <p style="text-align: left; margin: 10px; padding: 0;">Quantidade</p>
                                                         <div class="form-row">
                                                             <div class="form-group col-md-6">
-                                                                <input type="text" class="form-control" name="edit-price" id="edit-price" placeholder="Preço unitário" value="15,99" required>
+                                                                <input type="number" class="form-control" name="qtd" id="qtd" readonly>
+                                                            </div>
+
+                                                            <div class="input-group col-md-6" style="height: 32px; margin-bottom: 15px;">
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">+</div>
+                                                                </div>
+                                                                <input type="number" class="form-control" id="add" name="add" placeholder="Adicionar quantidade">
+                                                            </div>
+                                                        </div>
+
+                                                        <p style="text-align: left; margin: 10px; padding: 0;">Preço</p>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" name="edit-price" id="edit-price" placeholder="Preço unitário" required>
                                                             </div>
                                                         </div>
                                                     </form>
                                                 </div>
-                                                <div class="modal-footer">
+                                                <div class="modal-footer">                                                    
+                                                    <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
+                                                    <button type="submit" class="btn btn-danger delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                                    <button type="button" class="btn btn-success">Salvar alterações</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -297,5 +275,10 @@
         </div>
     </div>
 </body>
+
+<?php 
+    }
+}
+?>
 
 </html>

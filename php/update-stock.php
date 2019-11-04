@@ -10,7 +10,7 @@
 
 	$qtdFinal = $quantidade + $add;
 
-    if(!empty($nome) && !empty($qtdFinal) && !empty($preco) && !empty($id) {
+    if(!empty($nome) && !empty($qtdFinal) && !empty($preco)) {
         $queryEdita = "UPDATE tb02_estoque SET tb02_produto = '$nome', tb02_quantidade = '$qtdFinal', tb02_preco = '$preco' WHERE tb02_idProduto ='$id'";
 	   $resultadoEdita = mysqli_query($conexao, $queryEdita);    
     }	

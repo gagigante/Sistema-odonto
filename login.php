@@ -1,4 +1,3 @@
-<!doctype html>
 <html class="no-js h-100" lang="en">
 
 <head>
@@ -46,13 +45,13 @@
                 
                 <!-- <img width="100px;" src="assets/images/shards-dashboards-logo-danger.svg" /> -->
 
-                <form style="width: 100%; max-width: 400px; margin: 0 auto;">                        
+                <form style="width: 100%; max-width: 400px; margin: 0 auto;" action="php/login.php" method="POST">                        
 
                     <h2 style="margin-bottom: 30px;">Entrar </h2>
                     <div class="form-row">                        
                         <div class="form-group col-md-12">
                             <p style="margin: 5px">E-mail</p>
-                            <input type="email" class="form-control" name="email" id="email" autocomplete="off" required>
+                            <input type="text" class="form-control" name="email" id="email" autocomplete="off" required>
                         </div>
                     </div>
                     <div class="form-row"> 
@@ -66,7 +65,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <button onclick="window.location='index.html';" style="width: 100%;margin-top: 20px;" type="submit" class="btn btn-success">Entrar</button>
+                            <button style="width: 100%;margin-top: 20px;" type="submit" class="btn btn-success">Entrar</button>
                             <button style="width: 100%;margin-top: 20px;" type="submit" class="btn btn-info">Não tem uma conta?</button>
                         </div>               
                     </div>                    

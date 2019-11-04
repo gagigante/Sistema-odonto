@@ -1,7 +1,9 @@
 <?php
     require "conexao.php";
 
-    $queryselect = "select * from tb03_tratamentos order by tb03_nome";
+    $idLogin = $_SESSION['idUsuario'];
+
+    $queryselect = "select * from tb03_tratamentos where tb03_idUsuario = '$idLogin' order by tb03_nome";
     $resultadoselect = $conexao->query($queryselect);
 
     if($resultadoselect->num_rows>0) { 
