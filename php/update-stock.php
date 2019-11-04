@@ -2,10 +2,10 @@
 	
 	include_once "conexao.php";
 
-	$nome = $_POST["name"];
-	$quantidade = $_POST["qtd"];
-	$add = $_POST["add"];
-	$preco = str_replace(",",".", $_POST["price"]);
+	$nome = mysqli_real_escape_string($conexao, trim($_POST["name"]));
+	$quantidade = mysqli_real_escape_string($conexao, trim($_POST["qtd"]));
+	$add = mysqli_real_escape_string($conexao, trim($_POST["add"]));
+	$preco = mysqli_real_escape_string($conexao, trim(str_replace(",",".", $_POST["price"])));
 	$id = $_POST["id"];
 
 	$qtdFinal = $quantidade + $add;
