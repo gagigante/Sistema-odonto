@@ -56,13 +56,13 @@
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link " href="index.html">
+                            <a class="nav-link " href="index.php">
                                 <i class="material-icons">dashboard</i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="schedule.html">
+                            <a class="nav-link " href="schedule.php">
                                 <i class="material-icons">schedule</i>
                                 <span>Agenda</span>
                             </a>
@@ -186,7 +186,7 @@
                         <div class="col">
                             <div class="card card-small mb-4">
                                 <div class="card-header border-bottom">
-                                    <a href="add-patient.html" class="btn btn-success">Adicionar paciente</a>
+                                    <a href="add-patient.php" class="btn btn-success">Adicionar paciente</a>
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
                                     <table class="table mb-0">

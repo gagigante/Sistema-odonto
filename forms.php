@@ -46,35 +46,41 @@
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link " href="index.html">
+                            <a class="nav-link " href="index.php">
                                 <i class="material-icons">dashboard</i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="schedule.html">
+                            <a class="nav-link " href="schedule.php">
                                 <i class="material-icons">schedule</i>
                                 <span>Agenda</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="patients.html">
+                            <a class="nav-link " href="patients.php">
                                 <i class="material-icons">supervisor_account</i>
                                 <span>Pacientes</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="stock.html">
+                            <a class="nav-link active" href="stock.php">
                                 <i class="material-icons">table_chart</i>
                                 <span>Estoque</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="financial.html">
+                            <a class="nav-link " href="financial.php">
                                 <i class="material-icons">monetization_on</i>
                                 <span>Financeiro</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="treatments.php">
+                                <i class="material-icons">drag_indicator</i>
+                                <span>Catálogo de tratamentos</span>
+                            </a>
+                        </li>  
                         <!-- <li class="nav-item">
                 <a class="nav-link " href="user-profile-lite.html">
                   <i class="material-icons">person</i>
@@ -205,7 +211,7 @@
                                                 <td>Russian Federation</td>
                                                 <td>Gdańsk</td>
                                                 <td>107-0339</td>
-                                                <td><a href="patient-profile.html" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
+                                                <td><a href="patient-profile.php" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
                                             </tr>
                                             <tr>
                                                 <td><img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar" width="50px"></td>
@@ -213,7 +219,7 @@
                                                 <td>Russian Federation</td>
                                                 <td>Gdańsk</td>
                                                 <td>107-0339</td>
-                                                <td><a href="patient-profile.html" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
+                                                <td><a href="patient-profile.php" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
                                             </tr>
                                             <tr>
                                                 <td><img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar" width="50px"></td>
@@ -221,7 +227,7 @@
                                                 <td>Russian Federation</td>
                                                 <td>Gdańsk</td>
                                                 <td>107-0339</td>
-                                                <td><a href="patient-profile.html" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
+                                                <td><a href="patient-profile.php" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
                                             </tr>
                                             <tr>
                                                 <td><img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar" width="50px"></td>
@@ -229,7 +235,7 @@
                                                 <td>Russian Federation</td>
                                                 <td>Gdańsk</td>
                                                 <td>107-0339</td>
-                                                <td><a href="patient-profile.html" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
+                                                <td><a href="patient-profile.php" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
                                             </tr>
                                             <tr>
                                                 <td><img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar" width="50px"></td>
@@ -237,7 +243,7 @@
                                                 <td>Russian Federation</td>
                                                 <td>Gdańsk</td>
                                                 <td>107-0339</td>
-                                                <td><a href="patient-profile.html" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
+                                                <td><a href="patient-profile.php" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
                                             </tr>
                                             <tr>
                                                 <td><img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar" width="50px"></td>
@@ -245,7 +251,7 @@
                                                 <td>Russian Federation</td>
                                                 <td>Gdańsk</td>
                                                 <td>107-0339</td>
-                                                <td><a href="patient-profile.html" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
+                                                <td><a href="patient-profile.php" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
                                             </tr>
                                             <tr>
                                                 <td><img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar" width="50px"></td>
@@ -253,7 +259,7 @@
                                                 <td>Russian Federation</td>
                                                 <td>Gdańsk</td>
                                                 <td>107-0339</td>
-                                                <td><a href="patient-profile.html" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
+                                                <td><a href="patient-profile.php" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
                                             </tr>
                                             <tr>
                                                 <td><img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar" width="50px"></td>
@@ -261,7 +267,7 @@
                                                 <td>Russian Federation</td>
                                                 <td>Gdańsk</td>
                                                 <td>107-0339</td>
-                                                <td><a href="patient-profile.html" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
+                                                <td><a href="patient-profile.php" class="mb-2 btn btn-sm btn-success mr-1" style="color: white">Ver perfil</a></td>
                                             </tr>
                                         </tbody>
                                     </table>

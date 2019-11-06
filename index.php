@@ -46,13 +46,13 @@
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">
+                            <a class="nav-link active" href="index.php">
                                 <i class="material-icons">dashboard</i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="schedule.html">
+                            <a class="nav-link " href="schedule.php">
                                 <i class="material-icons">schedule</i>
                                 <span>Agenda</span>
                             </a>
@@ -141,11 +141,11 @@
                                     <span class="d-none d-md-inline-block">Sierra Brooks</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-small">
-                                    <a class="dropdown-item" href="user-profile-lite.html">
+                                    <a class="dropdown-item" href="user-profile-lite.php">
                                         <i class="material-icons">&#xE7FD;</i> Profile</a>
-                                    <a class="dropdown-item" href="components-blog-posts.html">
+                                    <a class="dropdown-item" href="components-blog-posts.php">
                                         <i class="material-icons">vertical_split</i> Blog Posts</a>
-                                    <a class="dropdown-item" href="add-new-post.html">
+                                    <a class="dropdown-item" href="add-new-post.php">
                                         <i class="material-icons">note_add</i> Add New Post</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item text-danger" href="#">

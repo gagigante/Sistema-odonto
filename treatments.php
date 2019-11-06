@@ -60,13 +60,13 @@
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link " href="index.html">
+                            <a class="nav-link " href="index.php">
                                 <i class="material-icons">dashboard</i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="schedule.html">
+                            <a class="nav-link " href="schedule.php">
                                 <i class="material-icons">schedule</i>
                                 <span>Agenda</span>
                             </a>

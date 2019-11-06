@@ -11,7 +11,8 @@ $(function(){
         var cpf = $('#cpf').val();
         var telefone = $('#phone').val();
         var email = $('#email').val();
-        var data = $('#dateOfBirth').val();         
+        var data = $('#dateOfBirth').val();    
+        document.getElementById("nomeUser").innerHTML = nome; //////////////////////////////     
 
         $.post('php/patient-profile-edita.php', {
             id:id,

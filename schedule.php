@@ -92,37 +92,37 @@
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link " href="index.html">
+                            <a class="nav-link " href="index.php">
                                 <i class="material-icons">dashboard</i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="schedule.html">
+                            <a class="nav-link active" href="schedule.php">
                                 <i class="material-icons">schedule</i>
                                 <span>Agenda</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="patients.html">
+                            <a class="nav-link " href="patients.php">
                                 <i class="material-icons">supervisor_account</i>
                                 <span>Pacientes</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="stock.html">
+                            <a class="nav-link " href="stock.php">
                                 <i class="material-icons">table_chart</i>
                                 <span>Estoque</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="financial.html">
+                            <a class="nav-link " href="financial.php">
                                 <i class="material-icons">monetization_on</i>
                                 <span>Financeiro</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="treatments.html">
+                            <a class="nav-link " href="treatments.php">
                                 <i class="material-icons">drag_indicator</i>
                                 <span>Catálogo de tratamentos</span>
                             </a>

@@ -2,9 +2,22 @@
 
     include_once "php/conexao.php"; 
     include 'php/verificaLogin.php';
+
+    $idLogin = $_SESSION['idUsuario'];
     
-    if (!empty($_GET["id"])) {
-        $id = $_GET["id"];
+    
+    $id = isset($_GET["id"]) ? (int) $_GET['id'] : 0;  
+
+    if (!isset($_SESSION)) {
+        header("Location: login.php");
+            
+    }
+    
+    if($id == 1){       
+        header("Location:pacients.php");
+
+    }else{
+
         
 ?>
 
@@ -57,6 +70,8 @@
             $('#rg').mask('00.000.000-00');
             $('#cpf').mask('000.000.000-00');
             $('#dateOfBirth').mask('00/00/0000');
+            var nome = $('#name').val();
+            document.getElementById("nomeUser").innerHTML = nome;    
 
             $('#edit-btn').click(function () {
                 var BtValue = $(this).val();
@@ -93,9 +108,7 @@
 <body class="h-100" style="overflow-x: hidden;">
     <?php        
 
-        $id = $_GET["id"];
-
-        $queryselect = "select * from tb01_paciente where tb01_idpaciente = $id";
+        $queryselect = "select * from tb01_paciente where tb01_idpaciente = $id and tb01_idUsuario = $idLogin";
         $resultadoselect = $conexao->query($queryselect);
 
             if($resultadoselect->num_rows>0){
@@ -116,7 +129,7 @@
                         <a class="navbar-brand w-100 mr-0" style="line-height: 25px;">
                             <div class="d-table m-auto">
                                 <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;"
-                                    src="assets/images/shards-dashboards-logo.svg">
+                                    src="images/shards-dashboards-logo.svg" alt="Shards Dashboard">
                                 <span class="d-none d-md-inline ml-1">ODONTO FRONT-END</span>
                             </div>
                         </a>
@@ -139,35 +152,41 @@
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link " href="index.html">
+                            <a class="nav-link " href="index.php">
                                 <i class="material-icons">dashboard</i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="schedule.html">
+                            <a class="nav-link " href="schedule.php">
                                 <i class="material-icons">schedule</i>
                                 <span>Agenda</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="patients.html">
+                            <a class="nav-link active" href="patients.php">
                                 <i class="material-icons">supervisor_account</i>
                                 <span>Pacientes</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="stock.html">
+                            <a class="nav-link " href="stock.php">
                                 <i class="material-icons">table_chart</i>
                                 <span>Estoque</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="financial.html">
+                            <a class="nav-link " href="financial.php">
                                 <i class="material-icons">monetization_on</i>
                                 <span>Financeiro</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="treatments.php">
+                                <i class="material-icons">drag_indicator</i>
+                                <span>Catálogo de tratamentos</span>
+                            </a>
+                        </li>  
                     </ul>
                 </div>
             </aside>
@@ -251,7 +270,7 @@
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-8 text-center text-sm-left mb-0">
-                            <h3 class="page-title"> <a href="patients.html"><i
+                            <h3 class="page-title"> <a href="patients.php"><i
                                         class="material-icons">supervisor_account</i>Pacientes </a> / <i
                                     class="material-icons">person</i>Perfil do paciente</h3>
                         </div>
@@ -263,7 +282,7 @@
                                     <div style="display: flex; flex-direction: row;height: 100%;padding-left: 10px;">
                                         <img class="user-avatar rounded-circle mr-2" <?php echo "src='assets/images/avatars/".$linha["tb01_imagem"]."'"; ?>
                                             alt="User Avatar" width="60px">
-                                        <p style="margin: auto 10px"><?php echo $linha["tb01_nome"]; ?></p>
+                                        <p style="margin: auto 10px" id="nomeUser"></p>
                                     </div>
                                 </div>
                                 <div class="card-body p-0 pb-3">
@@ -341,12 +360,18 @@
                                             <div class="col-md-4">
                                             </div>
                                         </div>
-                                    <?php }} ?>
+                                    <?php }
+
+                                        }else{
+                                            header("Location: patients.php");
+                                        }
+
+                                     ?>
 
                                         <div class="tab-pane fade" id="tab2" role="tabpanel"
                                             aria-labelledby="nav-profile-tab" style="padding: 30px;">
 
-                                            <a href="add-budget.html" class="btn btn-outline-success"
+                                            <a href="add-budget.php" class="btn btn-outline-success"
                                                 style="width: 140px; margin: 10px">Adicionar orçamento</a>
 
                                             <table class="table">
@@ -364,7 +389,7 @@
                                                         <td>R$ 80.00</td>
                                                         <td>99/99/9999</td>
                                                         <td>
-                                                            <a href="edit-budget.html" class="btn">Editar</a>
+                                                            <a href="edit-budget.php" class="btn">Editar</a>
                                                             <button type="button"
                                                                 style="background: transparent; border: 0;cursor: pointer;">
                                                                 <i class="material-icons"
@@ -391,7 +416,7 @@
                                                         <td>R$ 80.00</td>
                                                         <td>99/99/9999</td>
                                                         <td>
-                                                            <a href="edit-budget.html" class="btn">Editar</a>
+                                                            <a href="edit-budget.php" class="btn">Editar</a>
                                                             <button type="button"
                                                                 style="background: transparent; border: 0;cursor: pointer;">
                                                                 <i class="material-icons"
@@ -418,7 +443,7 @@
                                                         <td>R$ 80.00</td>
                                                         <td>99/99/9999</td>
                                                         <td>
-                                                            <a href="edit-budget.html" class="btn">Editar</a>
+                                                            <a href="edit-budget.php" class="btn">Editar</a>
                                                             <button type="button"
                                                                 style="background: transparent; border: 0;cursor: pointer;">
                                                                 <i class="material-icons"
@@ -663,12 +688,7 @@
 
 </html>
 
-<?php 
+<?php     
 
-    }elseif (!isset($_SESSION)) {
-        header("Location: login.php");
-        
-    }else{
-        header("Location: patients.php");
-    }
+        }
 ?>

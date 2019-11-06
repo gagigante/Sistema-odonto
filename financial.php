@@ -33,6 +33,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
     <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>
     <!--    <script src="scripts/app/app-blog-overview.1.1.0.js"></script>-->
+
+    <?php 
+        include 'php/conexao.php';/////////////////////////////////////
+
+    ?>
     <script>
         $(document).ready(function() {
 
@@ -69,13 +74,13 @@
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link " href="index.html">
+                            <a class="nav-link " href="index.php">
                                 <i class="material-icons">dashboard</i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="schedule.html">
+                            <a class="nav-link " href="schedule.php">
                                 <i class="material-icons">schedule</i>
                                 <span>Agenda</span>
                             </a>
