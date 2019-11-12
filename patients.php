@@ -20,10 +20,8 @@
 </head>
 
 <body class="h-100">
-    <?php 
-        include_once "php/conexao.php"; 
-        
-    ?>
+
+    <?php require 'php/verificaLogin.php'; ?>
 
     <div class="container-fluid">
         <div class="row">

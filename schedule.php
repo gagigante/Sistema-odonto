@@ -66,6 +66,8 @@
 </head>
 
 <body class="h-100">
+    
+    <?php require 'php/verificaLogin.php'; ?>
 
     <div class="container-fluid">
         <div class="row">
@@ -287,7 +289,7 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <form>
+                                        <form method="POST" action="php/add-events.php">
                                             <div class="modal-body">                                             
                                                 <p style="text-align: left; margin: 10px; padding: 0;">Paciente</p>
                                                 <div class="form-row">
@@ -313,11 +315,23 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <p style="text-align: left; margin: 10px; padding: 0;">Início</p>
-                                                        <input type="text" class="form-control" name="add-start" id="add-start" required autocomplete="off">
+                                                        <input type="text" class="form-control" name="add-start" id="add-start" value="
+
+                                                        <?php 
+                                                            date_default_timezone_set('America/Sao_Paulo');
+                                                            echo date('d/m/Y H:i:s'); 
+
+                                                        ?>" required autocomplete="off">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <p style="text-align: left; margin: 10px; padding: 0;">Fim</p>
-                                                        <input type="text" class="form-control" name="add-end" id="add-end" required autocomplete="off">
+                                                        <input type="text" class="form-control" name="add-end" id="add-end" value="
+
+                                                        <?php 
+                                                            date_default_timezone_set('America/Sao_Paulo');
+                                                            echo date('d/m/Y H:i:s'); 
+
+                                                        ?>" required autocomplete="off">
                                                     </div>
                                                 </div>
                                                 

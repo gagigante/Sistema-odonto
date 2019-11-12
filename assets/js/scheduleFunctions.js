@@ -46,21 +46,29 @@ document.addEventListener('DOMContentLoaded', function () {
             $('#registerModal #add-end').val(info.end.toLocaleString());
             $('#registerModal').modal('show');
         },
-        // dateClick: function () {
-        //     alert('a day has been clicked!');
-        // },
-        eventDrop: function (info) {
-            //alert(info.event.title + " was dropped on " + info.event.start.toISOString());
-            if (!confirm("Are you sure about this change?")) {
-                info.revert();
-            }
+        
+        eventDrop: function (info) { 
+            $.ajax({
+                url: 'php/update-events.php',
+                type: 'POST', 
+                data: {                   
+                    inicio: info.event.start.toLocaleString(),
+                    fim: info.event.end.toLocaleString(),                   
+                    id: info.event.id                  
+                },                 
+            })
+            
         },
-        eventResize: function (info) {
-            alert(info.event.title + " end is now " + info.event.end.toISOString());
-
-            if (!confirm("is this okay?")) {
-                info.revert();
-            }
+        eventResize: function (info) {                
+            $.ajax({
+                url: 'php/update-events.php',
+                type: 'POST', 
+                data: {                   
+                    inicio: info.event.start.toLocaleString(),
+                    fim: info.event.end.toLocaleString(),                   
+                    id: info.event.id                    
+                },                 
+            })   
         },
 
         eventClick: function (info) {    

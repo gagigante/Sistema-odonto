@@ -38,6 +38,9 @@
 </head>
 
 <?php 
+
+    require 'php/verificaLogin.php';
+
     include 'php/conexao.php';
     $idLogin = $_SESSION['idUsuario'];
 

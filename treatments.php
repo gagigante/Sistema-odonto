@@ -36,9 +36,12 @@
     
 </head>
 
-<?php include 'php/verificaLogin.php'; ?>
+
 
 <body class="h-100">
+
+    <?php require 'php/verificaLogin.php'; ?>
+
     <div class="container-fluid">
         <div class="row">
             <!-- Main Sidebar -->
