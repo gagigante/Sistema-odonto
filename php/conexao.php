@@ -1,6 +1,6 @@
 <?php
 
-    //include 'verificaLogin.php';
+    include 'verificaLogin.php';
     
     $servidor = "localhost";
     $usuario = "root";

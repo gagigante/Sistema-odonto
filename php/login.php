@@ -19,7 +19,6 @@
             if($login == $loginbd && $senha == $senhabd){
 
                 session_start();
-
                 $_SESSION['login'] = $login;
                 $_SESSION['senha'] = $senha;
                 $_SESSION['idUsuario'] = $idbd;

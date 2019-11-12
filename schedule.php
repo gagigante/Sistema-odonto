@@ -202,7 +202,7 @@
                     </nav>
                 </div>
                 <!-- / .main-navbar -->
-                <div class="main-content-container container-fluid px-4">
+                <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
@@ -289,7 +289,7 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <form method="POST" action="php/add-events.php">
+                                        <form id="scheduleForm" method="POST">
                                             <div class="modal-body">                                             
                                                 <p style="text-align: left; margin: 10px; padding: 0;">Paciente</p>
                                                 <div class="form-row">
@@ -318,7 +318,7 @@
                                                         <input type="text" class="form-control" name="add-start" id="add-start" value="
 
                                                         <?php 
-                                                            date_default_timezone_set('America/Sao_Paulo');
+                                                            //date_default_timezone_set('America/Sao_Paulo');
                                                             echo date('d/m/Y H:i:s'); 
 
                                                         ?>" required autocomplete="off">
@@ -328,7 +328,7 @@
                                                         <input type="text" class="form-control" name="add-end" id="add-end" value="
 
                                                         <?php 
-                                                            date_default_timezone_set('America/Sao_Paulo');
+                                                            //date_default_timezone_set('America/Sao_Paulo');
                                                             echo date('d/m/Y H:i:s'); 
 
                                                         ?>" required autocomplete="off">
@@ -340,14 +340,14 @@
                                                     <div class="form-group col-md-12">           
                                                         <select id="color" name="color" class="form-control">
                                                             <option value="#ffd700" style="color: #ffd700" selected>Amarelo</option>
-                                                            <option value="#0071c5" style="color: #0071c5">Azul</option>
-                                                            <option value="#ff4500" style="color: #ff4500;">Laranja</option>
-                                                            <option value="#8b4513" style="color: #8b4513">Marrom</option>
-                                                            <option value="#1c1c1c" style="color: #1c1c1c">Preto</option>
-                                                            <option value="#a020f0" style="color: #a020f0;">Roxo</option>
+                                                            <option value="#78c0f5" style="color: #78c0f5">Azul</option>
+                                                            <option value="#ffa280" style="color: #ffa280;">Laranja</option>
+                                                            <option value="#e8a06d" style="color: #e8a06d">Marrom</option>
+                                                            <option value="#b5b5b5" style="color: #b5b5b5">Cinza</option>
+                                                            <option value="#c982f5" style="color: #c982f5;">Roxo</option>
                                                             <option value="#40e0d0" style="color: #40e0d0;">Turquesa</option>
-                                                            <option value="#228b22" style="color: #228b22;">Verde</option>
-                                                            <option value="#8b0000" style="color: #8b0000;">Vermelho</option>
+                                                            <option value="#91f291" style="color: #91f291;">Verde</option>
+                                                            <option value="#ff6363" style="color: #ff6363;">Vermelho</option>
                                                         </select>
                                                     </div>                                                    
                                                 </div>   
