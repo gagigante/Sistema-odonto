@@ -26,41 +26,14 @@ if($resultadoselect->num_rows>=0) {
             'title' => $nome, 
             'start' => $inicio, 
             'end' => $fim, 
-            'patient' => $paciente, 
-            'description' => $descricao,
-            'color' => $cor
+            //'url' => $paciente, 
+            //'groupId' => $descricao,
+            'color' => $cor,
+            'extendedProps' => array( 'description' => $descricao, 'patient' => $paciente )
         ];
     }
 }    
 
 echo json_encode($eventos);
-
-//celke edition
-// define('HOST', 'localhost');
-// define('USER', 'root');
-// define('PASS', '');
-// define('DBNAME', 'bd_teste');
-// $conn = new PDO('mysql:host=' . HOST . ';dbname=' . DBNAME . ';', USER, PASS);
-// $query_events = "SELECT * FROM tb04_eventos";
-// $resultado_events = $conn->prepare($query_events);
-// $resultado_events->execute();
-// while($row_events = $resultado_events->fetch(PDO::FETCH_ASSOC)){
-//     $id = $row_events['tb04_id'];
-//     $nome = $row_events['tb04_nome'];
-//     $paciente = $row_events['tb04_id_paciente'];
-//     $cor = $row_events['tb04_cor'];
-//     $start = $row_events['tb04_inicio'];
-//     $end = $row_events['tb04_fim'];
-    
-//     $eventos[] = [
-//         'id' => $id, 
-//         'title' => $nome, 
-//         'patient' => $paciente, 
-//         'color' => $cor,
-//         'start' => $start, 
-//         'end' => $end, 
-//         ];
-// }
-// echo json_encode($eventos);
 
 ?>

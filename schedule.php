@@ -226,6 +226,7 @@
                                 </div>
                             </div>
 
+                            <!-- MODAL UPDATE -->
                             <div class="modal fade" id="scheduleModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -235,51 +236,55 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <div id="content"></div>
-                                            <div>
-                                                <p style="text-align: left; margin: 10px; padding: 0;">Paciente</p>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-12">
-                                                        <input type="text" class="form-control" name="event-patient" id="event-patient" readonly>
-                                                    </div>
-                                                </div>
+                                        <form id="modalForm" method="POST">    
+                                            <div class="modal-body">
+                                                <div id="content"></div>
 
-                                                <p style="text-align: left; margin: 10px; padding: 0;">Título</p>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-12">
-                                                        <input type="text" class="form-control" name="event-title" id="event-title" readonly>
+                                                <div>
+                                                    <p style="text-align: left; margin: 10px; padding: 0;">Paciente</p>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-12">
+                                                            <input type="text" class="form-control" name="event-patient" id="event-patient" required>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                
-                                                <p style="text-align: left; margin: 10px; padding: 0;">Descrição</p>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-12">
-                                                        <textarea type="text" class="form-control" name="event-description" id="event-description" readonly></textarea>
-                                                    </div>                 
-                                                </div>
-                                                
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <p style="text-align: left; margin: 10px; padding: 0;">Início</p>
-                                                        <input type="text" class="form-control" name="event-start" id="event-start" readonly>
+
+                                                    <p style="text-align: left; margin: 10px; padding: 0;">Título</p>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-12">
+                                                            <input type="text" class="form-control" name="event-title" id="event-title">
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group col-md-6">
-                                                        <p style="text-align: left; margin: 10px; padding: 0;">Fim</p>
-                                                        <input type="text" class="form-control" name="event-end" id="event-end" readonly>
+                                                    
+                                                    <p style="text-align: left; margin: 10px; padding: 0;">Descrição</p>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-12">
+                                                            <textarea type="text" class="form-control" name="event-description" id="event-description"></textarea>
+                                                        </div>                 
+                                                    </div>
+                                                    
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <p style="text-align: left; margin: 10px; padding: 0;">Início</p>
+                                                            <input type="text" class="form-control" name="event-start" id="event-start">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <p style="text-align: left; margin: 10px; padding: 0;">Fim</p>
+                                                            <input type="text" class="form-control" name="event-end" id="event-end">
+                                                        </div>                                                    
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="modal-footer">
+                                                <button id="save-update" type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
+                                                <button id="delete-update" type="submit" class="btn btn-danger delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                            </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
-                                            <button type="submit" class="btn btn-danger delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                        </div>
-                                    </div>
+                                     </form>   
                                 </div>
                             </div>
 
+                            <!-- MODAL INSERT -->
                             <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">

@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
             $('#registerModal').modal('show');
         },
         
-        eventDrop: function (info) { 
-            //alert(info.event.end);
+        //evento disparado ao arrastar o evento (update de data)        
+        eventDrop: function (info) {     
             $.ajax({
                 url: 'php/update-events.php',
                 type: 'POST', 
@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 },                 
             })              
         },
+
+        //evento disparado ao redimencionar o evento (update de data)        
         eventResize: function (info) {                
             //alert(info.event.end);
             $.ajax({
@@ -62,16 +64,20 @@ document.addEventListener('DOMContentLoaded', function () {
             })   
         },
 
+        //evento disparado ao selecionar um evento (abre o modal de update)
         eventClick: function (info) {    
-            info.jsEvent.preventDefault(); 
-            // console.log(info.event.description);
-            $('#scheduleModal #content').text(info.event.title);
-            // $('#scheduleModal #id').text(info.event.id);                
-            $('#event-patient').val(info.event.title);
-            $('#event-title').val(info.event.id);
-            $('#event-description').val(info.event.patient);
-            $('#event-start').val(info.event.start);
-            $('#event-end').val(info.event.end);                        
+            info.jsEvent.preventDefault();  
+            
+            //passa o id do evento como data atributes do botao do modal de update
+            $('#save-update').data('eventId', info.event.id);
+            $('#save-update').data('eventId', info.event.id);
+            //passa os dados do evento para os campos do form
+            $('#scheduleModal #content').text(info.event.title);            
+            $('#event-patient').val(info.event.extendedProps.patient);
+            $('#event-title').val(info.event.title);
+            $('#event-description').val(info.event.extendedProps.description);
+            $('#event-start').val(info.event.start.toLocaleString());
+            $('#event-end').val(info.event.end.toLocaleString());                    
             $('#scheduleModal').modal('show');            
         },
     });
@@ -79,6 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 $(document).ready(function () {
+
+    //form de insercao de evento
     $("#scheduleForm").on("submit", function (event) {
         event.preventDefault();
         $.ajax({
@@ -89,6 +97,42 @@ $(document).ready(function () {
             processData: false,
             success: function(response) {
                 location.reload();
+            }
+        })
+    });
+
+    //form de edicao completa de evento
+    $('#modalForm').submit(function (info) {
+        info.preventDefault();
+        let eventID = $('#save-update').data('eventId');
+        data = new FormData(this);
+        //acrescenta o id do evento ao objeto de data
+        data.append('eventId', eventID);
+
+        $.ajax({
+            type: 'POST',
+            url: 'php/update-events-click.php', 
+            //passa os dados do form com o id do evento para o php atraves de req. post           
+            data: data,       
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                location.reload();                          
+            }
+        })
+    });
+
+    $('#delete-update').click(function (info) {
+        info.preventDefault();        
+        let eventID = $('#save-update').data('eventId');
+        $.ajax({
+            type: 'POST',
+            url: '',             
+            data: { eventID },       
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                location.reload();                          
             }
         })
     });
