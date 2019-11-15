@@ -124,15 +124,13 @@ $(document).ready(function () {
 
     $('#delete-update').click(function (info) {
         info.preventDefault();        
-        let eventID = $('#save-update').data('eventId');
+        let eventID = $('#save-update').data('eventId');        
         $.ajax({
             type: 'POST',
-            url: '',             
-            data: { eventID },       
-            contentType: false,
-            processData: false,
+            url: 'php/delete-events.php',             
+            data: {eventID:eventID},       
             success: function(response) {
-                location.reload();                          
+                location.reload();                       
             }
         })
     });
