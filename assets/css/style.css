@@ -29,3 +29,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.ui-autocomplete{
+   z-index: 1050 !important;
+}

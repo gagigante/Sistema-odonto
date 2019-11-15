@@ -18,8 +18,12 @@
     <link rel="stylesheet" href="assets/css/shards-dashboards.1.1.0.min.css">
     <link rel="stylesheet" href="assets/css/extras.1.1.0.min.css">
 
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
     <!--Jquery CDN-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
     <!--Bootstrap Script-->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
@@ -53,12 +57,19 @@
     
     <!--MaskJs Script-->
     <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
-    <!--Fields Formating Script-->
+    <!--Fields Formating Script-->  
+
+
     <script>
       $(document).ready(function() {
-          $('#add-start').mask('00/00/0000 00:00:00');
-          $('#add-end').mask('00/00/0000 00:00:00');
-      });
+            $('#add-start').mask('00/00/0000 00:00:00');
+            $('#add-end').mask('00/00/0000 00:00:00'); 
+              
+
+            $("#add-patient, #event-patient").autocomplete({
+                source: 'php/autoComplete.php'
+            });
+      });     
     </script>
 
     <script src="assets/js/scheduleFunctions.js"></script>
@@ -67,7 +78,9 @@
 
 <body class="h-100">
     
-    <?php require 'php/verificaLogin.php'; ?>
+    <?php 
+        require 'php/verificaLogin.php';
+    ?>
 
     <div class="container-fluid">
         <div class="row">
@@ -238,13 +251,11 @@
                                         </div>
                                         <form id="modalForm" method="POST">    
                                             <div class="modal-body">
-                                                <div id="content"></div>
-
                                                 <div>
                                                     <p style="text-align: left; margin: 10px; padding: 0;">Paciente</p>
                                                     <div class="form-row">
                                                         <div class="form-group col-md-12">
-                                                            <input type="text" class="form-control" name="event-patient" id="event-patient" required>
+                                                            <input type="text" class="form-control" name="event-patient" id="event-patient" autocomplete="off" required>
                                                         </div>
                                                     </div>
 
@@ -294,12 +305,12 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <form id="scheduleForm" method="POST">
+                                        <form id="scheduleForm" method="POST" action="">
                                             <div class="modal-body">                                             
                                                 <p style="text-align: left; margin: 10px; padding: 0;">Paciente</p>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
-                                                        <input type="text" class="form-control" name="add-patient" id="add-patient" required>
+                                                        <input type="text" class="form-control" name="add-patient" id="add-patient" required autocomplete="off">
                                                     </div>
                                                 </div>
 
@@ -309,7 +320,7 @@
                                                         <input type="text" class="form-control" name="add-title" id="add-title" required>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <p style="text-align: left; margin: 10px; padding: 0;">Descrição</p>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
@@ -320,23 +331,11 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <p style="text-align: left; margin: 10px; padding: 0;">Início</p>
-                                                        <input type="text" class="form-control" name="add-start" id="add-start" value="
-
-                                                        <?php 
-                                                            //date_default_timezone_set('America/Sao_Paulo');
-                                                            echo date('d/m/Y H:i:s'); 
-
-                                                        ?>" required autocomplete="off">
+                                                        <input type="text" class="form-control" name="add-start" id="add-start" autocomplete="off" placeholder="00/00/0000 00:00:00" required>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <p style="text-align: left; margin: 10px; padding: 0;">Fim</p>
-                                                        <input type="text" class="form-control" name="add-end" id="add-end" value="
-
-                                                        <?php 
-                                                            //date_default_timezone_set('America/Sao_Paulo');
-                                                            echo date('d/m/Y H:i:s'); 
-
-                                                        ?>" required autocomplete="off">
+                                                        <input type="text" class="form-control" name="add-end" id="add-end" autocomplete="off" placeholder="00/00/0000 00:00:00" required>
                                                     </div>
                                                 </div>
                                                 
@@ -365,11 +364,9 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-                </div>
+                </div>            
                 <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
                     <span class="copyright ml-auto my-auto mr-2">Copyright © 2019
                         <a target="_blank" href="https://decadatech.com" rel="nofollow">Decada Technology</a>
