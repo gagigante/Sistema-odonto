@@ -1,6 +1,6 @@
 <?php
 	
-	include_once "conexao.php";
+	require "conexao.php";
 
 	$login = $_POST["email"];
 	$senha = $_POST["senha"];
@@ -18,16 +18,17 @@
 
             if($login == $loginbd && $senha == $senhabd){
 
-                session_start();
+                //session_start();
                 $_SESSION['login'] = $login;
                 $_SESSION['senha'] = $senha;
                 $_SESSION['idUsuario'] = $idbd;
                 $_SESSION["logado"] = 1;
+                //$_SESSION['alert'] = 'alerta';                
                 header("Location:../index.php");
             }                
     	}
     }
 
-   if($_SESSION["logado"] == 0){
-        header("Location:../login.php");
-   }
+//    if($_SESSION["logado"] == 0){
+//         header("Location:../login.php");
+//    }

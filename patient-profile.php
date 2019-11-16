@@ -1,7 +1,7 @@
 <?php 
 
-    include_once "php/conexao.php"; 
-    include 'php/verificaLogin.php';
+    require "php/conexao.php"; 
+    require 'php/verificaLogin.php';
 
     $idLogin = $_SESSION['idUsuario'];
     

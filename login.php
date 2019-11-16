@@ -38,6 +38,15 @@
 </head>
 
 <body class="h-100">
+
+    <?php
+        require 'php/conexao.php';
+        //verifica se existe uma conta logada e redireciona para a index
+        if(isset($_SESSION['logado']) && $_SESSION['logado'] == 1) {
+            header("Location: index.php");
+        }
+    ?>
+
     <div class="container-fluid" style="height: 100vh;">
         <div class="row" style="height: 100vh;">
             <div class="col-md-5" style="display: flex; flex-direction: column; justify-content: center;">
@@ -46,7 +55,6 @@
                 <!-- <img width="100px;" src="assets/images/shards-dashboards-logo-danger.svg" /> -->
 
                 <form style="width: 100%; max-width: 400px; margin: 0 auto;" action="php/login.php" method="POST">                        
-
                     <h2 style="margin-bottom: 30px;">Entrar </h2>
                     <div class="form-row">                        
                         <div class="form-group col-md-12">

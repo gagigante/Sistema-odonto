@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
         locale: 'pt-br',
         // timeZone: 'BRT',        
         slotDuration: '00:15',
-        // minTime: '07:00',
-        // maxTime: '22:00',
+        minTime: '07:00',
+        maxTime: '22:00',
         nowIndicator: true,
         selectable: true,
         editable: true,
@@ -46,7 +46,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     inicio: info.event.start.toLocaleString(),
                     fim: info.event.end.toLocaleString(),                   
                     id: info.event.id                    
-                },                 
+                }, 
+                success: function (result) {
+
+                    //ESTRUTURA DO ALERT
+                    let alert = '<div class="alert alert-success alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-check mx-2"></i><strong>Sucesso!</strong> O evento foi atualizado!</div>';
+                                                          
+                    $('.screen-alert').html(alert); //ADICIONA O ALERT NA TELA          
+                },                
             })              
         },
 
@@ -60,7 +67,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     inicio: info.event.start.toLocaleString(),
                     fim: info.event.end.toLocaleString(),                   
                     id: info.event.id                    
-                },                 
+                },
+                success: function (result) {
+                    //ESTRUTURA DO ALERT
+                    let alert = '<div class="alert alert-success alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-check mx-2"></i><strong>Sucesso!</strong> O evento foi atualizado!</div>';
+                                                      
+                    $('.screen-alert').html(alert); //ADICIONA O ALERT NA TELA          
+                },                
             })   
         },
 

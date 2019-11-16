@@ -62,9 +62,8 @@
 
     <script>
       $(document).ready(function() {
-            $('#add-start').mask('00/00/0000 00:00:00');
-            $('#add-end').mask('00/00/0000 00:00:00'); 
-              
+            $('#add-start, #event-start').mask('00/00/0000 00:00:00');
+            $('#add-end, #event-end').mask('00/00/0000 00:00:00');                      
 
             $("#add-patient, #event-patient").autocomplete({
                 source: 'php/autoComplete.php'
@@ -79,6 +78,7 @@
 <body class="h-100">
     
     <?php 
+        require 'php/conexao.php';
         require 'php/verificaLogin.php';
     ?>
 
@@ -201,7 +201,7 @@
                                         <i class="material-icons">settings_applications</i> Configurações
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-danger" href="#">
+                                    <a class="dropdown-item text-danger" href="logout.php">
                                         <i class="material-icons text-danger">&#xE879;</i> Sair
                                     </a>
                                 </div>
@@ -215,6 +215,10 @@
                     </nav>
                 </div>
                 <!-- / .main-navbar -->
+                <div class="screen-alert" style="position: absolute; width: 100%;">
+                  
+                </div>
+
                 <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">

@@ -21,9 +21,10 @@
 
 <body class="h-100">
 
-    <?php require 'php/verificaLogin.php';
-    require 'php/conexao.php';
-     ?>
+    <?php 
+        require 'php/conexao.php';
+        require 'php/verificaLogin.php';
+    ?>
 
     <div class="container-fluid">
         <div class="row">

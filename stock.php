@@ -39,16 +39,18 @@
 
 <?php 
 
+    require 'php/conexao.php';
     require 'php/verificaLogin.php';
 
-    include 'php/conexao.php';
     $idLogin = $_SESSION['idUsuario'];
 
-    $queryselect = "select * from tb04_login where tb04_idLogin = '$idLogin'"; //select * from tb04_login where tb01_idUsuario = '$idLogin'
-    $resultadoselect = $conexao->query($queryselect);
 
-    if($resultadoselect->num_rows>0){
-        while ($linha = $resultadoselect->fetch_assoc()){          
+    //IMPLEMENTAÇÃO NÃO RECOMENDADA
+    // $queryselect = "select * from tb04_login where tb04_idLogin = '$idLogin'";
+    // $resultadoselect = $conexao->query($queryselect);
+
+    // if($resultadoselect->num_rows>0){
+    // while ($linha = $resultadoselect->fetch_assoc()){          
 
 
 ?>
@@ -157,8 +159,8 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                     <img class="user-avatar rounded-circle mr-2" src="assets/images/avatars/0.jpg" alt="User Avatar">
-                                     <!--<img class="user-avatar rounded-circle mr-2" src="assets/images/avatars///<?php echo $linha['tb04_imagem'] ?>" alt="User Avatar">-->
-                                    <span class="d-none d-md-inline-block"><?php echo $linha["tb04_login"]; ?></span>
+                                     <!-- <img class="user-avatar rounded-circle mr-2" src="assets/images/avatars" alt="User Avatar"> -->
+                                    <span class="d-none d-md-inline-block">USERNAME</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-small">
                                     <a class="dropdown-item" href="#">
@@ -255,7 +257,7 @@
                                                         </div>
                                                     </form>
                                                 </div>
-                                                <div class="modal-footer">                                                    
+                                                <div class="modal-footer">                         
                                                     <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
                                                     <button type="submit" class="btn btn-danger delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -278,10 +280,5 @@
         </div>
     </div>
 </body>
-
-<?php 
-    }
-}
-?>
 
 </html>
