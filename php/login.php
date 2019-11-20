@@ -22,8 +22,7 @@
                 $_SESSION['login'] = $login;
                 $_SESSION['senha'] = $senha;
                 $_SESSION['idUsuario'] = $idbd;
-                $_SESSION["logado"] = 1;
-                //$_SESSION['alert'] = 'alerta';                
+                $_SESSION["logado"] = 1;                               
                 header("Location:../index.php");
             }                
     	}

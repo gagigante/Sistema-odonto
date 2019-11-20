@@ -216,7 +216,12 @@
                 </div>
                 <!-- / .main-navbar -->
                 <div class="screen-alert" style="position: absolute; width: 100%;">
-                  
+                    <?php 
+                        if(isset($_SESSION['alert']) && !empty($_SESSION['alert'])) {
+                            echo $_SESSION['alert'];
+                            $_SESSION['alert'] = '';
+                        }                        
+                    ?>
                 </div>
 
                 <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
