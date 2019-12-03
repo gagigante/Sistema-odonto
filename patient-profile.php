@@ -5,7 +5,6 @@
 
     $idLogin = $_SESSION['idUsuario'];
     
-    
     $id = isset($_GET["id"]) ? (int) $_GET['id'] : 0;  
 
     if (!isset($_SESSION)) {
@@ -193,6 +192,7 @@
             <!-- End Main Sidebar -->
             <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
                 <div class="main-navbar sticky-top bg-white">
+
                     <!-- Main Navbar -->
                     <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
                         <span class="main-navbar__search w-100 d-none d-md-flex d-lg-flex"></span>
@@ -270,9 +270,9 @@
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-8 text-center text-sm-left mb-0">
-                            <h3 class="page-title"> <a href="patients.php"><i
-                                        class="material-icons">supervisor_account</i>Pacientes </a> / <i
-                                    class="material-icons">person</i>Perfil do paciente</h3>
+                            <h3 class="page-title"> <a href="patients.php">
+                            <i class="material-icons">supervisor_account</i>Pacientes </a> / 
+                            <i class="material-icons">person</i>Perfil do paciente</h3>
                         </div>
                     </div>
                     <div class="row">
