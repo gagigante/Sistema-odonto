@@ -30,25 +30,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
     <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>
     <script src="scripts/verificaExtensao.js"></script>
+
     <!--MaskJs Script-->
     <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
+
     <!--Fields Formating Script-->
     <script>
+
         $(document).ready(function() {
+
+            $('#dateDiv').datepicker({
+                format: 'dd/mm/yyyy',
+            });
+
             $('#phone').mask('(00) 0 0000-0000');
             $('#rg').mask('00.000.000-00');
             $('#cpf').mask('000.000.000-00');
-            $('#dateOfBirth').mask('00/00/0000');
+            $('#date').mask('00/00/0000');
         });
-
     </script>
 
-    <!--Optionals Scripts-->
-    <!-- <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css"> -->
 </head>
 
 <body class="h-100">
+          
+    <?php 
+        require 'php/conexao.php';
+        require 'php/verificaLogin.php';
+    ?>
 
     <div class="container-fluid">
         <div class="row">
@@ -59,7 +68,7 @@
                     <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
                         <a class="navbar-brand w-100 mr-0" style="line-height: 25px;">
                             <div class="d-table m-auto">
-                                <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="images/shards-dashboards-logo.svg">
+                                <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="assets/images/shards-dashboards-logo.svg">
                                 <span class="d-none d-md-inline ml-1">ODONTO FRONT-END</span>
                             </div>
                         </a>
@@ -209,43 +218,60 @@
                                 </div>
 
                                 <div class="card-body p-0 pb-3 text-center">
-                                    <form style="padding: 30px;" action="php/add-patient-cadastro.php" method="POST" enctype="multipart/form-data">
+                                                                    
+                                    <form style="padding: 30px;" action="php/add-patient.php" method="POST" enctype="multipart/form-data">
+
+                                    <strong style="text-align: left;" class="text-muted d-block mb-2">Os campos com "*" são obrigatórios</strong>
+
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
-                                                <input type="text" class="form-control" name="name" id="name" placeholder="Nome completo" required>
+                                                <input type="text" class="form-control" name="name" id="name" placeholder="Nome completo *" required>
                                             </div>
                                         </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <input type="text" class="form-control" name="address" id="address" placeholder="Endereço *">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <input type="text" class="form-control" name="profession" id="profession" placeholder="Profissão">
+                                            </div>
+                                        </div>
+
 
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <input type="text" class="form-control" name="rg" id="rg" placeholder="RG">
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" required>
+                                                <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF">
                                             </div>
                                         </div>
 
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefone" required>
+                                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefone *" required>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required>
+                                                <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
                                             </div>
                                         </div>
 
                                         <div class="form-row">
-                                            <div class="col-md-6 form-group">
-                                                <input type="text" class="form-control" name="dateOfBirth" id="dateOfBirth" placeholder="Data de nascimento" required>
+
+                                            <div id="dateDiv" class="col-md-6 input-daterange form-group">
+                                                <input type="text" class="input-sm form-control" name="date" placeholder="Data de nascimento *" id="date" autocomplete="off" required>
                                             </div>
-                                            <div class="col-md-6 form-group">
+
+                                            <div class="col-md-5 form-group">
                                                 <label for="photo" style="margin-bottom: 0;">Adicionar foto de perfil</label>
                                                 <input type="file" accept="image/png, image/jpeg, image/jpg" onchange="verificaExtensao(this)" id="photo" name="photo" class="btn">
                                             </div>
                                         </div>
+
                                         <div class="form-row">
                                             <div class="col-md-6 form-group" style="margin: 0; padding: 0;">
-                                                <button type="submit" class="btn btn-outline-success" style="width: 125px;">Adicionar</button>
+                                                <button type="submit" class="btn btn-outline-success" style="width: 150px;">Adicionar</button>
                                             </div>
                                         </div>
                                     </form>

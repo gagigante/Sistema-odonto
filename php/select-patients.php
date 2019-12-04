@@ -22,26 +22,13 @@
                         </thead>
                         <tbody>";
 
-        while ($linha = $resultadoselect->fetch_assoc()){                
-            // echo "<tr>";
-            //     echo "<td>".$linha["tb02_produto"]."</td>";
-            //     echo "<td>".$linha["tb02_quantidade"]."</td>";
-            //     echo "<td>R$ ". str_replace(".",",", number_format($linha["tb02_preco"],2))."</td>";
-            //     echo "<td>";
-            //     echo "<button type='button' class='mb-2 btn btn-sm btn-success mr-1 view-modal' id='".$linha["tb02_idProduto"]."'
-            //         data-id='".$linha["tb02_idProduto"]."'
-            //         data-name='".$linha["tb02_produto"]."'
-            //         data-price='".$linha["tb02_preco"]."'
-            //         data-amount='".$linha["tb02_quantidade"]."'
-            //         style='color: white'>Editar/Adicionar/Remover</button>";
-            //     echo "</td>";
-            // echo "</tr>";  
+        while ($linha = $resultadoselect->fetch_assoc()){                          
 
             if(empty($linha["tb01_imagem"])){
-                $linha["tb01_imagem"] = "0.jpg";
+                $linha["tb01_imagem"] = "patient-default-profile-image.png";
             }
             echo "<tr> ";
-            echo "<td><img class='user-avatar rounded-circle mr-2' src='assets/images/avatars/".$linha["tb01_imagem"]."' alt='User Avatar' width='50px'></td>";
+            echo "<td><img class='user-avatar rounded-circle mr-2' src='assets/images/patients-images/".$linha["tb01_imagem"]."' alt='User Avatar' width='50px'></td>";
             echo "<td>".$linha["tb01_nome"]. "</td>";
             echo "<td>".$linha["tb01_cpf"]. "</td>";
             echo "<td>".$linha["tb01_telefone"]."</td>";
@@ -57,8 +44,8 @@
         
     }else {
         echo "<div style='padding: 10px;' >";
-        echo "<img style='width: 80%;' src='assets/images/empty-stock-placeholder.png' />";
-        echo "<h5 style='margin-top: 15px;'>Ainda não há nada cadastrado no estoque</h5>";
+        echo "<img style='width: 80%;' src='assets/images/empty-patients-placeholder.png' />";
+        echo "<h5 style='margin-top: 15px;'>Ainda não há pacientes cadastrados</h5>";
         echo "</div>";
     }        
 ?>

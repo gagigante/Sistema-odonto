@@ -233,7 +233,7 @@
                     </div>
                     <!-- End Page Header -->
                     <div class="row">
-                        <div class="col-sm-12" style="margin-bottom: 30px">  
+                        <div class="col-sm-12">  
 
                             <div class="card">
                                 <div class="card-header border-bottom">

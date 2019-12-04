@@ -204,8 +204,12 @@
                     <div class="row">
                         <div class="col">
                             <div class="card card-small mb-4">
-                                <div class="card-header border-bottom">
-                                    <a href="add-patient.php" class="btn btn-success">Adicionar paciente</a>
+                                <div class="card-header border-bottom">                                
+                                    <div class="form-row"style="margin-top: 15px;">
+                                        <div class="form-group col-md-3">                                          
+                                            <a href="add-patient.php" class="btn btn-success">Adicionar paciente</a>
+                                        </div>                                        
+                                    </div>                                    
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
 

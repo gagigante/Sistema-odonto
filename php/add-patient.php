@@ -1,7 +1,8 @@
 <?php
 
-	include_once "conexao.php";
-	session_start();
+	require "conexao.php";
+
+	//session_start();
 
 	$idLogin = $_SESSION['idUsuario'];
 

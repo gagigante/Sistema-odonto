@@ -246,7 +246,7 @@
                                         </div>
 
                                         <div id="dateDiv" class="col-md-2 input-daterange form-group">
-                                            <input type="text" class="input-sm form-control" name="date" placeholder="Data" id="date" autocomplete="off">
+                                            <input type="text" class="input-sm form-control" name="date" placeholder="Data" id="date" autocomplete="off" required>
                                         </div>
 
 

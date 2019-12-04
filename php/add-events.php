@@ -1,6 +1,5 @@
 <?php
 
-
 	require "conexao.php";
 
 	$idLogin = $_SESSION['idUsuario'];

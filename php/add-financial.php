@@ -1,5 +1,5 @@
 <?php	
-	include_once "conexao.php";
+	require "conexao.php";
 
     $idLogin = $_SESSION['idUsuario'];
 
