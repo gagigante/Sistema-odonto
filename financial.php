@@ -34,10 +34,15 @@
     <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>
     <!--    <script src="scripts/app/app-blog-overview.1.1.0.js"></script>-->
 
+    <!--MaskJs Script-->
+    <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
+
     <script>
-        $(document).ready(function() {
-            // Blog overview date range init.
-            $('#dateDiv').datepicker({});
+        $(document).ready(function() {                        
+            $('#dateDiv').datepicker({
+                //format: 'dd/mm/yyyy',
+            });
+            $('#date').mask('00/00/0000');
         });
     </script>
     <!--Optionals Scripts-->
@@ -211,7 +216,7 @@
                         </select>
                     </div>
 
-                    <div style="display: flex; flex-direction: row; justify-content: flex-start; align-itens: center; flex-wrap: wrap; margin-bottom: 30px;">
+                    <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-wrap: wrap; margin-bottom: 30px;">
                         <div class="border-bottom" style="padding: 10px 30px; margin: 10px;">
                             <p style="margin: 0">Recebimentos</p>
                             <h5 style="margin: 0; color: #32a852">R$ 10.000,00</h5>
