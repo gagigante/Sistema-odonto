@@ -231,7 +231,7 @@
 
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <input type="text" class="form-control" name="address" id="address" placeholder="Endereço *">
+                                                <input type="text" class="form-control" name="address" id="address" placeholder="Endereço *" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <input type="text" class="form-control" name="profession" id="profession" placeholder="Profissão">
