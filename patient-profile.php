@@ -365,99 +365,101 @@
 
                                             <a href="add-budget.php" class="btn btn-outline-success" style="width: 140px; margin: 10px">Adicionar orçamento</a>
 
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col" class="border-0">Descrição</th>
-                                                        <th scope="col" class="border-0">Valor</th>
-                                                        <th scope="col" class="border-0">Data</th>
-                                                        <th scope="col" class="border-0">Ações</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Plano tratamento de fulano</td>
-                                                        <td>R$ 80.00</td>
-                                                        <td>99/99/9999</td>
-                                                        <td>
-                                                            <a href="edit-budget.php" class="btn">Editar</a>
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons"
-                                                                    style="color: #999">find_in_page</i>
-                                                            </button>
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons"
-                                                                    style="color: #999">file_copy</i>
-                                                            </button>
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons"
-                                                                    style="color: #999">local_printshop</i>
-                                                            </button>
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons" style="color: red">delete</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Plano tratamento de fulano</td>
-                                                        <td>R$ 80.00</td>
-                                                        <td>99/99/9999</td>
-                                                        <td>
-                                                            <a href="edit-budget.php" class="btn">Editar</a>
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons"
-                                                                    style="color: #999">find_in_page</i>
-                                                            </button>
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons"
-                                                                    style="color: #999">file_copy</i>
-                                                            </button>
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons"
-                                                                    style="color: #999">local_printshop</i>
-                                                            </button>
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons" style="color: red">delete</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Plano tratamento de fulano</td>
-                                                        <td>R$ 80.00</td>
-                                                        <td>99/99/9999</td>
-                                                        <td>
-                                                            <a href="edit-budget.php" class="btn">Editar</a>
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons"
-                                                                    style="color: #999">find_in_page</i>
-                                                            </button>
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons"
-                                                                    style="color: #999">file_copy</i>
-                                                            </button>
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons"
-                                                                    style="color: #999">local_printshop</i>
-                                                            </button>
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons" style="color: red">delete</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                            <div class='table-responsive'>
+                                                <table class='table mb-0'> 
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="border-0">Descrição</th>
+                                                            <th scope="col" class="border-0">Valor</th>
+                                                            <th scope="col" class="border-0">Data</th>
+                                                            <th scope="col" class="border-0">Ações</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Plano tratamento de fulano</td>
+                                                            <td>R$ 80.00</td>
+                                                            <td>99/99/9999</td>
+                                                            <td>
+                                                                <a href="edit-budget.php" class="btn">Editar</a>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">find_in_page</i>
+                                                                </button>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">file_copy</i>
+                                                                </button>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">local_printshop</i>
+                                                                </button>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons" style="color: red">delete</i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Plano tratamento de fulano</td>
+                                                            <td>R$ 80.00</td>
+                                                            <td>99/99/9999</td>
+                                                            <td>
+                                                                <a href="edit-budget.php" class="btn">Editar</a>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">find_in_page</i>
+                                                                </button>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">file_copy</i>
+                                                                </button>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">local_printshop</i>
+                                                                </button>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons" style="color: red">delete</i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Plano tratamento de fulano</td>
+                                                            <td>R$ 80.00</td>
+                                                            <td>99/99/9999</td>
+                                                            <td>
+                                                                <a href="edit-budget.php" class="btn">Editar</a>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">find_in_page</i>
+                                                                </button>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">file_copy</i>
+                                                                </button>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">local_printshop</i>
+                                                                </button>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons" style="color: red">delete</i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
 
                                         <!-- TAB 3 - TRATAMENTOS -->
@@ -750,6 +752,7 @@
                         <a target="_blank" href="https://decadatech.com" rel="nofollow">Decada Technology</a>
                     </span>
                 </footer>
+
             </main>
         </div>
     </div>
