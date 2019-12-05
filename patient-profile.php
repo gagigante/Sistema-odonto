@@ -360,6 +360,7 @@
 
                                      ?>
 
+                                        <!-- TAB 2 - ORCAMENTOS -->
                                         <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="nav-profile-tab" style="padding: 30px;">
 
                                             <a href="add-budget.php" class="btn btn-outline-success" style="width: 140px; margin: 10px">Adicionar orçamento</a>
@@ -459,117 +460,82 @@
                                             </table>
                                         </div>
 
+                                        <!-- TAB 3 - TRATAMENTOS -->
                                         <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="nav-contact-tab" style="padding: 30px;">
                                         
-                                            <a href="add-budget.php" class="btn btn-outline-success" style="width: 140px; margin: 10px">Adicionar tratamento</a>
+                                            <a href="add-treatment.php" class="btn btn-outline-success" style="width: 140px; margin: 10px">Adicionar tratamento</a>
 
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col" class="border-0">Descrição</th>
-                                                        <th scope="col" class="border-0">Valor</th>
-                                                        <th scope="col" class="border-0">Data</th>
-                                                        <th scope="col" class="border-0">Pagamento</th>
-                                                        <th scope="col" class="border-0">Ações</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
+                                            <div class='table-responsive'>
+                                                <table class='table mb-0'>                                            
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="border-0">Descrição</th>
+                                                            <th scope="col" class="border-0">Valor</th>
+                                                            <th scope="col" class="border-0">Data</th>
+                                                            <th scope="col" class="border-0">Pagamento</th>
+                                                            <th scope="col" class="border-0">Ações</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
 
-                                                    <tr>
-                                                        <td>Plano tratamento de fulano</td>
-                                                        <td>R$ 80.00</td>
-                                                        <td>99/99/9999</td>
-                                                        <td> 
-                                                            <i class="material-icons" style="color: #ddd">check</i> 
-                                                        </td>
-                                                        <td>
-                                                            <a href="edit-budget.php" class="btn">Editar</a>
-                                                            
-                                                            <button type="button" style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons" style="color: red">delete</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td>Plano tratamento de fulano</td>
+                                                            <td>R$ 80.00</td>
+                                                            <td>99/99/9999</td>
+                                                            <td> 
+                                                                <i class="material-icons" style="color: #ddd">check</i> 
+                                                            </td>
+                                                            <td>
+                                                                <a href="edit-budget.php" class="btn">Editar</a>
+                                                                <button type="button" style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons" style="color: red">delete</i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
 
-                                                    <tr>
-                                                        <td>Plano tratamento de fulano</td>
-                                                        <td>R$ 80.00</td>
-                                                        <td>99/99/9999</td>
-                                                        <td>
-                                                            <i class="material-icons" style="color: #32a852">check</i> 
-                                                        </td>
-                                                        <td>
-                                                            <a href="edit-budget.php" class="btn">Editar</a>
-                                                            
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons" style="color: red">delete</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td>Plano tratamento de fulano</td>
+                                                            <td>R$ 80.00</td>
+                                                            <td>99/99/9999</td>
+                                                            <td>
+                                                                <i class="material-icons" style="color: #32a852">check</i> 
+                                                            </td>
+                                                            <td>
+                                                                <a href="edit-budget.php" class="btn">Editar</a>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons" style="color: red">delete</i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
 
-                                                    <tr>
-                                                        <td>Plano tratamento de fulano</td>
-                                                        <td>R$ 80.00</td>
-                                                        <td>99/99/9999</td>
-                                                        <td>
-                                                            <i class="material-icons" style="color: #32a852;">check</i> 
-                                                        </td>
-                                                        <td>
-                                                            <a href="edit-budget.php" class="btn">Editar</a>
-                                                             
-                                                            <button type="button"
-                                                                style="background: transparent; border: 0;cursor: pointer;">
-                                                                <i class="material-icons" style="color: red">delete</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td>Plano tratamento de fulano</td>
+                                                            <td>R$ 80.00</td>
+                                                            <td>99/99/9999</td>
+                                                            <td>
+                                                                <i class="material-icons" style="color: #32a852;">check</i> 
+                                                            </td>
+                                                            <td>
+                                                                <a href="edit-budget.php" class="btn">Editar</a>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons" style="color: red">delete</i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
 
-                                                </tbody>
-                                            </table>                                                                                                                                                                
-                                            <!-- Image Map Generated by http://www.image-map.net/ -->
-<!-- <img src="assets/images/bb4744f30c13ba63bf1c10f620cfa550.jpg" usemap="#image-map">
-
-<map name="image-map">
-    <area target="" alt="" title="" href="" coords="335,351,335,337,344,324,354,324,370,328,375,340,374,351,370,363,361,368,346,370,335,363" shape="poly">
-    <area target="" alt="" href="#" onclick="alert('dente')" coords="323,386,326,375,344,371,358,373,364,381,360,402,350,409,333,414,320,404" shape="poly">
-    <area target="" alt="" title="" href="" coords="305,439,309,420,323,415,333,416,343,421,345,444,337,454,319,461,306,450" shape="poly">
-    <area target="" alt="" title="" href="" coords="293,476,294,465,309,460,321,465,322,472,317,487,306,492,296,486" shape="poly">
-    <area target="" alt="" title="" href="" coords="276,506,276,494,284,486,296,487,302,495,301,510,292,518,283,515" shape="poly">
-    <area target="" alt="" title="" href="" coords="260,531,255,510,261,503,271,508,280,520,280,531,272,538,263,538" shape="poly">
-    <area target="" alt="" title="" href="" coords="238,538,240,519,248,518,255,529,261,542,258,549,249,551,240,550" shape="poly">
-    <area target="" alt="" title="" href="" coords="221,542,224,523,232,516,236,529,236,554,222,554" shape="poly">
-    <area target="" alt="" title="" href="" coords="201,546,206,524,213,520,216,526,216,542,217,553,205,554,197,532,196,515,185,518,178,535,178,546,191,555" shape="poly">
-    <area target="" alt="" title="" href="" coords="162,540,152,519,162,507,176,501,185,516,174,540" shape="poly">
-    <area target="" alt="" title="" href="" coords="133,502,136,488,147,481,156,484,165,496,161,504,149,520,138,512" shape="poly">
-    <area target="" alt="" title="" href="" coords="116,473,116,461,124,458,138,454,146,461,149,468,149,478,132,492,122,487" shape="poly">
-    <area target="" alt="" title="" href="" coords="98,432,97,418,114,409,130,408,137,427,142,443,138,450,116,459,102,446" shape="poly">
-    <area target="" alt="" title="" href="" coords="78,391,76,373,90,362,108,362,116,369,124,386,123,399,113,408,90,408" shape="poly">
-    <area target="" alt="" title="" href="" coords="66,329,78,318,101,319,106,335,110,357,78,364,67,346" shape="poly">
-    <area target="" alt="" title="" href="" coords="72,269,64,241,74,233,83,235,96,239,100,249,104,261,100,273,88,275" shape="poly">
-    <area target="" alt="" title="" href="" coords="72,219,75,195,88,194,106,200,112,210,118,228,105,242,78,232" shape="poly">
-    <area target="" alt="" title="" href="" coords="83,181,84,167,89,154,104,151,116,153,120,158,128,176,125,191,117,201,90,191" shape="poly">
-    <area target="" alt="" title="" href="" coords="98,141,99,123,117,119,130,125,135,138,133,151,118,153" shape="poly">
-    <area target="" alt="" title="" href="" coords="110,107,119,92,138,87,143,99,145,109,147,121,138,124,115,115" shape="poly">
-    <area target="" alt="" title="" href="" coords="132,73,138,60,152,58,159,70,164,82,164,89,154,94,131,84" shape="poly">
-    <area target="" alt="" title="" href="" coords="154,53,161,68,170,76,176,78,182,67,182,54,174,44" shape="poly">
-    <area target="" alt="" title="" href="" coords="184,46,184,56,188,65,194,72,202,74,210,66,218,55,217,44,203,42" shape="poly">
-    <area target="" alt="" title="" href="" coords="219,45,221,62,230,76,243,74,251,64,254,50,240,43" shape="poly">
-    <area target="" alt="" title="" href="" coords="255,79,253,59,262,50,272,52,278,61,279,74,266,84" shape="poly">
-    <area target="" alt="" title="" href="" coords="272,97,278,83,281,68,292,66,300,73,305,83,304,97,288,106,280,106" shape="poly">
-    <area target="" alt="" title="" href="" coords="290,131,289,117,298,103,312,99,324,103,326,116,324,123,308,135" shape="poly">
-    <area target="" alt="" title="" href="" coords="306,161,304,144,315,129,333,128,340,139,339,151,322,161" shape="poly">
-    <area target="" alt="" title="" href="" coords="314,195,313,173,332,157,350,154,354,167,356,183,354,192,334,207" shape="poly">
-    <area target="" alt="" title="" href="" coords="330,235,328,213,350,201,368,203,372,226,371,235,344,245" shape="poly">
-    <area target="" alt="" title="" href="" coords="337,274,333,254,346,247,376,243,380,256,377,270,368,283,354,283" shape="poly">
-</map>
-                                         -->                                                                                
+                                                    </tbody>
+                                                </table> 
+                                            </div>                          
                                         </div>
 
+                                        <!-- TAB 4 - ANAMNESE -->
                                         <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="nav-contact-tab">tab4</div>
-                                        
-                                        <div class="tab-pane fade" id="tab5" role="tabpanel"
-                                            aria-labelledby="nav-contact-tab">
+
+                                        <!-- TAB 5 - IMAGENS -->
+                                        <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                            
                                             <form style="margin: 30px">
                                                 <input type="file" class="btn btn-outline-success" /> Adicionar
                                                 imagem
@@ -649,13 +615,19 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="tab6" role="tabpanel"
-                                            aria-labelledby="nav-contact-tab">tab6</div>
-                                        <div class="tab-pane fade" id="tab7" role="tabpanel"
-                                            aria-labelledby="nav-contact-tab">
-                                            <a href="#" class="btn btn-outline-success"
-                                                style="width: 140px; margin: 30px">Adicionar novo</a>
-                                            <div style="display: flex; flex-direction: row; justify-content: flex-start; align-itens: center">
+
+                                        <!-- TAB 6 - DOCUMENTOS -->
+                                        <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                            tab6
+                                        </div>
+
+                                        <!-- TAB 7 - DEBITOS -->
+                                        <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="nav-contact-tab" style="padding: 30px;">
+                                            
+                                            <a href="#" class="btn btn-outline-success" style="width: 140px; margin: 10px;"> Adicionar novo </a>
+
+                                            <div style="display: flex; flex-direction: row; justify-content: flex-start; align-itens: center; flex-wrap: wrap">
+
                                                 <div class="border-bottom" style="padding: 10px 30px; margin: 10px;">
                                                     <p style="margin: 0">Total pago</p>
                                                     <h5 style="margin: 0; color: #32a852">R$ 10.000,00</h5>
@@ -663,69 +635,116 @@
                                                 <div class="border-bottom" style="padding: 10px 30px; margin: 10px;">
                                                     <p style="margin: 0">Total a receber</p>
                                                     <h5 style="margin: 0; color: #a83232">R$ 10.000,00</h5>
-                                                </div>                                                
+                                                </div>   
+
                                             </div>
                                             
-                                            <table class="table" style="margin: 30px; ">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col" class="border-0">Descrição</th>
-                                                        <th scope="col" class="border-0">Valor</th>
-                                                        <th scope="col" class="border-0">Data</th>
-                                                        <th scope="col" class="border-0">Ações</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>                                                    
-                                                    <tr>
-                                                        <td>Plano tratamento de fulano</td>
-                                                        <td>R$ 80.00</td>
-                                                        <td>99/99/9999</td>
-                                                        <td>
-                                                            <a href="#">Pagar</a>                                                            
-                                                        </td>
-                                                    </tr>                                                    
-                                                     <tr>
-                                                        <td>Plano tratamento de fulano</td>
-                                                        <td>R$ 80.00</td>
-                                                        <td>99/99/9999</td>
-                                                        <td>
-                                                            <i class="material-icons" style="color: #32a852">check</i>                   
-                                                        </td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>Plano tratamento de fulano</td>
-                                                        <td>R$ 80.00</td>
-                                                        <td>99/99/9999</td>
-                                                        <td>
-                                                            <i class="material-icons" style="color: #32a852">check</i>                   
-                                                        </td>
-                                                    </tr>  
-                                                     <tr>
-                                                        <td>Plano tratamento de fulano</td>
-                                                        <td>R$ 80.00</td>
-                                                        <td>99/99/9999</td>
-                                                        <td>
-                                                            <i class="material-icons" style="color: #32a852">check</i>                   
-                                                        </td>
-                                                    </tr>  
-                                                     <tr>
-                                                        <td>Plano tratamento de fulano</td>
-                                                        <td>R$ 80.00</td>
-                                                        <td>99/99/9999</td>
-                                                        <td>
-                                                            <i class="material-icons" style="color: #32a852">check</i>                   
-                                                        </td>
-                                                    </tr>  
-                                                </tbody>
-                                            </table>
-                                                
+                                            <div class='table-responsive'>
+                                                <table class='table mb-0'>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="border-0">Descrição</th>
+                                                            <th scope="col" class="border-0">Valor</th>
+                                                            <th scope="col" class="border-0">Data</th>
+                                                            <th scope="col" class="border-0">Ações</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                                    
+                                                        <tr>
+                                                            <td>Plano tratamento de fulano</td>
+                                                            <td>R$ 80.00</td>
+                                                            <td>99/99/9999</td>
+                                                            <td>
+                                                                <a href="#">Efetuar pagamento</a>                          
+                                                            </td>
+                                                        </tr>                                                    
+                                                        <tr>
+                                                            <td>Plano tratamento de fulano</td>
+                                                            <td>R$ 80.00</td>
+                                                            <td>99/99/9999</td>
+                                                            <td>
+                                                                <i class="material-icons" style="color: #32a852">check</i>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Plano tratamento de fulano</td>
+                                                            <td>R$ 80.00</td>
+                                                            <td>99/99/9999</td>
+                                                            <td>
+                                                                <i class="material-icons" style="color: #32a852">check</i>      
+                                                            </td>
+                                                        </tr>  
+                                                        <tr>
+                                                            <td>Plano tratamento de fulano</td>
+                                                            <td>R$ 80.00</td>
+                                                            <td>99/99/9999</td>
+                                                            <td>
+                                                                <i class="material-icons" style="color: #32a852">check</i>      
+                                                            </td>
+                                                        </tr>  
+                                                        <tr>
+                                                            <td>Plano tratamento de fulano</td>
+                                                            <td>R$ 80.00</td>
+                                                            <td>99/99/9999</td>
+                                                            <td>
+                                                                <i class="material-icons" style="color: #32a852">check</i>       
+                                                            </td>
+                                                        </tr>  
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- <div class="modal fade" id="debitModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ModalLabel">Adicionar um novo Débito</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form id="formEditTreatment">
+                                <div class="modal-body">
+                                    <p style="text-align: left; margin: 10px; padding: 0;">Nome do tratamento</p>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <input type="text" class="form-control" name="edit-name" id="edit-name" placeholder="Nome do produto" value="Anestesia" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <p style="text-align: left; margin: 10px; padding: 0;">Descrição</p>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <textarea type="text" class="form-control" name="edit-description" id="edit-description" required></textarea>
+                                        </div>                                                            
+                                    </div>
+                                    
+                                    <p style="text-align: left; margin: 10px; padding: 0;">Preço</p>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <input type="text" class="form-control" name="edit-price" id="edit-price" placeholder="Preço unitário" value="15,99" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
+                                    <button type="submit" class="btn btn-danger delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> -->
+
                 <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
                     <span class="copyright ml-auto my-auto mr-2">Copyright © 2019
                         <a target="_blank" href="https://decadatech.com" rel="nofollow">Decada Technology</a>
