@@ -1,6 +1,6 @@
 <?php
-	include_once "conexao.php";
-	session_start();
+	require "conexao.php";
+	
 	$idLogin = $_SESSION['idUsuario'];	
 
 	$produto = mysqli_real_escape_string($conexao, trim($_POST["product"]));

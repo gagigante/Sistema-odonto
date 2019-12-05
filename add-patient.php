@@ -27,9 +27,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
     <script src="scripts/extras.1.1.0.min.js"></script>
     <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
-    <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>
-    <script src="scripts/verificaExtensao.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script> 
+ 
+    <script src="assets/js/addPatientsFunctions.js"></script>
 
     <!--MaskJs Script-->
     <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
