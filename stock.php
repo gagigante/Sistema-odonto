@@ -74,6 +74,17 @@
                     </nav>
                 </div>
 
+                <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
+                    <div class="input-group input-group-seamless ml-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <input class="navbar-search form-control" type="text" placeholder="Pesquisar por nome do item" aria-label="Search">
+                    </div>
+                </form>
+
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -120,7 +131,18 @@
                 <div class="main-navbar sticky-top bg-white">
                     <!-- Main Navbar -->
                     <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
-                        <div class="main-navbar__search w-100 d-none d-md-flex d-lg-flex"></div>
+                        
+                        <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+                            <div class="input-group input-group-seamless ml-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                </div>
+                                <input class="navbar-search form-control" type="text" placeholder="Pesquisar por nome do item" aria-label="Search">
+                            </div>
+                        </form>
+
                         <ul class="navbar-nav border-left flex-row ">
                             <li class="nav-item border-right dropdown notifications">
                                 <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -170,7 +192,7 @@
                                         <i class="material-icons">settings_applications</i> Configurações
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-danger" href="#">
+                                    <a class="dropdown-item text-danger" href="logout.php">
                                         <i class="material-icons text-danger">&#xE879;</i> Sair
                                     </a>
                                 </div>
@@ -203,7 +225,7 @@
                                             <input type="text" class="form-control" name="product" id="product" placeholder="Produto" required>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <input type="number" class="form-control" name="amount" id="amount" placeholder="Quantidade" required>
+                                            <input type="number" class="form-control" name="amount" id="amount" placeholder="Quantidade" min="1" required>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <input type="text" class="form-control" name="price" id="price" placeholder="Preço unitário" required>

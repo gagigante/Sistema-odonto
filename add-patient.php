@@ -28,15 +28,14 @@
     <script src="scripts/extras.1.1.0.min.js"></script>
     <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script> 
- 
-    <script src="assets/js/addPatientsFunctions.js"></script>
-
+    
     <!--MaskJs Script-->
     <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
 
+    <script src="assets/js/addPatientsFunctions.js"></script>
+
     <!--Fields Formating Script-->
     <script>
-
         $(document).ready(function() {
 
             $('#dateDiv').datepicker({
@@ -185,7 +184,7 @@
                                         <i class="material-icons">settings_applications</i> Configurações
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-danger" href="#">
+                                    <a class="dropdown-item text-danger" href="logout.php">
                                         <i class="material-icons text-danger">&#xE879;</i> Sair
                                     </a>
                                 </div>

@@ -47,7 +47,8 @@
         <div class="row">
             <!-- Main Sidebar -->
             <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
-                <div class="main-navbar">
+                
+            <div class="main-navbar">
                     <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
                         <a class="navbar-brand w-100 mr-0" style="line-height: 25px;">
                             <div class="d-table m-auto">
@@ -60,6 +61,18 @@
                         </a>
                     </nav>
                 </div>
+                <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
+                    <div class="input-group input-group-seamless ml-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <input class="navbar-search form-control" type="text" placeholder="Pesquisar por nome do tratamento" aria-label="Search">
+                    </div>
+                </form>
+
+              
 
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
@@ -107,7 +120,18 @@
                 <div class="main-navbar sticky-top bg-white">
                     <!-- Main Navbar -->
                     <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
-                        <div class="main-navbar__search w-100 d-none d-md-flex d-lg-flex"></div>
+                        
+                        <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+                            <div class="input-group input-group-seamless ml-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                </div>
+                                <input class="navbar-search form-control" type="text" placeholder="Pesquisar por nome do tratamento" aria-label="Search">
+                            </div>
+                        </form>
+
                         <ul class="navbar-nav border-left flex-row ">
                             <li class="nav-item border-right dropdown notifications">
                                 <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
