@@ -41,16 +41,15 @@
     <link rel="stylesheet" href="assets/css/shards-dashboards.1.1.0.min.css">
     <link rel="stylesheet" href="assets/css/extras.1.1.0.min.css">
 
-
     <!--Jquery CDN-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
     <!--Bootstrap Script-->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
     <!--Bootstrap PopperJs CND-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
     <!--Framework required Scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
@@ -59,10 +58,12 @@
     <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
     <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>
+
     <!--MaskJs Script-->
     <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
-    <script src="scripts/edita-patient.js"></script>
-    <script src="scripts/select-patient.js"></script>
+
+    <script src="assets/js/patientProfileFunctions.js"></script>    
+
     <!--Fields Formating Script-->
     <script>
         $(document).ready(function () {
@@ -99,13 +100,11 @@
         });
 
     </script>
-
-    <!--Optionals Scripts-->
-    <!-- <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css"> -->
+    
 </head>
 
-<body class="h-100" style="overflow-x: hidden;">
+<body class="h-100">
+
     <?php        
 
         $queryselect = "select * from tb01_paciente where tb01_idpaciente = $id and tb01_idUsuario = $idLogin";
@@ -138,17 +137,7 @@
                         </a>
                     </nav>
                 </div>
-                <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
-                    <div class="input-group input-group-seamless ml-3">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <i class="fas fa-search"></i>
-                            </div>
-                        </div>
-                        <input class="navbar-search form-control" type="text" placeholder="Search for something..."
-                            aria-label="Search">
-                    </div>
-                </form>
+               
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -189,6 +178,7 @@
                         </li>  
                     </ul>
                 </div>
+
             </aside>
             <!-- End Main Sidebar -->
             <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
@@ -264,15 +254,16 @@
                             </a>
                         </nav>
                     </nav>
+
                 </div>
                 <!-- / .main-navbar -->
                 <div class="main-content-container container-fluid px-4">
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-8 text-center text-sm-left mb-0">
-                            <h3 class="page-title"> <a href="patients.php"><i
-                                        class="material-icons">supervisor_account</i>Pacientes </a> / <i
-                                    class="material-icons">person</i>Perfil do paciente</h3>
+                            <h3 class="page-title"> <a href="patients.php">
+                                <i class="material-icons">supervisor_account</i>Pacientes </a> / 
+                                <i class="material-icons">person</i>Perfil do paciente</h3>
                         </div>
                     </div>
                     <div class="row">
@@ -280,13 +271,14 @@
                             <div class="card card-small mb-4">
                                 <div class="card-header">
                                     <div style="display: flex; flex-direction: row;height: 100%;padding-left: 10px;">
-                                        <img class="user-avatar rounded-circle mr-2" <?php echo "src='assets/images/avatars/".$linha["tb01_imagem"]."'"; ?>
+                                        <img width="60px" height="60px" class="user-avatar rounded-circle mr-2" <?php echo "src='assets/images/patients-images/".$linha["tb01_imagem"]."'"; ?>
                                             alt="User Avatar" width="60px">
                                         <p style="margin: auto 10px" id="nomeUser"></p>
                                     </div>
                                 </div>
-                                <div class="card-body p-0 pb-3">
 
+                                <div class="card-body p-0 pb-3">
+                                    
                                     <nav>
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist"
                                             style="padding-left: 10px;">
@@ -368,11 +360,9 @@
 
                                      ?>
 
-                                        <div class="tab-pane fade" id="tab2" role="tabpanel"
-                                            aria-labelledby="nav-profile-tab" style="padding: 30px;">
+                                        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="nav-profile-tab" style="padding: 30px;">
 
-                                            <a href="add-budget.php" class="btn btn-outline-success"
-                                                style="width: 140px; margin: 10px">Adicionar orçamento</a>
+                                            <a href="add-budget.php" class="btn btn-outline-success" style="width: 140px; margin: 10px">Adicionar orçamento</a>
 
                                             <table class="table">
                                                 <thead>
@@ -468,16 +458,77 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="tab-pane fade" id="tab3" role="tabpanel"
-                                            aria-labelledby="nav-contact-tab">
+
+                                        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="nav-contact-tab" style="padding: 30px;">
                                         
-                                        
-                                        
-                                        
-                                        
-                                        
+                                            <a href="add-budget.php" class="btn btn-outline-success" style="width: 140px; margin: 10px">Adicionar tratamento</a>
+
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" class="border-0">Descrição</th>
+                                                        <th scope="col" class="border-0">Valor</th>
+                                                        <th scope="col" class="border-0">Data</th>
+                                                        <th scope="col" class="border-0">Pagamento</th>
+                                                        <th scope="col" class="border-0">Ações</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td>Plano tratamento de fulano</td>
+                                                        <td>R$ 80.00</td>
+                                                        <td>99/99/9999</td>
+                                                        <td> 
+                                                            <i class="material-icons" style="color: #ddd">check</i> 
+                                                        </td>
+                                                        <td>
+                                                            <a href="edit-budget.php" class="btn">Editar</a>
+                                                            
+                                                            <button type="button" style="background: transparent; border: 0;cursor: pointer;">
+                                                                <i class="material-icons" style="color: red">delete</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Plano tratamento de fulano</td>
+                                                        <td>R$ 80.00</td>
+                                                        <td>99/99/9999</td>
+                                                        <td>
+                                                            <i class="material-icons" style="color: #32a852">check</i> 
+                                                        </td>
+                                                        <td>
+                                                            <a href="edit-budget.php" class="btn">Editar</a>
+                                                            
+                                                            <button type="button"
+                                                                style="background: transparent; border: 0;cursor: pointer;">
+                                                                <i class="material-icons" style="color: red">delete</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Plano tratamento de fulano</td>
+                                                        <td>R$ 80.00</td>
+                                                        <td>99/99/9999</td>
+                                                        <td>
+                                                            <i class="material-icons" style="color: #32a852;">check</i> 
+                                                        </td>
+                                                        <td>
+                                                            <a href="edit-budget.php" class="btn">Editar</a>
+                                                             
+                                                            <button type="button"
+                                                                style="background: transparent; border: 0;cursor: pointer;">
+                                                                <i class="material-icons" style="color: red">delete</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>                                                                                                                                                                
                                             <!-- Image Map Generated by http://www.image-map.net/ -->
-<img src="assets/images/bb4744f30c13ba63bf1c10f620cfa550.jpg" usemap="#image-map">
+<!-- <img src="assets/images/bb4744f30c13ba63bf1c10f620cfa550.jpg" usemap="#image-map">
 
 <map name="image-map">
     <area target="" alt="" title="" href="" coords="335,351,335,337,344,324,354,324,370,328,375,340,374,351,370,363,361,368,346,370,335,363" shape="poly">
@@ -512,12 +563,11 @@
     <area target="" alt="" title="" href="" coords="330,235,328,213,350,201,368,203,372,226,371,235,344,245" shape="poly">
     <area target="" alt="" title="" href="" coords="337,274,333,254,346,247,376,243,380,256,377,270,368,283,354,283" shape="poly">
 </map>
-                                        
-                                        
-                                        
+                                         -->                                                                                
                                         </div>
-                                        <div class="tab-pane fade" id="tab4" role="tabpanel"
-                                            aria-labelledby="nav-contact-tab">tab4</div>
+
+                                        <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="nav-contact-tab">tab4</div>
+                                        
                                         <div class="tab-pane fade" id="tab5" role="tabpanel"
                                             aria-labelledby="nav-contact-tab">
                                             <form style="margin: 30px">

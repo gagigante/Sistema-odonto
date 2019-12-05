@@ -99,11 +99,7 @@
                         </a>
                     </nav>
                 </div>
-                <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
-                    <div class="input-group input-group-seamless ml-3">
-                        <div class="input-group-prepend"></div>
-                    </div>
-                </form>
+                              
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
