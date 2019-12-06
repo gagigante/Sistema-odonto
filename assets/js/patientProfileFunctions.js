@@ -1,4 +1,18 @@
-$(function(){
+$(document).ready(function() {
+
+    $('#add-debit').click(function(e) {        
+        $('#debitModal').modal('show');
+    });
+
+    //EVENTO DISPARADO AO FECHAR O MODAL PARA RESETAR OS CAMPOS
+    $('#debitModal').on('hidden.bs.modal', function (e) { 
+        alert('o modal foi fechado');
+    });
+
+    $('.btDeleteDebit').click(function(e) {
+        $('#deleteDebitModal').modal('show');        
+    });
+
     $('#edit-btn').click(function(e){
                 
         e.preventDefault();
