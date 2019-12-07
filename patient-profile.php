@@ -294,7 +294,7 @@
                                             <a style="margin-right: 5px;" class="nav-item nav-link" data-toggle="tab"
                                                 href="#tab2" role="tab">Orçamentos</a>
                                             <a style="margin-right: 5px;" class="nav-item nav-link" data-toggle="tab"
-                                                href="#tab3" role="tab">Tratamentos</a>
+                                                href="#tab3" role="tab">Consultas</a>
                                             <a style="margin-right: 5px;" class="nav-item nav-link" data-toggle="tab"
                                                 href="#tab4" role="tab">Anamnese</a>
                                             <a style="margin-right: 5px;" class="nav-item nav-link" data-toggle="tab"
@@ -469,10 +469,10 @@
                                             </div>
                                         </div>
 
-                                        <!-- TAB 3 - TRATAMENTOS -->
+                                        <!-- TAB 3 - CONSULTAS -->
                                         <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="nav-contact-tab" style="padding: 30px;">
                                         
-                                            <a href="add-treatment.php" class="btn btn-outline-success" style="width: 140px; margin: 10px">Adicionar tratamento</a>
+                                            <a href="add-treatment.php" class="btn btn-outline-success" style="width: 140px; margin: 10px">Adicionar consulta</a>
 
                                             <div class='table-responsive'>
                                                 <table class='table mb-0'>                                            
@@ -676,7 +676,7 @@
                                                             <td>R$ 80.00</td>
                                                             <td>99/99/9999</td>
                                                             <td>
-                                                                <button type="button" id="btPayDebit" style="background: transparent; border: none; cursor: pointer; color: #007bfe;">Efetuar pagamento</a>      
+                                                                <button type="button" class="btn" id="btPayDebit" style="background: transparent; border: none; cursor: pointer; color: #007bfe;">Efetuar pagamento</a>      
                                                             </td>
                                                         </tr>                                                    
                                                         <tr>
