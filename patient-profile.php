@@ -67,10 +67,18 @@
     <!--Fields Formating Script-->
     <script>
         $(document).ready(function () {
+
+            $('#dateDiv').datepicker({
+                format: 'dd/mm/yyyy',
+            });
+
+            $('#debitDate').mask('00/00/0000');
+
             $('#phone').mask('(00) 0 0000-0000');
             $('#rg').mask('00.000.000-00');
             $('#cpf').mask('000.000.000-00');
             $('#dateOfBirth').mask('00/00/0000');
+
             var nome = $('#name').val();
             document.getElementById("nomeUser").innerHTML = nome;    
 
@@ -98,7 +106,6 @@
                 }
             });
         });
-
     </script>
     
 </head>
@@ -624,9 +631,7 @@
                                         </div>
 
                                         <!-- TAB 7 - DEBITOS -->
-                                        <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="nav-contact-tab" style="padding: 30px;">
-                                            
-                                            <button id="add-debit" class="btn btn-outline-success" style="width: 140px; margin: 10px;"> Adicionar novo </button>
+                                        <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="nav-contact-tab" style="padding: 30px;">                                            
 
                                             <div style="display: flex; flex-direction: row; justify-content: flex-start; align-itens: center; flex-wrap: wrap">
 
@@ -638,10 +643,9 @@
                                                     <p style="margin: 0">Total a receber</p>
                                                     <h5 style="margin: 0; color: #a83232">R$ 10.000,00</h5>
                                                 </div>   
-
                                             </div>
                                             
-                                            <div class='table-responsive'>
+                                            <div class='table-responsive' style="margin-top: 15px;">
                                                 <table class='table mb-0'>
                                                     <thead>
                                                         <tr>
@@ -657,10 +661,7 @@
                                                             <td>R$ 80.00</td>
                                                             <td>99/99/9999</td>
                                                             <td>
-                                                                <a href="#">Efetuar pagamento</a>
-                                                                <button class="btDeleteDebit" type="button" style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons" style="color: red">delete</i>
-                                                                </button>                     
+                                                                <button type="button" id="btPayDebit" style="background: transparent; border: none; cursor: pointer; color: #007bfe;">Efetuar pagamento</a>      
                                                             </td>
                                                         </tr>                                                    
                                                         <tr>
@@ -668,10 +669,7 @@
                                                             <td>R$ 80.00</td>
                                                             <td>99/99/9999</td>
                                                             <td>
-                                                                <i class="material-icons" style="color: #32a852">check</i>
-                                                                <button class="btDeleteDebit" type="button" style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons" style="color: red">delete</i>
-                                                                </button>    
+                                                                <i class="material-icons" style="color: #32a852">check</i>  
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -679,10 +677,7 @@
                                                             <td>R$ 80.00</td>
                                                             <td>99/99/9999</td>
                                                             <td>
-                                                                <i class="material-icons" style="color: #32a852">check</i>      
-                                                                <button class="btDeleteDebit" type="button" style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons" style="color: red">delete</i>
-                                                                </button>     
+                                                                <i class="material-icons" style="color: #32a852">check</i>    
                                                             </td>
                                                         </tr>  
                                                         <tr>
@@ -690,10 +685,7 @@
                                                             <td>R$ 80.00</td>
                                                             <td>99/99/9999</td>
                                                             <td>
-                                                                <i class="material-icons" style="color: #32a852">check</i>      
-                                                                <button class="btDeleteDebit" type="button" style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons" style="color: red">delete</i>
-                                                                </button>   
+                                                                <i class="material-icons" style="color: #32a852">check</i>
                                                             </td>
                                                         </tr>  
                                                         <tr>
@@ -701,10 +693,7 @@
                                                             <td>R$ 80.00</td>
                                                             <td>99/99/9999</td>
                                                             <td>
-                                                                <i class="material-icons" style="color: #32a852">check</i>       
-                                                                <button class="btDeleteDebit" type="button" style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons" style="color: red">delete</i>
-                                                                </button>      
+                                                                <i class="material-icons" style="color: #32a852">check</i>
                                                             </td>
                                                         </tr>  
                                                     </tbody>
@@ -720,42 +709,22 @@
                     </div>
                 </div>
 
-                <!-- MODAL ADD DEBIT -->
-                <div class="modal fade" id="debitModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                <!-- MODAL DE CONFIRMACAO DE PAGAMENTO -->
+                <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="ModalLabel">Adicionar um novo Débito</h5>
+                                <h5 class="modal-title" id="ModalLabel">Confirmar pagamento</h5>                                
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <form id="formEditTreatment">
-                                <div class="modal-body">
-                                    <p style="text-align: left; margin: 10px; padding: 0;">Nome do tratamento</p>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-12">
-                                            <input type="text" class="form-control" name="edit-name" id="edit-name" placeholder="Nome do produto" value="Anestesia" required>
-                                        </div>
-                                    </div>
-                                    
-                                    <p style="text-align: left; margin: 10px; padding: 0;">Descrição</p>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-12">
-                                            <textarea type="text" class="form-control" name="edit-description" id="edit-description" required></textarea>
-                                        </div>                                                            
-                                    </div>
-                                    
-                                    <p style="text-align: left; margin: 10px; padding: 0;">Preço</p>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <input type="text" class="form-control" name="edit-price" id="edit-price" placeholder="Preço unitário" value="15,99" required>
-                                        </div>
-                                    </div>
+                                <div class="modal-body" style="padding-bottom: 0;">
+                                    <p>Desenha efetuar a baixa deste débito?</p>                                  
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
-                                    <button type="submit" class="btn btn-danger delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
+                                    <button type="button" id="btConfirmDebit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">check</i></button>     
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                 </div>
                             </form>
@@ -763,48 +732,6 @@
                     </div>
                 </div>
 
-                <!-- MODAL DELETE DEBIT -->
-                <div class="modal fade" id="deleteDebitModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="ModalLabel">Apagar registro</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <form id="formEditTreatment">
-                                <div class="modal-body">
-                                    <p style="text-align: left; margin: 10px; padding: 0;">Nome do tratamento</p>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-12">
-                                            <input type="text" class="form-control" name="edit-name" id="edit-name" placeholder="Nome do produto" value="Anestesia" required>
-                                        </div>
-                                    </div>
-                                    
-                                    <p style="text-align: left; margin: 10px; padding: 0;">Descrição</p>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-12">
-                                            <textarea type="text" class="form-control" name="edit-description" id="edit-description" required></textarea>
-                                        </div>                                                            
-                                    </div>
-                                    
-                                    <p style="text-align: left; margin: 10px; padding: 0;">Preço</p>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <input type="text" class="form-control" name="edit-price" id="edit-price" placeholder="Preço unitário" value="15,99" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
-                                    <button type="submit" class="btn btn-danger delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
 
                 <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
                     <span class="copyright ml-auto my-auto mr-2">Copyright © 2019

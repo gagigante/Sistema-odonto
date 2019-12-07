@@ -1,13 +1,16 @@
 $(document).ready(function() {
 
-    $('#add-debit').click(function(e) {        
-        $('#debitModal').modal('show');
+    $('#btPayDebit').click(function(e) {        
+        $('#confirmModal').modal('show');
     });
 
     //EVENTO DISPARADO AO FECHAR O MODAL PARA RESETAR OS CAMPOS
-    $('#debitModal').on('hidden.bs.modal', function (e) { 
-        alert('o modal foi fechado');
-    });
+    // $('#debitModal').on('hidden.bs.modal', function (e) { 
+    //     //alert('o modal foi fechado');
+    //     $('#debitDescription').val("");
+    //     $('#debitPrice').val("");
+    //     $('#debitDate').val("");
+    // });
 
     $('.btDeleteDebit').click(function(e) {
         $('#deleteDebitModal').modal('show');        
