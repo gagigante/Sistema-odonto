@@ -1,7 +1,11 @@
 $(document).ready(function() {
 
     $('#btPayDebit').click(function(e) {        
-        $('#confirmModal').modal('show');
+        $('#confirmPayDebitModal').modal('show');
+    });
+
+    $('#btDeleteTreatment').click(function(e) {
+        $('#confirmDeleteTreatmentModal').modal('show');
     });
 
     //EVENTO DISPARADO AO FECHAR O MODAL PARA RESETAR OS CAMPOS

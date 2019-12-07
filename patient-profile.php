@@ -495,8 +495,13 @@
                                                                 <i class="material-icons" style="color: #ddd">check</i> 
                                                             </td>
                                                             <td>
-                                                                <a href="edit-budget.php" class="btn">Editar</a>
-                                                                <button type="button" style="background: transparent; border: 0;cursor: pointer;">
+                                                                <a href="edit-treatment.php" class="btn">Editar</a>
+                                                                                                                        
+                                                                <button id="btViewTreatment" type="button" style="background: transparent; border: 0;cursor: pointer;">
+                                                                        <i class="material-icons" style="color: #ddd">remove_red_eye</i>
+                                                                </button>
+
+                                                                <button id="btDeleteTreatment" type="button" style="background: transparent; border: 0;cursor: pointer;">
                                                                     <i class="material-icons" style="color: red">delete</i>
                                                                 </button>
                                                             </td>
@@ -510,8 +515,13 @@
                                                                 <i class="material-icons" style="color: #32a852">check</i> 
                                                             </td>
                                                             <td>
-                                                                <a href="edit-budget.php" class="btn">Editar</a>
-                                                                <button type="button"
+                                                                <a href="edit-treatment.php" class="btn">Editar</a>
+
+                                                                <button id="btViewTreatment" type="button" style="background: transparent; border: 0;cursor: pointer;">
+                                                                        <i class="material-icons" style="color: #ddd">remove_red_eye</i>
+                                                                </button>
+
+                                                                <button id="btDeleteTreatment" type="button"
                                                                     style="background: transparent; border: 0;cursor: pointer;">
                                                                     <i class="material-icons" style="color: red">delete</i>
                                                                 </button>
@@ -526,8 +536,13 @@
                                                                 <i class="material-icons" style="color: #32a852;">check</i> 
                                                             </td>
                                                             <td>
-                                                                <a href="edit-budget.php" class="btn">Editar</a>
-                                                                <button type="button"
+                                                                <a href="edit-treatment.php" class="btn">Editar</a>
+
+                                                                <button id="btViewTreatment" type="button" style="background: transparent; border: 0;cursor: pointer;">
+                                                                        <i class="material-icons" style="color: #ddd">remove_red_eye</i>
+                                                                </button>
+
+                                                                <button id="btDeleteTreatment" type="button"
                                                                     style="background: transparent; border: 0;cursor: pointer;">
                                                                     <i class="material-icons" style="color: red">delete</i>
                                                                 </button>
@@ -633,7 +648,7 @@
                                         <!-- TAB 7 - DEBITOS -->
                                         <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="nav-contact-tab" style="padding: 30px;">                                            
 
-                                            <div style="display: flex; flex-direction: row; justify-content: flex-start; align-itens: center; flex-wrap: wrap">
+                                            <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-wrap: wrap">
 
                                                 <div class="border-bottom" style="padding: 10px 30px; margin: 10px;">
                                                     <p style="margin: 0">Total pago</p>
@@ -709,8 +724,8 @@
                     </div>
                 </div>
 
-                <!-- MODAL DE CONFIRMACAO DE PAGAMENTO -->
-                <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                <!-- MODAL DE CONFIRMACAO DE PAGAMENTO DA TAB DEBITO -->
+                <div class="modal fade" id="confirmPayDebitModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -732,6 +747,28 @@
                     </div>
                 </div>
 
+                <!-- MODAL DE CONFIRMACAO DE DELETE DA TAB TRATAMENTOS -->
+                <div class="modal fade" id="confirmDeleteTreatmentModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ModalLabel">Confirmar ação</h5>                                
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form id="formEditTreatment">
+                                <div class="modal-body" style="padding-bottom: 0;">
+                                    <p>Desenha mesmo apagar este registro?</p>                                  
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="btConfirmDeleteTretment" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">check</i></button>     
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
                 <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
                     <span class="copyright ml-auto my-auto mr-2">Copyright © 2019
