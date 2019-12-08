@@ -397,8 +397,25 @@
                                                                 <button type="button"
                                                                     style="background: transparent; border: 0;cursor: pointer;">
                                                                     <i class="material-icons"
-                                                                        style="color: #999">file_copy</i>
+                                                                        style="color: #999">local_printshop</i>
                                                                 </button>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons" style="color: red">delete</i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Plano tratamento de fulano</td>
+                                                            <td>R$ 80.00</td>
+                                                            <td>99/99/9999</td>
+                                                            <td>
+                                                                <a href="edit-budget.php" class="btn">Editar</a>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">find_in_page</i>
+                                                                </button> 
                                                                 <button type="button"
                                                                     style="background: transparent; border: 0;cursor: pointer;">
                                                                     <i class="material-icons"
@@ -420,39 +437,7 @@
                                                                     style="background: transparent; border: 0;cursor: pointer;">
                                                                     <i class="material-icons"
                                                                         style="color: #999">find_in_page</i>
-                                                                </button>
-                                                                <button type="button"
-                                                                    style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons"
-                                                                        style="color: #999">file_copy</i>
-                                                                </button>
-                                                                <button type="button"
-                                                                    style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons"
-                                                                        style="color: #999">local_printshop</i>
-                                                                </button>
-                                                                <button type="button"
-                                                                    style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons" style="color: red">delete</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Plano tratamento de fulano</td>
-                                                            <td>R$ 80.00</td>
-                                                            <td>99/99/9999</td>
-                                                            <td>
-                                                                <a href="edit-budget.php" class="btn">Editar</a>
-                                                                <button type="button"
-                                                                    style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons"
-                                                                        style="color: #999">find_in_page</i>
-                                                                </button>
-                                                                <button type="button"
-                                                                    style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons"
-                                                                        style="color: #999">file_copy</i>
-                                                                </button>
+                                                                </button>                                                          
                                                                 <button type="button"
                                                                     style="background: transparent; border: 0;cursor: pointer;">
                                                                     <i class="material-icons"
@@ -496,9 +481,11 @@
                                                             </td>
                                                             <td>
                                                                 <a href="edit-treatment.php" class="btn">Editar</a>
-                                                                                                                        
-                                                                <button id="btViewTreatment" type="button" style="background: transparent; border: 0;cursor: pointer;">
-                                                                        <i class="material-icons" style="color: #ddd">remove_red_eye</i>
+
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">find_in_page</i>
                                                                 </button>
 
                                                                 <button id="btDeleteTreatment" type="button" style="background: transparent; border: 0;cursor: pointer;">
@@ -517,8 +504,10 @@
                                                             <td>
                                                                 <a href="edit-treatment.php" class="btn">Editar</a>
 
-                                                                <button id="btViewTreatment" type="button" style="background: transparent; border: 0;cursor: pointer;">
-                                                                        <i class="material-icons" style="color: #ddd">remove_red_eye</i>
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">find_in_page</i>
                                                                 </button>
 
                                                                 <button id="btDeleteTreatment" type="button"
@@ -536,10 +525,11 @@
                                                                 <i class="material-icons" style="color: #32a852;">check</i> 
                                                             </td>
                                                             <td>
-                                                                <a href="edit-treatment.php" class="btn">Editar</a>
-
-                                                                <button id="btViewTreatment" type="button" style="background: transparent; border: 0;cursor: pointer;">
-                                                                        <i class="material-icons" style="color: #ddd">remove_red_eye</i>
+                                                                <a href="edit-treatment.php" class="btn">Editar</a>                                                          
+                                                                <button type="button"
+                                                                    style="background: transparent; border: 0;cursor: pointer;">
+                                                                    <i class="material-icons"
+                                                                        style="color: #999">find_in_page</i>
                                                                 </button>
 
                                                                 <button id="btDeleteTreatment" type="button"
