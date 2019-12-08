@@ -226,8 +226,12 @@
                                                 <input type="text" class="form-control" name="description" id="description" placeholder="Descrição da consulta *" required>
                                             </div>
                                         </div>
+                                      
+                                        <div style="border: 1px solid #ddd; border-radius: 6px; margin: 0 0 15px;">
+                                            <div class="card-header border-bottom">
+                                                <h5 style="margin-top: 10px">Procedimentos da consulta</h5>
 
-                                        <div class="form-row">
+                                                <div class="form-row">
                                             <div class="form-group col-sm-10">
                                                 <input type="text" class="form-control" name="treatment" id="treatment" placeholder="Tratamentos *">
                                             </div>                                            
@@ -237,9 +241,6 @@
                                             </div>
                                         </div>
 
-                                        <div style="border: 1px solid #ddd; border-radius: 6px; margin: 0 0 15px;">
-                                            <div class="card-header border-bottom">
-                                                <h5 style="margin-top: 10px">Procedimentos da consulta</h5>
                                             </div>
                                             <div class="card-body p-0 pb-3 text-center">
                                                 <div class='table-responsive'>
