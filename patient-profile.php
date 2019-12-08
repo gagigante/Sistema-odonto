@@ -264,7 +264,7 @@
 
                 </div>
                 <!-- / .main-navbar -->
-                <div class="main-content-container container-fluid px-4">
+                <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-8 text-center text-sm-left mb-0">
@@ -457,7 +457,7 @@
                                         <!-- TAB 3 - CONSULTAS -->
                                         <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="nav-contact-tab" style="padding: 30px;">
                                         
-                                            <a href="add-treatment.php" class="btn btn-outline-success" style="width: 140px; margin: 10px">Adicionar consulta</a>
+                                            <a href="add-treatment.php?id=<?php echo $_GET['id']; ?>" class="btn btn-outline-success" style="width: 140px; margin: 10px">Adicionar consulta</a>
 
                                             <div class='table-responsive'>
                                                 <table class='table mb-0'>                                            
@@ -554,7 +554,6 @@
                                                 <input type="file" class="btn btn-outline-success" /> Adicionar
                                                 imagem
                                             </form>
-
                                             
                                             <div class="gallery">
                                                 <div class="gallery-item">
