@@ -208,6 +208,7 @@
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
                                     <form style="padding: 30px;" method="POST">
+
                                         <div class="form-row">
                                             <div class="form-group col-md-6">                                            
                                                 <input type="text" class="form-control" name="patient" id="patient" placeholder="Nome do paciente *" readonly required>
@@ -219,6 +220,12 @@
                                                 </select>                                               
                                             </div>
                                         </div>                                     
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">                                            
+                                                <input type="text" class="form-control" name="description" id="description" placeholder="Descrição da consulta *" required>
+                                            </div>
+                                        </div>
 
                                         <div class="form-row">
                                             <div class="form-group col-sm-10">

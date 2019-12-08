@@ -30,12 +30,13 @@ CREATE TABLE IF NOT EXISTS `tb01_paciente` (
   `tb01_idpaciente` int(100) NOT NULL AUTO_INCREMENT,
   `tb01_idUsuario` int(100) NOT NULL,
   PRIMARY KEY (`tb01_idpaciente`)
-) ENGINE=MyISAM AUTO_INCREMENT=71 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela bd_teste.tb01_paciente: 3 rows
 /*!40000 ALTER TABLE `tb01_paciente` DISABLE KEYS */;
 INSERT INTO `tb01_paciente` (`tb01_nome`, `tb01_rg`, `tb01_cpf`, `tb01_telefone`, `tb01_email`, `tb01_data`, `tb01_imagem`, `tb01_proficao`, `tb01_endereco`, `tb01_idpaciente`, `tb01_idUsuario`) VALUES
-	('dad', '', '', '(11) 1 1111-1111', '', '26/12/2019', '20d7ec614f9ebdb74d27c47ef431fb07Wallpaper OmniStack - 1440x900.png', '', 'dadad', 70, 1),
+	('dawda', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', '1111@111', '29/05/2001', 'ce6ea6d087a1f1d3c3598ce3a14ad82cWallpaper OmniStack - 1920x1080.png', 'adawd', 'dadad', 71, 1),
+	('Gabriel Henrique Gigante da Silva', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', '', '26/12/2019', '20d7ec614f9ebdb74d27c47ef431fb07Wallpaper OmniStack - 1440x900.png', '', 'dadad', 70, 1),
 	('gabriel', '', '', '(33) 3 3333-3333', '', '29/05/2001', '85e4b33822fba96dc8f3f77116265f05bb4744f30c13ba63bf1c10f620cfa550.jpg', '', 'endereco', 69, 1);
 /*!40000 ALTER TABLE `tb01_paciente` ENABLE KEYS */;
 
@@ -47,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `tb02_estoque` (
   `tb02_idProduto` int(100) NOT NULL AUTO_INCREMENT,
   `tb02_idUsuario` int(11) NOT NULL,
   PRIMARY KEY (`tb02_idProduto`)
-) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela bd_teste.tb02_estoque: 1 rows
 /*!40000 ALTER TABLE `tb02_estoque` DISABLE KEYS */;
@@ -63,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `tb03_tratamentos` (
   `tb03_id` int(11) NOT NULL AUTO_INCREMENT,
   `tb03_idUsuario` int(100) NOT NULL,
   PRIMARY KEY (`tb03_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela bd_teste.tb03_tratamentos: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb03_tratamentos` DISABLE KEYS */;
@@ -146,8 +147,46 @@ INSERT INTO `tb06_eventos` (`tb06_idEvento`, `tb06_idUsuario`, `tb06_nome`, `tb0
 	(66, 1, 'adada', 'editado', 'dadadd', '#ffd700', '2019-11-13 08:45:00', '2019-11-13 09:00:00'),
 	(67, 1, 'dadad', 'editado', 'adada', '#ffd700', '2019-11-14 09:30:00', '2019-11-14 09:45:00'),
 	(68, 1, 'adada', 'GABRIEL SOUZA PEREIRA', 'dawdada', '#b5b5b5', '2019-11-26 08:00:00', '2019-11-26 09:00:00'),
-	(69, 1, 'adada', 'Gabriel Henrique Gigante da Silva', 'dadada', '#ffd700', '2019-12-02 09:15:00', '2019-12-02 09:30:00');
+	(69, 1, 'adada', 'Gabriel Henrique Gigante da Silva', 'dadada', '#ffd700', '2019-12-05 10:30:00', '2019-12-05 11:15:00');
 /*!40000 ALTER TABLE `tb06_eventos` ENABLE KEYS */;
+
+-- Copiando estrutura para tabela bd_teste.tb07_consultas
+CREATE TABLE IF NOT EXISTS `tb07_consultas` (
+  `tb07_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tb07_id_paciente` int(11) DEFAULT NULL,
+  `tb07_id_dentista` int(11) DEFAULT NULL,
+  `tb07_descricao` varchar(50) DEFAULT NULL,
+  `tb07_valor` double DEFAULT NULL,
+  `tb07_data` datetime DEFAULT NULL,
+  PRIMARY KEY (`tb07_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela bd_teste.tb07_consultas: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `tb07_consultas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb07_consultas` ENABLE KEYS */;
+
+-- Copiando estrutura para tabela bd_teste.tb08_tratamentos_consulta
+CREATE TABLE IF NOT EXISTS `tb08_tratamentos_consulta` (
+  `tb08_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tb08_id_consulta` int(11) DEFAULT NULL,
+  `tb08_id_tratamento` int(11) DEFAULT NULL,
+  PRIMARY KEY (`tb08_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela bd_teste.tb08_tratamentos_consulta: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `tb08_tratamentos_consulta` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb08_tratamentos_consulta` ENABLE KEYS */;
+
+-- Copiando estrutura para tabela bd_teste.tb09_dentistas
+CREATE TABLE IF NOT EXISTS `tb09_dentistas` (
+  `tb09_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tb09_nome` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`tb09_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela bd_teste.tb09_dentistas: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `tb09_dentistas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb09_dentistas` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
