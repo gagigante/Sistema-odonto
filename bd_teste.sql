@@ -48,12 +48,13 @@ CREATE TABLE IF NOT EXISTS `tb02_estoque` (
   `tb02_idProduto` int(100) NOT NULL AUTO_INCREMENT,
   `tb02_idUsuario` int(11) NOT NULL,
   PRIMARY KEY (`tb02_idProduto`)
-) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb02_estoque: 1 rows
+-- Copiando dados para a tabela bd_teste.tb02_estoque: 2 rows
 /*!40000 ALTER TABLE `tb02_estoque` DISABLE KEYS */;
 INSERT INTO `tb02_estoque` (`tb02_produto`, `tb02_quantidade`, `tb02_preco`, `tb02_idProduto`, `tb02_idUsuario`) VALUES
-	('produto1', 2, 60, 36, 2);
+	('produto1', 2, 60, 36, 2),
+	('produto1', 4, 60, 40, 1);
 /*!40000 ALTER TABLE `tb02_estoque` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb03_tratamentos
@@ -64,12 +65,15 @@ CREATE TABLE IF NOT EXISTS `tb03_tratamentos` (
   `tb03_id` int(11) NOT NULL AUTO_INCREMENT,
   `tb03_idUsuario` int(100) NOT NULL,
   PRIMARY KEY (`tb03_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb03_tratamentos: ~1 rows (aproximadamente)
+-- Copiando dados para a tabela bd_teste.tb03_tratamentos: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb03_tratamentos` DISABLE KEYS */;
 INSERT INTO `tb03_tratamentos` (`tb03_nome`, `tb03_descricao`, `tb03_preco`, `tb03_id`, `tb03_idUsuario`) VALUES
-	('editado', '111', 60, 2, 2);
+	('editado', '111', 60, 2, 2),
+	('Tratamento 2', 'descricao do tratamento 2', 80, 4, 1),
+	('Tratamento 3', 'descricao do tratamento 3', 130, 5, 1),
+	('tratamento 1', 'descricao do tratamento 1', 100, 6, 1);
 /*!40000 ALTER TABLE `tb03_tratamentos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb04_login
@@ -121,9 +125,9 @@ CREATE TABLE IF NOT EXISTS `tb06_eventos` (
   `tb06_inicio` datetime NOT NULL,
   `tb06_fim` datetime NOT NULL,
   PRIMARY KEY (`tb06_idEvento`)
-) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela bd_teste.tb06_eventos: 22 rows
+-- Copiando dados para a tabela bd_teste.tb06_eventos: 23 rows
 /*!40000 ALTER TABLE `tb06_eventos` DISABLE KEYS */;
 INSERT INTO `tb06_eventos` (`tb06_idEvento`, `tb06_idUsuario`, `tb06_nome`, `tb06_paciente`, `tb06_descricao`, `tb06_cor`, `tb06_inicio`, `tb06_fim`) VALUES
 	(56, 1, 'dadada', 'GABRIEL SOUZA PEREIRA', 'adada', '#b5b5b5', '2019-11-13 10:00:00', '2019-11-13 10:15:00'),
@@ -147,34 +151,41 @@ INSERT INTO `tb06_eventos` (`tb06_idEvento`, `tb06_idUsuario`, `tb06_nome`, `tb0
 	(66, 1, 'adada', 'editado', 'dadadd', '#ffd700', '2019-11-13 08:45:00', '2019-11-13 09:00:00'),
 	(67, 1, 'dadad', 'editado', 'adada', '#ffd700', '2019-11-14 09:30:00', '2019-11-14 09:45:00'),
 	(68, 1, 'adada', 'GABRIEL SOUZA PEREIRA', 'dawdada', '#b5b5b5', '2019-11-26 08:00:00', '2019-11-26 09:00:00'),
-	(69, 1, 'adada', 'Gabriel Henrique Gigante da Silva', 'dadada', '#ffd700', '2019-12-05 10:30:00', '2019-12-05 11:15:00');
+	(69, 1, 'adada', 'Gabriel Henrique Gigante da Silva', 'dadada', '#ffd700', '2019-12-05 10:30:00', '2019-12-05 11:15:00'),
+	(71, 1, 'adada', 'Gabriel Henrique Gigante da Silva', 'dadad', '#ffd700', '2019-12-24 09:00:00', '2019-12-24 09:15:00');
 /*!40000 ALTER TABLE `tb06_eventos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb07_consultas
 CREATE TABLE IF NOT EXISTS `tb07_consultas` (
   `tb07_id` int(11) NOT NULL AUTO_INCREMENT,
-  `tb07_id_paciente` int(11) DEFAULT NULL,
-  `tb07_id_dentista` int(11) DEFAULT NULL,
-  `tb07_descricao` varchar(50) DEFAULT NULL,
-  `tb07_valor` double DEFAULT NULL,
-  `tb07_data` datetime DEFAULT NULL,
+  `tb07_id_paciente` int(11) NOT NULL,
+  `tb07_id_dentista` int(11) NOT NULL,
+  `tb07_id_usuario` int(11) NOT NULL,
+  `tb07_descricao` varchar(50) NOT NULL,
+  `tb07_valor` double NOT NULL,
+  `tb07_status_pagamento` int(11) NOT NULL,
+  `tb07_data` datetime NOT NULL,
   PRIMARY KEY (`tb07_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb07_consultas: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela bd_teste.tb07_consultas: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb07_consultas` DISABLE KEYS */;
+INSERT INTO `tb07_consultas` (`tb07_id`, `tb07_id_paciente`, `tb07_id_dentista`, `tb07_id_usuario`, `tb07_descricao`, `tb07_valor`, `tb07_status_pagamento`, `tb07_data`) VALUES
+	(2, 70, 1, 1, 'descricao da consulta', 500, 0, '2019-12-12 00:00:00');
 /*!40000 ALTER TABLE `tb07_consultas` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb08_tratamentos_consulta
 CREATE TABLE IF NOT EXISTS `tb08_tratamentos_consulta` (
   `tb08_id` int(11) NOT NULL AUTO_INCREMENT,
-  `tb08_id_consulta` int(11) DEFAULT NULL,
-  `tb08_id_tratamento` int(11) DEFAULT NULL,
+  `tb08_id_consulta` int(11) NOT NULL,
+  `tb08_id_tratamento` int(11) NOT NULL,
   PRIMARY KEY (`tb08_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb08_tratamentos_consulta: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela bd_teste.tb08_tratamentos_consulta: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb08_tratamentos_consulta` DISABLE KEYS */;
+INSERT INTO `tb08_tratamentos_consulta` (`tb08_id`, `tb08_id_consulta`, `tb08_id_tratamento`) VALUES
+	(1, 2, 1);
 /*!40000 ALTER TABLE `tb08_tratamentos_consulta` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb09_dentistas
@@ -182,10 +193,12 @@ CREATE TABLE IF NOT EXISTS `tb09_dentistas` (
   `tb09_id` int(11) NOT NULL AUTO_INCREMENT,
   `tb09_nome` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`tb09_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb09_dentistas: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela bd_teste.tb09_dentistas: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb09_dentistas` DISABLE KEYS */;
+INSERT INTO `tb09_dentistas` (`tb09_id`, `tb09_nome`) VALUES
+	(1, 'Gabriel Henrique Gigante da Silva');
 /*!40000 ALTER TABLE `tb09_dentistas` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -459,7 +459,9 @@
                                         
                                             <a href="add-treatment.php?id=<?php echo $_GET['id']; ?>" class="btn btn-outline-success" style="width: 140px; margin: 10px">Adicionar consulta</a>
 
-                                            <div class='table-responsive'>
+                                            <div class="query-ajax-response"> </div>
+                                            
+                                            <!-- <div class='table-responsive'>
                                                 <table class='table mb-0'>                                            
                                                     <thead>
                                                         <tr>
@@ -541,7 +543,7 @@
 
                                                     </tbody>
                                                 </table> 
-                                            </div>                          
+                                            </div>                           -->
                                         </div>
 
                                         <!-- TAB 4 - ANAMNESE -->

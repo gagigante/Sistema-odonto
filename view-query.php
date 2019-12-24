@@ -32,7 +32,7 @@
     <!--MaskJs Script-->
     <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
 
-    <script src="assets/js/addTreatmentsFunctions.js"></script>
+    <script src="assets/js/addPatientsFunctions.js"></script>
 
     <!--Fields Formating Script-->
     <script>
@@ -56,20 +56,6 @@
     <?php 
         require 'php/conexao.php';
         require 'php/verificaLogin.php';
-            
-        //CONSULTA QUE RETORNA O NOME DO PACIENTE COM BASE NO ID FORNECIDO PELA URL
-        $queryselect = "select * from tb01_paciente where tb01_idpaciente = '".$_GET['id']."'";
-        $resultadoselect = $conexao->query($queryselect);                                                
-
-        if($resultadoselect->num_rows>=0) { 
-            while ($linha = $resultadoselect->fetch_assoc()){  
-                $patientName = $linha['tb01_nome'];                
-            }
-        } 
-        
-        //CONSULTA TODOS OS DENTISTAS CADASTRADOS NA BASE DE DADOS
-        $queryselect = "select * from tb09_dentistas order by tb09_nome";
-        $dentistas = $conexao->query($queryselect);
     ?>
 
     <div class="container-fluid">
@@ -202,14 +188,14 @@
                         </nav>
                     </nav>
                     <!-- End Main Navbar -->
-                </div>                
+                </div>
 
-                <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
+                <div class="main-content-container container-fluid px-4">
 
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-8 text-center text-sm-left mb-0">
-                            <h3 class="page-title"> <a href="patient-profile.php?id=<?php echo $_GET['id']; ?>"><i class="material-icons">person</i>Perfil do paciente </a> / <i class="material-icons">add_circle_outline</i>Adicionar consulta</h3>
+                            <h3 class="page-title"> <a href="patient-profile.php?id=<?php echo $_GET['id']; ?>"><i class="material-icons">person</i>Perfil do paciente </a> / <i class="material-icons">add_circle_outline</i>Adicionar paciente</h3>
                         </div>
                     </div>                    
 
@@ -225,13 +211,12 @@
 
                                         <div class="form-row">
                                             <div class="form-group col-md-6">                                            
-                                                <input type="text" class="form-control" name="patient" id="patient" placeholder="Nome do paciente *" value="<?php echo $patientName; ?>" readonly required>
+                                                <input type="text" class="form-control" name="patient" id="patient" placeholder="Nome do paciente *" readonly required>
                                             </div>                                            
                                             <div class="form-group col-md-6">    
                                                 <select id="professional" name="professional" class="form-control" required>
-                                                <?php foreach($dentistas as $dentista): ?>
-                                                    <option value="<?php echo $dentista['tb09_id']; ?>">Dr. <?php echo $dentista['tb09_nome'];?></option>                                                    
-                                                <?php endforeach ?>
+                                                    <option>Dentista 1</option>
+                                                    <option>Dentista 2</option>
                                                 </select>                                               
                                             </div>
                                         </div>                                     
@@ -298,14 +283,6 @@
                                                         </tbody>
                                                     </table>
                                                 </div> 
-                                                <div style="margin: 20px 20px 0;">
-                                                <div class="form-row">                                                  
-                                                    <div class="form-group col-md-6">
-                                                        <p style="text-align: left; margin: 0 5px;">Valor Total</p>
-                                                        <input type="text" class="form-control" name="total-price" id="total-price" placeholder="Preço total *" value="R$ 165,75" readonly required>
-                                                    </div>   
-                                                    </div>                                                
-                                                </div>
                                             </div>
                                         </div>
 

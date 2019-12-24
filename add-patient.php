@@ -190,7 +190,7 @@
                     <!-- End Main Navbar -->
                 </div>
 
-                <div class="main-content-container container-fluid px-4">
+                <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
 
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
