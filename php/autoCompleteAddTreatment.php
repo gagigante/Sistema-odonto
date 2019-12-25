@@ -10,9 +10,11 @@ $resultadoselect = $conexao->query($queryselect);
 
 
 if($resultadoselect->num_rows>=0) { 
-    while ($linha = $resultadoselect->fetch_assoc()){
-
-    	$data[] = $linha['tb01_nome'];
+    while ($linha = $resultadoselect->fetch_assoc()){                
+        $data[] = [ 
+            'id' => $linha['tb03_id'],
+            'label' => $linha['tb03_nome']
+        ];
     }	
 }
 

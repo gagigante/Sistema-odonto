@@ -8,19 +8,28 @@
 
     <title>DECADA ODONTO</title>
 
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/shards-dashboards.1.1.0.min.css">
     <link rel="stylesheet" href="assets/css/extras.1.1.0.min.css">
 
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
     <!--Jquery CDN-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
     <!--Bootstrap Script-->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
     <!--Bootstrap PopperJs CND-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
     <!--Framework required Scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
@@ -36,7 +45,7 @@
 
     <!--Fields Formating Script-->
     <script>
-        $(document).ready(function() {
+        $(document).ready(function() {        
 
             $('#dateDiv').datepicker({
                 format: 'dd/mm/yyyy',
@@ -73,7 +82,7 @@
     ?>
 
     <div class="container-fluid">
-        <div class="row">
+        <div class="row">            
 
             <!-- Main Sidebar -->
             <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
@@ -218,7 +227,7 @@
 
                             <div class="card card-small mb-4">
                                 <div class="card-header border-bottom">
-                                    <h3 style="margin-top: 10px">Cadastro de consulta</h3>
+                                    <h3 style="margin-top: 10px">Cadastro de consulta</h3>                                 
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
                                     <form style="padding: 30px;" method="POST">
@@ -245,16 +254,16 @@
                                         <div style="border: 1px solid #ddd; border-radius: 6px; margin: 0 0 15px;">
                                             <div class="card-header border-bottom">
                                                 <h5 style="margin-top: 10px">Procedimentos da consulta</h5>
-
+                                                
                                                 <div class="form-row">
-                                            <div class="form-group col-sm-10">
-                                                <input type="text" class="form-control" name="treatment" id="treatment" placeholder="Tratamentos *">
-                                            </div>                                            
-                                            <div class="form-group col-sm-2">
-                                                <button type='button' class='btn btn-sm btn-success'
-                                                style='color: white'>Adicionar</button>
-                                            </div>
-                                        </div>
+                                                    <div class="form-group col-sm-10">
+                                                        <input type="text" class="form-control" name="treatment" id="treatment" placeholder="Tratamentos *" autocomplete="off" required>
+                                                    </div>                                            
+                                                    <div class="form-group col-sm-2">
+                                                        <button type='button' class='btn btn-sm btn-success btAddTreatment'
+                                                        style='color: white'>Adicionar</button>
+                                                    </div>
+                                                </div>
 
                                             </div>
                                             <div class="card-body p-0 pb-3 text-center">
@@ -267,42 +276,23 @@
                                                                 <th scope='col' class='border-0'>Ações</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody> 
-                                                            <tr>
-                                                                <td>Nome do tratamento</td>
-                                                                <td>55.25</td>   
-                                                                <td>
-                                                                    <button type='button' class='btn btn-sm btn-danger'>
-                                                                        Remover
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Nome do tratamento</td>
-                                                                <td>55.25</td>   
-                                                                <td>
-                                                                    <button type='button' class='btn btn-sm btn-danger'>
-                                                                        Remover
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Nome do tratamento</td>
-                                                                <td>55.25</td>   
-                                                                <td>
-                                                                    <button type='button' class='btn btn-sm btn-danger'>
-                                                                        Remover
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
+                                                        <tbody id="treatmentsTableContent"> 
+                                                        
+                                                        
                                                         </tbody>
                                                     </table>
+
+                                                    <div id="emptyPlaceholder">
+                                                        <img style="max-width: 100%;" src="assets/images/empty-treatments-placeholder.png" />
+                                                        <h5 style='margin-top: 15px;'>Adicione um ou mais tratamentos à essa consulta</h5>
+                                                    </div>
+
                                                 </div> 
                                                 <div style="margin: 20px 20px 0;">
                                                 <div class="form-row">                                                  
                                                     <div class="form-group col-md-6">
                                                         <p style="text-align: left; margin: 0 5px;">Valor Total</p>
-                                                        <input type="text" class="form-control" name="total-price" id="total-price" placeholder="Preço total *" value="R$ 165,75" readonly required>
+                                                        <input type="text" class="form-control" name="total-price" id="total-price" placeholder="Preço total *" readonly required>
                                                     </div>   
                                                     </div>                                                
                                                 </div>
@@ -311,11 +301,11 @@
 
                                         <div class="form-row">
                                             <div id="dateDiv" class="col-md-6 input-daterange form-group">
-                                                <input type="text" class="input-sm form-control" name="date" placeholder="Data e hora do tratamento *" id="date" autocomplete="off" required>
+                                                <input type="text" class="input-sm form-control" name="start-date" placeholder="Data e hora do tratamento *" id="start-date" autocomplete="off" required>
                                             </div>    
-                                            <div class="form-group col-md-6">
-                                                <input type="text" class="form-control" name="total-price" id="total-price" placeholder="Preço total *" value="R$ 165,75" readonly required>
-                                            </div>                                                   
+                                            <div id="dateDiv" class="col-md-6 input-daterange form-group">
+                                                <input type="text" class="input-sm form-control" name="end-date" placeholder="Data e hora do tratamento *" id="end-date" autocomplete="off" required>
+                                            </div>                               
                                         </div>
 
                                         <div class="form-row">
