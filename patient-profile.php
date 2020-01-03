@@ -278,7 +278,7 @@
                             <div class="card card-small mb-4">
                                 <div class="card-header">
                                     <div style="display: flex; flex-direction: row;height: 100%;padding-left: 10px;">
-                                        <img width="60px" height="60px" class="user-avatar rounded-circle mr-2" <?php echo "src='assets/images/patients-images/".$linha["tb01_imagem"]."'"; ?>
+                                        <img width="60px" height="60px" class="user-avatar rounded-circle mr-2" <?php echo "src='assets/images/patients-profile-images/".$linha["tb01_imagem"]."'"; ?>
                                             alt="User Avatar" width="60px">
                                         <p style="margin: auto 10px" id="nomeUser"></p>
                                     </div>
@@ -557,7 +557,19 @@
                                                 imagem
                                             </form>
                                             
-                                            <div class="gallery">
+                                            <div class="gallery gallery-ajax-response">
+                                                
+                                                <!-- <div class="gallery-item">
+                                                    <img src="assets/images/profile-images/download.jpg">
+                                                    <div class="item-options">
+                                                        Image name goes here
+                                                        <button type="button"
+                                                            style="background: transparent; border: 0;cursor: pointer;">
+                                                            <i class="material-icons" style="color: red">delete</i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
                                                 <div class="gallery-item">
                                                     <img src="assets/images/profile-images/download.jpg">
                                                     <div class="item-options">
@@ -617,17 +629,7 @@
                                                             <i class="material-icons" style="color: red">delete</i>
                                                         </button>
                                                     </div>
-                                                </div>
-                                                <div class="gallery-item">
-                                                    <img src="assets/images/profile-images/download.jpg">
-                                                    <div class="item-options">
-                                                        Image name goes here
-                                                        <button type="button"
-                                                            style="background: transparent; border: 0;cursor: pointer;">
-                                                            <i class="material-icons" style="color: red">delete</i>
-                                                        </button>
-                                                    </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
 

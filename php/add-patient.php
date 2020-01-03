@@ -35,7 +35,7 @@
 		$resultadoInsereCadastro = mysqli_query($conexao, $queryInsereCadastro);
 
 	}else{
-		if(move_uploaded_file($imagemtemp, "../assets/images/patients-images/".$imageNameWithHash)){
+		if(move_uploaded_file($imagemtemp, "../assets/images/patients-profile-images/".$imageNameWithHash)){
 			$queryInsereCadastro = "INSERT INTO tb01_paciente (tb01_nome, tb01_rg, tb01_cpf, tb01_telefone, tb01_email, tb01_data, tb01_imagem, tb01_proficao, tb01_endereco, tb01_idUsuario) VALUES ('$nome', '$rg', '$cpf', '$tel', '$email', '$data','$imageNameWithHash', '$proficao', '$endereco', '$idLogin')";
 			$resultadoInsereCadastro = mysqli_query($conexao, $queryInsereCadastro);
 		}

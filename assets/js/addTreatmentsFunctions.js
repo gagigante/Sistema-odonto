@@ -51,7 +51,7 @@ $(document).ready(function(e) {
                         divContent = divContent + "<tr><td>" +treatmentsData[i].name+ "</td><td>R$" +treatmentsData[i].price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})+ "</td><td><button type='button' id='" +i+ "' class='btn btn-sm btn-danger btDeleteButton'>Remover</button></td</tr>";
                     }
 
-                    console.log(price);
+                    //console.log(price);
            
                     $('#treatmentsTableContent').html(divContent);
                     $('#total-price').val(price);
@@ -82,13 +82,16 @@ $(document).ready(function(e) {
 
         //PERCORRE O ARRAY E ARMAZENA O HTML NA VARIAVEL
         for(let i = 0; i < treatmentsData.length; i++){
-            price += treatmentsData[i].price;
+            price = (price * 1) + (treatmentsData[i].price * 1);
             divContent = divContent + "<tr><td>" +treatmentsData[i].name+ "</td><td>R$" +treatmentsData[i].price+ "</td><td><button type='button' id='" +i+ "' class='btn btn-sm btn-danger btDeleteButton'>Remover</button></td</tr>";
         }
 
+        console.log(price);
+        
         //ESCREVE O CONTEÚDO NA TABELA
         $('#treatmentsTableContent').html(divContent);
         $('#total-price').val(price);
+
         //VERIFICA SE O EMPTY-PLACEHOLDER DEVE SER EXIBIDO
         if(treatmentsData.length == 0) {            
             $('#emptyPlaceholder').show();            

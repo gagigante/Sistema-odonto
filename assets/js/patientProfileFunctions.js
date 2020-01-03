@@ -46,7 +46,7 @@ $(document).ready(function() {
         var telefone = $('#phone').val();
         var email = $('#email').val();
         var data = $('#dateOfBirth').val();    
-        document.getElementById("nomeUser").innerHTML = nome; //////////////////////////////     
+        document.getElementById("nomeUser").innerHTML = nome;  
 
         $.post('php/patient-profile-edita.php', {
             id:id,
@@ -61,6 +61,20 @@ $(document).ready(function() {
 
         });
         
+    });
+
+    // TAB 5 - IMAGENS
+
+    //SELECT DAS IMAGENS
+    $.ajax({
+        url: 'php/select-patient-images.php',
+        type: 'POST', 
+        data: {                   
+            patient_id: patientId  
+        },
+        success: function(response) {
+            $('.gallery-ajax-response').html(response);
+        },
     });
 });
 

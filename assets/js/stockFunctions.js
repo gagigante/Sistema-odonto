@@ -6,6 +6,12 @@ $(document).ready(function(e) {
             $('.ajax-response').html(response);
         },
     });
+
+    //LIMPA OS CAMPOS DO FORM AO FECHAR O 
+    $('#stockModal').on('hidden.bs.modal', function () {        
+        $('#add').val('');
+    });
+
 });
 
 //AO DAR SUBMIT NO FORM ADICIONA O ITEM E ATUALIZA O CONTEÚDO DA TABELA
@@ -50,11 +56,15 @@ $(document).on('click', '.view-modal', function() {
     $('#edit-name').val($(buttonId).data('name'));
     $('#qtd').val($(buttonId).data('amount'));
     $('#edit-price').val($(buttonId).data('price'));
+
+    const minNumberInputValue = ($(buttonId).data('amount') - 1) * -1;
+    $('#add').attr('min', minNumberInputValue);
     
     //PASSA O ID DO PRODUTO COMO DATA-ATRIBUTE PARA OS BOTOES DE SALVAR E APAGAR
     $('.save').data('productId', productId);
     $('.delete').data('productId', productId);
 });
+
 
 $(function () {
     //SALVA AS ALTERAÇÕES E FAZ O SELECT NOVAMENTE

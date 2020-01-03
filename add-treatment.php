@@ -51,10 +51,13 @@
                 format: 'dd/mm/yyyy',
             });
 
-            $('#phone').mask('(00) 0 0000-0000');
-            $('#rg').mask('00.000.000-00');
-            $('#cpf').mask('000.000.000-00');
-            $('#date').mask('00/00/0000 00:00:00');
+            $('#query-start').mask('00/00/0000 00:00:00');
+            $('#query-end').mask('00/00/0000 00:00:00');    
+
+            // $('#phone').mask('(00) 0 0000-0000');
+            // $('#rg').mask('00.000.000-00');
+            // $('#cpf').mask('000.000.000-00');
+            // $('#date').mask('00/00/0000 00:00:00');
         });
     </script>
 
@@ -233,10 +236,12 @@
                                     <form style="padding: 30px;" method="POST">
 
                                         <div class="form-row">
-                                            <div class="form-group col-md-6">                                            
+                                            <div class="form-group col-md-6">   
+                                                <p style="text-align: left; margin: 10px; padding: 0;">Nome do paciente</p>
                                                 <input type="text" class="form-control" name="patient" id="patient" placeholder="Nome do paciente *" value="<?php echo $patientName; ?>" readonly required>
                                             </div>                                            
-                                            <div class="form-group col-md-6">    
+                                            <div class="form-group col-md-6">
+                                                <p style="text-align: left; margin: 10px; padding: 0;">Nome do responsável</p>    
                                                 <select id="professional" name="professional" class="form-control" required>
                                                 <?php foreach($dentistas as $dentista): ?>
                                                     <option value="<?php echo $dentista['tb09_id']; ?>">Dr. <?php echo $dentista['tb09_nome'];?></option>                                                    
@@ -246,7 +251,8 @@
                                         </div>                                     
 
                                         <div class="form-row">
-                                            <div class="form-group col-md-12">                                            
+                                            <div class="form-group col-md-12">   
+                                                <p style="text-align: left; margin: 10px; padding: 0;">Descrição da consulta</p>
                                                 <input type="text" class="form-control" name="description" id="description" placeholder="Descrição da consulta *" required>
                                             </div>
                                         </div>
@@ -257,7 +263,7 @@
                                                 
                                                 <div class="form-row">
                                                     <div class="form-group col-sm-10">
-                                                        <input type="text" class="form-control" name="treatment" id="treatment" placeholder="Tratamentos *" autocomplete="off" required>
+                                                        <input type="text" class="form-control" name="treatment" id="treatment" placeholder="Tratamentos *" autocomplete="off">
                                                     </div>                                            
                                                     <div class="form-group col-sm-2">
                                                         <button type='button' class='btn btn-sm btn-success btAddTreatment'
@@ -291,7 +297,7 @@
                                                 <div style="margin: 20px 20px 0;">
                                                 <div class="form-row">                                                  
                                                     <div class="form-group col-md-6">
-                                                        <p style="text-align: left; margin: 0 5px;">Valor Total</p>
+                                                        <p style="text-align: left; margin: 10px; padding: 0;">Valor total</p>
                                                         <input type="text" class="form-control" name="total-price" id="total-price" placeholder="Preço total *" readonly required>
                                                     </div>   
                                                     </div>                                                
@@ -299,13 +305,63 @@
                                             </div>
                                         </div>
 
+                                        <!-- <div style="border: 1px solid #ddd; border-radius: 6px; margin: 0 0 15px;">
+                                            <div class="card-header border-bottom">
+                                                <h5 style="margin-top: 10px">Itens que serão utilizados na consulta</h5>
+                                                
+                                                <div class="form-row">
+                                                    <div class="form-group col-sm-10">
+                                                        <input type="text" class="form-control" name="treatment" id="treatment" placeholder="Tratamentos *" autocomplete="off" required>
+                                                    </div>                                            
+                                                    <div class="form-group col-sm-2">
+                                                        <button type='button' class='btn btn-sm btn-success btAddTreatment'
+                                                        style='color: white'>Adicionar</button>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="card-body p-0 pb-3 text-center">
+                                                <div class='table-responsive'>
+                                                    <table class='table mb-0'>
+                                                        <thead class='bg-light'>
+                                                            <tr>
+                                                                <th scope='col' class='border-0'>Tratamento</th>        
+                                                                <th scope='col' class='border-0'>Preço</th>
+                                                                <th scope='col' class='border-0'>Ações</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="treatmentsTableContent"> 
+                                                        
+                                                        
+                                                        </tbody>
+                                                    </table>
+
+                                                    <div id="emptyPlaceholder">
+                                                        <img style="max-width: 100%;" src="assets/images/empty-treatments-placeholder.png" />
+                                                        <h5 style='margin-top: 15px;'>Adicione um ou mais tratamentos à essa consulta</h5>
+                                                    </div>
+
+                                                </div> 
+                                                <div style="margin: 20px 20px 0;">
+                                                <div class="form-row">                                                  
+                                                    <div class="form-group col-md-6">
+                                                        <p style="text-align: left; margin: 10px; padding: 0;">Valor total</p>
+                                                        <input type="text" class="form-control" name="total-price" id="total-price" placeholder="Preço total *" readonly required>
+                                                    </div>   
+                                                    </div>                                                
+                                                </div>
+                                            </div>
+                                        </div> -->
+
                                         <div class="form-row">
-                                            <div id="dateDiv" class="col-md-6 input-daterange form-group">
-                                                <input type="text" class="input-sm form-control" name="start-date" placeholder="Data e hora do tratamento *" id="start-date" autocomplete="off" required>
+                                            <div class="form-group col-md-6">
+                                                <p style="text-align: left; margin: 10px; padding: 0;">Data e hora do início da consulta</p>
+                                                <input type="text" class="form-control" name="query-start" id="query-start" autocomplete="off" placeholder="00/00/0000 00:00:00" required>
                                             </div>    
-                                            <div id="dateDiv" class="col-md-6 input-daterange form-group">
-                                                <input type="text" class="input-sm form-control" name="end-date" placeholder="Data e hora do tratamento *" id="end-date" autocomplete="off" required>
-                                            </div>                               
+                                            <div class="form-group col-md-6">
+                                                <p style="text-align: left; margin: 10px; padding: 0;">Data e hora do fim da consulta</p>
+                                                <input type="text" class="form-control" name="query-end" id="query-end" autocomplete="off" placeholder="00/00/0000 00:00:00" required>
+                                            </div>                       
                                         </div>
 
                                         <div class="form-row">

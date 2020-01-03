@@ -244,7 +244,7 @@
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="ModalLabel">Editar ou adicionar item</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
@@ -282,7 +282,7 @@
                                                 <div class="modal-footer">                         
                                                     <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
                                                     <button type="submit" class="btn btn-danger delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                    <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal">Fechar</button>
                                                 </div>
                                             </div>
                                         </div>
