@@ -552,9 +552,9 @@
                                         <!-- TAB 5 - IMAGENS -->
                                         <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="nav-contact-tab">
                                             
-                                            <form style="margin: 30px">
-                                                <input type="file" class="btn btn-outline-success" /> Adicionar
-                                                imagem
+                                            <form style="margin: 30px" method="POST" enctype="multipart/form-data" id="patient-add-image-form">
+                                                <input type="file" id="image-input" class="btn" /> 
+                                                <Button type="button" class="btn btn-outline-success" id="bt-add-image">Adicionar imagem</Button>
                                             </form>
                                             
                                             <div class="gallery gallery-ajax-response">

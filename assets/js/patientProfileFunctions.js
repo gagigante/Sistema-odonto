@@ -76,6 +76,35 @@ $(document).ready(function() {
             $('.gallery-ajax-response').html(response);
         },
     });
+
+    //ADICIONAR IMAGEM
+    $('#bt-add-image').click(function() {
+       
+        $.ajax({
+            url: 'php/add-patient-image.php',
+            method: 'post',
+            data: new FormData($('#patient-add-image-form')[0]),
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(response){
+                alert('rodou');
+            },
+        });// Fim do ajax
+
+        // let image = document.getElementById("image-input");
+        // for (var i = 0; i < elem.files.length; ++ i) {
+        //    images.push(elem.files[i].name);
+        // }
+        // var produtoData = {
+    
+        //     'Titulo': $('#produtoTitulo').val(),
+        //     'Descricao': $('#produtoDescricao').val(),
+        //     'Imagem': images,
+        // };
+
+        //alert('clicou');
+    });
 });
 
 // $(function () {
