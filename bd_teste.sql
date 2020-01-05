@@ -30,14 +30,16 @@ CREATE TABLE IF NOT EXISTS `tb01_paciente` (
   `tb01_idpaciente` int(100) NOT NULL AUTO_INCREMENT,
   `tb01_idUsuario` int(100) NOT NULL,
   PRIMARY KEY (`tb01_idpaciente`)
-) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb01_paciente: 3 rows
+-- Copiando dados para a tabela bd_teste.tb01_paciente: 5 rows
 /*!40000 ALTER TABLE `tb01_paciente` DISABLE KEYS */;
 INSERT INTO `tb01_paciente` (`tb01_nome`, `tb01_rg`, `tb01_cpf`, `tb01_telefone`, `tb01_email`, `tb01_data`, `tb01_imagem`, `tb01_proficao`, `tb01_endereco`, `tb01_idpaciente`, `tb01_idUsuario`) VALUES
 	('dawda', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', '1111@111', '29/05/2001', 'ce6ea6d087a1f1d3c3598ce3a14ad82cWallpaper OmniStack - 1920x1080.png', 'adawd', 'dadad', 71, 1),
 	('Gabriel Henrique Gigante da Silva', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', '', '26/12/2019', '20d7ec614f9ebdb74d27c47ef431fb07Wallpaper OmniStack - 1440x900.png', '', 'dadad', 70, 1),
-	('gabriel', '', '', '(33) 3 3333-3333', '', '29/05/2001', '85e4b33822fba96dc8f3f77116265f05bb4744f30c13ba63bf1c10f620cfa550.jpg', '', 'endereco', 69, 1);
+	('gabriel', '', '', '(33) 3 3333-3333', '', '29/05/2001', '85e4b33822fba96dc8f3f77116265f05bb4744f30c13ba63bf1c10f620cfa550.jpg', '', 'endereco', 69, 1),
+	('gabriel gigante', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', '1111@111', '29/05/2001', 'acdeddc921d32e558f183e4e4a1c2007foi+ben+10+(3).jpg', 'Programador', 'Rua Calixto Finelli', 72, 1),
+	('example', '', '', '(11) 1 1111-1111', '', '22/01/2020', '4b055749f4278f7f219a7e3f929024abbruno.jpeg', '', 'end', 73, 1);
 /*!40000 ALTER TABLE `tb01_paciente` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb02_estoque
@@ -48,13 +50,14 @@ CREATE TABLE IF NOT EXISTS `tb02_estoque` (
   `tb02_idProduto` int(100) NOT NULL AUTO_INCREMENT,
   `tb02_idUsuario` int(11) NOT NULL,
   PRIMARY KEY (`tb02_idProduto`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb02_estoque: 2 rows
+-- Copiando dados para a tabela bd_teste.tb02_estoque: 3 rows
 /*!40000 ALTER TABLE `tb02_estoque` DISABLE KEYS */;
 INSERT INTO `tb02_estoque` (`tb02_produto`, `tb02_quantidade`, `tb02_preco`, `tb02_idProduto`, `tb02_idUsuario`) VALUES
 	('produto1', 2, 60, 36, 2),
-	('produto1', 4, 60, 40, 1);
+	('produto1', 3, 60, 46, 1),
+	('tr', 12, 60, 45, 1);
 /*!40000 ALTER TABLE `tb02_estoque` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb03_tratamentos
@@ -73,7 +76,7 @@ INSERT INTO `tb03_tratamentos` (`tb03_nome`, `tb03_descricao`, `tb03_preco`, `tb
 	('editado', '111', 60, 2, 2),
 	('Tratamento 2', 'descricao do tratamento 2', 80, 4, 1),
 	('Tratamento 3', 'descricao do tratamento 3', 130, 5, 1),
-	('tratamento 1', 'descricao do tratamento 1', 100, 6, 1);
+	('tratamento 1', 'descricao do tratamento 1', 250, 6, 1);
 /*!40000 ALTER TABLE `tb03_tratamentos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb04_login
@@ -200,6 +203,19 @@ CREATE TABLE IF NOT EXISTS `tb09_dentistas` (
 INSERT INTO `tb09_dentistas` (`tb09_id`, `tb09_nome`) VALUES
 	(1, 'Gabriel Henrique Gigante da Silva');
 /*!40000 ALTER TABLE `tb09_dentistas` ENABLE KEYS */;
+
+-- Copiando estrutura para tabela bd_teste.tb10_imagens_paciente
+CREATE TABLE IF NOT EXISTS `tb10_imagens_paciente` (
+  `tb10_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tb10_id_paciente` int(11) DEFAULT NULL,
+  `tb10_imagem` varchar(500) DEFAULT NULL,
+  `tb10_id_usuario` int(11) DEFAULT NULL,
+  PRIMARY KEY (`tb10_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela bd_teste.tb10_imagens_paciente: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `tb10_imagens_paciente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb10_imagens_paciente` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
