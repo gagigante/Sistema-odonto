@@ -1,16 +1,9 @@
-/* .open-alert {
-    display: inherit;
-}
-
-.close-alert {
-    display: none;
-} */
 
 .gallery {        
     margin: 0 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;    
+    justify-content: center;    
 }
 
 .gallery > .gallery-item {    

@@ -78,32 +78,82 @@ $(document).ready(function() {
     });
 
     //ADICIONAR IMAGEM
-    $('#bt-add-image').click(function() {
-       
+    $('#patient-add-image-form').on('submit', function(e) {
+        
+        e.preventDefault();
+
+        var form = $('#patient-add-image-form')[0];        
+        var data = new FormData(form);
+        data.append('idPaciente', patientId);
+
         $.ajax({
+            type: 'POST',
             url: 'php/add-patient-image.php',
-            method: 'post',
-            data: new FormData($('#patient-add-image-form')[0]),
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function(response){
-                alert('rodou');
+            data: data,
+            processData: false,  
+            contentType: false,            
+            success: function(response){                
+                
+                $('.screen-alert').html(response); //ADICIONA O ALERT NA TELA
+                
+                //SELECT DAS IMAGENS
+                $.ajax({
+                    url: 'php/select-patient-images.php',
+                    type: 'POST', 
+                    data: {                   
+                        patient_id: patientId  
+                    },
+                    success: function(response) {                                                 
+                        $('.gallery-ajax-response').html(response);
+                    },
+                });                
             },
-        });// Fim do ajax
+        });    
 
-        // let image = document.getElementById("image-input");
-        // for (var i = 0; i < elem.files.length; ++ i) {
-        //    images.push(elem.files[i].name);
-        // }
-        // var produtoData = {
-    
-        //     'Titulo': $('#produtoTitulo').val(),
-        //     'Descricao': $('#produtoDescricao').val(),
-        //     'Imagem': images,
-        // };
+        $('#image-input').val("");    
+    });
 
-        //alert('clicou');
+    //APAGAR IMAGEM
+    $(document).on('click', '.btDelete', function () {
+        const buttonId = $('.btDelete').attr("id");        
+        $("#btConfirImageDelete").data("imageId", buttonId);        
+        $('#deleteImageModal').modal('show');
+    });  
+
+    //BOTAO DO MODAL PARA CONFIRMAR DELETE
+    $('#btConfirImageDelete').click(function() {
+
+        const imageId = $('#btConfirImageDelete').data('imageId');        
+
+        $.ajax({
+            url: 'php/delete-patient-image.php',
+            type: 'POST', 
+            data: {                   
+                imageId: imageId,  
+            },
+            success: function(response) {                                                 
+                                 
+                //ESTRUTURA DO ALERT
+                let alert = '<div class="alert alert-success alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-check mx-2"></i><strong>Sucesso!</strong> A imagem foi removida!</div>';
+                
+                $('.screen-alert').html(alert); //ADICIONA O ALERT NA TELA   
+
+                 //SELECT DAS IMAGENS
+                 $.ajax({
+                    url: 'php/select-patient-images.php',
+                    type: 'POST', 
+                    data: {                   
+                        patient_id: patientId  
+                    },
+                    success: function(response) {                                                 
+                        $('.gallery-ajax-response').html(response);
+                    },
+                });  
+
+            },
+        });    
+
+        $('#deleteImageModal').modal('hide');
     });
 });
 

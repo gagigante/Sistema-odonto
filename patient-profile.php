@@ -264,6 +264,9 @@
 
                 </div>
                 <!-- / .main-navbar -->
+
+                <div class="screen-alert" style="position: absolute; width: 100%;"></div>
+
                 <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
@@ -553,84 +556,35 @@
                                         <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="nav-contact-tab">
                                             
                                             <form style="margin: 30px" method="POST" enctype="multipart/form-data" id="patient-add-image-form">
-                                                <input type="file" id="image-input" class="btn" /> 
-                                                <Button type="button" class="btn btn-outline-success" id="bt-add-image">Adicionar imagem</Button>
+                                                <input type="file" name="image" id="image-input" require /> 
+                                                <Button type="submit" class="btn btn-outline-success" id="bt-add-image">Adicionar imagem</Button>
                                             </form>
                                             
-                                            <div class="gallery gallery-ajax-response">
-                                                
-                                                <!-- <div class="gallery-item">
-                                                    <img src="assets/images/profile-images/download.jpg">
-                                                    <div class="item-options">
-                                                        Image name goes here
-                                                        <button type="button"
-                                                            style="background: transparent; border: 0;cursor: pointer;">
-                                                            <i class="material-icons" style="color: red">delete</i>
-                                                        </button>
-                                                    </div>
-                                                </div>
+                                            <div class="gallery gallery-ajax-response"></div>
 
-                                                <div class="gallery-item">
-                                                    <img src="assets/images/profile-images/download.jpg">
-                                                    <div class="item-options">
-                                                        Image name goes here
-                                                        <button type="button"
-                                                            style="background: transparent; border: 0;cursor: pointer;">
-                                                            <i class="material-icons" style="color: red">delete</i>
-                                                        </button>
+                                            <!-- MODAL DE CONFIRMACAO DE PAGAMENTO DA TAB DEBITO -->
+                                            <div class="modal fade" id="deleteImageModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="ModalLabel">Confirmar ação</h5>                                
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div>
+                                                            <div class="modal-body" style="padding-bottom: 0;">
+                                                                <p>Deseja mesmo apagar esta imagem?</p>      
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" id="btConfirImageDelete" class="btn btn-danger save"><i class="material-icons" style="font-size: 18px">check</i></button>     
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="gallery-item">
-                                                    <img src="assets/images/profile-images/download.jpg">
-                                                    <div class="item-options">
-                                                        Image name goes here
-                                                        <button type="button"
-                                                            style="background: transparent; border: 0;cursor: pointer;">
-                                                            <i class="material-icons" style="color: red">delete</i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="gallery-item">
-                                                    <img src="assets/images/profile-images/download.jpg">
-                                                    <div class="item-options">
-                                                        Image name goes here
-                                                        <button type="button"
-                                                            style="background: transparent; border: 0;cursor: pointer;">
-                                                            <i class="material-icons" style="color: red">delete</i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="gallery-item">
-                                                    <img src="assets/images/profile-images/download.jpg">
-                                                    <div class="item-options">
-                                                        Image name goes here
-                                                        <button type="button"
-                                                            style="background: transparent; border: 0;cursor: pointer;">
-                                                            <i class="material-icons" style="color: red">delete</i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="gallery-item">
-                                                    <img src="assets/images/profile-images/download.jpg">
-                                                    <div class="item-options">
-                                                        Image name goes here
-                                                        <button type="button"
-                                                            style="background: transparent; border: 0;cursor: pointer;">
-                                                            <i class="material-icons" style="color: red">delete</i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="gallery-item">
-                                                    <img src="assets/images/profile-images/download.jpg">
-                                                    <div class="item-options">
-                                                        Image name goes here
-                                                        <button type="button"
-                                                            style="background: transparent; border: 0;cursor: pointer;">
-                                                            <i class="material-icons" style="color: red">delete</i>
-                                                        </button>
-                                                    </div>
-                                                </div> -->
                                             </div>
+
                                         </div>
 
                                         <!-- TAB 6 - DOCUMENTOS -->
