@@ -26,7 +26,12 @@
 	
 		// Verifica se o upload foi enviado via POST   
 		if(is_uploaded_file($arquivo['tmp_name'])) {  
-	       
+	       		
+			if (!file_exists('assets/images/patients-images')) {
+		    		mkdir('assets/images/patients-images', 0777, true);
+			}
+			
+			
 			// Essa função move_uploaded_file() copia e verifica se o arquivo enviado foi copiado com sucesso para o destino  
 			if (!move_uploaded_file($arquivo['tmp_name'], '../assets/images/patients-images/' . $imageNameWithHash)){  
 				
