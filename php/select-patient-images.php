@@ -10,19 +10,20 @@
 
     if($resultadoselect->num_rows>0) { 
 
-        $cont = 1;
+        //$cont = 1;
 
         while ($linha = $resultadoselect->fetch_assoc()){    
                  
             echo '<div class="gallery-item">';
                 echo '<img src="assets/images/patients-images/' .$linha['tb10_imagem']. '">';
                 echo '<div class="item-options">';
-                    echo $cont;
+                    echo '<a href="assets/images/patients-images/' .$linha['tb10_imagem']. '" download>Download</a>';
+                    //echo $cont;
                     echo '<button type="button" class="btn btn-outline-danger btDelete" id="' .$linha['tb10_id']. '" >Remover </button>';
                 echo '</div>';
             echo '</div>';
 
-            $cont++;           
+            //$cont++;           
         }                
         
     }else {

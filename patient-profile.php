@@ -560,9 +560,12 @@
                                                 <Button type="submit" class="btn btn-outline-success" id="bt-add-image">Adicionar imagem</Button>
                                             </form>
                                             
-                                            <div class="gallery gallery-ajax-response"></div>
+                                            <!-- <div class="gallery gallery-ajax-response"> -->
+                                            <div class="gallery gallery-ajax-response">
+                                            
+                                            </div>
 
-                                            <!-- MODAL DE CONFIRMACAO DE PAGAMENTO DA TAB DEBITO -->
+                                            <!-- MODAL DE CONFIRMACAO DE DELETE-->
                                             <div class="modal fade" id="deleteImageModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
