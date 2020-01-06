@@ -27,8 +27,12 @@
 		// Verifica se o upload foi enviado via POST   
 		if(is_uploaded_file($arquivo['tmp_name'])) {  
 	       		
-			if (!file_exists('assets/images/patients-images')) {
-		    		mkdir('assets/images/patients-images', 0777, true);
+// 			if (!file_exists('assets/images/patients-images')) {
+// 		    		mkdir('assets/images/patients-images', 0777, true);
+// 			}
+			
+			if(!file_exists("a../ssets/images/patients-images")) {
+	               		mkdir("../assets/images/patients-images");  
 			}
 			
 			
