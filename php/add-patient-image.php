@@ -35,7 +35,7 @@
 			if (!move_uploaded_file($arquivo['tmp_name'], '../assets/images/patients-images/' . $imageNameWithHash)){  
 				
 				//ERRO - ARQUIVO NAO COPIADO
-				echo('<div class="alert alert-success alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-times mx-2"></i><strong>Erro!</strong> Algo não occoreu como o esperado!</div>');
+				echo('<div class="alert alert-danger alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-times mx-2"></i><strong>Erro!</strong> Algo não occoreu como o esperado!</div>');
 				exit();  
 			}
 
