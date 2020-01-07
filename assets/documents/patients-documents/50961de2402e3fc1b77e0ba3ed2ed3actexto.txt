@@ -1,0 +1,6 @@
+doc
+pdf
+ppt
+txt
+xls
+zip
