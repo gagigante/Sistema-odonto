@@ -114,7 +114,6 @@ $(document).ready(function() {
     });
 
     //APAGAR IMAGEM
-
     var selectedImageId;
 
     $(document).on('click', '.btDelete', function () {
@@ -159,6 +158,99 @@ $(document).ready(function() {
     });
 
     // TAB 6 - DOCUMENTOS
+
+    //SELECT DOS DOCUMENTOS
+    $.ajax({
+        url: 'php/select-patient-documents.php',
+        type: 'POST', 
+        data: {                   
+            patient_id: patientId  
+        },
+        success: function(response) {
+            $('.document-ajax-response').html(response);
+        },
+    });
+
+     //ADICIONAR DOCUMENTO
+     $('#patient-add-document-form').on('submit', function(e) {
+        
+        e.preventDefault();
+
+        var form = $('#patient-add-document-form')[0];        
+        var data = new FormData(form);
+        data.append('idPaciente', patientId);
+
+        $.ajax({
+            type: 'POST',
+            url: 'php/add-patient-document.php',
+            data: data,
+            processData: false,  
+            contentType: false,            
+            success: function(response){                
+                
+                $('.screen-alert').html(response); //ADICIONA O ALERT NA TELA
+                
+                //SELECT DOS DOCUMENTOS
+                $.ajax({
+                    url: 'php/select-patient-documents.php',
+                    type: 'POST', 
+                    data: {                   
+                        patient_id: patientId  
+                    },
+                    success: function(response) {
+                        $('.document-ajax-response').html(response);
+                    },
+                });      
+            },
+        });    
+
+        $('#document-input').val("");    
+        $('#documentName').val("");    
+    });
+
+    //APAGAR DOCUMENTO
+    var selectedDocId;
+
+    $(document).on('click', '.btDeleteDoc', function () {
+        selectedDocId = $(this).attr("id");        
+        $('#deleteDocModal').modal('show');
+    });  
+
+    //BOTAO DO MODAL PARA CONFIRMAR DELETE
+    $('#btConfirDocDelete').click(function() {
+
+        const docId = selectedDocId;
+
+        $.ajax({
+            url: 'php/delete-patient-document.php',
+            type: 'POST', 
+            data: {                   
+                docId: docId,  
+            },
+            success: function(response) {                                                 
+                                 
+                //ESTRUTURA DO ALERT
+                let alert = '<div class="alert alert-success alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-check mx-2"></i><strong>Sucesso!</strong> O documento foi removido!</div>';
+
+                $('.screen-alert').html(alert); //ADICIONA O ALERT NA TELA   
+
+                //SELECT DOS DOCUMENTOS
+                $.ajax({
+                    url: 'php/select-patient-documents.php',
+                    type: 'POST', 
+                    data: {                   
+                        patient_id: patientId  
+                    },
+                    success: function(response) {
+                        $('.document-ajax-response').html(response);
+                    },
+                });     
+
+            },
+        });    
+
+        $('#deleteDocModal').modal('hide');
+    });
 
     //TAB 7 - DEBITOS
 

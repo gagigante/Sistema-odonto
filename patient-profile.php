@@ -556,14 +556,11 @@
                                         <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="nav-contact-tab">
                                             
                                             <form style="margin: 30px" method="POST" enctype="multipart/form-data" id="patient-add-image-form">
-                                                <input type="file" name="image" id="image-input" require /> 
+                                                <input type="file" name="image" id="image-input" required /> 
                                                 <Button type="submit" class="btn btn-outline-success" id="bt-add-image">Adicionar imagem</Button>
                                             </form>
-                                            
-                                            <!-- <div class="gallery gallery-ajax-response"> -->
-                                            <div class="gallery gallery-ajax-response">
-                                            
-                                            </div>
+                                                                                        
+                                            <div class="gallery gallery-ajax-response"></div>
 
                                             <!-- MODAL DE CONFIRMACAO DE DELETE-->
                                             <div class="modal fade" id="deleteImageModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -593,69 +590,45 @@
                                         <!-- TAB 6 - DOCUMENTOS -->
                                         <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="nav-contact-tab">
 
-                                        <form style="margin: 30px" method="POST" enctype="multipart/form-data" id="patient-add-document-form">
-                                                <input type="file" name="document" id="document-input" require /> 
-                                                <Button type="submit" class="btn btn-outline-success" id="bt-add-document">Adicionar imagem</Button>
+                                            <form style="margin: 30px" method="POST" enctype="multipart/form-data" id="patient-add-document-form">
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-4">
+                                                        <input type="file" name="document" id="document-input" required /> 
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <input type="text" class="form-control" name="documentName" id="documentName" placeholder="Nome do documento" required />
+                                                    </div>                                          
+                                                    <div class="form-group col-md-4">
+                                                        <Button type="submit" class="btn btn-outline-success" id="bt-add-document">Adicionar documento</Button>
+                                                    </div>  
+                                                </div>    
                                             </form>
-                                            
-                                            <!-- <div class="gallery gallery-ajax-response"> -->
-                                            <div class="document-ajax-response" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; padding: 20px">
-                                                
-                                                <div style="margin: 10px; padding: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-radius: 8px;  ">
-                                                    <img style="width: 180px; height: 180px;" src="assets/images/filesIcons/psd.png" />
-                                                    <div style="height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
-                                                        <a href="#" download>Download</a>
-                    
-                                                        <button type="button" class="btn btn-outline-danger">Remover </button>
-                                                    </div>
-                                                </div>
+                                                                                        
+                                            <div class="documents document-ajax-response"> </div> 
 
-                                                <div style="margin: 10px; padding: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-radius: 8px;  ">
-                                                    <img style="width: 180px; height: 180px;" src="assets/images/filesIcons/psd.png" />
-                                                    <div style="height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
-                                                        <a href="#" download>Download</a>
-                    
-                                                        <button type="button" class="btn btn-outline-danger">Remover </button>
+                                            <!-- MODAL DE CONFIRMACAO DE DELETE-->
+                                            <div class="modal fade" id="deleteDocModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="ModalLabel">Confirmar ação</h5>                                
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div>
+                                                            <div class="modal-body" style="padding-bottom: 0;">
+                                                                <p>Deseja mesmo apagar este documento?</p>      
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" id="btConfirDocDelete" class="btn btn-danger save"><i class="material-icons" style="font-size: 18px">check</i></button>     
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-
-                                                <div style="margin: 10px; padding: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-radius: 8px;  ">
-                                                    <img style="width: 180px; height: 180px;" src="assets/images/filesIcons/psd.png" />
-                                                    <div style="height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
-                                                        <a href="#" download>Download</a>
-                    
-                                                        <button type="button" class="btn btn-outline-danger">Remover </button>
-                                                    </div>
-                                                </div>
-
-                                                <div style="margin: 10px; padding: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-radius: 8px;  ">
-                                                    <img style="width: 180px; height: 180px;" src="assets/images/filesIcons/psd.png" />
-                                                    <div style="height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
-                                                        <a href="#" download>Download</a>
-                    
-                                                        <button type="button" class="btn btn-outline-danger">Remover </button>
-                                                    </div>
-                                                </div>
-                                                <div style="margin: 10px; padding: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-radius: 8px;  ">
-                                                    <img style="width: 180px; height: 180px;" src="assets/images/filesIcons/psd.png" />
-                                                    <div style="height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
-                                                        <a href="#" download>Download</a>
-                    
-                                                        <button type="button" class="btn btn-outline-danger">Remover </button>
-                                                    </div>
-                                                </div>
-                                                <div style="margin: 10px; padding: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-radius: 8px;  ">
-                                                    <img style="width: 180px; height: 180px;" src="assets/images/filesIcons/psd.png" />
-                                                    <div style="height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
-                                                        <a href="#" download>Download</a>
-                    
-                                                        <button type="button" class="btn btn-outline-danger">Remover </button>
-                                                    </div>
-                                                </div>
-
                                             </div>
 
-                                            
                                         </div>
 
                                         <!-- TAB 7 - DEBITOS -->
