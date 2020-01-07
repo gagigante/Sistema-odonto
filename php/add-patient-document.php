@@ -8,7 +8,7 @@
 
 	if(isset($_FILES['document']) && $_FILES['document']['size'] > 0) {  
  
-		$extensoes_aceitas = array('doc' ,'pdf', 'ppt', 'txt', 'xlsx', 'zip');
+		$extensoes_aceitas = array('docx' ,'pdf', 'ppt', 'txt', 'xlsx', 'zip');
 		$array_extensoes   = explode('.', $_FILES['document']['name']);
 	    $extensao = strtolower(end($array_extensoes));
  
