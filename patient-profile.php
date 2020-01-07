@@ -592,7 +592,70 @@
 
                                         <!-- TAB 6 - DOCUMENTOS -->
                                         <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                            tab6
+
+                                        <form style="margin: 30px" method="POST" enctype="multipart/form-data" id="patient-add-document-form">
+                                                <input type="file" name="document" id="document-input" require /> 
+                                                <Button type="submit" class="btn btn-outline-success" id="bt-add-document">Adicionar imagem</Button>
+                                            </form>
+                                            
+                                            <!-- <div class="gallery gallery-ajax-response"> -->
+                                            <div class="document-ajax-response" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; padding: 20px">
+                                                
+                                                <div style="margin: 10px; padding: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-radius: 8px;  ">
+                                                    <img style="width: 180px; height: 180px;" src="assets/images/filesIcons/psd.png" />
+                                                    <div style="height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+                                                        <a href="#" download>Download</a>
+                    
+                                                        <button type="button" class="btn btn-outline-danger">Remover </button>
+                                                    </div>
+                                                </div>
+
+                                                <div style="margin: 10px; padding: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-radius: 8px;  ">
+                                                    <img style="width: 180px; height: 180px;" src="assets/images/filesIcons/psd.png" />
+                                                    <div style="height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+                                                        <a href="#" download>Download</a>
+                    
+                                                        <button type="button" class="btn btn-outline-danger">Remover </button>
+                                                    </div>
+                                                </div>
+
+                                                <div style="margin: 10px; padding: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-radius: 8px;  ">
+                                                    <img style="width: 180px; height: 180px;" src="assets/images/filesIcons/psd.png" />
+                                                    <div style="height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+                                                        <a href="#" download>Download</a>
+                    
+                                                        <button type="button" class="btn btn-outline-danger">Remover </button>
+                                                    </div>
+                                                </div>
+
+                                                <div style="margin: 10px; padding: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-radius: 8px;  ">
+                                                    <img style="width: 180px; height: 180px;" src="assets/images/filesIcons/psd.png" />
+                                                    <div style="height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+                                                        <a href="#" download>Download</a>
+                    
+                                                        <button type="button" class="btn btn-outline-danger">Remover </button>
+                                                    </div>
+                                                </div>
+                                                <div style="margin: 10px; padding: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-radius: 8px;  ">
+                                                    <img style="width: 180px; height: 180px;" src="assets/images/filesIcons/psd.png" />
+                                                    <div style="height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+                                                        <a href="#" download>Download</a>
+                    
+                                                        <button type="button" class="btn btn-outline-danger">Remover </button>
+                                                    </div>
+                                                </div>
+                                                <div style="margin: 10px; padding: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-radius: 8px;  ">
+                                                    <img style="width: 180px; height: 180px;" src="assets/images/filesIcons/psd.png" />
+                                                    <div style="height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+                                                        <a href="#" download>Download</a>
+                    
+                                                        <button type="button" class="btn btn-outline-danger">Remover </button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            
                                         </div>
 
                                         <!-- TAB 7 - DEBITOS -->

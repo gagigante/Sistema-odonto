@@ -114,16 +114,18 @@ $(document).ready(function() {
     });
 
     //APAGAR IMAGEM
+
+    var selectedImageId;
+
     $(document).on('click', '.btDelete', function () {
-        const buttonId = $('.btDelete').attr("id");        
-        $("#btConfirImageDelete").data("imageId", buttonId);        
+        selectedImageId = $(this).attr("id");                 
         $('#deleteImageModal').modal('show');
     });  
 
     //BOTAO DO MODAL PARA CONFIRMAR DELETE
     $('#btConfirImageDelete').click(function() {
 
-        const imageId = $('#btConfirImageDelete').data('imageId');        
+        const imageId = selectedImageId;
 
         $.ajax({
             url: 'php/delete-patient-image.php',
