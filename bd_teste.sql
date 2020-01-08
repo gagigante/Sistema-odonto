@@ -128,9 +128,9 @@ CREATE TABLE IF NOT EXISTS `tb06_eventos` (
   `tb06_inicio` datetime NOT NULL,
   `tb06_fim` datetime NOT NULL,
   PRIMARY KEY (`tb06_idEvento`)
-) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela bd_teste.tb06_eventos: 23 rows
+-- Copiando dados para a tabela bd_teste.tb06_eventos: 25 rows
 /*!40000 ALTER TABLE `tb06_eventos` DISABLE KEYS */;
 INSERT INTO `tb06_eventos` (`tb06_idEvento`, `tb06_idUsuario`, `tb06_nome`, `tb06_paciente`, `tb06_descricao`, `tb06_cor`, `tb06_inicio`, `tb06_fim`) VALUES
 	(56, 1, 'dadada', 'GABRIEL SOUZA PEREIRA', 'adada', '#b5b5b5', '2019-11-13 10:00:00', '2019-11-13 10:15:00'),
@@ -155,7 +155,9 @@ INSERT INTO `tb06_eventos` (`tb06_idEvento`, `tb06_idUsuario`, `tb06_nome`, `tb0
 	(67, 1, 'dadad', 'editado', 'adada', '#ffd700', '2019-11-14 09:30:00', '2019-11-14 09:45:00'),
 	(68, 1, 'adada', 'GABRIEL SOUZA PEREIRA', 'dawdada', '#b5b5b5', '2019-11-26 08:00:00', '2019-11-26 09:00:00'),
 	(69, 1, 'adada', 'Gabriel Henrique Gigante da Silva', 'dadada', '#ffd700', '2019-12-05 10:30:00', '2019-12-05 11:15:00'),
-	(71, 1, 'adada', 'Gabriel Henrique Gigante da Silva', 'dadad', '#ffd700', '2019-12-24 09:00:00', '2019-12-24 09:15:00');
+	(71, 1, 'adada', 'Gabriel Henrique Gigante da Silva', 'dadad', '#ffd700', '2019-12-24 09:00:00', '2019-12-24 09:15:00'),
+	(72, 1, 'dadad', 'gabriel', 'DAD', '#b5b5b5', '2020-01-06 07:30:00', '2020-01-06 08:00:00'),
+	(73, 1, 'adada', 'Gabriel Henrique Gigante da Silva', 'ADA', '#ff6363', '2020-01-06 08:15:00', '2020-01-06 08:45:00');
 /*!40000 ALTER TABLE `tb06_eventos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb07_consultas
@@ -211,11 +213,34 @@ CREATE TABLE IF NOT EXISTS `tb10_imagens_paciente` (
   `tb10_imagem` varchar(500) DEFAULT NULL,
   `tb10_id_usuario` int(11) DEFAULT NULL,
   PRIMARY KEY (`tb10_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb10_imagens_paciente: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela bd_teste.tb10_imagens_paciente: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb10_imagens_paciente` DISABLE KEYS */;
+INSERT INTO `tb10_imagens_paciente` (`tb10_id`, `tb10_id_paciente`, `tb10_imagem`, `tb10_id_usuario`) VALUES
+	(59, 70, 'ff53dcf598ea37a7b63da33649de626d5723fab70e21634575011f03qr-635-gb-01-eps.jpeg', 1),
+	(60, 70, '8d112ebb81f4b5554a52c8f23f497a1dbruno.jpeg', 1),
+	(61, 70, '47dc93ba1c51e46c4e4848d38b04b097bb4744f30c13ba63bf1c10f620cfa550.jpg', 1),
+	(94, 72, 'e33529be7e649e1e1e243166447575a85723fab70e21634575011f03qr-635-gb-01-eps.jpeg', 1),
+	(95, 72, '81d460cfcd057bbb739fda6a81e778a4bruno.jpeg', 1),
+	(101, 73, 'c11f195946c998bc77f1a98b69a9e4235723fab70e21634575011f03qr-635-gb-01-eps.jpeg', 1),
+	(102, 71, '8eb288ec9ceb878364ae288cff53c231PHP.jpg', 1);
 /*!40000 ALTER TABLE `tb10_imagens_paciente` ENABLE KEYS */;
+
+-- Copiando estrutura para tabela bd_teste.tb11_documentos_paciente
+CREATE TABLE IF NOT EXISTS `tb11_documentos_paciente` (
+  `tb11_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tb11_id_paciente` int(11) NOT NULL,
+  `tb11_documento` varchar(500) NOT NULL,
+  `tb11_nome` varchar(100) NOT NULL,
+  `tb11_extencao` varchar(100) NOT NULL,
+  `tb11_id_usuario` int(11) NOT NULL,
+  PRIMARY KEY (`tb11_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela bd_teste.tb11_documentos_paciente: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `tb11_documentos_paciente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb11_documentos_paciente` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

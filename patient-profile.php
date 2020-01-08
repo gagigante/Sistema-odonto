@@ -1,27 +1,4 @@
-<?php 
-
-    include_once "php/conexao.php"; 
-    include 'php/verificaLogin.php';
-
-    $idLogin = $_SESSION['idUsuario'];
-    
-    
-    $id = isset($_GET["id"]) ? (int) $_GET['id'] : 0;  
-
-    if (!isset($_SESSION)) {
-        header("Location: login.php");
-            
-    }
-    
-    if($id == 1){       
-        header("Location:pacients.php");
-
-    }else{
-
-        
-?>
-
-
+<!doctype html>
 <html class="no-js h-100">
 
 <head>
@@ -114,15 +91,12 @@
 
     <?php        
 
-        $queryselect = "select * from tb01_paciente where tb01_idpaciente = $id and tb01_idUsuario = $idLogin";
-        $resultadoselect = $conexao->query($queryselect);
-
-            if($resultadoselect->num_rows>0){
-                while ($linha = $resultadoselect->fetch_assoc()){   
-
-                if(empty($linha["tb01_imagem"])){
-                    $linha["tb01_imagem"] = "0.jpg";
-                }                                           
+        require 'php/conexao.php';
+        require 'php/verificaLogin.php';
+        
+        if (!isset($_GET['id']) || empty($_GET['id'])) {
+            header("Location: patients.php");                
+        }                         
 
     ?>
 
@@ -279,11 +253,11 @@
                     <div class="row">
                         <div class="col">
                             <div class="card card-small mb-4">
+                                
                                 <div class="card-header">
                                     <div style="display: flex; flex-direction: row;height: 100%;padding-left: 10px;">
-                                        <img width="60px" height="60px" class="user-avatar rounded-circle mr-2" <?php echo "src='assets/images/patients-profile-images/".$linha["tb01_imagem"]."'"; ?>
-                                            alt="User Avatar" width="60px">
-                                        <p style="margin: auto 10px" id="nomeUser"></p>
+                                        <img width="60px" height="60px" id="userProfileImage" class="user-avatar rounded-circle mr-2" alt="User Avatar">
+                                        <p style="margin: auto 10px" id="nomeUser"> </p>
                                     </div>
                                 </div>
 
@@ -311,64 +285,50 @@
 
                                     <div class="tab-content" id="nav-tabContent">
 
+
+                                        <!-- TAB 1 - SOBRE -->
                                         <div class="tab-pane fade show active" id="tab1" role="tabpanel">
-                                            <form class="col-md-8" style="padding: 30px;" id="formEdita">
+                                            <form method="POST" enctype="multipart/form-data" id="formEdita" class="col-md-8" style="padding: 30px;">
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
-                                                        <input type="text" class="form-control" name="name" id="name"
-                                                            placeholder="Nome completo" value="<?php echo $linha["tb01_nome"];; ?>"
-                                                            readonly>
-                                                        <input type="hidden"  name="idpaciente" id="idpaciente" value="<?php echo $linha["tb01_idpaciente"];; ?>" readonly>    
+                                                        <input type="text" class="form-control" name="name" id="name" placeholder="Nome completo" readonly>                           
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <input type="text" class="form-control" name="rg" id="rg"
-                                                            placeholder="RG" value="<?php echo $linha["tb01_rg"];; ?>" readonly>
+                                                        <input type="text" class="form-control" name="rg" id="rg" placeholder="RG" readonly>
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        <input type="text" class="form-control" name="cpf" id="cpf"
-                                                            placeholder="CPF" value="<?php echo $linha["tb01_cpf"];; ?>" readonly>
+                                                        <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <input type="text" class="form-control" name="phone" id="phone"
-                                                            placeholder="Telefone" value="<?php echo $linha["tb01_telefone"];; ?>" readonly>
+                                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefone" required readonly>
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        <input type="email" class="form-control" name="email" id="email"
-                                                            placeholder="E-mail" value="<?php echo $linha["tb01_email"];; ?>" readonly>
+                                                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <input type="text" class="form-control" name="dateOfBirth"
-                                                            id="dateOfBirth" placeholder="Data de nascimento"
-                                                            value="<?php echo $linha["tb01_data"];; ?>" readonly>
+                                                        <input type="text" class="form-control" name="dateOfBirth" id="dateOfBirth" placeholder="Data de nascimento" required readonly>
                                                     </div>
-                                                    <div class="form-group col-md-6">                                                        
+                                                    <div class="form-group col-md-6">          
                                                         <input type="file" accept="image/png, image/jpeg, image/jpg" onchange="verificaExtensao(this)" id="photo" name="photo" class="btn">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <input type="button" name="button" type="button" id="edit-btn"
+                                                        <input type="submit" name="button" type="button" id="edit-btn"
                                                             class="btn btn-outline-success" value="Editar perfil"
                                                             style="width: 125px;" />
                                                     </div>
                                                 </div>
                                             </form>
-                                            <div class="col-md-4">
-                                            </div>
-                                        </div>
-                                    <?php }
 
-                                        }else{
-                                            header("Location: patients.php");
-                                        }
-
-                                     ?>
+                                            <div class="col-md-4"> </div>
+                                        </div>                                   
 
                                         <!-- TAB 2 - ORCAMENTOS -->
                                         <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="nav-profile-tab" style="padding: 30px;">
@@ -463,90 +423,7 @@
                                             <a href="add-treatment.php?id=<?php echo $_GET['id']; ?>" class="btn btn-outline-success" style="width: 140px; margin: 10px">Adicionar consulta</a>
 
                                             <div class="query-ajax-response"> </div>
-                                            
-                                            <!-- <div class='table-responsive'>
-                                                <table class='table mb-0'>                                            
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col" class="border-0">Descrição</th>
-                                                            <th scope="col" class="border-0">Valor</th>
-                                                            <th scope="col" class="border-0">Data</th>
-                                                            <th scope="col" class="border-0">Pagamento</th>
-                                                            <th scope="col" class="border-0">Ações</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
 
-                                                        <tr>
-                                                            <td>Plano tratamento de fulano</td>
-                                                            <td>R$ 80.00</td>
-                                                            <td>99/99/9999</td>
-                                                            <td> 
-                                                                <i class="material-icons" style="color: #ddd">check</i> 
-                                                            </td>
-                                                            <td>
-                                                                <a href="edit-treatment.php" class="btn">Editar</a>
-
-                                                                <button type="button"
-                                                                    style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons"
-                                                                        style="color: #999">find_in_page</i>
-                                                                </button>
-
-                                                                <button id="btDeleteTreatment" type="button" style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons" style="color: red">delete</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>Plano tratamento de fulano</td>
-                                                            <td>R$ 80.00</td>
-                                                            <td>99/99/9999</td>
-                                                            <td>
-                                                                <i class="material-icons" style="color: #32a852">check</i> 
-                                                            </td>
-                                                            <td>
-                                                                <a href="edit-treatment.php" class="btn">Editar</a>
-
-                                                                <button type="button"
-                                                                    style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons"
-                                                                        style="color: #999">find_in_page</i>
-                                                                </button>
-
-                                                                <button id="btDeleteTreatment" type="button"
-                                                                    style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons" style="color: red">delete</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>Plano tratamento de fulano</td>
-                                                            <td>R$ 80.00</td>
-                                                            <td>99/99/9999</td>
-                                                            <td>
-                                                                <i class="material-icons" style="color: #32a852;">check</i> 
-                                                            </td>
-                                                            <td>
-                                                                <a href="edit-treatment.php" class="btn">Editar</a>                                                          
-                                                                <button type="button"
-                                                                    style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons"
-                                                                        style="color: #999">find_in_page</i>
-                                                                </button>
-
-                                                                <button id="btDeleteTreatment" type="button"
-                                                                    style="background: transparent; border: 0;cursor: pointer;">
-                                                                    <i class="material-icons" style="color: red">delete</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-
-                                                    </tbody>
-                                                </table> 
-                                            </div>                           -->
                                         </div>
 
                                         <!-- TAB 4 - ANAMNESE -->
@@ -768,8 +645,3 @@
 </body>
 
 </html>
-
-<?php     
-
-        }
-?>

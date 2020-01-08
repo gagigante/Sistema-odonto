@@ -4,6 +4,48 @@ $(document).ready(function() {
     const url = window.location.href; 
     const patientId = url.split('?')[1].split('=')[1];     
 
+    // TAB 1 - SOBRE
+
+    //SELECT DOS DADOS DO PACIENTE
+    $.ajax({
+        url: 'php/select-patient-data.php',
+        type: 'POST', 
+        data: {                   
+            patient_id: patientId  
+        },
+        success: function(response) {  
+                      
+            var data = JSON.parse(response);
+ 
+            $('#nomeUser').text(data[0].nome);
+            $("#userProfileImage").attr("src","assets/images/patients-profile-images/" +data[0].imagem+ "");
+
+            $('#name').val(data[0].nome);
+            $('#rg').val(data[0].rg);
+            $('#cpf').val(data[0].cpf);
+            $('#phone').val(data[0].telefone);
+            $('#email').val(data[0].email);
+            $('#dateOfBirth').val(data[0].data);
+
+        },
+    });
+
+    //UPDATE DOS DADOS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     $.ajax({
         url: 'php/select-query.php',
         type: 'POST', 
@@ -23,43 +65,35 @@ $(document).ready(function() {
         $('#confirmDeleteTreatmentModal').modal('show');
     });
 
-    //EVENTO DISPARADO AO FECHAR O MODAL PARA RESETAR OS CAMPOS
-    // $('#debitModal').on('hidden.bs.modal', function (e) { 
-    //     //alert('o modal foi fechado');
-    //     $('#debitDescription').val("");
-    //     $('#debitPrice').val("");
-    //     $('#debitDate').val("");
-    // });
-
     $('.btDeleteDebit').click(function(e) {
         $('#deleteDebitModal').modal('show');        
     });
 
     $('#edit-btn').click(function(e){
                 
-        e.preventDefault();
+        // e.preventDefault();
 
-        var id = $('#idpaciente').val();
-        var nome = $('#name').val();
-        var rg = $('#rg').val();
-        var cpf = $('#cpf').val();
-        var telefone = $('#phone').val();
-        var email = $('#email').val();
-        var data = $('#dateOfBirth').val();    
-        document.getElementById("nomeUser").innerHTML = nome;  
+        // var id = $('#idpaciente').val();
+        // var nome = $('#name').val();
+        // var rg = $('#rg').val();
+        // var cpf = $('#cpf').val();
+        // var telefone = $('#phone').val();
+        // var email = $('#email').val();
+        // var data = $('#dateOfBirth').val();    
+        // document.getElementById("nomeUser").innerHTML = nome;  
 
-        $.post('php/patient-profile-edita.php', {
-            id:id,
-            nome:nome,
-            rg:rg,
-            cpf:cpf,
-            telefone:telefone,
-            email:email,
-            data:data
+        // $.post('php/patient-profile-edita.php', {
+        //     id:id,
+        //     nome:nome,
+        //     rg:rg,
+        //     cpf:cpf,
+        //     telefone:telefone,
+        //     email:email,
+        //     data:data
 
-        }, function(resposta){
+        // }, function(resposta){
 
-        });
+        // });
         
     });
 
@@ -171,8 +205,8 @@ $(document).ready(function() {
         },
     });
 
-     //ADICIONAR DOCUMENTO
-     $('#patient-add-document-form').on('submit', function(e) {
+    //ADICIONAR DOCUMENTO
+    $('#patient-add-document-form').on('submit', function(e) {
         
         e.preventDefault();
 
