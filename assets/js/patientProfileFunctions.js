@@ -14,24 +14,96 @@ $(document).ready(function() {
             patient_id: patientId  
         },
         success: function(response) {  
-                      
+
             var data = JSON.parse(response);
  
             $('#nomeUser').text(data[0].nome);
-            $("#userProfileImage").attr("src","assets/images/patients-profile-images/" +data[0].imagem+ "");
+            $("#userProfileImage").attr("src","assets/images/patients-profile-images/" +data[0].imagem);
 
             $('#name').val(data[0].nome);
+            $('#address').val(data[0].endereco);
             $('#rg').val(data[0].rg);
             $('#cpf').val(data[0].cpf);
             $('#phone').val(data[0].telefone);
             $('#email').val(data[0].email);
             $('#dateOfBirth').val(data[0].data);
-
         },
     });
 
-    //UPDATE DOS DADOS
+    //UPDATE DOS DADOS    
+    $('#about-patient-form').on('submit', function(e) {
+        
+        e.preventDefault();
 
+        const BtValue = $('#edit-btn').val();
+
+        if (BtValue === "Editar perfil") {
+
+            $("#name").attr("readonly", false);
+            $("#address").attr("readonly", false);
+            $("#rg").attr("readonly", false);
+            $("#cpf").attr("readonly", false);
+            $("#phone").attr("readonly", false);
+            $("#email").attr("readonly", false);
+            $("#dateOfBirth").attr("readonly", false);
+
+            $('#edit-btn').val("Salvar alterações");
+
+        } else {
+
+            let form = $('#about-patient-form')[0];        
+            let data = new FormData(form);
+            data.append('idPaciente', patientId);
+
+            $.ajax({
+                type: 'POST',
+                url: 'php/update-patient-data.php',
+                data: data,
+                processData: false,  
+                contentType: false,            
+                success: function(response) {    
+
+                    $('.screen-alert').html(response); //ADICIONA O ALERT NA TELA
+
+                    //SELECT DOS DADOS DO PACIENTE
+                    $.ajax({
+                        url: 'php/select-patient-data.php',
+                        type: 'POST', 
+                        data: {                   
+                            patient_id: patientId  
+                        },
+                        success: function(response) {  
+
+                            var data = JSON.parse(response);
+                
+                            $('#nomeUser').text(data[0].nome);
+                            $("#userProfileImage").attr("src","assets/images/patients-profile-images/" +data[0].imagem);
+
+                            $('#name').val(data[0].nome);
+                            $('#address').val(data[0].endereco);
+                            $('#rg').val(data[0].rg);
+                            $('#cpf').val(data[0].cpf);
+                            $('#phone').val(data[0].telefone);
+                            $('#email').val(data[0].email);
+                            $('#dateOfBirth').val(data[0].data);
+                        },
+                    });
+                }
+            });
+
+            $("#name").attr("readonly", true);
+            $("#address").attr("readonly", true);
+            $("#rg").attr("readonly", true);
+            $("#cpf").attr("readonly", true);
+            $("#phone").attr("readonly", true);
+            $("#email").attr("readonly", true);
+            $("#dateOfBirth").attr("readonly", true);
+
+            $('#edit-btn').val("Editar perfil");
+
+            $('#profile-photo').val("");   
+        }
+    });
 
 
 

@@ -54,34 +54,9 @@
             $('#phone').mask('(00) 0 0000-0000');
             $('#rg').mask('00.000.000-00');
             $('#cpf').mask('000.000.000-00');
-            $('#dateOfBirth').mask('00/00/0000');
+            $('#dateOfBirth').mask('00/00/0000');         
 
-            var nome = $('#name').val();
-            document.getElementById("nomeUser").innerHTML = nome;    
-
-            $('#edit-btn').click(function () {
-                var BtValue = $(this).val();
-
-                if (BtValue === "Editar perfil") {
-                    $("#name").attr("readonly", false);
-                    $("#rg").attr("readonly", false);
-                    $("#cpf").attr("readonly", false);
-                    $("#phone").attr("readonly", false);
-                    $("#email").attr("readonly", false);
-                    $("#dateOfBirth").attr("readonly", false);
-
-                    $(this).val("Salvar alterações");
-                }
-                else {
-                    $("#name").attr("readonly", true);
-                    $("#rg").attr("readonly", true);
-                    $("#cpf").attr("readonly", true);
-                    $("#phone").attr("readonly", true);
-                    $("#email").attr("readonly", true);
-                    $("#dateOfBirth").attr("readonly", true);
-                    $(this).val("Editar perfil");
-                }
-            });
+         
         });
     </script>
     
@@ -239,7 +214,9 @@
                 </div>
                 <!-- / .main-navbar -->
 
-                <div class="screen-alert" style="position: absolute; width: 100%;"></div>
+                <div class="screen-alert" style="position: absolute; width: 100%;"> 
+                    <!-- <div class="alert alert-danger alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-times mx-2"></i><strong>Erro!</strong> Extenção não suportada! </div> -->
+                </div>
 
                 <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
                     <!-- Page Header -->
@@ -253,7 +230,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="card card-small mb-4">
-                                
+
                                 <div class="card-header">
                                     <div style="display: flex; flex-direction: row;height: 100%;padding-left: 10px;">
                                         <img width="60px" height="60px" id="userProfileImage" class="user-avatar rounded-circle mr-2" alt="User Avatar">
@@ -288,10 +265,18 @@
 
                                         <!-- TAB 1 - SOBRE -->
                                         <div class="tab-pane fade show active" id="tab1" role="tabpanel">
-                                            <form method="POST" enctype="multipart/form-data" id="formEdita" class="col-md-8" style="padding: 30px;">
+                                            <form method="POST" enctype="multipart/form-data" id="about-patient-form" class="col-md-8" style="padding: 30px;">
+
+                                            <strong style="text-align: left;" class="text-muted d-block mb-2">Os campos com "*" são obrigatórios</strong>
+
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
-                                                        <input type="text" class="form-control" name="name" id="name" placeholder="Nome completo" readonly>                           
+                                                        <input type="text" class="form-control" name="name" id="name" placeholder="Nome completo *" required readonly>  
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-12">
+                                                        <input type="text" class="form-control" name="address" id="address" placeholder="Endereço *" required readonly>  
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
@@ -304,18 +289,23 @@
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefone" required readonly>
+                                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefone *" required readonly>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <input type="text" class="form-control" name="dateOfBirth" id="dateOfBirth" placeholder="Data de nascimento" required readonly>
+                                                    <!-- <div class="form-group col-md-6">
+                                                        <input type="text" class="form-control" name="dateOfBirth" id="dateOfBirth" placeholder="Data de nascimento *" required readonly>
+                                                    </div> -->
+
+                                                    <div id="dateDiv" class="col-md-6 input-daterange form-group">
+                                                        <input type="text" class="input-sm form-control" name="dateOfBirth" id="dateOfBirth" placeholder="Data de nascimento *" autocomplete="off" required readonly>
                                                     </div>
-                                                    <div class="form-group col-md-6">          
-                                                        <input type="file" accept="image/png, image/jpeg, image/jpg" onchange="verificaExtensao(this)" id="photo" name="photo" class="btn">
+                                                    <div class="form-group col-md-6">  
+                                                        <label for="profile-photo">Foto de perfil:</label>
+                                                        <input type="file" id="profile-photo" name="profile-photo" class="btn">
                                                     </div>
                                                 </div>
                                                 <div class="row">
