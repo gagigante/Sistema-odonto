@@ -27,6 +27,7 @@ $(document).ready(function() {
             $('#phone').val(data[0].telefone);
             $('#email').val(data[0].email);
             $('#dateOfBirth').val(data[0].data);
+            $('#profession').val(data[0].profissao);
         },
     });
 
@@ -46,6 +47,7 @@ $(document).ready(function() {
             $("#phone").attr("readonly", false);
             $("#email").attr("readonly", false);
             $("#dateOfBirth").attr("readonly", false);
+            $('#profession').attr("readonly", false);
 
             $('#edit-btn').val("Salvar alterações");
 
@@ -86,6 +88,7 @@ $(document).ready(function() {
                             $('#phone').val(data[0].telefone);
                             $('#email').val(data[0].email);
                             $('#dateOfBirth').val(data[0].data);
+                            $('#profession').val(data[0].profissao);
                         },
                     });
                 }
@@ -98,6 +101,7 @@ $(document).ready(function() {
             $("#phone").attr("readonly", true);
             $("#email").attr("readonly", true);
             $("#dateOfBirth").attr("readonly", true);
+            $('#profession').attr("readonly", true);
 
             $('#edit-btn').val("Editar perfil");
 

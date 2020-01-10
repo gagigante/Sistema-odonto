@@ -303,6 +303,12 @@
                                                         <label for="dateOfBirth">Data de nascimento:</label>
                                                         <input type="text" class="input-sm form-control" name="dateOfBirth" id="dateOfBirth" placeholder="Data de nascimento *" autocomplete="off" required readonly>
                                                     </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="profession">Profissão:</label>
+                                                        <input type="text" class="form-control" name="profession" id="profession" placeholder="Profissão" autocomplete="off" required readonly>
+                                                    </div>                                                    
+                                                </div>
+                                                <div class="form-row">
                                                     <div class="form-group col-md-6">  
                                                         <label for="profile-photo">Foto de perfil:</label>
                                                         <input type="file" id="profile-photo" name="profile-photo" class="btn">
