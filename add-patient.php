@@ -257,6 +257,7 @@
                                                 <label for="photo" style="margin-bottom: 0;">Adicionar foto de perfil</label>
                                                 <input type="file" accept="image/png, image/jpeg, image/jpg" onchange="verificaExtensao(this)" id="photo" name="photo" class="btn">
                                             </div>
+
                                         </div>
 
                                         <div class="form-row">
@@ -270,6 +271,33 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+                <!-- MODAL DE CONFIRMACAO DE DELETE-->
+                <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ModalLabel">Extensão não suportada</h5>                                
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div>
+                                <div class="modal-body" style="padding-bottom: 0;">
+                                    <p id="modalText">Deseja mesmo apagar esta imagem?</p>      
+                                </div>
+                                <div class="modal-footer">                                    
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
                     <span class="copyright ml-auto my-auto mr-2">Copyright © 2019
                         <a target="_blank" href="https://decadatech.com" rel="nofollow">Decada Technology</a>
