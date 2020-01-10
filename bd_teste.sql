@@ -24,22 +24,24 @@ CREATE TABLE IF NOT EXISTS `tb01_paciente` (
   `tb01_telefone` varchar(360) NOT NULL,
   `tb01_email` varchar(360) NOT NULL,
   `tb01_data` varchar(360) NOT NULL,
-  `tb01_imagem` varchar(360) DEFAULT 'patient-default-profile-image.png',
-  `tb01_proficao` varchar(360) DEFAULT NULL,
+  `tb01_imagem` varchar(500) DEFAULT 'patient-default-profile-image.png',
+  `tb01_profissao` varchar(360) DEFAULT NULL,
   `tb01_endereco` varchar(360) DEFAULT NULL,
   `tb01_idpaciente` int(100) NOT NULL AUTO_INCREMENT,
   `tb01_idUsuario` int(100) NOT NULL,
   PRIMARY KEY (`tb01_idpaciente`)
-) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=76 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb01_paciente: 5 rows
+-- Copiando dados para a tabela bd_teste.tb01_paciente: 7 rows
 /*!40000 ALTER TABLE `tb01_paciente` DISABLE KEYS */;
-INSERT INTO `tb01_paciente` (`tb01_nome`, `tb01_rg`, `tb01_cpf`, `tb01_telefone`, `tb01_email`, `tb01_data`, `tb01_imagem`, `tb01_proficao`, `tb01_endereco`, `tb01_idpaciente`, `tb01_idUsuario`) VALUES
-	('dawda', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', '1111@111', '29/05/2001', 'ce6ea6d087a1f1d3c3598ce3a14ad82cWallpaper OmniStack - 1920x1080.png', 'adawd', 'dadad', 71, 1),
-	('Gabriel Henrique Gigante da Silva', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', '', '26/12/2019', '20d7ec614f9ebdb74d27c47ef431fb07Wallpaper OmniStack - 1440x900.png', '', 'dadad', 70, 1),
-	('gabriel', '', '', '(33) 3 3333-3333', '', '29/05/2001', '85e4b33822fba96dc8f3f77116265f05bb4744f30c13ba63bf1c10f620cfa550.jpg', '', 'endereco', 69, 1),
-	('gabriel gigante', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', '1111@111', '29/05/2001', 'acdeddc921d32e558f183e4e4a1c2007foi+ben+10+(3).jpg', 'Programador', 'Rua Calixto Finelli', 72, 1),
-	('example', '', '', '(11) 1 1111-1111', '', '22/01/2020', '4b055749f4278f7f219a7e3f929024abbruno.jpeg', '', 'end', 73, 1);
+INSERT INTO `tb01_paciente` (`tb01_nome`, `tb01_rg`, `tb01_cpf`, `tb01_telefone`, `tb01_email`, `tb01_data`, `tb01_imagem`, `tb01_profissao`, `tb01_endereco`, `tb01_idpaciente`, `tb01_idUsuario`) VALUES
+	('nome editado1', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', '1111@111', '2002-05-29', 'patient-default-profile-image.png', 'adawd', 'dadad', 71, 1),
+	('Gabriel Henrique Gigante da Silvaaaa', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', 'outro_user@outlook.com', '2004-06-16', 'da0ee429f4b76d5a78473bbbb95d72795723fab70e21634575011f03qr-635-gb-01-eps.jpeg', '', 'rua xxxx', 70, 1),
+	('nome editawdo', '77.777.777-77', '777.777.777-77', '(77) 7 7777-7777', 'aaaa@aaaa', '2000-10-30', 'b2c7f301d8d705219a84bf834670a32cbruno.jpeg', '', 'endereco EDITADO', 69, 1),
+	('gabriel gigante', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', '1111@111', '2001-05-29', 'b5e58dcd45b31f35b432bfafd1a2fe1a15563286815cc3b0e9dc375_1556328681_3x2_md.jpg', 'Programador', 'Rua Calixto Finelli', 72, 1),
+	('gabriel souza', '11.111.111-11', '222.222.222-22', '(33) 3 3333-3333', 'aaa@aaa.com', '2001-05-29', 'patient-default-profile-image.png', '', 'rua editada', 73, 1),
+	('kayky', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', 'aaa@aaa', '1970-01-01', '1b3a15074cad9d5015f8d252fcc87babdownload.png', 'vagabundo', 'st example', 74, 1),
+	('khenzo', '11.111.111-11', '111.111.111-11', '(11) 1 1111-1111', '111@111', '11/01/2000', 'a1941630052c084af6c7be86099013b6meiota.jpg', 'proficao', 'rua', 75, 1);
 /*!40000 ALTER TABLE `tb01_paciente` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb02_estoque
@@ -70,13 +72,13 @@ CREATE TABLE IF NOT EXISTS `tb03_tratamentos` (
   PRIMARY KEY (`tb03_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb03_tratamentos: ~4 rows (aproximadamente)
+-- Copiando dados para a tabela bd_teste.tb03_tratamentos: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb03_tratamentos` DISABLE KEYS */;
 INSERT INTO `tb03_tratamentos` (`tb03_nome`, `tb03_descricao`, `tb03_preco`, `tb03_id`, `tb03_idUsuario`) VALUES
 	('editado', '111', 60, 2, 2),
 	('Tratamento 2', 'descricao do tratamento 2', 80, 4, 1),
 	('Tratamento 3', 'descricao do tratamento 3', 130, 5, 1),
-	('tratamento 1', 'descricao do tratamento 1', 250, 6, 1);
+	('tratamento 1', 'descricao do tratamento 1', 200, 6, 1);
 /*!40000 ALTER TABLE `tb03_tratamentos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb04_login
@@ -173,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `tb07_consultas` (
   PRIMARY KEY (`tb07_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb07_consultas: ~1 rows (aproximadamente)
+-- Copiando dados para a tabela bd_teste.tb07_consultas: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb07_consultas` DISABLE KEYS */;
 INSERT INTO `tb07_consultas` (`tb07_id`, `tb07_id_paciente`, `tb07_id_dentista`, `tb07_id_usuario`, `tb07_descricao`, `tb07_valor`, `tb07_status_pagamento`, `tb07_data`) VALUES
 	(2, 70, 1, 1, 'descricao da consulta', 500, 0, '2019-12-12 00:00:00');
@@ -187,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `tb08_tratamentos_consulta` (
   PRIMARY KEY (`tb08_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb08_tratamentos_consulta: ~1 rows (aproximadamente)
+-- Copiando dados para a tabela bd_teste.tb08_tratamentos_consulta: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb08_tratamentos_consulta` DISABLE KEYS */;
 INSERT INTO `tb08_tratamentos_consulta` (`tb08_id`, `tb08_id_consulta`, `tb08_id_tratamento`) VALUES
 	(1, 2, 1);
@@ -200,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `tb09_dentistas` (
   PRIMARY KEY (`tb09_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb09_dentistas: ~1 rows (aproximadamente)
+-- Copiando dados para a tabela bd_teste.tb09_dentistas: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb09_dentistas` DISABLE KEYS */;
 INSERT INTO `tb09_dentistas` (`tb09_id`, `tb09_nome`) VALUES
 	(1, 'Gabriel Henrique Gigante da Silva');
@@ -215,15 +217,9 @@ CREATE TABLE IF NOT EXISTS `tb10_imagens_paciente` (
   PRIMARY KEY (`tb10_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb10_imagens_paciente: ~7 rows (aproximadamente)
+-- Copiando dados para a tabela bd_teste.tb10_imagens_paciente: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb10_imagens_paciente` DISABLE KEYS */;
 INSERT INTO `tb10_imagens_paciente` (`tb10_id`, `tb10_id_paciente`, `tb10_imagem`, `tb10_id_usuario`) VALUES
-	(59, 70, 'ff53dcf598ea37a7b63da33649de626d5723fab70e21634575011f03qr-635-gb-01-eps.jpeg', 1),
-	(60, 70, '8d112ebb81f4b5554a52c8f23f497a1dbruno.jpeg', 1),
-	(61, 70, '47dc93ba1c51e46c4e4848d38b04b097bb4744f30c13ba63bf1c10f620cfa550.jpg', 1),
-	(94, 72, 'e33529be7e649e1e1e243166447575a85723fab70e21634575011f03qr-635-gb-01-eps.jpeg', 1),
-	(95, 72, '81d460cfcd057bbb739fda6a81e778a4bruno.jpeg', 1),
-	(101, 73, 'c11f195946c998bc77f1a98b69a9e4235723fab70e21634575011f03qr-635-gb-01-eps.jpeg', 1),
 	(102, 71, '8eb288ec9ceb878364ae288cff53c231PHP.jpg', 1);
 /*!40000 ALTER TABLE `tb10_imagens_paciente` ENABLE KEYS */;
 
@@ -236,7 +232,7 @@ CREATE TABLE IF NOT EXISTS `tb11_documentos_paciente` (
   `tb11_extencao` varchar(100) NOT NULL,
   `tb11_id_usuario` int(11) NOT NULL,
   PRIMARY KEY (`tb11_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela bd_teste.tb11_documentos_paciente: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb11_documentos_paciente` DISABLE KEYS */;

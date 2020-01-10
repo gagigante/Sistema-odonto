@@ -12,7 +12,7 @@
 
 	$nome = mysqli_real_escape_string($conexao, trim($_POST["name"]));
 	$endereco = mysqli_real_escape_string($conexao, trim($_POST["address"]));
-	$proficao = mysqli_real_escape_string($conexao, trim($_POST["profession"]));
+	$profissao = mysqli_real_escape_string($conexao, trim($_POST["profession"]));
 	$rg = mysqli_real_escape_string($conexao, trim($_POST["rg"]));
 	$cpf = mysqli_real_escape_string($conexao, trim($_POST["cpf"]));
 	$tel = mysqli_real_escape_string($conexao, trim($_POST["phone"]));
@@ -31,13 +31,13 @@
 
 	if(empty($imagem)){
 
-		$queryInsereCadastro = "INSERT INTO tb01_paciente (tb01_nome, tb01_rg, tb01_cpf, tb01_telefone, tb01_email, tb01_data, tb01_proficao, tb01_endereco, tb01_idUsuario) VALUES ('$nome', '$rg', '$cpf', '$tel', '$email', '$data', '$proficao', '$endereco', '$idLogin')";
+		$queryInsereCadastro = "INSERT INTO tb01_paciente (tb01_nome, tb01_rg, tb01_cpf, tb01_telefone, tb01_email, tb01_data, tb01_profissao, tb01_endereco, tb01_idUsuario) VALUES ('$nome', '$rg', '$cpf', '$tel', '$email', '$data', '$profissao', '$endereco', '$idLogin')";
 		$resultadoInsereCadastro = mysqli_query($conexao, $queryInsereCadastro);
 
 	} else {
 
 		if(move_uploaded_file($imagemtemp, "../assets/images/patients-profile-images/".$imageNameWithHash)){
-			$queryInsereCadastro = "INSERT INTO tb01_paciente (tb01_nome, tb01_rg, tb01_cpf, tb01_telefone, tb01_email, tb01_data, tb01_imagem, tb01_proficao, tb01_endereco, tb01_idUsuario) VALUES ('$nome', '$rg', '$cpf', '$tel', '$email', '$data','$imageNameWithHash', '$proficao', '$endereco', '$idLogin')";
+			$queryInsereCadastro = "INSERT INTO tb01_paciente (tb01_nome, tb01_rg, tb01_cpf, tb01_telefone, tb01_email, tb01_data, tb01_imagem, tb01_profissao, tb01_endereco, tb01_idUsuario) VALUES ('$nome', '$rg', '$cpf', '$tel', '$email', '$data','$imageNameWithHash', '$profissao', '$endereco', '$idLogin')";
 			$resultadoInsereCadastro = mysqli_query($conexao, $queryInsereCadastro);
 		}
 

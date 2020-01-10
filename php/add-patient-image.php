@@ -18,8 +18,8 @@
 		// Validamos se a extensão do arquivo é aceita
 	    if (array_search($extensao, $extensoes_aceitas) === false) {
 				  
-			//ERRO - EXTENCAO NAO SUPORTADA
-			echo('<div class="alert alert-danger alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-times mx-2"></i><strong>Erro!</strong> Extenção não suportada! </div>');
+			//ERRO - EXTENSAO NAO SUPORTADA
+			echo('<div class="alert alert-danger alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-times mx-2"></i><strong>Erro!</strong> Extensão não suportada! </div>');
 
 	       exit(); 
 		}

@@ -2,10 +2,10 @@
     //include 'verificaLogin.php';
     session_start();
 
-//     $servidor = "localhost";
-//     $usuario = "root";
-//     $senha = "";
-//     $banco = "bd_teste";
+    // $servidor = "localhost";
+    // $usuario = "root";
+    // $senha = "";
+    // $banco = "bd_teste";
 
     $servidor = "mysql873.umbler.com";
     $usuario = "bd_user_adm";

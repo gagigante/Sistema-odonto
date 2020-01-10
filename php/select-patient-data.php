@@ -23,7 +23,7 @@
                 'email' => $linha['tb01_email'],
                 'data' => $conv_data,
                 'imagem' => $linha['tb01_imagem'],
-                'proficao' => $linha['tb01_proficao'],
+                'profissao' => $linha['tb01_profissao'],
                 'endereco' => $linha['tb01_endereco']
             ];
         }
