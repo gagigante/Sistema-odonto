@@ -105,18 +105,9 @@ $(document).ready(function() {
         }
     });
 
+    // TAB 2 - ORCAMENTOS
 
-
-
-
-
-
-
-
-
-
-
-
+    // TAB 3 - CONSULTAS
 
     $.ajax({
         url: 'php/select-query.php',

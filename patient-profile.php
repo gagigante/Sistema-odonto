@@ -55,7 +55,6 @@
             $('#rg').mask('00.000.000-00');
             $('#cpf').mask('000.000.000-00');
             $('#dateOfBirth').mask('00/00/0000');         
-
          
         });
     </script>
@@ -265,42 +264,43 @@
 
                                         <!-- TAB 1 - SOBRE -->
                                         <div class="tab-pane fade show active" id="tab1" role="tabpanel">
-                                            <form method="POST" enctype="multipart/form-data" id="about-patient-form" class="col-md-8" style="padding: 30px;">
+                                            <form method="POST" enctype="multipart/form-data" id="about-patient-form" class="col-md-8" style="padding: 30px;">                                            
 
-                                            <strong style="text-align: left;" class="text-muted d-block mb-2">Os campos com "*" são obrigatórios</strong>
-
-                                                <div class="form-row">
+                                                <div class="form-row" style="margin-top: 10px;">                                                    
                                                     <div class="form-group col-md-12">
+                                                        <label for="name">Nome completo:</label>
                                                         <input type="text" class="form-control" name="name" id="name" placeholder="Nome completo *" required readonly>  
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
+                                                        <label for="address">Endereço:</label>
                                                         <input type="text" class="form-control" name="address" id="address" placeholder="Endereço *" required readonly>  
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
+                                                        <label for="rg">RG:</label>
                                                         <input type="text" class="form-control" name="rg" id="rg" placeholder="RG" readonly>
                                                     </div>
                                                     <div class="form-group col-md-6">
+                                                        <label for="cpf">CPF:</label>
                                                         <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
+                                                        <label for="phone">Telefone:</label>
                                                         <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefone *" required readonly>
                                                     </div>
                                                     <div class="form-group col-md-6">
+                                                        <label for="email">E-mail:</label>
                                                         <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" readonly>
                                                     </div>
                                                 </div>
-                                                <div class="form-row">
-                                                    <!-- <div class="form-group col-md-6">
-                                                        <input type="text" class="form-control" name="dateOfBirth" id="dateOfBirth" placeholder="Data de nascimento *" required readonly>
-                                                    </div> -->
-
+                                                <div class="form-row">                                                    
                                                     <div id="dateDiv" class="col-md-6 input-daterange form-group">
+                                                        <label for="dateOfBirth">Data de nascimento:</label>
                                                         <input type="text" class="input-sm form-control" name="dateOfBirth" id="dateOfBirth" placeholder="Data de nascimento *" autocomplete="off" required readonly>
                                                     </div>
                                                     <div class="form-group col-md-6">  

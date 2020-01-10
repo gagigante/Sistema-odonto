@@ -31,7 +31,7 @@
 	    if (array_search($extensao, $extensoes_aceitas) === false) {
 				  
 			//ERRO - EXTENCAO NAO SUPORTADA
-			echo('<div class="alert alert-danger alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-times mx-2"></i><strong>Erro!</strong> Extenção não suportada! </div>');
+			echo('<div class="alert alert-danger alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-times mx-2"></i><strong>Erro!</strong> Extenção da foto não suportada! </div>');
 
 	       exit(); 
 		}
@@ -52,35 +52,21 @@
 			}
 
             //PEGA O NOME DA FOTO DE PERFIL ATUAL
-            // $query = "SELECT tb01_IMAGEM FROM tb01_paciente WHERE tb01_idpaciente = '$id'";
-            // $result = mysqli_query($conexao, $query);	
-              
-            // $arr = array();
-            // while($linha = mysqli_fetch_assoc($result)){
-            //     $arr[] = $linha;
-            // }
-
-            // return $arr;
-
-            // while($data = $result->fetch_assoc()) {
-            //     if($result['tb01_imagem'] != "patient-default-profile-image.png") {
-            //         unlink('../assets/images/patients-profile-images/' . $result);
-            //     }    
-            // }
-
-            // if($result->num_rows>0){                
-            //     if($result[0] != "patient-default-profile-image.png"){
-            //         $currentImage = $result;
-            //     }                
-            // }
-            //unlink('../assets/images/patients-profile-images/' . $currentImage);
+            $queryselect = "SELECT * FROM tb01_paciente WHERE tb01_idPaciente = " .$id;        
+            $resultadoselect = $conexao->query($queryselect);
+            
+            while($row = $resultadoselect->fetch_assoc()) {
+                if ($row['tb01_imagem'] != "patient-default-profile-image.png") {                   
+                    unlink('../assets/images/patients-profile-images/' . $row['tb01_imagem']);  
+                }
+            }
 
             //ATUALIZA A FOTO DE PERFIL
 			$query = "UPDATE tb01_paciente SET tb01_imagem = '$imageNameWithHash' WHERE tb01_idpaciente = '$id'";
 			$result = mysqli_query($conexao, $query);	
-
-			//SUCESSO - TUDO SAIU COMO ESPERADO
-			echo('<div class="alert alert-success alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-check mx-2"></i><strong>Sucesso!</strong> Imagem adicionada!</div>');
-		}		
-	}
+        }		             
+    }
+    
+    //SUCESSO - TUDO SAIU COMO ESPERADO
+    echo('<div class="alert alert-success alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-check mx-2"></i><strong>Sucesso!</strong> Os dados foram atualizados!</div>');
 ?>
