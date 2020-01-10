@@ -13,7 +13,7 @@
         while ($linha = $resultadoselect->fetch_assoc()){    
                
             echo '<div class="documents-item">';
-                echo '<img src="assets/images/filesIcons/' .$linha['tb11_extencao']. '.png" />';
+                echo '<img src="assets/images/filesIcons/' .$linha['tb11_extensao']. '.png" />';
                 echo '<div class="item-options">';
                     echo '<div>';
                         echo '<p>' .$linha['tb11_nome']. '</p>';

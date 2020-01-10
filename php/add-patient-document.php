@@ -43,7 +43,7 @@
 				exit();  
 			}
 
-            $query = "INSERT INTO tb11_documentos_paciente (tb11_id_paciente, tb11_documento, tb11_nome, tb11_extencao, tb11_id_usuario) VALUES ('$idPaciente', '$docNameWithHash', '$docDesc', '$ext', '$idLogin');";
+            $query = "INSERT INTO tb11_documentos_paciente (tb11_id_paciente, tb11_documento, tb11_nome, tb11_extensao, tb11_id_usuario) VALUES ('$idPaciente', '$docNameWithHash', '$docDesc', '$ext', '$idLogin');";
 			$result = mysqli_query($conexao, $query);	
 
 			//SUCESSO - TUDO SAIU COMO ESPERADO
