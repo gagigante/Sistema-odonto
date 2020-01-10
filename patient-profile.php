@@ -305,7 +305,7 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="profession">Profissão:</label>
-                                                        <input type="text" class="form-control" name="profession" id="profession" placeholder="Profissão" autocomplete="off" required readonly>
+                                                        <input type="text" class="form-control" name="profession" id="profession" placeholder="Profissão" autocomplete="off" readonly>
                                                     </div>                                                    
                                                 </div>
                                                 <div class="form-row">
