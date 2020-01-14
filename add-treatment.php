@@ -8,7 +8,7 @@
 
     <title>DECADA ODONTO</title>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--Custom CSS -->
@@ -216,6 +216,8 @@
                     <!-- End Main Navbar -->
                 </div>                
 
+                <div class="screen-alert" style="position: absolute; width: 100%;"></div>
+
                 <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
 
                     <!-- Page Header -->
@@ -226,14 +228,14 @@
                     </div>                    
 
                     <div class="row">
-                        <div class="col-md-8" style="margin: 30px auto;">
+                        <div class="col-md-10" style="margin: 30px auto;">
 
                             <div class="card card-small mb-4">
                                 <div class="card-header border-bottom">
                                     <h3 style="margin-top: 10px">Cadastro de consulta</h3>                                 
                                 </div>
                                 <div class="card-body p-0 pb-3 text-center">
-                                    <form style="padding: 30px;" method="POST">
+                                    <form style="padding: 30px;" id="queryForm" method="POST">
 
                                         <div class="form-row">
                                             <div class="form-group col-md-6">   
@@ -295,11 +297,60 @@
 
                                                 </div> 
                                                 <div style="margin: 20px 20px 0;">
-                                                <div class="form-row">                                                  
-                                                    <div class="form-group col-md-6">
-                                                        <p style="text-align: left; margin: 10px; padding: 0;">Valor total</p>
-                                                        <input type="text" class="form-control" name="total-price" id="total-price" placeholder="Preço total *" readonly required>
-                                                    </div>   
+                                                    <div class="form-row">                                                  
+                                                        <div class="form-group col-md-6">
+                                                            <p style="text-align: left; margin: 10px; padding: 0;">Valor total</p>
+                                                            <input type="text" class="form-control" name="total-price" id="total-price" placeholder="Preço total *" value="0" readonly required>
+                                                        </div>   
+                                                        <div class="form-group col-md-6">
+                                                            <p style="text-align: left; margin: 10px; padding: 0;">Desconto (%)</p>
+                                                            <input type="text" class="form-control" name="discount" id="discount" placeholder="Desconto">
+                                                        </div>   
+                                                    </div> 
+                                                    <div class="form-row">
+                                                        <div class="col-md-6">
+                                                            <p style="text-align: left; margin: 10px; padding: 0;">Preço final</p>
+                                                            <input type="text" class="form-control" name="final-price" id="final-price" placeholder="Preço final" readonly required>
+                                                        </div>
+                                                    </div>                                               
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="border: 1px solid #ddd; border-radius: 6px; margin: 0 0 15px;">
+                                            <div class="card-header border-bottom">
+                                                <h5 style="margin-top: 10px">Região afetada</h5>
+                                                
+                                                
+                                           
+
+                                                <!-- <div class="form-row">
+                                                    <div class="form-group col-sm-10">
+                                                        <input type="text" class="form-control" name="treatment" id="treatment" placeholder="Tratamentos *" autocomplete="off">
+                                                    </div>                                            
+                                                    <div class="form-group col-sm-2">
+                                                        <button type='button' class='btn btn-sm btn-success btAddTreatment'
+                                                        style='color: white'>Adicionar</button>
+                                                    </div>
+                                                </div> -->
+
+                                            </div>
+                                            <div class="card-body p-0 pb-3 text-center" style="margin: 15px 15px 0 15px;">
+                                                
+                                            <div class="tooths-container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; border-bottom: 0.5px solid rgba(0,0,0,0.4)">
+                                                    <div class="" style="width:50%; height: 100px; border-right: 0.5px solid rgba(0,0,0,0.4);">
+
+                                                    </div>
+                                                    <div class="" style="width:50%; height: 100px; border-left: 0.5px solid rgba(0,0,0,0.4)">
+                                                        
+                                                    </div>                                                
+                                                </div>
+                                                <div class="tooths-container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; border-top: 0.5px solid rgba(0,0,0,0.4)">
+                                                    <div class="" style="width:50%; height: 100px; border-right: 0.5px solid rgba(0,0,0,0.4)">
+
+                                                    </div>
+                                                    <div class="" style="width:50%; height: 100px; border-left: 0.5px solid rgba(0,0,0,0.4)">
+                                                        
                                                     </div>                                                
                                                 </div>
                                             </div>

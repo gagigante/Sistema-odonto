@@ -3,6 +3,11 @@ $(document).ready(function(e) {
     let selectedTreatmentId = 0;
     let treatmentsData = 0;
     
+    //PEGA O ID VIA GET
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var idPaciente = url.searchParams.get("id");
+
     //AUTOCOMPLETE DO CAMPO DE TRATAMENTO
     $("#treatment").autocomplete({        
         source: 'php/autoCompleteAddTreatment.php',     
@@ -44,14 +49,14 @@ $(document).ready(function(e) {
              
                     let result = $.parseJSON(response);  
                     treatmentsData = result;                      
-                                 
+                                            
                     for(let i = 0; i < treatmentsData.length; i++){
-                        console.log(treatmentsData[i].price);
-                        price = parseFloat(price).toFixed(2) + parseFloat(treatmentsData[i].price).toFixed(2);
-                        divContent = divContent + "<tr><td>" +treatmentsData[i].name+ "</td><td>R$" +treatmentsData[i].price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})+ "</td><td><button type='button' id='" +i+ "' class='btn btn-sm btn-danger btDeleteButton'>Remover</button></td</tr>";
-                    }
+                        price = parseFloat(price) + parseFloat(treatmentsData[i].price);
 
-                    //console.log(price);
+                        divContent = divContent + "<tr><td>" +treatmentsData[i].name+ "</td><td>R$" +treatmentsData[i].price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})+ "</td><td><button type='button' id='" +i+ "' class='btn btn-sm btn-danger btDeleteButton'>Remover</button></td</tr>";
+                    }   
+                    
+                    console.log(treatmentsData);
            
                     $('#treatmentsTableContent').html(divContent);
                     $('#total-price').val(price);
@@ -85,9 +90,7 @@ $(document).ready(function(e) {
             price = (price * 1) + (treatmentsData[i].price * 1);
             divContent = divContent + "<tr><td>" +treatmentsData[i].name+ "</td><td>R$" +treatmentsData[i].price+ "</td><td><button type='button' id='" +i+ "' class='btn btn-sm btn-danger btDeleteButton'>Remover</button></td</tr>";
         }
-
-        console.log(price);
-        
+                
         //ESCREVE O CONTEÚDO NA TABELA
         $('#treatmentsTableContent').html(divContent);
         $('#total-price').val(price);
@@ -98,4 +101,21 @@ $(document).ready(function(e) {
         }
     });
 
+    $('#queryForm').submit(function(e) {
+
+        e.preventDefault()
+        
+        if($('#total-price').val() != 0) {     
+            alert('submit');
+        } else {
+            
+            let alert = '<div class="alert alert-danger alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-times mx-2"></i><strong>Erro!</strong> Selecione pelo menos um tratamento! </div>';
+            $('.screen-alert').html(alert); //ADICIONA O ALERT NA TELA 
+            
+            //SUBIR A PÁGINA PARA O TOPO 
+            $('html, body').animate({scrollTop: 0}, 800);
+            event.stopPropagation(); 
+
+        }
+    });
 });
