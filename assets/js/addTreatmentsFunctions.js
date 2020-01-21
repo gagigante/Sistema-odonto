@@ -59,7 +59,7 @@ $(document).ready(function(e) {
                     console.log(treatmentsData);
            
                     $('#treatmentsTableContent').html(divContent);
-                    $('#total-price').val(price);
+                    $('#treatments-total-price').val(price);
           
                     selectedTreatmentId = 0;
                     $('#treatment').val('');
@@ -67,7 +67,7 @@ $(document).ready(function(e) {
                     //VERIFICA SE O EMPTY-PLACEHOLDER DEVE SER EXIBIDO
                     if(treatmentsData != 0) {
                         if(treatmentsData.length > 0) {
-                            $('#emptyPlaceholder').hide();
+                            $('#treatmentsEmptyPlaceholder').hide();
                         }
                     }            
                 },
@@ -93,11 +93,11 @@ $(document).ready(function(e) {
                 
         //ESCREVE O CONTEÚDO NA TABELA
         $('#treatmentsTableContent').html(divContent);
-        $('#total-price').val(price);
+        $('#treatments-total-price').val(price);
 
         //VERIFICA SE O EMPTY-PLACEHOLDER DEVE SER EXIBIDO
         if(treatmentsData.length == 0) {            
-            $('#emptyPlaceholder').show();            
+            $('#treatmentsEmptyPlaceholder').show();            
         }
     });
 
@@ -105,7 +105,7 @@ $(document).ready(function(e) {
 
         e.preventDefault()
         
-        if($('#total-price').val() != 0) {     
+        if($('#treatments-total-price').val() != 0) {     
             alert('submit');
         } else {
             

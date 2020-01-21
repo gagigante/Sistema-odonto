@@ -274,6 +274,7 @@
                                                 </div>
 
                                             </div>
+
                                             <div class="card-body p-0 pb-3 text-center">
                                                 <div class='table-responsive'>
                                                     <table class='table mb-0'>
@@ -290,7 +291,7 @@
                                                         </tbody>
                                                     </table>
 
-                                                    <div id="emptyPlaceholder">
+                                                    <div id="treatmentsEmptyPlaceholder">
                                                         <img style="max-width: 100%;" src="assets/images/empty-treatments-placeholder.png" />
                                                         <h5 style='margin-top: 15px;'>Adicione um ou mais tratamentos à essa consulta</h5>
                                                     </div>
@@ -300,17 +301,17 @@
                                                     <div class="form-row">                                                  
                                                         <div class="form-group col-md-6">
                                                             <p style="text-align: left; margin: 10px; padding: 0;">Valor total</p>
-                                                            <input type="text" class="form-control" name="total-price" id="total-price" placeholder="Preço total *" value="0" readonly required>
+                                                            <input type="text" class="form-control" name="treatments-total-price" id="treatments-total-price" placeholder="Preço total *" value="0" readonly required>
                                                         </div>   
                                                         <div class="form-group col-md-6">
                                                             <p style="text-align: left; margin: 10px; padding: 0;">Desconto (%)</p>
-                                                            <input type="text" class="form-control" name="discount" id="discount" placeholder="Desconto">
+                                                            <input type="text" class="form-control" name="treatments-discount" id="treatments-discount" placeholder="Desconto">
                                                         </div>   
                                                     </div> 
                                                     <div class="form-row">
                                                         <div class="col-md-6">
                                                             <p style="text-align: left; margin: 10px; padding: 0;">Preço final</p>
-                                                            <input type="text" class="form-control" name="final-price" id="final-price" placeholder="Preço final" readonly required>
+                                                            <input type="text" class="form-control" name="treatments-final-price" id="treatments-final-price" placeholder="Preço final" readonly required>
                                                         </div>
                                                     </div>                                               
                                                 </div>
@@ -356,54 +357,58 @@
                                             </div>
                                         </div>
 
-                                        <!-- <div style="border: 1px solid #ddd; border-radius: 6px; margin: 0 0 15px;">
+                                        <div style="border: 1px solid #ddd; border-radius: 6px; margin: 0 0 15px;">
                                             <div class="card-header border-bottom">
                                                 <h5 style="margin-top: 10px">Itens que serão utilizados na consulta</h5>
                                                 
                                                 <div class="form-row">
-                                                    <div class="form-group col-sm-10">
-                                                        <input type="text" class="form-control" name="treatment" id="treatment" placeholder="Tratamentos *" autocomplete="off" required>
+                                                    <div class="form-group col-sm-5">
+                                                        <input type="text" class="form-control" placeholder="Nome do item" autocomplete="off">
+                                                    </div>                       
+                                                    <div class="form-group col-sm-5">
+                                                        <input type="number" class="form-control" placeholder="Quantidade" min="0" autocomplete="off">
                                                     </div>                                            
                                                     <div class="form-group col-sm-2">
-                                                        <button type='button' class='btn btn-sm btn-success btAddTreatment'
-                                                        style='color: white'>Adicionar</button>
+                                                        <button type='button' class='btn btn-sm btn-success' style='color: white'>Adicionar</button>
                                                     </div>
                                                 </div>
-                                                
                                             </div>
+                                            
                                             <div class="card-body p-0 pb-3 text-center">
                                                 <div class='table-responsive'>
                                                     <table class='table mb-0'>
                                                         <thead class='bg-light'>
                                                             <tr>
-                                                                <th scope='col' class='border-0'>Tratamento</th>        
-                                                                <th scope='col' class='border-0'>Preço</th>
+                                                                <th scope='col' class='border-0'>Nome do item</th>        
+                                                                <th scope='col' class='border-0'>Quantidade</th>
+                                                                <th scope='col' class='border-0'>Preço unitário</th>
+                                                                <th scope='col' class='border-0'>Preço total</th>
                                                                 <th scope='col' class='border-0'>Ações</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody id="treatmentsTableContent"> 
+                                                        <tbody id="stockItensTableContent"> 
                                                         
                                                         
                                                         </tbody>
                                                     </table>
 
-                                                    <div id="emptyPlaceholder">
-                                                        <img style="max-width: 100%;" src="assets/images/empty-treatments-placeholder.png" />
-                                                        <h5 style='margin-top: 15px;'>Adicione um ou mais tratamentos à essa consulta</h5>
+                                                    <div id="stockItensEmptyPlaceholder">
+                                                        <img style="max-width: 100%;" src="assets/images/empty-stock-placeholder.png" />
+                                                        <h5 style='margin-top: 15px;'>Adicione os itens que serão utilizados na consulta</h5>
                                                     </div>
 
                                                 </div> 
                                                 <div style="margin: 20px 20px 0;">
-                                                <div class="form-row">                                                  
-                                                    <div class="form-group col-md-6">
-                                                        <p style="text-align: left; margin: 10px; padding: 0;">Valor total</p>
-                                                        <input type="text" class="form-control" name="total-price" id="total-price" placeholder="Preço total *" readonly required>
-                                                    </div>   
-                                                    </div>                                                
+                                                    <div class="form-row">                                                  
+                                                        <div class="form-group col-md-6">
+                                                            <p style="text-align: left; margin: 10px; padding: 0;">Valor total</p>
+                                                            <input type="text" class="form-control" name="total-price" id="total-price" placeholder="Preço total *" value="0" readonly required>
+                                                        </div>                                                           
+                                                    </div>                                                     
                                                 </div>
                                             </div>
-                                        </div> -->
-
+                                        </div>
+                                        
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <p style="text-align: left; margin: 10px; padding: 0;">Data e hora do início da consulta</p>
