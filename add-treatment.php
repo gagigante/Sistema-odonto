@@ -47,7 +47,7 @@
     <script>
         $(document).ready(function() {        
 
-            $('#dateDiv').datepicker({
+            $('#dateDiv, #dateDiv2').datepicker({
                 format: 'dd/mm/yyyy',
             });
 
@@ -409,22 +409,32 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <p style="text-align: left; margin: 10px; padding: 0;">Data e hora do início da consulta</p>
-                                                <input type="text" class="form-control" name="query-start" id="query-start" autocomplete="off" placeholder="00/00/0000 00:00:00" required>
-                                            </div>    
-                                            <div class="form-group col-md-6">
-                                                <p style="text-align: left; margin: 10px; padding: 0;">Data e hora do fim da consulta</p>
-                                                <input type="text" class="form-control" name="query-end" id="query-end" autocomplete="off" placeholder="00/00/0000 00:00:00" required>
-                                            </div>                       
-                                        </div>
+                                        <p style="text-align: left; margin: 40px auto 10px; padding: 0;">Data e hora do início da consulta</p>
+                                        <div class="form-row">                                     
+                                            <div id="dateDiv" class="col-md-3 input-daterange form-group">
+                                                <input type="text" class="input-sm form-control" name="start-date" placeholder="Data" id="start-date" autocomplete="off" required>
+                                            </div>
 
-                                        <div class="form-row">
-                                            <div class="col-md-6 form-group" style="margin: 0; padding: 0;">
-                                                <button type="submit" class="btn btn-outline-success" style="width: 150px;">Adicionar</button>
+                                            <div class="col-md-2">
+                                                <input type="time" class="form-control" id="start-time" name="start-time" required>
                                             </div>
                                         </div>
+
+                                        <p style="text-align: left; margin: 15px auto 10px; padding: 0;">Data e hora do fim da consulta</p>
+                                        <div class="form-row">                                     
+                                            <div id="dateDiv2" class="col-md-3 input-daterange form-group">
+                                                <input type="text" class="input-sm form-control" name="end-date" placeholder="Data" id="end-date" autocomplete="off" required>
+                                            </div>
+
+                                            <div class="col-md-2">
+                                                <input type="time" class="form-control" id="end-time" name="end-time" required>
+                                            </div>
+                                        </div>
+                                                                      
+                                        <div class="col-md-6" style="display: flex; flex-direction: flex-start; margin: 15px 0">
+                                            <button style="width: 200px" type="submit" class="btn btn-outline-success">Adicionar</button>
+                                        </div>                                                
+                                        
                                     </form>
                                 </div>
                             </div>
