@@ -8,8 +8,9 @@
     <title>Login</title>
     <link rel="shortcut icon" href="#" />
    
-    <!-- Fontawesome icons -->
+    <!-- icons -->
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--Custom CSS -->
     <link rel="stylesheet" href="assets/css/login.style.css">
@@ -45,17 +46,17 @@
                     </div>
                     <div class="form-row"> 
                         <div class="form-group col-md-12">                          
-                            <label for="user">Senha</label>
+                            <label for="password">Senha</label>
                             <input type="password" class="form-control" name="password" id="password" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12 buttons">
                             <button type="submit" class="btn btn-success">Entrar</button>
-                            <button type="button" id="resetPassBtn" class="btn btn-info">Não tem uma conta?</button>
+                            <button type="button" id="createAccountBtn" class="btn btn-info">Não tem uma conta?</button>
                         </div>  
                         <div class="form-group">
-                            <a href="#">Esqueceu sua senha?</a>
+                            <a href="#" id="resetPassBtn">Esqueceu sua senha?</a>
                         </div>             
                     </div>                    
                 </form>
@@ -80,10 +81,19 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                  
+                    <form>
+                        <div class="form-row">                        
+                            <div class="form-group col-md-12">                            
+                                <label for="email">E-mail cadastrado:</label>
+                                <input type="email" class="form-control" name="email" id="email" autocomplete="off">
+                            </div>
+                        </div> 
+                    </form>
                 </div>
                 <div class="modal-footer">                         
-                    <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>                   
+                    <button type="button" class="btn btn-success send-email">
+                        <i class="material-icons" style="font-size: 18px">send</i>
+                    </button>                   
                     <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal">Fechar</button>
                 </div>
             </div>

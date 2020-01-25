@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    // LOGIN
     $('#form-login').on('submit', function(e) {
         e.preventDefault();
 
@@ -26,7 +27,29 @@ $(document).ready(function() {
         });
     });
 
-    $('#resetPassBtn').click(function() {        
+    // CRIAR CONTA 
+    $('#createAccountBtn').click(function() {          
+        window.location.href = 'create-account.php';
+    });
+    
+    // ABRE MODAL DE RESET DE SENHA
+    $('#resetPassBtn').click(function(e) {  
+        e.preventDefault();      
         $('#resetPassModal').modal('show');
+    });
+
+    // CONFIRMA MODAL DE RESET DE SENHA
+    $(document).on('click', '.send-email', function() {
+        //alert('clicou');
+        $.ajax({
+            type: 'POST',
+            url: 'php/send-email.php',
+            data: {
+                email: $('input[name=email]').val()
+            },
+            success: function(response) {
+                alert(response);
+            }
+        });
     });
 });
