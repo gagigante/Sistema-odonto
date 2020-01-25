@@ -1,33 +1,23 @@
-<?php
-	
+<?php	
 	require "conexao.php";
 
-	$login = $_POST["email"];
-	$senha = $_POST["senha"];
+    $usuario = mysqli_real_escape_string($conexao, trim($_POST["user"]));
+    $senha = mysqli_real_escape_string($conexao, trim($_POST["password"]));	
     $_SESSION["logado"] = 0;
 
-	$queryselect = "select * from tb04_login";
+	$queryselect = "SELECT * FROM tb04_login WHERE tb04_usuario = '$usuario' AND tb04_senha = MD5('$senha')";
     $resultadoselect = $conexao->query($queryselect);
 
     if($resultadoselect->num_rows>0) { 
-    	while ($linha = $resultadoselect->fetch_assoc()){  
-
-    		$loginbd = $linha["tb04_login"];
-    		$senhabd = $linha["tb04_senha"];
-            $idbd = $linha["tb04_idLogin"];    
-
-            if($login == $loginbd && $senha == $senhabd){
-
-                //session_start();
-                $_SESSION['login'] = $login;
-                $_SESSION['senha'] = $senha;
-                $_SESSION['idUsuario'] = $idbd;
-                $_SESSION["logado"] = 1;                               
-                header("Location:../index.php");
-            }                
-    	}
+        while ($linha = $resultadoselect->fetch_assoc()) {  
+            $_SESSION['login'] = $linha['tb04_usuario'];
+            //$_SESSION['senha'] = $linha['tb04_senha'];
+            $_SESSION['idUsuario'] = $linha['tb04_id'];
+            $_SESSION["logado"] = 1;  
+            echo 'login success';
+            // header("Location:../index.php");
+        }
+    } else {
+        echo 'login error';
     }
-
-//    if($_SESSION["logado"] == 0){
-//         header("Location:../login.php");
-//    }
+?>
