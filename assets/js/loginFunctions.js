@@ -56,7 +56,8 @@ $(document).ready(function() {
                     $('input[name=email]').val('');
                     if (response == 0) {                    
                         $('.modal-body .modal-alert').html('<div class="alert alert-danger" role="alert">Nenhum usuário foi encontrado com esse nome de usuário ou E-mail!</div>');
-                    } else {                                                        
+                    } else {                                
+                        console.log(response);                        
                         $('.modal-body .modal-alert').html('<div class="alert alert-success" role="alert">Um E-mail de redefinição de senha foi enviado para você! Cheque também a sua caixa de Spam e de Lixo Eletrônico.</div>');
     
                         setTimeout(() => $('#resetPassModal').modal('hide'), 3000);
