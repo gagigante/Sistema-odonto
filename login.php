@@ -81,14 +81,15 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <div>
                         <div class="form-row">                        
                             <div class="form-group col-md-12">                            
-                                <label for="email">E-mail cadastrado:</label>
-                                <input type="email" class="form-control" name="email" id="email" autocomplete="off">
+                                <label for="email">E-mail ou nome de usuário cadastrado:</label>
+                                <input type="text" class="form-control" name="email" id="email" autocomplete="off">
                             </div>
-                        </div> 
-                    </form>
+                        </div>                        
+                    </div>
+                    <div class="modal-alert"></div>
                 </div>
                 <div class="modal-footer">                         
                     <button type="button" class="btn btn-success send-email">

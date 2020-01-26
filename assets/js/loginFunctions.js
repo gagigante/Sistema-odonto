@@ -38,18 +38,31 @@ $(document).ready(function() {
         $('#resetPassModal').modal('show');
     });
 
+    // Evento ao fechar modal
+    $('#resetPassModal').on('hidden.bs.modal', function () {                
+        $('.modal-body .modal-alert').html('');
+    });    
+
     // CONFIRMA MODAL DE RESET DE SENHA
     $(document).on('click', '.send-email', function() {
-        //alert('clicou');
-        $.ajax({
-            type: 'POST',
-            url: 'php/send-email.php',
-            data: {
-                email: $('input[name=email]').val()
-            },
-            success: function(response) {
-                alert(response);
-            }
-        });
+        if ($('input[name=email]').val() != '') {
+            $.ajax({
+                type: 'POST',
+                url: 'php/send-email.php',
+                data: {
+                    email: $('input[name=email]').val()
+                },
+                success: function(response) {  
+                    $('input[name=email]').val('');
+                    if (response == 0) {                    
+                        $('.modal-body .modal-alert').html('<div class="alert alert-danger" role="alert">Nenhum usuário foi encontrado com esse nome de usuário ou E-mail!</div>');
+                    } else {                    
+                        $('.modal-body .modal-alert').html('<div class="alert alert-success" role="alert">Um E-mail de redefinição de senha foi enviado para você! Cheque também a sua caixa de Spam e de Lixo Eletrônico.</div>');
+    
+                        setTimeout(() => $('#resetPassModal').modal('hide'), 3000);
+                    }                
+                }
+            });
+        }        
     });
 });
