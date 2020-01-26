@@ -23,7 +23,7 @@
                 . "Reply-To: contato@ggportfolio.com.br" . "\r\n"
                 . "X-Mailer: PHP/" .phpversion();
     
-        mail($input, $assunto, $corpo, $header);
+        mail('gabriel_gigante@outlook.com', $assunto, $corpo, $header);
     
         echo 1;
 
