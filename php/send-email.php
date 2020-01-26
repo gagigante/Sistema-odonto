@@ -18,14 +18,18 @@
 
         $assunto = "Redefinição de senha";
 
-        $corpo = "Para redefinir sua senha acesse: https://ggportfolio.com.br/change-password.php?id=".$user_id;
+        $email_template = file_get_contents('../assets/email-template/password-redefinition/index.php?id='.$user_id);
+
+        //$corpo = "Para redefinir sua senha acesse: https://ggportfolio.com.br/change-password.php?id=".$user_id;
         
         $header = "From: contato@ggportfolio.com.br" . "\r\n" 
+                . "Return-Path: contato@ggportfolio.com.br" . "\r\n"
                 . "Reply-To: contato@ggportfolio.com.br" . "\r\n"
+                . "Content-type: text/html" . "\r\n"
                 . "X-Mailer: PHP/" .phpversion();
     
-        mail($user_email, $assunto, $corpo, $header);
-    
+        mail($user_email, $assunto, $email_template, $header);
+
         echo 1;
 
     } else {
