@@ -107,7 +107,7 @@
                 . "Content-type: text/html" . "\r\n"
                 . "X-Mailer: PHP/" .phpversion();
     
-        //mail($user_email, $assunto, $corpo, $header);
+        mail($user_email, $assunto, $corpo, $header);
         
         echo $corpo;
         echo 1;
