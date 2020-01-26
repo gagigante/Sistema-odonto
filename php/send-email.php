@@ -8,7 +8,8 @@
 
     if($result->num_rows>0) {
         while ($dados = $result->fetch_assoc()) {            
-            $user_id = $dados['tb04_id'];             
+            $user_id = $dados['tb04_id'];         
+            $user_email = $dados['tb04_email'];  
         }        
 
         // ATUALIZA O CAMPO DE RESET DE SENHA PARA TRUE
@@ -23,7 +24,7 @@
                 . "Reply-To: contato@ggportfolio.com.br" . "\r\n"
                 . "X-Mailer: PHP/" .phpversion();
     
-        mail('gabriel_gigante@outlook.com', $assunto, $corpo, $header);
+        mail($user_email, $assunto, $corpo, $header);
     
         echo 1;
 
