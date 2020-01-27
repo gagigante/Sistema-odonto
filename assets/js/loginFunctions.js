@@ -26,7 +26,7 @@ $(document).ready(function() {
             }    
         });
     });
-
+   
     // CRIAR CONTA 
     $('#createAccountBtn').click(function() {          
         window.location.href = 'create-account.php';
@@ -54,15 +54,46 @@ $(document).ready(function() {
                 },
                 success: function(response) {  
                     $('input[name=email]').val('');
-                    if (response == 0) {                    
+                    if (response == 0) {      
                         $('.modal-body .modal-alert').html('<div class="alert alert-danger" role="alert">Nenhum usuário foi encontrado com esse nome de usuário ou E-mail!</div>');
-                    } else {                                            
+                    } else {       
                         $('.modal-body .modal-alert').html('<div class="alert alert-success" role="alert">Um E-mail de redefinição de senha foi enviado para você! Cheque também a sua caixa de Spam e de Lixo Eletrônico.</div>');
-    
-                        setTimeout(() => $('#resetPassModal').modal('hide'), 3000);
+                        startCountdown();              
+                        setTimeout(() => $('#resetPassModal').modal('hide'), 8000);
                     }                
                 }
             });
         }        
     });
+
+    let seg = new Number();
+    seg = 30;
+
+    function startCountdown() {
+
+        // Se o tempo não for zerado
+        if ((seg - 1) >= 0) {       
+        
+            // Formata o número menor que dez, ex: 08, 07, ...
+            if (seg <= 9) {
+                seg = "0" + seg;
+            }                        
+            $("#sessao").html("Tente novamente em " + seg + " segundos");
+            
+            setTimeout(startCountdown, 1000);
+
+            //Desabilita o botão
+            $(".send-email").attr('disabled','disabled');
+
+            // diminui o tempo
+            seg--;
+
+        // Quando o contador chegar a zero faz esta ação
+        } else {
+            $(".send-email").removeAttr('disabled');
+            $("#sessao").html("");
+            //TEMPO DE ESPERA DO BOTAO DE RESET SENHA
+            seg = 30;
+        }
+    }
 });

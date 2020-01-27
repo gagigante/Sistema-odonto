@@ -17,12 +17,12 @@
 
     <!-- Frameworks css -->
     <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/libs/shards-dashboard/css/shards-dashboards.1.1.0.min.css">    
+    <link rel="stylesheet" href="assets/libs/shards-dashboard/css/shards-dashboards.1.1.0.min.css">         
 
 </head>
 
 <body class="h-100">
-
+    
     <?php
         require 'php/conexao.php';
         //verifica se existe uma conta logada e redireciona para a index
@@ -86,6 +86,7 @@
                             <div class="form-group col-md-12">                            
                                 <label for="email">E-mail ou nome de usuário cadastrado:</label>
                                 <input type="text" class="form-control" name="email" id="email" autocomplete="off">
+                                <small id="sessao"></small>
                             </div>
                         </div>                        
                     </div>
@@ -100,7 +101,6 @@
             </div>
         </div>
     </div>
-
 
     <!--Jquery CDN-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
