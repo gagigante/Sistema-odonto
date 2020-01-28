@@ -6,34 +6,13 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>DECADA ODONTO</title>
+    <title>Tratamentos</title>
 
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!--Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/shards-dashboards.1.1.0.min.css">
-    <link rel="stylesheet" href="assets/css/extras.1.1.0.min.css">
-
-    <!--Jquery CDN-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!--Bootstrap Script-->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <!--Bootstrap PopperJs CND-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <!--Framework required Scripts-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-    <script src="scripts/extras.1.1.0.min.js"></script>
-    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>    
-
-    <script src="assets/js/treatmentsFunctions.js"></script>
-    
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/libs/shards-dashboard/css/shards-dashboards.1.1.0.min.css">          
 </head>
 
 <body class="h-100">
@@ -45,15 +24,16 @@
 
     <div class="container-fluid">
         <div class="row">
+
             <!-- Main Sidebar -->
             <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
                 
-            <div class="main-navbar">
+                <div class="main-navbar">
                     <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
                         <a class="navbar-brand w-100 mr-0" style="line-height: 25px;">
                             <div class="d-table m-auto">
                                 <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="assets/images/shards-dashboards-logo.svg">
-                                <span class="d-none d-md-inline ml-1">ODONTO FRONT-END</span>
+                                <span class="d-none d-md-inline ml-1">PLUS ODONTO</span>
                             </div>
                         </a>
                         <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -61,6 +41,7 @@
                         </a>
                     </nav>
                 </div>
+
                 <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
                     <div class="input-group input-group-seamless ml-3">
                         <div class="input-group-prepend">
@@ -71,9 +52,7 @@
                         <input class="navbar-search form-control" type="text" placeholder="Pesquisar por nome do tratamento" aria-label="Search">
                     </div>
                 </form>
-
               
-
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -114,7 +93,9 @@
                         </li>                      
                     </ul>
                 </div>
+
             </aside>
+
             <!-- End Main Sidebar -->
             <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
                 <div class="main-navbar sticky-top bg-white">
@@ -179,8 +160,8 @@
                                     <a class="dropdown-item" href="#">
                                         <i class="material-icons">settings_applications</i> Configurações
                                     </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-danger" href="#">
+                                    <div class="dropdown-divider"> </div>
+                                    <a class="dropdown-item text-danger" href="logout.php">
                                         <i class="material-icons text-danger">&#xE879;</i> Sair
                                     </a>
                                 </div>
@@ -226,49 +207,7 @@
                                 <div class="card-body p-0 pb-3 text-center">
                                     
                                     <div class="ajax-response"></div>
-
-                                    <div class="modal fade" id="treatmentModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="ModalLabel">Editar ou adicionar item</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <form id="formEditTreatment">
-                                                    <div class="modal-body">
-                                                        <p style="text-align: left; margin: 10px; padding: 0;">Nome do tratamento</p>
-                                                        <div class="form-row">
-                                                            <div class="form-group col-md-12">
-                                                                <input type="text" class="form-control" name="edit-name" id="edit-name" placeholder="Nome do produto" value="Anestesia" required>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <p style="text-align: left; margin: 10px; padding: 0;">Descrição</p>
-                                                        <div class="form-row">
-                                                            <div class="form-group col-md-12">
-                                                                <textarea type="text" class="form-control" name="edit-description" id="edit-description" required></textarea>
-                                                            </div>                                                            
-                                                        </div>
-                                                        
-                                                        <p style="text-align: left; margin: 10px; padding: 0;">Preço</p>
-                                                        <div class="form-row">
-                                                            <div class="form-group col-md-6">
-                                                                <input type="text" class="form-control" name="edit-price" id="edit-price" placeholder="Preço unitário" value="15,99" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
-                                                        <button type="submit" class="btn btn-danger delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    
                                 </div>
                             </div>
                         </div>
@@ -281,7 +220,86 @@
                 </footer>
             </main>
         </div>
+
+        <!-- MODAL DE EDICAO -->
+        <div class="modal fade" id="treatmentModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Editar ou adicionar item</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="formEditTreatment">
+                        <div class="modal-body">                            
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="edit-name">Nome do tratamento</label>
+                                    <input type="text" class="form-control" name="edit-name" id="edit-name" placeholder="Nome do produto" value="Anestesia" required>
+                                </div>
+                            </div>
+                                                        
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="edit-description">Descrição</label>
+                                    <textarea type="text" class="form-control" name="edit-description" id="edit-description" required></textarea>
+                                </div>                                                            
+                            </div>
+                                                        
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="edit-price">Preço</label>
+                                    <input type="text" class="form-control" name="edit-price" id="edit-price" placeholder="Preço unitário" value="15,99" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">save</i></button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL DE CONFIRMACAO DE DELETE -->
+        <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Apagar tratamento</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>                    
+                    <div class="modal-body">
+                        <p style="text-align: left; margin: 10px; padding: 0;">Tem certeza que deseja remover este tratamento?</p>
+                    </div>
+                    <div class="modal-footer">                        
+                        <button type="submit" class="btn btn-danger confirm-delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!--Jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--Bootstrap Script-->
+    <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+    <!--Bootstrap PopperJs CND-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <!--Framework required Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>  
+    <script src="assets/libs/shards-dashboard/js/shards-dashboards.1.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>    
+
+    <script src="assets/js/treatmentsFunctions.js"></script>
 </body>
 
 </html>
