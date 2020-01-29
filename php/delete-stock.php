@@ -1,10 +1,8 @@
 <?php
-	include_once "conexao.php";
+	require "conexao.php";
 
 	$id = $_POST["id"];
 
-	$queryDelete ="delete from tb02_estoque WHERE tb02_idProduto=$id";
-	$resultadoDelete = $conexao->query($queryDelete);
-
-		
+	$query ="delete from tb02_estoque WHERE tb02_id=$id";
+	$result = $conexao->query($query);		
  ?>
