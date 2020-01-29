@@ -232,8 +232,7 @@
                                     <input type="text" class="form-control" name="edit-name" id="edit-name" placeholder="Nome do produto" required>
                                 </div>
                             </div>
-                            
-                            <p style="text-align: left; margin: 10px; padding: 0;">Quantidade</p>
+                                                        
                             <div class="form-row">                                
                                 <div class="form-group col-md-6">
                                     <label for="qtd">Quantidade disponível</label>
