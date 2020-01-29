@@ -14,7 +14,7 @@
             //$_SESSION['senha'] = $linha['tb04_senha'];
             $_SESSION['idUsuario'] = $linha['tb04_id'];
             $_SESSION["logado"] = 1;  
-            echo 'login success';
+            //echo 'login success';
             // header("Location:../index.php");
         }
     } else {
