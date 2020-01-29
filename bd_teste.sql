@@ -41,39 +41,38 @@ INSERT INTO `tb01_paciente` (`tb01_nome`, `tb01_rg`, `tb01_cpf`, `tb01_telefone`
 
 -- Copiando estrutura para tabela bd_teste.tb02_estoque
 CREATE TABLE IF NOT EXISTS `tb02_estoque` (
+  `tb02_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tb02_id_usuario` int(11) NOT NULL,
   `tb02_produto` varchar(360) NOT NULL,
   `tb02_quantidade` int(100) NOT NULL,
   `tb02_preco` double NOT NULL,
-  `tb02_idProduto` int(100) NOT NULL AUTO_INCREMENT,
-  `tb02_idUsuario` int(11) NOT NULL,
-  PRIMARY KEY (`tb02_idProduto`)
-) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`tb02_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb02_estoque: 3 rows
+-- Copiando dados para a tabela bd_teste.tb02_estoque: 2 rows
 /*!40000 ALTER TABLE `tb02_estoque` DISABLE KEYS */;
-INSERT INTO `tb02_estoque` (`tb02_produto`, `tb02_quantidade`, `tb02_preco`, `tb02_idProduto`, `tb02_idUsuario`) VALUES
-	('produto1', 2, 60, 36, 2),
-	('produto1', 3, 60, 46, 1),
-	('tr', 12, 60, 45, 1);
+INSERT INTO `tb02_estoque` (`tb02_id`, `tb02_id_usuario`, `tb02_produto`, `tb02_quantidade`, `tb02_preco`) VALUES
+	(36, 2, 'produto1', 2, 60);
 /*!40000 ALTER TABLE `tb02_estoque` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb03_tratamentos
 CREATE TABLE IF NOT EXISTS `tb03_tratamentos` (
+  `tb03_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tb03_id_usuario` int(11) NOT NULL,
   `tb03_nome` varchar(100) NOT NULL,
   `tb03_descricao` varchar(500) NOT NULL,
   `tb03_preco` double NOT NULL,
-  `tb03_id` int(11) NOT NULL AUTO_INCREMENT,
-  `tb03_idUsuario` int(100) NOT NULL,
   PRIMARY KEY (`tb03_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb03_tratamentos: ~4 rows (aproximadamente)
+-- Copiando dados para a tabela bd_teste.tb03_tratamentos: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb03_tratamentos` DISABLE KEYS */;
-INSERT INTO `tb03_tratamentos` (`tb03_nome`, `tb03_descricao`, `tb03_preco`, `tb03_id`, `tb03_idUsuario`) VALUES
-	('editado', '111', 60, 2, 2),
-	('Tratamento 2', 'descricao do tratamento 2', 80, 4, 1),
-	('Tratamento 3', 'descricao do tratamento 3', 130, 5, 1),
-	('tratamento 1', 'descricao do tratamento 1', 200, 6, 1);
+INSERT INTO `tb03_tratamentos` (`tb03_id`, `tb03_id_usuario`, `tb03_nome`, `tb03_descricao`, `tb03_preco`) VALUES
+	(2, 2, 'editado', '111', 60),
+	(10, 1, 'fafawf', 'awfawf', 60),
+	(11, 1, 'wfwagwa', 'aaw', 60),
+	(12, 1, 'afafa', 'faf', 45),
+	(13, 1, 'tratamento 1', 'descricao do tratamento 1', 80);
 /*!40000 ALTER TABLE `tb03_tratamentos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb04_login
@@ -90,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `tb04_login` (
 /*!40000 ALTER TABLE `tb04_login` DISABLE KEYS */;
 INSERT INTO `tb04_login` (`tb04_id`, `tb04_usuario`, `tb04_email`, `tb04_senha`, `tb04_reset_password`) VALUES
 	(1, 'user_admin', 'decadatech@gmail.com', '275f78b0da67df65db9336325c664de2', b'1'),
-	(2, 'oto', '', '123', b'0');
+	(2, 'oto', '', '275f78b0da67df65db9336325c664de2', b'0');
 /*!40000 ALTER TABLE `tb04_login` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb05_financeiro
@@ -104,16 +103,17 @@ CREATE TABLE IF NOT EXISTS `tb05_financeiro` (
   `tb05_idPaciente` int(100) DEFAULT NULL,
   `tb05_idItem` int(100) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`tb05_idItem`)
-) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb05_financeiro: 5 rows
+-- Copiando dados para a tabela bd_teste.tb05_financeiro: 6 rows
 /*!40000 ALTER TABLE `tb05_financeiro` DISABLE KEYS */;
 INSERT INTO `tb05_financeiro` (`tb05_nome`, `tb05_tipo`, `tb05_valor`, `tb05_data`, `tb05_situacao`, `tb05_idUsuario`, `tb05_idPaciente`, `tb05_idItem`) VALUES
 	('editado', 0, 60, '2019-12-30', 0, 1, NULL, 37),
 	('editado', 1, 60, '1970-01-01', 0, 1, NULL, 36),
 	('Gabriel Henrique Gigante da Silva', 1, 60, '2019-01-01', 0, 1, NULL, 35),
 	('editado', 1, 60, '1970-01-01', 0, 1, NULL, 34),
-	('editado', 1, 60, '2019-12-31', 0, 2, NULL, 33);
+	('editado', 1, 60, '2019-12-31', 0, 2, NULL, 33),
+	('dwadad', 1, 60, '2020-01-28', 0, 2, NULL, 38);
 /*!40000 ALTER TABLE `tb05_financeiro` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb06_eventos
