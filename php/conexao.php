@@ -7,10 +7,10 @@
     $senha = "";
     $banco = "bd_teste";
 
-    // $servidor = "mysql873.umbler.com";
-    // $usuario = "bd_user_adm";
-    // $senha = "JrMp7_4T-MpAZ";
-    // $banco = "bd_sis_odonto";
+    $servidor = "mysql669.umbler.com";
+    $usuario = "plus_odonto_adm";
+    $senha = "JrMp7_4T-MpAZ";
+    $banco = "bd_plus_odonto";
 
     $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
     mysqli_set_charset($conexao,"utf8");
