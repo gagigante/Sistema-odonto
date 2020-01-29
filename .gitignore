@@ -1,6 +1,5 @@
 node_modules
 .DS_Store
-php/conexao.php
 assets/images/patients-profile-images/
 assets/images/others/
 LICENSE
