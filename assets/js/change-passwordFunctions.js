@@ -41,6 +41,8 @@ $(document).ready(function() {
                     },
                     success: function(res) { 
                         $('#confirmModal').modal('show');
+                        $('input#confirm-password').val("");
+                        $('input#password').val("");
                     }    
                 });
 
