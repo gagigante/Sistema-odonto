@@ -3,10 +3,10 @@
     
     $idLogin = $_SESSION['idUsuario'];
 
-    $queryselect = "select * from tb01_paciente where tb01_idUsuario = '$idLogin' order by tb01_nome";
-    $resultadoselect = $conexao->query($queryselect);
+    $query = "select * from tb01_paciente where tb01_idUsuario = '$idLogin' order by tb01_nome";
+    $result = $conexao->query($query);
 
-    if($resultadoselect->num_rows>0) { 
+    if($result->num_rows>0) { 
 
         echo    "<div class='table-responsive'>
                     <table class='table mb-0'>
@@ -22,7 +22,7 @@
                         </thead>
                         <tbody>";
 
-        while ($linha = $resultadoselect->fetch_assoc()){                          
+        while ($linha = $result->fetch_assoc()){                          
          
             if(empty($linha["tb01_cpf"])){
                 $linha["tb01_cpf"] = "(Sem dado)";
@@ -39,8 +39,7 @@
             echo "<td><a href='patient-profile.php?id=".$linha["tb01_idpaciente"]."' class='mb-2 btn btn-sm btn-success mr-1' style='color: white'>Ver perfil</a></td>";
             echo "</tr>";
         }
-        
-        
+                        
         echo        "</tbody>
             </table>
     </div>";
