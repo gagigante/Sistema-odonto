@@ -10,6 +10,7 @@
         while ($dados = $result->fetch_assoc()) {            
             $user_id = $dados['tb04_id'];         
             $user_email = $dados['tb04_email'];  
+            $user_hash = md5($user_id) . "/" . md5($user_email);
         }        
 
         // ATUALIZA O CAMPO DE RESET DE SENHA PARA TRUE
@@ -172,7 +173,7 @@
                           <td width="540" valign="top" align="center" style="padding:0;Margin:0;"> 
                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;"> 
                              <tr style="border-collapse:collapse;"> 
-                              <td align="center" style="Margin:0;padding-left:10px;padding-right:10px;padding-top:40px;padding-bottom:40px;"><span class="es-button-border" style="border-style:solid;border-color:#7C72DC;background:#56CB1F;border-width:1px;display:inline-block;border-radius:2px;width:auto;"><a href="https://app.plusodonto.com.br/change-password.php?id='.$user_id.'" class="es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, '.'helvetica neue'.', arial, verdana, sans-serif;font-size:20px;color:#FFFFFF;border-style:solid;border-color:#56CB1F;border-width:15px 25px 15px 25px;display:inline-block;background:#56CB1F;border-radius:2px;font-weight:normal;font-style:normal;line-height:24px;width:auto;text-align:center;">Redefinir senha</a></span></td> 
+                              <td align="center" style="Margin:0;padding-left:10px;padding-right:10px;padding-top:40px;padding-bottom:40px;"><span class="es-button-border" style="border-style:solid;border-color:#7C72DC;background:#56CB1F;border-width:1px;display:inline-block;border-radius:2px;width:auto;"><a href="https://app.plusodonto.com.br/change-password.php?id='.$user_hash.'" class="es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, '.'helvetica neue'.', arial, verdana, sans-serif;font-size:20px;color:#FFFFFF;border-style:solid;border-color:#56CB1F;border-width:15px 25px 15px 25px;display:inline-block;background:#56CB1F;border-radius:2px;font-weight:normal;font-style:normal;line-height:24px;width:auto;text-align:center;">Redefinir senha</a></span></td> 
                              </tr> 
                            </table></td> 
                          </tr> 
