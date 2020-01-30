@@ -17,7 +17,10 @@
 	$cpf = mysqli_real_escape_string($conexao, trim($_POST["cpf"]));
 	$tel = mysqli_real_escape_string($conexao, trim($_POST["phone"]));
 	$email = mysqli_real_escape_string($conexao, trim($_POST["email"]));
-	$data = mysqli_real_escape_string($conexao, trim($_POST["date"]));
+
+	//CONVERTER A DATA DO PADRAO BRASILEIRO PARA O FORMATO DO BANCO DE DADOS
+	$data = str_replace('/', '-', mysqli_real_escape_string($conexao, trim($_POST["date"])));
+	$conv_data = date("Y-m-d", strtotime($data));	
 
 	$tamanho['tamanho'] = 1024*1024*100;
 
@@ -31,14 +34,14 @@
 
 	if(empty($imagem)){
 
-		$queryInsereCadastro = "INSERT INTO tb01_paciente (tb01_nome, tb01_rg, tb01_cpf, tb01_telefone, tb01_email, tb01_data, tb01_profissao, tb01_endereco, tb01_idUsuario) VALUES ('$nome', '$rg', '$cpf', '$tel', '$email', '$data', '$profissao', '$endereco', '$idLogin')";
-		$resultadoInsereCadastro = mysqli_query($conexao, $queryInsereCadastro);
+		$query = "INSERT INTO tb01_paciente (tb01_nome, tb01_rg, tb01_cpf, tb01_telefone, tb01_email, tb01_data, tb01_profissao, tb01_endereco, tb01_idUsuario) VALUES ('$nome', '$rg', '$cpf', '$tel', '$email', '$conv_data', '$profissao', '$endereco', '$idLogin')";
+		$result = mysqli_query($conexao, $query);
 
 	} else {
 
 		if(move_uploaded_file($imagemtemp, "../assets/images/patients-profile-images/".$imageNameWithHash)){
-			$queryInsereCadastro = "INSERT INTO tb01_paciente (tb01_nome, tb01_rg, tb01_cpf, tb01_telefone, tb01_email, tb01_data, tb01_imagem, tb01_profissao, tb01_endereco, tb01_idUsuario) VALUES ('$nome', '$rg', '$cpf', '$tel', '$email', '$data','$imageNameWithHash', '$profissao', '$endereco', '$idLogin')";
-			$resultadoInsereCadastro = mysqli_query($conexao, $queryInsereCadastro);
+			$query = "INSERT INTO tb01_paciente (tb01_nome, tb01_rg, tb01_cpf, tb01_telefone, tb01_email, tb01_data, tb01_imagem, tb01_profissao, tb01_endereco, tb01_idUsuario) VALUES ('$nome', '$rg', '$cpf', '$tel', '$email', '$conv_data','$imageNameWithHash', '$profissao', '$endereco', '$idLogin')";
+			$result = mysqli_query($conexao, $query);
 		}
 
 	}	

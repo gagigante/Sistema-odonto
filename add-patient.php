@@ -6,49 +6,13 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>DECADA ODONTO</title>
+    <title>Adicionar paciente</title>
 
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/shards-dashboards.1.1.0.min.css">
-    <link rel="stylesheet" href="assets/css/extras.1.1.0.min.css">
-
-    <!--Jquery CDN-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!--Bootstrap Script-->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <!--Bootstrap PopperJs CND-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <!--Framework required Scripts-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-    <script src="scripts/extras.1.1.0.min.js"></script>
-    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script> 
-    
-    <!--MaskJs Script-->
-    <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
-
-    <script src="assets/js/addPatientsFunctions.js"></script>
-
-    <!--Fields Formating Script-->
-    <script>
-        $(document).ready(function() {
-
-            $('#dateDiv').datepicker({
-                format: 'dd/mm/yyyy',
-            });
-
-            $('#phone').mask('(00) 0 0000-0000');
-            $('#rg').mask('00.000.000-00');
-            $('#cpf').mask('000.000.000-00');
-            $('#date').mask('00/00/0000');
-        });
-    </script>
-
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/libs/shards-dashboard/css/shards-dashboards.1.1.0.min.css">
 </head>
 
 <body class="h-100">
@@ -68,7 +32,7 @@
                         <a class="navbar-brand w-100 mr-0" style="line-height: 25px;">
                             <div class="d-table m-auto">
                                 <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="assets/images/shards-dashboards-logo.svg">
-                                <span class="d-none d-md-inline ml-1">ODONTO FRONT-END</span>
+                                <span class="d-none d-md-inline ml-1">PLUS ODONTO</span>
                             </div>
                         </a>
                         <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -272,32 +236,6 @@
                     </div>
                 </div>
 
-
-
-
-
-                <!-- MODAL DE CONFIRMACAO DE DELETE-->
-                <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="ModalLabel">Extensão não suportada</h5>                                
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div>
-                                <div class="modal-body" style="padding-bottom: 0;">
-                                    <p id="modalText">Deseja mesmo apagar esta imagem?</p>      
-                                </div>
-                                <div class="modal-footer">                                    
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
                     <span class="copyright ml-auto my-auto mr-2">Copyright © 2019
                         <a target="_blank" href="https://decadatech.com" rel="nofollow">Decada Technology</a>
@@ -306,6 +244,62 @@
             </main>
         </div>
     </div>
+
+    <!-- MODAL DE CONFIRMACAO DE DELETE-->
+    <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Extensão não suportada</h5>                                
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div>
+                    <div class="modal-body" style="padding-bottom: 0;">
+                        <p id="modalText">Deseja mesmo apagar esta imagem?</p>      
+                    </div>
+                    <div class="modal-footer">                                    
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--Bootstrap Script-->
+    <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+    <!--Bootstrap PopperJs CND-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <!--Framework required Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>    
+    <script src="assets/libs/shards-dashboard/js/shards-dashboards.1.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script> 
+    
+    <!--MaskJs Script-->
+    <script type="text/javascript" src="assets/libs/jquery-mask/jquery.mask.js"></script>
+
+    <script src="assets/js/addPatientsFunctions.js"></script>
+
+    <!--Fields Formating Script-->
+    <script>
+        $(document).ready(function() {
+
+            $('#dateDiv').datepicker({
+                format: 'dd/mm/yyyy',
+            });
+
+            $('#phone').mask('(00) 0 0000-0000');
+            $('#rg').mask('00.000.000-00');
+            $('#cpf').mask('000.000.000-00');
+            $('#date').mask('00/00/0000');
+        });
+    </script>
+
 </body>
 
 </html>
