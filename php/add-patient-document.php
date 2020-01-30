@@ -31,6 +31,12 @@
 		// Verifica se o upload foi enviado via POST   
 		if(is_uploaded_file($arquivo['tmp_name'])) {  
 			
+			//Se a pasta documents nao existir
+			if(!file_exists("../assets/documents")) {
+				mkdir("../assets/documents");  
+			}
+
+			//Se a pasta patients-documents nao existir
 			if(!file_exists("../assets/documents/patients-documents")) {
 				mkdir("../assets/documents/patients-documents");  
 			}
