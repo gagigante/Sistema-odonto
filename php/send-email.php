@@ -276,9 +276,9 @@
          </body>
         </html>';
                
-        $header = "From: contato@ggportfolio.com.br" . "\r\n" 
+        $header = "From: no-reply@app.plusodonto.com.br" . "\r\n" 
                 . "Return-Path: contato@ggportfolio.com.br" . "\r\n"
-                . "Reply-To: contato@ggportfolio.com.br" . "\r\n"
+                . "Reply-To: no-reply@app.plusodonto.com.br" . "\r\n"
                 . "Content-type: text/html" . "\r\n"
                 . "X-Mailer: PHP/" .phpversion();
     
