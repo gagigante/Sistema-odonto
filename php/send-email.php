@@ -14,7 +14,7 @@
         }        
 
         // ATUALIZA O CAMPO DE RESET DE SENHA PARA TRUE
-        $queryUpdate = "UPDATE tb04_login SET tb04_reset_password = 1 WHERE tb04_id ='$user_id'";
+        $queryUpdate = "UPDATE tb04_usuarios SET tb04_reset_password = 1 WHERE tb04_id ='$user_id'";
         $result = mysqli_query($conexao, $queryUpdate);	        
 
         $assunto = "Redefinição de senha";

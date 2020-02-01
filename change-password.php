@@ -93,7 +93,7 @@
     <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>    
 
-    <script src="assets/js/change-passwordFunctions.js"></script>
+    <script src="assets/js/changePasswordFunctions.js"></script>
 
 </body>
 
