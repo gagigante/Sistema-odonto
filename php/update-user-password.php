@@ -14,7 +14,7 @@
         ${'var' . $i} = $array[$i];
     }
 
-    $query = "UPDATE tb04_login SET tb04_senha = MD5('$password'), tb04_reset_password = 0 WHERE md5(tb04_id) ='$var0' AND md5(tb04_email) = '$var1'";
+    $query = "UPDATE tb04_usuario SET tb04_senha = MD5('$password'), tb04_reset_password = 0 WHERE md5(tb04_id) ='$var0' AND md5(tb04_email) = '$var1'";
     $result = mysqli_query($conexao, $query);
     
     echo 0;
