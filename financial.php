@@ -1,54 +1,18 @@
 <!doctype html>
-<html class="no-js h-100" lang="en">
+<html class="no-js h-100">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>DECADA ODONTO</title>
+    <title>Financeiro</title>
 
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!--Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/shards-dashboards.1.1.0.min.css">
-    <link rel="stylesheet" href="assets/css/extras.1.1.0.min.css">
-
-    <!--Jquery CDN-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!--Bootstrap Script-->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <!--Bootstrap PopperJs CND-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <!--Framework required Scripts-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-    <script src="scripts/extras.1.1.0.min.js"></script>
-    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
-    <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>
-    <!--    <script src="scripts/app/app-blog-overview.1.1.0.js"></script>-->
-
-    <!--MaskJs Script-->
-    <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
-
-    <script>
-        $(document).ready(function() {                        
-            $('#dateDiv').datepicker({
-                //format: 'dd/mm/yyyy',
-            });
-            $('#date').mask('00/00/0000');
-        });
-    </script>
-    <!--Optionals Scripts-->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css">
-    <script src="assets/js/financialFunctions.js"></script>
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/libs/shards-dashboard/css/shards-dashboards.1.1.0.min.css">
 </head>
 
 <body class="h-100">
@@ -67,7 +31,7 @@
                         <a class="navbar-brand w-100 mr-0" style="line-height: 25px;">
                             <div class="d-table m-auto">
                                 <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="assets/images/shards-dashboards-logo.svg">
-                                <span class="d-none d-md-inline ml-1">ODONTO FRONT-END</span>
+                                <span class="d-none d-md-inline ml-1">PLUS ODONTO</span>
                             </div>
                         </a>
                         <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -113,19 +77,7 @@
                                 <i class="material-icons">drag_indicator</i>
                                 <span>Catálogo de tratamentos</span>
                             </a>
-                        </li>
-                        <!-- <li class="nav-item">
-                <a class="nav-link " href="user-profile-lite.html">
-                  <i class="material-icons">person</i>
-                  <span>User Profile</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="errors.html">
-                  <i class="material-icons">error</i>
-                  <span>Errors</span>
-                </a>
-              </li> -->
+                        </li>                
                     </ul>
                 </div>
             </aside>
@@ -183,7 +135,7 @@
                                         <i class="material-icons">settings_applications</i> Configurações
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-danger" href="#">
+                                    <a class="dropdown-item text-danger" href="logout.php">
                                         <i class="material-icons text-danger">&#xE879;</i> Sair
                                     </a>
                                 </div>
@@ -208,9 +160,10 @@
                         </div>
                     </div>
 
-                    <div class="form-group col-md-2" style="margin-bottom: 0;">
-                        <select id="" name="" class="form-control">
-                            <option selected>Neste mês</option>
+                    <!-- <div class="form-group col-md-3" style="margin-bottom: 0;">
+                        <select id="select-period" name="select-period" class="form-control">
+                            <option value="">Selecione uma opção</option>
+                            <option>Neste mês</option>
                             <option>Neste ano</option>
                             <option>Tudo</option>
                         </select>
@@ -229,7 +182,7 @@
                             <p style="margin: 0">Saldo</p>
                             <h5 style="margin: 0; color: grey">R$ 10.000,00</h5>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="row">
 
@@ -254,7 +207,6 @@
                                             <input type="text" class="input-sm form-control" name="date" placeholder="Data" id="date" autocomplete="off" required>
                                         </div>
 
-
                                         <div class="form-group col-md-3">
                                             <button type="submit" class="btn btn-success">Adicionar item</button>
                                         </div>
@@ -270,13 +222,62 @@
                     </div>
                 </div>
                 <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
-                    <span class="copyright ml-auto my-auto mr-2">Copyright © 2019
+                    <span class="copyright ml-auto my-auto mr-2">Copyright © 2020
                         <a target="_blank" href="https://decadatech.com" rel="nofollow">Decada Technology</a>
                     </span>
                 </footer>
             </main>
         </div>
+
+        <!-- MODAL DE CONFIRMACAO DE DELETE -->
+        <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Remover item</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>                    
+                    <div class="modal-body">
+                        <p style="text-align: left; margin: 10px; padding: 0;">Tem certeza que deseja remover este item?</p>
+                        <!-- <small style="margin: 10px">Esta ação é irreversível *</small> -->
+                    </div>
+                    <div class="modal-footer">                        
+                        <button type="submit" class="btn btn-danger confirm-delete"><i class="material-icons" style="font-size: 18px">delete_outline</i></button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+
     </div>
+
+     <!--Jquery CDN-->
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+     <!--Bootstrap Script-->
+     <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+     <!--Bootstrap PopperJs CND-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+     <!--Framework required Scripts-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>     
+     <script src="assets/libs/shards-dashboard/js/shards-dashboards.1.1.0.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>        
+     <!--MaskJs Script-->
+     <script type="text/javascript" src="assets/libs/jquery-mask/jquery.mask.js"></script>
+    
+    <script src="assets/js/financialFunctions.js"></script>
+ 
+    <script>
+        $(document).ready(function() {                        
+            $('#dateDiv').datepicker({
+                format: 'dd/mm/yyyy',
+            });
+            $('#date').mask('00/00/0000');
+        });
+    </script>
 </body>
 
 </html>
