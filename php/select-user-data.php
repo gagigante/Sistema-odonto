@@ -13,7 +13,7 @@
     }
 
     // FAZ O SELECT NO USUARIO COM BASE NO ID E VERIFICA SE O CAMPO DE RESETAR SENHA ESTA COMO TRUE
-    $querySelect = "SELECT * FROM tb04_login WHERE MD5(tb04_id) = '$var0' AND MD5(tb04_email) = '$var1'";
+    $querySelect = "SELECT * FROM tb04_usuario WHERE MD5(tb04_id) = '$var0' AND MD5(tb04_email) = '$var1'";
     $result = $conexao->query($querySelect);
 
     $data = [];
