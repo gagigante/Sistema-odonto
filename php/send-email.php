@@ -3,7 +3,7 @@
     
     $input = mysqli_real_escape_string($conexao, trim($_POST["email"]));	
 
-    $querySelect = "SELECT * FROM tb04_login WHERE tb04_usuario = '$input' OR tb04_email = '$input'";
+    $querySelect = "SELECT * FROM tb04_usuarios WHERE tb04_usuario = '$input' OR tb04_email = '$input'";
     $result = $conexao->query($querySelect);
 
     if($result->num_rows>0) {
