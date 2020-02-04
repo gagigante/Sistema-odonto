@@ -4,7 +4,11 @@
     $idLogin = $_SESSION['idUsuario'];
 	$idPaciente = $_POST['idPaciente'];
     
-    $docDesc = $_POST['documentName'];
+	$docDesc = $_POST['documentName'];
+		
+	$spaceLimit = $_POST['space_limit'];
+	$directorySize = 0;
+	$avaiable_space = 0;
 
 	if(isset($_FILES['document']) && $_FILES['document']['size'] > 0) {  
  
@@ -40,9 +44,31 @@
 			if(!file_exists("../assets/documents/patients-documents")) {
 				mkdir("../assets/documents/patients-documents");  
 			}
+
+			if(!file_exists("../assets/documents/patients-documents/".$idLogin)) {
+				mkdir("../assets/documents/patients-documents".$idLogin);  
+			}
+
+			if(!file_exists("../assets/documents/patients-documents/".$idLogin.'/'.$idPaciente)) {
+				mkdir("../assets/documents/patients-documents/".$idLogin.'/'.$idPaciente);  
+			}
+			
+			// CALCULA ESPAÇO DISPONÍVEL
+			foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator("../assets/documents/patients-documents/".$idLogin.'/'.$idPaciente, FilesystemIterator::SKIP_DOTS)) as $object){
+				$directorySize += $object->getSize();
+			}
+
+			$avaiable_space = $spaceLimit - ($directorySize/1000000);
+
+			if (($arquivo['size']/1000000) > $avaiable_space) {
+				// ERRO - TAMANHO DO ARQUIVO MAIOR QUE ESPAÇO DISPONÍVEL				
+				echo('<div class="alert alert-danger alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-times mx-2"></i><strong>Erro!</strong> Não há espaço suficiente para este arquivo!</div>');
+				exit();  
+			}
+
 						
 			// Essa função move_uploaded_file() copia e verifica se o arquivo enviado foi copiado com sucesso para o destino  
-			if (!move_uploaded_file($arquivo['tmp_name'], '../assets/documents/patients-documents/' . $docNameWithHash)){  
+			if (!move_uploaded_file($arquivo['tmp_name'], '../assets/documents/patients-documents/'.$idLogin.'/'.$idPaciente .'/'.$docNameWithHash)){  
 				
 				//ERRO - ARQUIVO NAO COPIADO
 				echo('<div class="alert alert-danger alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-times mx-2"></i><strong>Erro!</strong> Algo não occoreu como o esperado!</div>');

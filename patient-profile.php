@@ -6,72 +6,26 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>DECADA ODONTO</title>
+    <title>Perfil do paciente</title>
 
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!--Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/shards-dashboards.1.1.0.min.css">
-    <link rel="stylesheet" href="assets/css/extras.1.1.0.min.css">
-
-    <!--Jquery CDN-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-    <!--Bootstrap Script-->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
-    <!--Bootstrap PopperJs CND-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-
-    <!--Framework required Scripts-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-    <script src="scripts/extras.1.1.0.min.js"></script>
-    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
-    <script src="scripts/app/app-blog-new-post.1.1.0.js"></script>
-
-    <!--MaskJs Script-->
-    <script type="text/javascript" src="assets/js/jquery.mask.js"></script>
-
-    <script src="assets/js/patientProfileFunctions.js"></script>    
-
-    <!--Fields Formating Script-->
-    <script>
-        $(document).ready(function () {
-
-            $('#dateDiv').datepicker({
-                format: 'dd/mm/yyyy',
-            });
-
-            $('#debitDate').mask('00/00/0000');
-
-            $('#phone').mask('(00) 0 0000-0000');
-            $('#rg').mask('00.000.000-00');
-            $('#cpf').mask('000.000.000-00');
-            $('#dateOfBirth').mask('00/00/0000');         
-         
-        });
-    </script>
     
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/libs/shards-dashboard/css/shards-dashboards.1.1.0.min.css">
+
+    <link rel="stylesheet" href="assets/css/patient-profile.style.css">
 </head>
 
 <body class="h-100">
 
     <?php        
-
         require 'php/conexao.php';
         require 'php/verificaLogin.php';
         
         if (!isset($_GET['id']) || empty($_GET['id'])) {
             header("Location: patients.php");                
         }                         
-
     ?>
 
     <div class="container-fluid">
@@ -84,7 +38,7 @@
                             <div class="d-table m-auto">
                                 <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;"
                                     src="assets/images/shards-dashboards-logo.svg" alt="Shards Dashboard">
-                                <span class="d-none d-md-inline ml-1">ODONTO FRONT-END</span>
+                                <span class="d-none d-md-inline ml-1">PLUS ODONTO</span>
                             </div>
                         </a>
                         <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -194,7 +148,7 @@
                                         <i class="material-icons">settings_applications</i> Configurações
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-danger" href="#">
+                                    <a class="dropdown-item text-danger" href="logout.php">
                                         <i class="material-icons text-danger">&#xE879;</i> Sair
                                     </a>
                                 </div>
@@ -213,9 +167,7 @@
                 </div>
                 <!-- / .main-navbar -->
 
-                <div class="screen-alert" style="position: absolute; width: 100%;"> 
-                    <!-- <div class="alert alert-danger alert-dismissible fade show mb-0" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-times mx-2"></i><strong>Erro!</strong> Extenção não suportada! </div> -->
-                </div>
+                <div class="screen-alert" style="position: absolute; width: 100%;"></div>
 
                 <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
                     <!-- Page Header -->
@@ -254,6 +206,10 @@
                                                 href="#tab5" role="tab">Imagens</a>
                                             <a style="margin-right: 5px;" class="nav-item nav-link" data-toggle="tab"
                                                 href="#tab6" role="tab">Documentos</a>
+                                            <!-- <a style="margin-right: 5px;" class="nav-item nav-link" data-toggle="tab"
+                                            href="#tab6" role="tab">Atestados</a>
+                                            <a style="margin-right: 5px;" class="nav-item nav-link" data-toggle="tab"
+                                            href="#tab6" role="tab" disabled>Receitas</a> -->
                                             <a style="margin-right: 5px;" class="nav-item nav-link" data-toggle="tab"
                                                 href="#tab7" role="tab">Débitos</a>
                                         </div>
@@ -269,33 +225,33 @@
                                                 <div class="form-row" style="margin-top: 10px;">                                                    
                                                     <div class="form-group col-md-12">
                                                         <label for="name">Nome completo:</label>
-                                                        <input type="text" class="form-control" name="name" id="name" placeholder="Nome completo *" required readonly>  
+                                                        <input type="text" class="form-control" name="name" id="name" placeholder="Nome completo *" autocomplete="off" required readonly>  
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
                                                         <label for="address">Endereço:</label>
-                                                        <input type="text" class="form-control" name="address" id="address" placeholder="Endereço *" required readonly>  
+                                                        <input type="text" class="form-control" name="address" id="address" placeholder="Endereço *" autocomplete="off" required readonly>  
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label for="rg">RG:</label>
-                                                        <input type="text" class="form-control" name="rg" id="rg" placeholder="RG" readonly>
+                                                        <input type="text" class="form-control" name="rg" id="rg" placeholder="RG" autocomplete="off" readonly>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="cpf">CPF:</label>
-                                                        <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" readonly>
+                                                        <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" autocomplete="off" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label for="phone">Telefone:</label>
-                                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefone *" required readonly>
+                                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefone *" autocomplete="off" required readonly>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="email">E-mail:</label>
-                                                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" readonly>
+                                                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" autocomplete="off" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">                                                    
@@ -463,10 +419,16 @@
                                         <!-- TAB 6 - DOCUMENTOS -->
                                         <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="nav-contact-tab">
 
+                                            <p style="margin: 30px auto 0 30px;">Consumo de espaço de documentos</p>
+                                            <div id="document-avaible-space" class="progress" style="margin: 10px 30px 0 30px;">
+                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                                            </div>
+                                            <small style="margin-left: 30px;"><span id="doc-used"></span>mb / <span id="doc-avaiable"></span>mb (Esse é o limite compartilhado entre os pacientes deste perfil)</small>
+
                                             <form style="margin: 30px" method="POST" enctype="multipart/form-data" id="patient-add-document-form">
                                                 <div class="form-row">
                                                     <div class="form-group col-md-4">
-                                                        <input type="file" name="document" id="document-input" required /> 
+                                                        <input type="file" accept=".docx, application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, text/plain, application/pdf," name="document" id="document-input" required /> 
                                                     </div>
                                                     <div class="form-group col-md-4">
                                                         <input type="text" class="form-control" name="documentName" id="documentName" placeholder="Nome do documento" required />
@@ -574,6 +536,29 @@
                                                 </table>
                                             </div>
 
+                                            <!-- MODAL DE CONFIRMACAO DE PAGAMENTO DA TAB DEBITO -->
+                                            <div class="modal fade" id="confirmPayDebitModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="ModalLabel">Confirmar pagamento</h5>                                
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <form id="formEditTreatment">
+                                                            <div class="modal-body" style="padding-bottom: 0;">
+                                                                <p>Desenha efetuar a baixa deste débito?</p>                                  
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" id="btConfirmDebit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">check</i></button>     
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+   
                                         </div>
 
                                     </div>
@@ -583,52 +568,7 @@
                     </div>
                 </div>
 
-                <!-- MODAL DE CONFIRMACAO DE PAGAMENTO DA TAB DEBITO -->
-                <div class="modal fade" id="confirmPayDebitModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="ModalLabel">Confirmar pagamento</h5>                                
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <form id="formEditTreatment">
-                                <div class="modal-body" style="padding-bottom: 0;">
-                                    <p>Desenha efetuar a baixa deste débito?</p>                                  
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" id="btConfirmDebit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">check</i></button>     
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MODAL DE CONFIRMACAO DE DELETE DA TAB TRATAMENTOS -->
-                <div class="modal fade" id="confirmDeleteTreatmentModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="ModalLabel">Confirmar ação</h5>                                
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <form id="formEditTreatment">
-                                <div class="modal-body" style="padding-bottom: 0;">
-                                    <p>Desenha mesmo apagar este registro?</p>                                  
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" id="btConfirmDeleteTretment" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">check</i></button>     
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
+            
                 <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
                     <span class="copyright ml-auto my-auto mr-2">Copyright © 2019
                         <a target="_blank" href="https://decadatech.com" rel="nofollow">Decada Technology</a>
@@ -636,8 +576,71 @@
                 </footer>
 
             </main>
-        </div>
+
+            <!-- MODAL DE CONFIRMACAO DE DELETE DA TAB TRATAMENTOS -->
+            <div class="modal fade" id="confirmDeleteTreatmentModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">Confirmar ação</h5>                                
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form id="">
+                            <div class="modal-body" style="padding-bottom: 0;">
+                                <p>Desenha mesmo apagar este registro?</p>                                  
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="btConfirmDeleteTretment" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">check</i></button>     
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>        
     </div>
+
+     <!--Jquery CDN-->
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+     <!--Bootstrap Script-->
+     <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+ 
+     <!--Bootstrap PopperJs CND-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+ 
+     <!--Framework required Scripts-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>     
+     <script src="assets/libs/shards-dashboard/js/shards-dashboards.1.1.0.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>     
+ 
+     <!--MaskJs Script-->
+     <script type="text/javascript" src="assets/libs/jquery-mask/jquery.mask.js"></script>
+ 
+     <script src="assets/js/patientProfileFunctions.js"></script>    
+ 
+     <!--Fields Formating Script-->
+     <script>
+         $(document).ready(function () {
+ 
+             $('#dateDiv').datepicker({
+                 format: 'dd/mm/yyyy',
+             });
+ 
+             $('#debitDate').mask('00/00/0000');
+ 
+             $('#phone').mask('(00) 0 0000-0000');
+             $('#rg').mask('00.000.000-00');
+             $('#cpf').mask('000.000.000-00');
+             $('#dateOfBirth').mask('00/00/0000');                   
+         });
+     </script>
+
 </body>
 
 </html>

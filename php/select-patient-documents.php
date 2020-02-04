@@ -19,7 +19,7 @@
                         echo '<p>' .$linha['tb11_nome']. '</p>';
                     echo '</div>';
                     echo '<div>';
-                        echo '<a href="assets/documents/patients-documents/' .$linha['tb11_documento']. '" download>Download</a>';
+                        echo '<a href="assets/documents/patients-documents/'.$idLogin.'/'.$patientId.'/'.$linha['tb11_documento'].'" download>Download</a>';
                         echo '<button type="button" class="btn btn-outline-danger btDeleteDoc" style="margin-left: 5px" id="' .$linha['tb11_id']. '"> Remover </button>';
                     echo '</div>';
                 echo '</div>';

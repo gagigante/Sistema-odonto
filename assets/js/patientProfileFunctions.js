@@ -2,7 +2,11 @@ $(document).ready(function() {
     
     //PEGA O ID DO PACIENTE NA URL
     const url = window.location.href; 
-    const patientId = url.split('?')[1].split('=')[1];     
+    const patientId = url.split('?')[1].split('=')[1];  
+    
+    // LIMITE DAS PASTAS DE DOCUMENTOS E DE IMAGENS POR USUARIO
+    const docDirectoryLimit = 80;
+    const imageDirectoryLimit = 120;
 
     // TAB 1 - SOBRE
 
@@ -18,7 +22,7 @@ $(document).ready(function() {
             var data = JSON.parse(response);
  
             $('#nomeUser').text(data[0].nome);
-            $("#userProfileImage").attr("src","assets/images/patients-profile-images/" +data[0].imagem);
+            $("#userProfileImage").attr("src","assets/images/patients-profile-images/" +data[0].imagem); 
 
             $('#name').val(data[0].nome);
             $('#address').val(data[0].endereco);
@@ -259,7 +263,7 @@ $(document).ready(function() {
     });
 
     // TAB 6 - DOCUMENTOS
-
+   
     //SELECT DOS DOCUMENTOS
     $.ajax({
         url: 'php/select-patient-documents.php',
@@ -269,6 +273,25 @@ $(document).ready(function() {
         },
         success: function(response) {
             $('.document-ajax-response').html(response);
+
+            //CALCULA ESPAÇO DISPONÍVEL
+            $.ajax({
+                url: 'php/get-patient-document-directory-size.php',
+                type: 'POST', 
+                data: {                   
+                    patient_id: patientId  
+                },
+                success: function(response) {
+                    const directorySize = response;
+                    const avaiblePercent = (directorySize/docDirectoryLimit) * 100;
+                                
+                    $('#document-avaible-space div').css({ width: `${avaiblePercent}%` }); 
+                    $('#document-avaible-space div').html(Math.round(avaiblePercent * 10) / 10 + "%"); 
+
+                    $('#doc-used').html(Math.round(directorySize * 10) / 10);
+                    $('#doc-avaiable').html(docDirectoryLimit);
+                },
+            });
         },
     });
 
@@ -280,6 +303,7 @@ $(document).ready(function() {
         var form = $('#patient-add-document-form')[0];        
         var data = new FormData(form);
         data.append('idPaciente', patientId);
+        data.append('space_limit', docDirectoryLimit);        
 
         $.ajax({
             type: 'POST',
@@ -296,10 +320,29 @@ $(document).ready(function() {
                     url: 'php/select-patient-documents.php',
                     type: 'POST', 
                     data: {                   
-                        patient_id: patientId  
+                        patient_id: patientId                      
                     },
                     success: function(response) {
                         $('.document-ajax-response').html(response);
+
+                        //CALCULA ESPAÇO DISPONÍVEL
+                        $.ajax({
+                            url: 'php/get-patient-document-directory-size.php',
+                            type: 'POST', 
+                            data: {                   
+                                patient_id: patientId  
+                            },
+                            success: function(response) {
+                                const directorySize = response;
+                                const avaiblePercent = (directorySize/docDirectoryLimit) * 100;
+                                            
+                                $('#document-avaible-space div').css({ width: `${avaiblePercent}%` }); 
+                                $('#document-avaible-space div').html(Math.round(avaiblePercent * 10) / 10 + "%"); 
+
+                                $('#doc-used').html(Math.round(directorySize * 10) / 10);
+                                $('#doc-avaiable').html(docDirectoryLimit);
+                            },
+                        });
                     },
                 });      
             },
@@ -327,6 +370,7 @@ $(document).ready(function() {
             type: 'POST', 
             data: {                   
                 docId: docId,  
+                patient_id: patientId,                
             },
             success: function(response) {                                                 
                                  
@@ -344,6 +388,25 @@ $(document).ready(function() {
                     },
                     success: function(response) {
                         $('.document-ajax-response').html(response);
+
+                        //CALCULA ESPAÇO DISPONÍVEL
+                        $.ajax({
+                            url: 'php/get-patient-document-directory-size.php',
+                            type: 'POST', 
+                            data: {                   
+                                patient_id: patientId  
+                            },
+                            success: function(response) {
+                                const directorySize = response;
+                                const avaiblePercent = (directorySize/docDirectoryLimit) * 100;
+                                            
+                                $('#document-avaible-space div').css({ width: `${avaiblePercent}%` }); 
+                                $('#document-avaible-space div').html(Math.round(avaiblePercent * 10) / 10 + "%"); 
+
+                                $('#doc-used').html(Math.round(directorySize * 10) / 10);
+                                $('#doc-avaiable').html(docDirectoryLimit);
+                            },
+                        });
                     },
                 });     
 
