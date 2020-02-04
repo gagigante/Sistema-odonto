@@ -421,7 +421,7 @@
 
                                             <p style="margin: 30px auto 0 30px;">Consumo de espaço de documentos</p>
                                             <div id="document-avaible-space" class="progress" style="margin: 10px 30px 0 30px;">
-                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                             <small style="margin-left: 30px;"><span id="doc-used"></span>mb / <span id="doc-avaiable"></span>mb (Esse é o limite compartilhado entre os pacientes deste perfil)</small>
 
