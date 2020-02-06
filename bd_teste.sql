@@ -1,5 +1,5 @@
 -- --------------------------------------------------------
--- Servidor:                     127.0.0.1
+-- Servidor:                     localhost
 -- Versão do servidor:           10.1.31-MariaDB - mariadb.org binary distribution
 -- OS do Servidor:               Win32
 -- HeidiSQL Versão:              10.1.0.5464
@@ -30,11 +30,16 @@ CREATE TABLE IF NOT EXISTS `tb01_paciente` (
   `tb01_idpaciente` int(100) NOT NULL AUTO_INCREMENT,
   `tb01_idUsuario` int(100) NOT NULL,
   PRIMARY KEY (`tb01_idpaciente`)
-) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb01_paciente: 2 rows
+-- Copiando dados para a tabela bd_teste.tb01_paciente: 7 rows
 /*!40000 ALTER TABLE `tb01_paciente` DISABLE KEYS */;
 INSERT INTO `tb01_paciente` (`tb01_nome`, `tb01_rg`, `tb01_cpf`, `tb01_telefone`, `tb01_email`, `tb01_data`, `tb01_imagem`, `tb01_profissao`, `tb01_endereco`, `tb01_idpaciente`, `tb01_idUsuario`) VALUES
+	('corrigido', '', '', '(11) 1 1111-1111', '', '2001-05-29', 'patient-default-profile-image.png', '', 'rua', 83, 1),
+	('wfafwf', '', '', '(11) 1 1111-1111', '', '2020-02-19', 'patient-default-profile-image.png', '', 'afawfas', 84, 1),
+	('editado1', '', '', '(11) 1 1111-1111', '', '2001-05-29', 'cd5e238d9ccff6664be8ff034b8c078015563286815cc3b0e9dc375_1556328681_3x2_md.jpg', '', 'afafaf', 82, 1),
+	('ZD', '12.345.215-15', '456.816.131-64', '(11) 9 5656-0844', 'zd@vagaba.com', '2001-05-29', '949af78a7fc827a11b3560aa39947e74foi+ben+10+(3).jpg', 'vagabundo', 'rua de braga', 81, 1),
+	('awfawfwa', '', '', '(55) 1 1968-5957', '', '24/05/2000', 'patient-default-profile-image.png', '', 'afafawf', 80, 2),
 	('Kayky', '', '', '(11) 1 1111-1111', '', '16/07/2004', '05d8b32ffff9cd18d430e5d7ac6d4d66bruno.jpeg', '', 'Rua Calixto Finelli', 79, 1),
 	('Gabriel Gigante', '54.994.390-0', '503.001.778-01', '(11) 9 6859-5762', 'gabriel_gigante@outlook.com', '1970-01-01', 'ab72cfd3bf2e9e3585172ad21652a1835723fab70e21634575011f03qr-635-gb-01-eps.jpeg', 'Programador', 'Rua Calixto Finelli', 78, 1);
 /*!40000 ALTER TABLE `tb01_paciente` ENABLE KEYS */;
@@ -47,9 +52,9 @@ CREATE TABLE IF NOT EXISTS `tb02_estoque` (
   `tb02_quantidade` int(100) NOT NULL,
   `tb02_preco` double NOT NULL,
   PRIMARY KEY (`tb02_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb02_estoque: 2 rows
+-- Copiando dados para a tabela bd_teste.tb02_estoque: 1 rows
 /*!40000 ALTER TABLE `tb02_estoque` DISABLE KEYS */;
 INSERT INTO `tb02_estoque` (`tb02_id`, `tb02_id_usuario`, `tb02_produto`, `tb02_quantidade`, `tb02_preco`) VALUES
 	(36, 2, 'produto1', 2, 60);
@@ -75,8 +80,8 @@ INSERT INTO `tb03_tratamentos` (`tb03_id`, `tb03_id_usuario`, `tb03_nome`, `tb03
 	(13, 1, 'tratamento 1', 'descricao do tratamento 1', 80);
 /*!40000 ALTER TABLE `tb03_tratamentos` ENABLE KEYS */;
 
--- Copiando estrutura para tabela bd_teste.tb04_login
-CREATE TABLE IF NOT EXISTS `tb04_login` (
+-- Copiando estrutura para tabela bd_teste.tb04_usuarios
+CREATE TABLE IF NOT EXISTS `tb04_usuarios` (
   `tb04_id` int(11) NOT NULL AUTO_INCREMENT,
   `tb04_usuario` varchar(32) NOT NULL,
   `tb04_email` varchar(55) NOT NULL,
@@ -85,35 +90,32 @@ CREATE TABLE IF NOT EXISTS `tb04_login` (
   PRIMARY KEY (`tb04_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb04_login: 2 rows
-/*!40000 ALTER TABLE `tb04_login` DISABLE KEYS */;
-INSERT INTO `tb04_login` (`tb04_id`, `tb04_usuario`, `tb04_email`, `tb04_senha`, `tb04_reset_password`) VALUES
+-- Copiando dados para a tabela bd_teste.tb04_usuarios: 2 rows
+/*!40000 ALTER TABLE `tb04_usuarios` DISABLE KEYS */;
+INSERT INTO `tb04_usuarios` (`tb04_id`, `tb04_usuario`, `tb04_email`, `tb04_senha`, `tb04_reset_password`) VALUES
 	(1, 'user_admin', 'decadatech@gmail.com', '275f78b0da67df65db9336325c664de2', b'1'),
 	(2, 'oto', '', '275f78b0da67df65db9336325c664de2', b'0');
-/*!40000 ALTER TABLE `tb04_login` ENABLE KEYS */;
+/*!40000 ALTER TABLE `tb04_usuarios` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb05_financeiro
 CREATE TABLE IF NOT EXISTS `tb05_financeiro` (
-  `tb05_nome` varchar(360) NOT NULL,
-  `tb05_tipo` int(100) NOT NULL,
+  `tb05_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tb05_id_usuario` int(11) NOT NULL,
+  `tb05_nome` varchar(500) NOT NULL,
+  `tb05_tipo` tinyint(4) NOT NULL,
   `tb05_valor` double NOT NULL,
   `tb05_data` date NOT NULL,
-  `tb05_situacao` int(100) NOT NULL,
-  `tb05_idUsuario` int(100) NOT NULL,
-  `tb05_idPaciente` int(100) DEFAULT NULL,
-  `tb05_idItem` int(100) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`tb05_idItem`)
-) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+  `tb05_is_patient_item` bit(1) NOT NULL,
+  PRIMARY KEY (`tb05_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela bd_teste.tb05_financeiro: 6 rows
+-- Copiando dados para a tabela bd_teste.tb05_financeiro: 4 rows
 /*!40000 ALTER TABLE `tb05_financeiro` DISABLE KEYS */;
-INSERT INTO `tb05_financeiro` (`tb05_nome`, `tb05_tipo`, `tb05_valor`, `tb05_data`, `tb05_situacao`, `tb05_idUsuario`, `tb05_idPaciente`, `tb05_idItem`) VALUES
-	('editado', 0, 60, '2019-12-30', 0, 1, NULL, 37),
-	('editado', 1, 60, '1970-01-01', 0, 1, NULL, 36),
-	('Gabriel Henrique Gigante da Silva', 1, 60, '2019-01-01', 0, 1, NULL, 35),
-	('editado', 1, 60, '1970-01-01', 0, 1, NULL, 34),
-	('editado', 1, 60, '2019-12-31', 0, 2, NULL, 33),
-	('dwadad', 1, 60, '2020-01-28', 0, 2, NULL, 38);
+INSERT INTO `tb05_financeiro` (`tb05_id`, `tb05_id_usuario`, `tb05_nome`, `tb05_tipo`, `tb05_valor`, `tb05_data`, `tb05_is_patient_item`) VALUES
+	(45, 1, 'editado', 1, 45, '2020-02-05', b'0'),
+	(42, 1, 'fawfawf', 1, 60, '2020-01-28', b'1'),
+	(44, 1, 'dadad', 1, 60, '2020-02-11', b'0'),
+	(39, 1, 'item', 1, 1000, '2020-01-30', b'1');
 /*!40000 ALTER TABLE `tb05_financeiro` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela bd_teste.tb06_eventos
@@ -204,6 +206,15 @@ CREATE TABLE IF NOT EXISTS `tb11_documentos_paciente` (
 -- Copiando dados para a tabela bd_teste.tb11_documentos_paciente: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb11_documentos_paciente` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tb11_documentos_paciente` ENABLE KEYS */;
+
+-- Copiando estrutura para tabela bd_teste.tb12_perfis
+CREATE TABLE IF NOT EXISTS `tb12_perfis` (
+  `tb12_perfil` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela bd_teste.tb12_perfis: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `tb12_perfis` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb12_perfis` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
