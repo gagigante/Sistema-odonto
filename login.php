@@ -63,7 +63,7 @@
             </div>
             <div class="col-md-7 login-content">
                 <img src="assets/images/shards-dashboards-logo-success.svg" />
-                <h2>Nome do sistema</h2>
+                <h2>Plus Odonto</h2>
                 <footer>
                     <span>Um produto de <a href="https://decadatech.com" target="_blank">Decada Technology</a></span>
                 </footer>
