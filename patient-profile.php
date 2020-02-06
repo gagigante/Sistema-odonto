@@ -438,9 +438,9 @@
                                                     </div>  
                                                 </div>    
                                             </form>
-                                                                                        
-                                            <div class="documents document-ajax-response"> </div> 
 
+                                            <div class="documents document-ajax-response"> </div>                                            
+                
                                             <!-- MODAL DE CONFIRMACAO DE DELETE-->
                                             <div class="modal fade" id="deleteDocModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">

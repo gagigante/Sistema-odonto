@@ -9,7 +9,7 @@
     $resultadoselect = $conexao->query($queryselect);
 
     if($resultadoselect->num_rows>0) { 
-        
+        echo '<div style="display: flex; justify-content: flex-start; flex-wrap: wrap; width: 100%; padding: 10px;">';
         while ($linha = $resultadoselect->fetch_assoc()){    
                
             echo '<div class="documents-item">';
@@ -24,9 +24,11 @@
                     echo '</div>';
                 echo '</div>';
             echo '</div>';
-        }                
+        }          
+        echo '</div>';
         
-    } else {        
+    } else {      
+        echo '<div style="display: flex; justify-content: center; width: 100%">';  
         echo "<div style='padding: 10px;display: flex; flex-direction: column; align-items: center'>";
             echo "<img style='width: 80%; margin: 0 auto' src='assets/images/empty-documents-placeholder.png' />";
             echo "<h5 style='margin-top: 15px;text-align: center'>Ainda não há nenhum documento registrado</h5>";
