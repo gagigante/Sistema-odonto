@@ -6,13 +6,13 @@
 
     $dados = array();
 
-    $queryselect = "select * from tb01_paciente where tb01_idpaciente = '$patient_id' and tb01_idUsuario = '$idLogin'";
+    $queryselect = "select * from tb01_pacientes where tb01_id = '$patient_id' and tb01_id_usuario = '$idLogin'";
     $resultadoselect = $conexao->query($queryselect);
 
     if($resultadoselect->num_rows>0){
         while ($linha = $resultadoselect->fetch_assoc()){   
 
-            $data = str_replace("-", "/", $linha["tb01_data"]);
+            $data = str_replace("-", "/", $linha["tb01_data_nascimento"]);
             $conv_data = date('d/m/Y', strtotime($data));
 
             $dados[] = [

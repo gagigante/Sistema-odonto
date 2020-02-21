@@ -3,7 +3,7 @@
     
     $idLogin = $_SESSION['idUsuario'];
 
-    $query = "select * from tb01_paciente where tb01_idUsuario = '$idLogin' order by tb01_nome";
+    $query = "select * from tb01_pacientes where tb01_id_usuario = '$idLogin' order by tb01_nome";
     $result = $conexao->query($query);
 
     if($result->num_rows>0) { 
@@ -36,7 +36,7 @@
             echo "<td>".$linha["tb01_cpf"]. "</td>";
             echo "<td>".$linha["tb01_telefone"]."</td>";
             echo "<td>".$linha["tb01_email"] ."</td>";
-            echo "<td><a href='patient-profile.php?id=".$linha["tb01_idpaciente"]."' class='mb-2 btn btn-sm btn-success mr-1' style='color: white'>Ver perfil</a></td>";
+            echo "<td><a href='patient-profile.php?id=".$linha["tb01_id"]."' class='mb-2 btn btn-sm btn-success mr-1' style='color: white'>Ver perfil</a></td>";
             echo "</tr>";
         }
                         

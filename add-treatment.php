@@ -70,7 +70,7 @@
         require 'php/verificaLogin.php';
             
         //CONSULTA QUE RETORNA O NOME DO PACIENTE COM BASE NO ID FORNECIDO PELA URL
-        $queryselect = "select * from tb01_paciente where tb01_idpaciente = '".$_GET['id']."'";
+        $queryselect = "select * from tb01_pacientes where tb01_id = '".$_GET['id']."'";
         $resultadoselect = $conexao->query($queryselect);                                                
 
         if($resultadoselect->num_rows>=0) { 

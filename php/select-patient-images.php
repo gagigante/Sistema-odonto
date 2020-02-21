@@ -26,10 +26,12 @@
             //$cont++;           
         }                
         
-    }else {        
-        echo "<div style='padding: 10px;display: flex; flex-direction: column; align-items: center'>";
-            echo "<img style='width: 80%; margin: 0 auto' src='assets/images/empty-image-placeholder.png' />";
-            echo "<h5 style='margin-top: 15px;text-align: center'>Ainda não há nenhuma imagem registrada</h5>";
-        echo "</div>";        
+    }else { 
+        echo '<div style="display: flex; justify-content: center; width: 100%">';         
+            echo "<div style='padding: 10px;display: flex; flex-direction: column; align-items: center'>";
+                echo "<img style='width: 80%; margin: 0 auto' src='assets/images/empty-image-placeholder.png' />";
+                echo "<h5 style='margin-top: 15px;text-align: center'>Ainda não há nenhuma imagem registrada</h5>";
+            echo "</div>";        
+        echo '</div>';
     }        
 ?>

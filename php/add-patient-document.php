@@ -1,7 +1,7 @@
 <?php
 	require "conexao.php";    
 	
-    $idLogin = $_SESSION['idUsuario'];
+	$idLogin = $_SESSION['idUsuario'];
 	$idPaciente = $_POST['idPaciente'];
     
 	$docDesc = $_POST['documentName'];

@@ -7,15 +7,15 @@
     $rg = mysqli_real_escape_string($conexao, trim($_POST["rg"]));
     $cpf = mysqli_real_escape_string($conexao, trim($_POST["cpf"]));
     $tel = mysqli_real_escape_string($conexao, trim($_POST["phone"]));
-	$email = mysqli_real_escape_string($conexao, trim($_POST["email"]));    
-	$profissao = mysqli_real_escape_string($conexao, trim($_POST["profession"]));    
+		$email = mysqli_real_escape_string($conexao, trim($_POST["email"]));    
+		$profissao = mysqli_real_escape_string($conexao, trim($_POST["profession"]));    
 
     //CONVERTER A DATA DO PADRAO BRASILEIRO PARA O FORMATO DO BANCO DE DADOS
-	$data = str_replace('/', '-', mysqli_real_escape_string($conexao, trim($_POST["dateOfBirth"])));
-	$conv_data = date("Y-m-d", strtotime($data));
+		$data = str_replace('/', '-', mysqli_real_escape_string($conexao, trim($_POST["dateOfBirth"])));
+		$conv_data = date("Y-m-d", strtotime($data));
 
-	$queryEditaCadastro = "UPDATE tb01_paciente SET tb01_nome = '$nome', tb01_rg = '$rg', tb01_cpf = '$cpf', tb01_telefone = '$tel',  tb01_email = '$email', tb01_endereco = '$endereco', tb01_data = '$conv_data', tb01_profissao = '$profissao' WHERE tb01_idpaciente='$id'";
-    $resultadoEditaCadastro = mysqli_query($conexao, $queryEditaCadastro);	
+		$query = "UPDATE tb01_pacientes SET tb01_nome = '$nome', tb01_rg = '$rg', tb01_cpf = '$cpf', tb01_telefone = '$tel',  tb01_email = '$email', tb01_endereco = '$endereco', tb01_data_nascimento = '$conv_data', tb01_profissao = '$profissao' WHERE tb01_id='$id'";
+    $result = mysqli_query($conexao, $query);	
         
     if(isset($_FILES['profile-photo']) && $_FILES['profile-photo']['size'] > 0) {  
  
@@ -63,7 +63,7 @@
             }
 
             //ATUALIZA A FOTO DE PERFIL
-			$query = "UPDATE tb01_paciente SET tb01_imagem = '$imageNameWithHash' WHERE tb01_idpaciente = '$id'";
+			$query = "UPDATE tb01_pacientes SET tb01_imagem = '$imageNameWithHash' WHERE tb01_id = '$id'";
 			$result = mysqli_query($conexao, $query);	
         }		             
     }
