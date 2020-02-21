@@ -23,7 +23,7 @@
         mkdir("../assets/documents/patients-documents/".$idLogin.'/'.$patient_id);  
     }
 
-    foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator("../assets/documents/patients-documents/".$idLogin.'/'.$patient_id, FilesystemIterator::SKIP_DOTS)) as $object){
+    foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator("../assets/documents/patients-documents/".$idLogin, FilesystemIterator::SKIP_DOTS)) as $object){
         $bytestotal += $object->getSize();
     }
     
