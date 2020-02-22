@@ -428,7 +428,7 @@
                                             <form style="margin: 30px" method="POST" enctype="multipart/form-data" id="patient-add-document-form">
                                                 <div class="form-row">
                                                     <div class="form-group col-md-4">
-                                                        <input type="file" accept=".docx, application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, text/plain, application/pdf," name="document" id="document-input" required /> 
+                                                        <input type="file" accept=".docx, .xlsx, application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, text/plain, application/pdf," name="document" id="document-input" required /> 
                                                     </div>
                                                     <div class="form-group col-md-4">
                                                         <input type="text" class="form-control" name="documentName" id="documentName" placeholder="Nome do documento" required />
