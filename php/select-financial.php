@@ -34,10 +34,10 @@
                 echo "<td>R$ ". str_replace(".",",", number_format($linha["tb05_valor"],2))."</td>";
                 echo "<td>".  date('d/m/Y',strtotime($linha["tb05_data"])) ."</td>";
                 echo "<td>";
-                    if($linha["tb05_is_patient_item"] == false) {                        
+                    if(!($linha["tb05_id_consulta"])) { 
                         echo "<button type='button' class='mb-2 btn btn-sm btn-danger mr-1 view-modal-delete' id='".$linha["tb05_id"]."'>Remover</button>";
                     }else{
-                        echo "<i class='material-icons' style='color: #32a852'>check_circle</i>";
+                        echo "<a class='btn' href='view-treatment.php?id=".$linha["tb05_id_consulta"]."'>Ver consulta</a>";
                     }
                 echo "</td>";               
             echo "</tr>";  
