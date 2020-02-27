@@ -573,41 +573,14 @@
                         <a target="_blank" href="https://decadatech.com" rel="nofollow">Decada Technology</a>
                     </span>
                 </footer>
-
             </main>
-
-            <!-- MODAL DE CONFIRMACAO DE DELETE DA TAB TRATAMENTOS -->
-            <div class="modal fade" id="confirmDeleteTreatmentModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalLabel">Confirmar ação</h5>                                
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <form id="">
-                            <div class="modal-body" style="padding-bottom: 0;">
-                                <p>Desenha mesmo apagar este registro?</p>                                  
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="btConfirmDeleteTretment" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">check</i></button>     
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
         </div>        
     </div>
 
     <!--Jquery CDN-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
     <!--Bootstrap Script-->
     <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
-
     <!--Bootstrap PopperJs CND-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
  
@@ -615,9 +588,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>     
-    <script src="assets/libs/shards-dashboard/js/shards-dashboards.1.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>     
- 
+    
+    <script src="assets/libs/shards-dashboard/js/shards-dashboards.1.1.0.min.js"></script>
+    
     <!--MaskJs Script-->
     <script type="text/javascript" src="assets/libs/jquery-mask/jquery.mask.js"></script>
 
