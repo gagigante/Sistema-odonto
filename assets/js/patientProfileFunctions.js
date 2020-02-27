@@ -585,7 +585,7 @@ $(document).ready(function() {
         });
 
         $('#paymentsModal').modal('show');
-    })
+    });
 
     //------------
 });

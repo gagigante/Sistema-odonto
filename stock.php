@@ -297,7 +297,16 @@
     <script src="assets/libs/shards-dashboard/js/shards-dashboards.1.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>    
 
+    <!--MaskJs Script-->
+    <script type="text/javascript" src="assets/libs/jquery-mask/jquery.mask.js"></script>
+
     <script src="assets/js/stockFunctions.js"></script>
+
+    <script>
+        $(document).ready(function() {  
+            $('#price, #edit-price').mask('000.000.000.000.000,00', {reverse: true});
+        });
+    </script>
 </body>
 
 </html>
