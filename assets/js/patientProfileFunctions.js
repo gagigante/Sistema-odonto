@@ -549,17 +549,20 @@ $(document).ready(function() {
                             $('.query-ajax-response').html(response);
                         },
                     });
-
-                    $('#modal-payment').val('');
-                    $('#modal-paid-out').val('');
-                    $('#modal-payment-date').val('');
                 },
             });
 
             $('#PayDebitModal').modal('hide');
         } else {
-
+            // ELSE DA VALIDAÇÃO DOS CAMPOS (DATA E VALOR PAGO)
         }
+    });
+
+    //LIMPA OS CAMPOS DO FORM AO FECHAR O MODAL
+    $('#PayDebitModal').on('hidden.bs.modal', function () {        
+        $('#modal-payment').val('');
+        $('#modal-paid-out').val('');
+        $('#modal-payment-date').val('');
     });
 
     // ABRE O MODAL DE VISUALIZAÇÃO DE MOVIMENTAÇÕES
