@@ -117,8 +117,9 @@ $(document).ready(function() {
 
     // TAB 3 - CONSULTAS
 
+    // SELECT DAS CONSULTAS
     $.ajax({
-        url: 'php/select-query.php',
+        url: 'php/select-patient-queries.php',
         type: 'POST', 
         data: {                   
             patient_id: patientId  
@@ -417,5 +418,171 @@ $(document).ready(function() {
     });
 
     //TAB 7 - DEBITOS
+      
+    //SELECT DOS DADOS DE DÉBITO DA CONSULTA DO PACIENTE
+    $.ajax({
+        url: 'php/select-patient-values.php',
+        type: 'POST', 
+        data: {                   
+            patient_id: patientId  
+        },
+        success: function(response) {
 
+            const data = JSON.parse(response)
+
+            $(".debit-received").text("R$ " + data.received);
+            $(".debit-pending").text("R$ " + data.pending);
+        },
+    });
+    
+    //SELECT DOS DÉBITOS DA CONSULTA
+    $.ajax({
+        url: 'php/select-patient-debits.php',
+        type: 'POST', 
+        data: {                   
+            patient_id: patientId  
+        },
+        success: function(response) {
+            $('.debits-ajax-response').html(response);
+        },
+    });
+
+    var selectedDebit;
+    
+    // ABRE MODAL DE PAGAMENTO 
+    $(document).on('click', '.view-modal-debit', function (e) {
+
+        e.preventDefault();
+
+        selectedDebit = $(this).attr('id');  
+        
+        let totalPrice = $('.price-td.'+selectedDebit).text().replace('R$', '');
+        let received = $('.received-td.'+selectedDebit).text().replace('R$', '');
+        
+        let parsedTotalPrice = totalPrice.replace(',', '.');
+        let parsedReceived = received.replace(',', '.');
+
+        let receivable = parseFloat(parsedTotalPrice - parsedReceived);
+        
+        $('#modal-received').text('R$' + parsedReceived.replace('.', ','));
+        $('#modal-pending').text('R$' + receivable.toString().replace('.', ','));
+        $('#modal-description').text($('.description-td.'+selectedDebit).text());
+
+        $('#PayDebitModal').modal('show');
+    });  
+
+    // CHECKBOX DE PAGAMENTO COMPLETO
+    $('#modal-check').click(function() {
+        if ($(this).is(':checked')) {
+            $("#modal-paid-out").attr("readonly", true);
+            $("#modal-paid-out").val($('#modal-pending').text().replace('R$', ''));
+        } else {
+            $("#modal-paid-out").attr("readonly", false);
+            $("#modal-paid-out").val("");
+        };
+    });
+
+    // REGISTRA PAGAMENTO
+    $('#modal-debit-form').on('submit', function(e) {
+        
+        e.preventDefault();
+
+        let paymentDate = $('#modal-payment-date').val();
+        let payment = $('#modal-payment').val();
+        let paidOut = parseFloat($('#modal-paid-out').val().replace(',', '.'));
+
+        // DETERMINA O VALOR MÁXIMO À SER PAGO
+        let totalPrice = $('.price-td.'+selectedDebit).text().replace('R$', '');
+        let received = $('.received-td.'+selectedDebit).text().replace('R$', '');
+        let parsedTotalPrice = totalPrice.replace(',', '.');
+        let parsedReceived = received.replace(',', '.');
+        let receivable = parseFloat(parsedTotalPrice - parsedReceived);
+        
+        if(paymentDate.length === 10 && paidOut <= receivable) {
+            $.ajax({
+                url: 'php/add-patient-payment.php',
+                type: 'POST', 
+                data: {                   
+                    queryId: selectedDebit,
+                    paid: paidOut,
+                    payment: payment,
+                    date: paymentDate
+                },
+                success: function(response) {
+                    
+                    //SELECT DOS DADOS DE DÉBITO DA CONSULTA DO PACIENTE
+                    $.ajax({
+                        url: 'php/select-patient-values.php',
+                        type: 'POST', 
+                        data: {                   
+                            patient_id: patientId  
+                        },
+                        success: function(response) {
+    
+                            const data = JSON.parse(response)
+    
+                            $(".debit-received").text("R$ " + data.received);
+                            $(".debit-pending").text("R$ " + data.pending);
+                        },
+                    });
+                    
+                    //SELECT DOS DÉBITOS DA CONSULTA
+                    $.ajax({
+                        url: 'php/select-patient-debits.php',
+                        type: 'POST', 
+                        data: {                   
+                            patient_id: patientId  
+                        },
+                        success: function(response) {
+                            $('.debits-ajax-response').html(response);
+                        },
+                    });
+
+                    // SELECT DAS CONSULTAS
+                    $.ajax({
+                        url: 'php/select-patient-queries.php',
+                        type: 'POST', 
+                        data: {                   
+                            patient_id: patientId  
+                        },
+                        success: function(response) {
+                            $('.query-ajax-response').html(response);
+                        },
+                    });
+
+                    $('#modal-payment').val('');
+                    $('#modal-paid-out').val('');
+                    $('#modal-payment-date').val('');
+                },
+            });
+
+            $('#PayDebitModal').modal('hide');
+        } else {
+
+        }
+    });
+
+    // ABRE O MODAL DE VISUALIZAÇÃO DE MOVIMENTAÇÕES
+    $(document).on('click', '.view-modal-payments', function (e) {
+        
+        e.preventDefault();
+
+        selectedDebit = $(this).attr('id');
+
+        // SELECT DAS MOVIMENTAÇÕES DA CONSULTA
+        $.ajax({
+            url: 'php/select-patient-payments.php',
+            type: 'POST', 
+            data: {                   
+                queryId: selectedDebit  
+            },
+            success: function(response) {
+                $('.payments-ajax-response').html(response);
+            },
+        });
+
+        $('#paymentsModal').modal('show');
+    })
+
+    //------------
 });

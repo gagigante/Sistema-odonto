@@ -389,7 +389,7 @@
                                                 <Button type="submit" class="btn btn-outline-success" id="bt-add-image">Adicionar imagem</Button>
                                             </form>
                                                                                         
-                                            <div class="gallery gallery-ajax-response"></div>
+                                            <div class="gallery gallery-ajax-response"> </div>
 
                                             <!-- MODAL DE CONFIRMACAO DE DELETE-->
                                             <div class="modal fade" id="deleteImageModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -473,104 +473,103 @@
 
                                                 <div class="border-bottom" style="padding: 10px 30px; margin: 10px;">
                                                     <p style="margin: 0">Total pago</p>
-                                                    <h5 style="margin: 0; color: #32a852">R$ 10.000,00</h5>
+                                                    <h5 style="margin: 0; color: #32a852" class="debit-received">R$ 0</h5>
                                                 </div>
                                                 <div class="border-bottom" style="padding: 10px 30px; margin: 10px;">
                                                     <p style="margin: 0">Total a receber</p>
-                                                    <h5 style="margin: 0; color: #a83232">R$ 10.000,00</h5>
+                                                    <h5 style="margin: 0; color: #a83232" class="debit-pending">R$ 0</h5>
                                                 </div>   
                                             </div>
-                                            
-                                            <div class='table-responsive' style="margin-top: 15px;">
-                                                <table class='table mb-0'>
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col" class="border-0">Descrição</th>
-                                                            <th scope="col" class="border-0">Valor</th>
-                                                            <th scope="col" class="border-0">Data</th>
-                                                            <th scope="col" class="border-0">Ações</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>                                                    
-                                                        <tr>
-                                                            <td>Plano tratamento de fulano</td>
-                                                            <td>R$ 80.00</td>
-                                                            <td>99/99/9999</td>
-                                                            <td>
-                                                                <button type="button" class="btn" id="btPayDebit" style="background: transparent; border: none; cursor: pointer; color: #007bfe;">Efetuar pagamento</a>      
-                                                            </td>
-                                                        </tr>                                                    
-                                                        <tr>
-                                                            <td>Plano tratamento de fulano</td>
-                                                            <td>R$ 80.00</td>
-                                                            <td>99/99/9999</td>
-                                                            <td>
-                                                                <i class="material-icons" style="color: #32a852">check</i>  
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Plano tratamento de fulano</td>
-                                                            <td>R$ 80.00</td>
-                                                            <td>99/99/9999</td>
-                                                            <td>
-                                                                <i class="material-icons" style="color: #32a852">check</i>    
-                                                            </td>
-                                                        </tr>  
-                                                        <tr>
-                                                            <td>Plano tratamento de fulano</td>
-                                                            <td>R$ 80.00</td>
-                                                            <td>99/99/9999</td>
-                                                            <td>
-                                                                <i class="material-icons" style="color: #32a852">check</i>
-                                                            </td>
-                                                        </tr>  
-                                                        <tr>
-                                                            <td>Plano tratamento de fulano</td>
-                                                            <td>R$ 80.00</td>
-                                                            <td>99/99/9999</td>
-                                                            <td>
-                                                                <i class="material-icons" style="color: #32a852">check</i>
-                                                            </td>
-                                                        </tr>  
-                                                    </tbody>
-                                                </table>
-                                            </div>
 
-                                            <!-- MODAL DE CONFIRMACAO DE PAGAMENTO DA TAB DEBITO -->
-                                            <div class="modal fade" id="confirmPayDebitModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                                            <div class="debits-ajax-response"> </div>
+                                           
+                                            <!-- MODAL DE VISUALIZAÇÃO DE MOVIMENTAÇÕES -->
+                                            <div class="modal fade" id="paymentsModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="ModalLabel">Confirmar pagamento</h5>                                
+                                                            <h5 class="modal-title" id="ModalLabel">Movimentações</h5>                                
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
-                                                        <form id="formEditTreatment">
-                                                            <div class="modal-body" style="padding-bottom: 0;">
-                                                                <p>Desenha efetuar a baixa deste débito?</p>                                  
+                                                        <div class="modal-body payments-ajax-response"> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- MODAL DE PAGAMENTOS -->
+                                            <div class="modal fade" id="PayDebitModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="ModalLabel">Realizar pagamento</h5>
+                                                            <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <form method="POST" id="modal-debit-form">
+                                                            <div class="modal-body"> 
+                                                                <div style='display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-wrap: wrap'>
+                                                                    <div class='border-bottom' style='padding: 10px 30px; margin: 10px;'>
+                                                                        <p style='margin: 0'>Total recebido</p>
+                                                                        <h5 style='margin: 0; color: #32a852' id="modal-received"></h5>
+                                                                    </div>
+                                                                    <div class='border-bottom' style='padding: 10px 30px; margin: 10px;'>
+                                                                        <p style='margin: 0'>Total a receber</p>
+                                                                        <h5 style='margin: 0; color: #a83232' id="modal-pending">0</h5>
+                                                                    </div>   
+                                                                </div>
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-12">
+                                                                        <label for="modal-description">Descrição da consulta</label>
+                                                                        <textarea type="text" class="form-control" id="modal-description" rows="6" readonly></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-12">
+                                                                        <label for="modal-payment">Forma de pagamento</label>
+                                                                        <input type="text" class="form-control" name="modal-payment" id="modal-payment" autocomplete="off" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-6">
+                                                                        <label for="modal-paid-out">Valor pago</label>
+                                                                        <input type="text" class="form-control" name="modal-paid-out" id="modal-paid-out" autocomplete="off" required>
+                                                                    </div>
+                                                                    <div id="dateDiv" class="form-group col-md-6 input-daterange" style="padding: 0;">
+                                                                        <label for="modal-payment-date">Data do pagamento:</label>
+                                                                        <input type="text" class="form-control" name="modal-payment-date" id="modal-payment-date" autocomplete="off" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="modal-check" name="modal-check">
+                                                                            <label class="custom-control-label" for="modal-check" required>Valor todo pago</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" id="btConfirmDebit" class="btn btn-success save"><i class="material-icons" style="font-size: 18px">check</i></button>     
-                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                            <div class="modal-footer">                         
+                                                                <button type="submit" class="btn btn-success saveDebit"><i class="material-icons" style="font-size: 18px">save</i></button>                                                            
+                                                                <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal">Fechar</button>
                                                             </div>
                                                         </form>
                                                     </div>
                                                 </div>
                                             </div>
-   
-                                        </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             
                 <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
-                    <span class="copyright ml-auto my-auto mr-2">Copyright © 2019
+                    <span class="copyright ml-auto my-auto mr-2">Copyright © 2020
                         <a target="_blank" href="https://decadatech.com" rel="nofollow">Decada Technology</a>
                     </span>
                 </footer>
@@ -603,43 +602,44 @@
         </div>        
     </div>
 
-     <!--Jquery CDN-->
-     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--Jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-     <!--Bootstrap Script-->
-     <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+    <!--Bootstrap Script-->
+    <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--Bootstrap PopperJs CND-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
  
-     <!--Bootstrap PopperJs CND-->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <!--Framework required Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>     
+    <script src="assets/libs/shards-dashboard/js/shards-dashboards.1.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>     
  
-     <!--Framework required Scripts-->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>     
-     <script src="assets/libs/shards-dashboard/js/shards-dashboards.1.1.0.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>     
- 
-     <!--MaskJs Script-->
-     <script type="text/javascript" src="assets/libs/jquery-mask/jquery.mask.js"></script>
- 
-     <script src="assets/js/patientProfileFunctions.js"></script>    
- 
-     <!--Fields Formating Script-->
-     <script>
-         $(document).ready(function () {
- 
-             $('#dateDiv').datepicker({
-                 format: 'dd/mm/yyyy',
-             });
- 
-             $('#debitDate').mask('00/00/0000');
- 
-             $('#phone').mask('(00) 0 0000-0000');
-             $('#rg').mask('00.000.000-00');
-             $('#cpf').mask('000.000.000-00');
-             $('#dateOfBirth').mask('00/00/0000');                   
-         });
-     </script>
+    <!--MaskJs Script-->
+    <script type="text/javascript" src="assets/libs/jquery-mask/jquery.mask.js"></script>
+
+    <script src="assets/js/patientProfileFunctions.js"></script>    
+
+    <!--Fields Formating Script-->
+    <script>
+        $(document).ready(function () {
+
+            $('#dateDiv').datepicker({
+                format: 'dd/mm/yyyy',
+            });        
+            
+            $('#phone').mask('(00) 0 0000-0000');
+            $('#rg').mask('00.000.000-00');
+            $('#cpf').mask('000.000.000-00');
+            $('#dateOfBirth').mask('00/00/0000');                   
+            
+            $('#modal-payment-date').mask('00/00/0000');
+            $('#modal-paid-out').mask('000.000.000.000.000,00', {reverse: true});
+        });
+    </script>
 
 </body>
 

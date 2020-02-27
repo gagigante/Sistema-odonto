@@ -4,7 +4,7 @@
     $idLogin = $_SESSION['idUsuario'];
     $patientId =  $_POST["patient_id"];
 
-    $queryselect = "SELECT tb07_descricao, tb07_valor, tb07_data, tb07_status_pagamento, tb07_id FROM tb07_consultas WHERE tb07_id_usuario = ".$idLogin." AND tb07_id_paciente = " .$patientId. " ORDER BY tb07_data DESC";        
+    $queryselect = "SELECT tb07_descricao, tb07_valor, tb07_data_consulta, tb07_status_pagamento, tb07_id FROM tb07_consultas WHERE tb07_id_usuario = ".$idLogin." AND tb07_id_paciente = " .$patientId. " ORDER BY tb07_data_consulta DESC";        
 
     $resultadoselect = $conexao->query($queryselect);
 
@@ -25,13 +25,17 @@
 
         while ($linha = $resultadoselect->fetch_assoc()){                
             echo "<tr>";
-                echo "<td>".$linha["tb07_descricao"]."</td>";                
+                echo "<td class='description-td'>".$linha["tb07_descricao"]."</td>";                
                 echo "<td>R$ ". str_replace(".",",", number_format($linha["tb07_valor"],2))."</td>";
-                echo "<td>".date('d/m/Y',strtotime($linha["tb07_data"]))."</td>";  
+                echo "<td>".date('d/m/Y',strtotime($linha["tb07_data_consulta"]))."</td>";  
                 if($linha["tb07_status_pagamento"] == 0){
-                    echo "<td> <i class='material-icons' style'color: #ddd'>check</i> </td>";                  
-                } else {
-                    echo "<td> <i class='material-icons' style='color: #32a852'>check</i> </td>";
+                    echo "<td> <i class='material-icons' style='color: #cf4536'>check_circle</i> </td>";                  
+                } 
+                if($linha["tb07_status_pagamento"] == 1) {
+                    echo "<td> <i class='material-icons' style='color: #cfcf36'>check_circle</i> </td>";
+                }
+                if($linha["tb07_status_pagamento"] == 2) {
+                    echo "<td> <i class='material-icons' style='color: #32a852'>check_circle</i> </td>";
                 }     
                 echo "<td>
                         <a href='edit-treatment.php?id=" .$linha["tb07_id"]. "' class='btn'>Editar</a>

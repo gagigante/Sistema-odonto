@@ -34,14 +34,9 @@
     background-color: red;
 }
 
+/* TAB DE DOCUMENTOS */
 .documents {        
     width: 100%;
-    /* display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap; 
-    padding: 10px; */
-   
-
 }
 
 .documents div > .documents-item {    
@@ -67,5 +62,16 @@
 .documents div .documents-item .item-options div p {
     max-width: 20ch;
     margin: 10px auto;
+    text-align: center;
+}
+
+/* TABELAS */
+
+.description-td {
+    text-align: justify;
+    max-width: 380px;
+}
+
+td {
     text-align: center;
 }
