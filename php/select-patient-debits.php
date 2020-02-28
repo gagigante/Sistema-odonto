@@ -4,7 +4,7 @@
     $idLogin = $_SESSION['idUsuario'];
     $patientId =  $_POST["patient_id"];
 
-    $query = "SELECT tb07_id, tb07_descricao, tb07_valor, tb07_valor_desconto, tb07_desconto, tb07_valor_pago, tb07_data_consulta, tb07_status_pagamento FROM tb07_consultas WHERE tb07_id_usuario = ".$idLogin." AND tb07_id_paciente = ".$patientId." ORDER BY tb07_data_consulta DESC, tb07_status_pagamento";
+    $query = "SELECT tb07_id, tb07_descricao, tb07_valor, tb07_valor_desconto, tb07_desconto, tb07_valor_pago, tb07_data_consulta, tb07_status_pagamento FROM tb07_consultas WHERE tb07_id_usuario = ".$idLogin." AND tb07_id_paciente = ".$patientId." ORDER BY tb07_data_consulta ASC, tb07_status_pagamento ASC";
     $response = $conexao->query($query);
 
     if($response->num_rows>0) { 
