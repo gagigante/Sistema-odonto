@@ -4,14 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Shards Dashboard Lite - Free Bootstrap Admin Template – DesignRevision</title>
-    <meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Dashboard</title>
+    
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="styles/shards-dashboards.1.1.0.min.css">
-    <link rel="stylesheet" href="styles/extras.1.1.0.min.css">
+
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="assets/libs/shards-dashboard/css/shards-dashboards.1.1.0.min.css">
+    <!-- <link rel="stylesheet" href="styles/extras.1.1.0.min.css"> -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 
@@ -143,7 +146,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar">
+                                    <img class="user-avatar rounded-circle mr-2" src="assets/images/avatars/0.jpg" alt="User Avatar">
                                     <span class="d-none d-md-inline-block">Sierra Brooks</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-small">
@@ -348,7 +351,7 @@
                                 <div class="card-body p-0">
                                     <div class="blog-comments__item d-flex p-3">
                                         <div class="blog-comments__avatar mr-3">
-                                            <img src="images/avatars/1.jpg" alt="User avatar" /> </div>
+                                            <img src="assets/images/avatars/1.jpg" alt="User avatar" /> </div>
                                         <div class="blog-comments__content">
                                             <div class="blog-comments__meta text-muted">
                                                 <a class="text-secondary" href="#">James Johnson</a> on
@@ -376,7 +379,7 @@
                                     </div>
                                     <div class="blog-comments__item d-flex p-3">
                                         <div class="blog-comments__avatar mr-3">
-                                            <img src="images/avatars/2.jpg" alt="User avatar" /> </div>
+                                            <img src="assets/images/avatars/2.jpg" alt="User avatar" /> </div>
                                         <div class="blog-comments__content">
                                             <div class="blog-comments__meta text-muted">
                                                 <a class="text-secondary" href="#">James Johnson</a> on
@@ -404,7 +407,7 @@
                                     </div>
                                     <div class="blog-comments__item d-flex p-3">
                                         <div class="blog-comments__avatar mr-3">
-                                            <img src="images/avatars/3.jpg" alt="User avatar" /> </div>
+                                            <img src="assets/images/avatars/3.jpg" alt="User avatar" /> </div>
                                         <div class="blog-comments__content">
                                             <div class="blog-comments__meta text-muted">
                                                 <a class="text-secondary" href="#">James Johnson</a> on
@@ -528,39 +531,21 @@
             </main>
         </div>
     </div>
-    <div class="promo-popup animated">
-        <a href="http://bit.ly/shards-dashboard-pro" class="pp-cta extra-action">
-            <img src="https://dgc2qnsehk7ta.cloudfront.net/uploads/sd-blog-promo-2.jpg"> </a>
-        <div class="pp-intro-bar"> Need More Templates?
-            <span class="close">
-                <i class="material-icons">close</i>
-            </span>
-            <span class="up">
-                <i class="material-icons">keyboard_arrow_up</i>
-            </span>
-        </div>
-        <div class="pp-inner-content">
-            <h2>Shards Dashboard Pro</h2>
-            <p>A premium & modern Bootstrap 4 admin dashboard template pack.</p>
-            <a class="pp-cta extra-action" href="http://bit.ly/shards-dashboard-pro">Download</a>
-        </div>
-    </div>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <!-- <script src="scripts/extras.1.1.0.min.js"></script> -->
 
-    <script src="scripts/extras.1.1.0.min.js"></script>
-
-    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
-    <script src="scripts/app/app-blog-overview.1.1.0.js"></script>
+    <script src="assets/libs/shards-dashboard/js/shards-dashboards.1.1.0.min.js"></script>
+    
+    <script src="assets/js/dashboardFunctions.js"></script>
 </body>
 
 </html>
