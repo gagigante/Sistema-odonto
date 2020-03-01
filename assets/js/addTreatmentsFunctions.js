@@ -8,6 +8,7 @@ $(document).ready(function(e) {
     var url = new URL(url_string);
     var idPaciente = url.searchParams.get("id");
 
+
     //AUTOCOMPLETE DO CAMPO DE TRATAMENTO
     $("#treatment").autocomplete({        
         source: 'php/autoCompleteAddTreatment.php',     
