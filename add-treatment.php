@@ -279,9 +279,6 @@
                                             <div class="card-header border-bottom">
                                                 <h5 style="margin-top: 10px">Região afetada</h5>
                                                 
-                                                
-                                           
-
                                                 <!-- <div class="form-row">
                                                     <div class="form-group col-sm-10">
                                                         <input type="text" class="form-control" name="treatment" id="treatment" placeholder="Tratamentos *" autocomplete="off">
