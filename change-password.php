@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Redefinir senha</title>
-    <link rel="shortcut icon" href="#" />
    
     <!-- icons -->
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!--Custom CSS -->
-    <link rel="stylesheet" href="assets/css/change-password.style.css">
 
     <!-- Frameworks css -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/shards-dashboards.1.1.0.min.css">    
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/libs/shards-dashboard/css/shards-dashboards.1.1.0.min.css">    
 
+    <!--Custom CSS -->
+    <link rel="stylesheet" href="assets/css/change-password.style.css">
 </head>
 
 <body class="h-100">
@@ -77,11 +76,9 @@
             </div>
         </div>
     </div>
-
-
+    
     <!--Jquery CDN-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
-    <!--Bootstrap Script-->
     <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
     <!--Bootstrap PopperJs CND-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -90,8 +87,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>    
-    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>    
+    <script src="assets/libs/shards-dashboard/js/shards-dashboards.1.1.0.min.js"></script>
 
     <script src="assets/js/changePasswordFunctions.js"></script>
 
