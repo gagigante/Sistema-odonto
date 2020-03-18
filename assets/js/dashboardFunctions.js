@@ -288,14 +288,14 @@
         var bouData = {
           // Generate the days labels on the X axis.
           labels: Array.from(new Array(dataPhpFinanceiro[0].select1Quant), function (_, i) {
-            return i === 0 ? 1 : i;
+            return i === 0 ? 0 : i;
           }),
           datasets: [{
-            label: 'Current Month',
+            label: 'Ganhos',
             fill: 'start',
             data: dataPhpFinanceiro[0].select1,
-            backgroundColor: 'rgba(0,123,255,0.1)',
-            borderColor: 'rgba(0,123,255,1)',
+            backgroundColor: 'rgba(14,171,98,0.1)',
+            borderColor: 'rgba(14,171,98,1)',
             pointBackgroundColor: '#ffffff',
             pointHoverBackgroundColor: 'rgb(0,123,255)',
             borderWidth: 1.5,

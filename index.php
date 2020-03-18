@@ -273,10 +273,10 @@
                         <div class="col-lg-8 col-md-12 col-sm-12 mb-4">
                             <div class="card card-small">
                                 <div class="card-header border-bottom">
-                                    <h6 class="m-0">Users</h6>
+                                    <h6 class="m-0">Financeiro</h6>
                                 </div>
                                 <div class="card-body pt-0">
-                                    <div class="row border-bottom py-2 bg-light">
+                                    <!-- <div class="row border-bottom py-2 bg-light">
                                         <div class="col-12 col-sm-6">
                                             <div id="blog-overview-date-range" class="input-daterange input-group input-group-sm my-auto ml-auto mr-auto ml-sm-auto mr-sm-0" style="max-width: 350px;">
                                                 <input type="text" class="input-sm form-control" name="start" placeholder="Start Date" id="blog-overview-date-range-1">
@@ -292,7 +292,7 @@
                                             <button type="button" class="btn btn-sm btn-white ml-auto mr-auto ml-sm-auto mr-sm-0 mt-3 mt-sm-0">View
                                                 Full Report &rarr;</button>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <canvas height="130" style="max-width: 100% !important;" class="blog-overview-users"></canvas>
                                 </div>
                             </div>
@@ -462,8 +462,8 @@
                                         <div class="ajax-response"></div>  
                                     </ul>
                                 </div>
-                                <!-- <div class="card-footer border-top">
-                                    <div class="row">
+                                <div class="card-footer border-top">
+                                    <!-- <div class="row">
                                         <div class="col">
                                             <select class="custom-select custom-select-sm">
                                                 <option selected>Last Week</option>
@@ -471,12 +471,12 @@
                                                 <option value="2">Last Month</option>
                                                 <option value="3">Last Year</option>
                                             </select>
-                                        </div>
+                                        </div> -->
                                         <div class="col text-right view-report">
-                                            <a href="#">Full report &rarr;</a>
+                                            <a href="stock.php">Veja todos &rarr;</a>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                         <!-- End Top Referrals Component -->
