@@ -175,6 +175,14 @@
                             <h3 class="page-title"><i class="material-icons">dashboard</i>Dashboard</h3>
                         </div>
                     </div>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary btnSemana active">
+                            <input type="radio" name="options" id="option1" autocomplete="off"> Semana
+                        </label>
+                        <label class="btn btn-secondary btnMes">
+                            <input type="radio" name="options" id="option2" autocomplete="off"> Mês
+                        </label>                        
+                    </div>
                     <!-- End Page Header -->
                     <!-- Small Stats Blocks -->
                     <div class="row">
@@ -183,11 +191,11 @@
                                 <div class="card-body p-0 d-flex">
                                     <div class="d-flex flex-column m-auto">
                                         <div class="stats-small__data text-center">
-                                            <span class="stats-small__label text-uppercase">Posts</span>
-                                            <h6 class="stats-small__value count my-3">2,390</h6>
+                                            <span class="stats-small__label text-uppercase">Consultas</span>
+                                            <h6 class="stats-small__value count my-3" id="quant1"></h6>
                                         </div>
                                         <div class="stats-small__data">
-                                            <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
+                                            <span class="stats-small__percentage stats-small__percentage--increase" id="porc1"></span>
                                         </div>
                                     </div>
                                     <canvas height="120" class="blog-overview-stats-small-1"></canvas>
@@ -447,45 +455,14 @@
                         <div class="col-lg-4 col-md-12 col-sm-12 mb-4">
                             <div class="card card-small">
                                 <div class="card-header border-bottom">
-                                    <h6 class="m-0">Top Referrals</h6>
+                                    <h6 class="m-0">Seu estoque</h6>
                                 </div>
                                 <div class="card-body p-0">
                                     <ul class="list-group list-group-small list-group-flush">
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">GitHub</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">19,291</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">Stack Overflow</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">11,201</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">Hacker News</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">9,291</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">Reddit</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">8,281</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">The Next Web</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">7,128</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">Tech Crunch</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">6,218</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">YouTube</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">1,218</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">Adobe</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">827</span>
-                                        </li>
+                                        <div class="ajax-response"></div>  
                                     </ul>
                                 </div>
-                                <div class="card-footer border-top">
+                                <!-- <div class="card-footer border-top">
                                     <div class="row">
                                         <div class="col">
                                             <select class="custom-select custom-select-sm">
@@ -499,7 +476,7 @@
                                             <a href="#">Full report &rarr;</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <!-- End Top Referrals Component -->
