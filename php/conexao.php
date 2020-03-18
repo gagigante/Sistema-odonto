@@ -5,7 +5,7 @@
     $servidor = "localhost";
     $usuario = "root";
     $senha = "";
-    $banco = "bd_teste";
+    $banco = "bd_plus";
 
     // $servidor = "mysql669.umbler.com";
     // $usuario = "plus_odonto_adm";

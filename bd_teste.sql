@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS `tb03_tratamentos` (
 CREATE TABLE IF NOT EXISTS `tb04_usuarios` (
   `tb04_id` int(11) NOT NULL AUTO_INCREMENT,
   `tb04_usuario` varchar(50) NOT NULL,
+  `tb04_image` varchar(50) NOT NULL,
   `tb04_email` varchar(50) NOT NULL,
   `tb04_senha` varchar(50) NOT NULL,
   `tb04_reset_password` bit(1) NOT NULL DEFAULT b'0',

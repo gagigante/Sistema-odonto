@@ -11,6 +11,7 @@
     if($resultadoselect->num_rows>0) { 
         while ($linha = $resultadoselect->fetch_assoc()) {  
             $_SESSION['login'] = $linha['tb04_usuario'];
+            $_SESSION['image'] = $linha['tb04_image'];
             //$_SESSION['senha'] = $linha['tb04_senha'];
             $_SESSION['idUsuario'] = $linha['tb04_id'];
             $_SESSION["logado"] = 1;  

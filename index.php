@@ -139,9 +139,9 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#"
                                     role="button" aria-haspopup="true" aria-expanded="false">
-                                    <img class="user-avatar rounded-circle mr-2" src="assets/images/user-profile-images/user-default-profile-image.png"
+                                    <img class="user-avatar rounded-circle mr-2" src="assets/images/user-profile-images/<?php echo $_SESSION['image'] ?>"
                                         alt="User Avatar">
-                                    <span class="d-none d-md-inline-block">Dra. Sierra Brooks</span>
+                                    <span class="d-none d-md-inline-block"><?php echo $_SESSION['login'] ?></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-small">
                                     <!-- <a class="dropdown-item" href="#">
