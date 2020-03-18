@@ -222,6 +222,8 @@
     <script src="assets/libs/shards-dashboard/js/shards-dashboards.1.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>       
     <script src="assets/js/patientsFunctions.js"></script>
+    <script src="assets/js/navbarFunctions.js"></script>
+
 
 </body>
 

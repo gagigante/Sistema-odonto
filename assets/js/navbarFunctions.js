@@ -4,7 +4,7 @@ $('.navbar-search').keyup(function() {
     var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
     $('.table-responsive table tr').show();
     //FILTRAR COM O VALOR DO CAMPO PRODUTO
-    $('.table-responsive table tr #stockName').filter(function() {
+    $('.table-responsive table tr #selectName').filter(function() {
         var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
         return !~text.indexOf(val);
     }).parent().hide();

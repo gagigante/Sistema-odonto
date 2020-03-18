@@ -304,6 +304,8 @@
     <script type="text/javascript" src="assets/libs/jquery-mask/jquery.mask.js"></script>
 
     <script src="assets/js/treatmentsFunctions.js"></script>
+    <script src="assets/js/navbarFunctions.js"></script>
+
 
     <script>
         $(document).ready(function() {  

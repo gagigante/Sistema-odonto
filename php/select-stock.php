@@ -21,8 +21,8 @@
                         <tbody>";
 
         while ($linha = $result->fetch_assoc()){                
-            echo "<tr id='stockItems'>";
-                echo "<td id='stockName'>".$linha["tb02_produto"]."</td>";
+            echo "<tr>";
+                echo "<td id='selectName'>".$linha["tb02_produto"]."</td>";
                 echo "<td>".$linha["tb02_quantidade"]."</td>";
                 echo "<td>R$ ". str_replace(".",",", number_format($linha["tb02_preco"],2))."</td>";
                 echo "<td>";
