@@ -1,9 +1,18 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import AppProvider from './hooks';
+
+import Layout from './components/Layout';
+
+import GlobalStyles from './styles/GlobalStyle';
 
 const App: React.FC = () => {
-  return <div />;
+  return (
+    <AppProvider>
+      <Layout />
+      <GlobalStyles />
+    </AppProvider>
+  );
 };
 
 export default App;
