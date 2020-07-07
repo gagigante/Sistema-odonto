@@ -23,7 +23,7 @@
 
         while ($linha = $result->fetch_assoc()){                
             echo "<tr>";
-                echo "<td class='name-col-".$linha["tb03_id"]."'>".$linha["tb03_nome"]."</td>";
+                echo "<td id='selectName' class='name-col-".$linha["tb03_id"]."'>".$linha["tb03_nome"]."</td>";
                 echo "<td class='description-col-".$linha["tb03_id"]."'>".$linha["tb03_descricao"]."</td>";
                 echo "<td>R$ ". str_replace(".",",", number_format($linha["tb03_preco"], 2))."</td>";
                 echo "<td>";

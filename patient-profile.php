@@ -138,16 +138,16 @@
                                     role="button" aria-haspopup="true" aria-expanded="false">
                                     <img class="user-avatar rounded-circle mr-2" src="assets/images/avatars/0.jpg"
                                         alt="User Avatar">
-                                    <span class="d-none d-md-inline-block">Dra. Sierra Brooks</span>
+                                    <span class="d-none d-md-inline-block"> <?php echo $_SESSION['login'] ?> </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-small">
-                                    <a class="dropdown-item" href="#">
+                                    <!-- <a class="dropdown-item" href="#">
                                         <i class="material-icons">&#xE7FD;</i> Perfil
                                     </a>
                                     <a class="dropdown-item" href="#">
                                         <i class="material-icons">settings_applications</i> Configurações
                                     </a>
-                                    <div class="dropdown-divider"></div>
+                                    <div class="dropdown-divider"></div> -->
                                     <a class="dropdown-item text-danger" href="logout.php">
                                         <i class="material-icons text-danger">&#xE879;</i> Sair
                                     </a>
