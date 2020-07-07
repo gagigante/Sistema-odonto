@@ -139,9 +139,9 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#"
                                     role="button" aria-haspopup="true" aria-expanded="false">
-                                    <img class="user-avatar rounded-circle mr-2" src="assets/images/user-profile-images/user-default-profile-image.png"
+                                    <img class="user-avatar rounded-circle mr-2" src="assets/images/user-profile-images/<?php echo $_SESSION['image'] ?>"
                                         alt="User Avatar">
-                                    <span class="d-none d-md-inline-block">Dra. Sierra Brooks</span>
+                                    <span class="d-none d-md-inline-block"><?php echo $_SESSION['login'] ?></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-small">
                                     <!-- <a class="dropdown-item" href="#">
@@ -175,6 +175,14 @@
                             <h3 class="page-title"><i class="material-icons">dashboard</i>Dashboard</h3>
                         </div>
                     </div>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary btnSemana active">
+                            <input type="radio" name="options" id="option1" autocomplete="off"> Semana
+                        </label>
+                        <label class="btn btn-secondary btnMes">
+                            <input type="radio" name="options" id="option2" autocomplete="off"> Mês
+                        </label>                        
+                    </div>
                     <!-- End Page Header -->
                     <!-- Small Stats Blocks -->
                     <div class="row">
@@ -183,11 +191,11 @@
                                 <div class="card-body p-0 d-flex">
                                     <div class="d-flex flex-column m-auto">
                                         <div class="stats-small__data text-center">
-                                            <span class="stats-small__label text-uppercase">Posts</span>
-                                            <h6 class="stats-small__value count my-3">2,390</h6>
+                                            <span class="stats-small__label text-uppercase">Consultas</span>
+                                            <h6 class="stats-small__value count my-3" id="quant1"></h6>
                                         </div>
                                         <div class="stats-small__data">
-                                            <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
+                                            <span class="stats-small__percentage stats-small__percentage--increase" id="porc1"></span>
                                         </div>
                                     </div>
                                     <canvas height="120" class="blog-overview-stats-small-1"></canvas>
@@ -265,10 +273,10 @@
                         <div class="col-lg-8 col-md-12 col-sm-12 mb-4">
                             <div class="card card-small">
                                 <div class="card-header border-bottom">
-                                    <h6 class="m-0">Users</h6>
+                                    <h6 class="m-0">Financeiro</h6>
                                 </div>
                                 <div class="card-body pt-0">
-                                    <div class="row border-bottom py-2 bg-light">
+                                    <!-- <div class="row border-bottom py-2 bg-light">
                                         <div class="col-12 col-sm-6">
                                             <div id="blog-overview-date-range" class="input-daterange input-group input-group-sm my-auto ml-auto mr-auto ml-sm-auto mr-sm-0" style="max-width: 350px;">
                                                 <input type="text" class="input-sm form-control" name="start" placeholder="Start Date" id="blog-overview-date-range-1">
@@ -284,7 +292,7 @@
                                             <button type="button" class="btn btn-sm btn-white ml-auto mr-auto ml-sm-auto mr-sm-0 mt-3 mt-sm-0">View
                                                 Full Report &rarr;</button>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <canvas height="130" style="max-width: 100% !important;" class="blog-overview-users"></canvas>
                                 </div>
                             </div>
@@ -447,46 +455,15 @@
                         <div class="col-lg-4 col-md-12 col-sm-12 mb-4">
                             <div class="card card-small">
                                 <div class="card-header border-bottom">
-                                    <h6 class="m-0">Top Referrals</h6>
+                                    <h6 class="m-0">Seu estoque</h6>
                                 </div>
                                 <div class="card-body p-0">
                                     <ul class="list-group list-group-small list-group-flush">
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">GitHub</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">19,291</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">Stack Overflow</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">11,201</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">Hacker News</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">9,291</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">Reddit</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">8,281</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">The Next Web</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">7,128</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">Tech Crunch</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">6,218</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">YouTube</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">1,218</span>
-                                        </li>
-                                        <li class="list-group-item d-flex px-3">
-                                            <span class="text-semibold text-fiord-blue">Adobe</span>
-                                            <span class="ml-auto text-right text-semibold text-reagent-gray">827</span>
-                                        </li>
+                                        <div class="ajax-response"></div>  
                                     </ul>
                                 </div>
                                 <div class="card-footer border-top">
-                                    <div class="row">
+                                    <!-- <div class="row">
                                         <div class="col">
                                             <select class="custom-select custom-select-sm">
                                                 <option selected>Last Week</option>
@@ -494,9 +471,9 @@
                                                 <option value="2">Last Month</option>
                                                 <option value="3">Last Year</option>
                                             </select>
-                                        </div>
+                                        </div> -->
                                         <div class="col text-right view-report">
-                                            <a href="#">Full report &rarr;</a>
+                                            <a href="stock.php">Veja todos &rarr;</a>
                                         </div>
                                     </div>
                                 </div>
