@@ -2,9 +2,9 @@ export default {
   title: 'dark',
 
   colors: {
-    accent: '#007bff',
+    accent: '#63a7ff',
+    hover: 'rgba(99, 167, 255, 0.1)',
     foreground: '#373C3F',
-    navbar: '#2F3437',
     content: '#2F3437',
     separator: '#272b2e',
     text1: '#fff',

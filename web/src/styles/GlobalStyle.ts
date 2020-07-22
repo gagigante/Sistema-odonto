@@ -6,14 +6,20 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
   html, body, #root {
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
   }
+
   *, button, input {
     border: 0;
     outline: 0;
     font-family: 'Roboto', sans-serif;
   }
+
   :root {
     --primary: #36393f;
     --secondary: #2f3136;

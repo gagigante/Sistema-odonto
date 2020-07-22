@@ -1,18 +1,20 @@
 import React from 'react';
 
-import { Grid, Content } from './styles';
+import { Container, Grid, Content } from './styles';
 
 import Sidebar from '../Sidebar';
 import Navbar from '../Navbar';
 
 const Layout: React.FC = () => {
   return (
-    <Grid>
+    <Container>
       <Sidebar />
-      <Navbar />
+      <Grid>
+        <Navbar />
 
-      <Content />
-    </Grid>
+        <Content />
+      </Grid>
+    </Container>
   );
 };
 

@@ -3,8 +3,8 @@ export default {
 
   colors: {
     accent: '#007bff',
+    hover: 'rgba(0, 123, 255, 0.1)',
     foreground: '#f8f8f8',
-    navbar: '#f5f5f5',
     content: '#f5f5f5',
     separator: '#ddd',
     text1: '#5A6169',
