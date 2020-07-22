@@ -6,8 +6,8 @@ declare module 'styled-components' {
 
     colors: {
       accent: string;
+      hover: string;
       foreground: string;
-      navbar: string;
       content: string;
       separator: string;
       text1: string;

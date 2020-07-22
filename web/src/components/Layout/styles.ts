@@ -1,22 +1,20 @@
 import styled from 'styled-components';
 
-// SB - Sidebar
-// NB - Navbar
-// CT - Content
+export const Container = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+`;
 
 export const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 240px auto;
-  grid-template-rows: 60px auto;
-  grid-template-areas:
-    'SB NB NB NB'
-    'SB CT CT CT'
-    'SB CT CT CT';
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   height: 100vh;
+  background-color: red;
 `;
 
 export const Content = styled.div`
-  grid-area: CT;
   display: flex;
   flex: 1;
   background-color: ${props => props.theme.colors.content};

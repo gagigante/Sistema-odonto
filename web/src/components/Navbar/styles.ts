@@ -5,13 +5,12 @@ interface NotificationProps {
 }
 
 export const Container = styled.div`
-  grid-area: NB;
+  height: 60px;
   display: flex;
-  flex: 1;
   justify-content: space-between;
   align-items: center;
   padding: 6px 0 6px 12px;
-  background-color: ${props => props.theme.colors.navbar};
+  background-color: ${props => props.theme.colors.content};
   box-shadow: 0px 6px 16px 0px ${props => props.theme.colors.boxShadow};
   -webkit-box-shadow: 0px 6px 16px 0px ${props => props.theme.colors.boxShadow};
   -moz-box-shadow: 0px 6px 16px 0px ${props => props.theme.colors.boxShadow};
