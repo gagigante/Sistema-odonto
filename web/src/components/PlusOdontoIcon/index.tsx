@@ -6,9 +6,9 @@ interface Props {
   height: string;
 }
 
-export const PlusOdontoIcon: React.FC<Props> = ({ color, width, height}) => {
+export const PlusOdontoIcon: React.FC<Props> = ({ color, width, height }) => {
   return (
-      <svg width={width} height={height} viewBox="0 0 41 41" fill={color}>
+    <svg width={width} height={height} viewBox="0 0 41 41" fill={color}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
