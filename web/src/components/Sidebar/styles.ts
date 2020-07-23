@@ -60,6 +60,9 @@ export const Header = styled.div`
 export const Menu = styled.div`
   flex: 1;
   padding-top: 32px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  ::-webkit-scrollbar { display: none; }
 `;
 
 export const MenuButton = styled.div<MenuButtonProps>`
