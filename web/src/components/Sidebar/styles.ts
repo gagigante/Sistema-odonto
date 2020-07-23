@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 import { PlusOdontoIcon as Icon } from '../PlusOdontoIcon';
 
+interface ContainerProps {
+  isVisibleInMobile: boolean;
+}
+
 interface MenuButtonProps {
   isActive?: boolean;
 }
@@ -10,8 +14,23 @@ export const PlusOdontoIcon = styled(Icon)`
   height: 100px;
 `;
 
-export const Container = styled.aside`
-  display: none;
+export const Container = styled.aside<ContainerProps>`
+  @media (max-width: 500px) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 60px;
+    transition: 0.2s ease-in-out;
+
+    ${props =>
+      props.isVisibleInMobile
+        ? css`
+            left: 0;
+          `
+        : css`
+            left: -100vw;
+          `}
+  }
 
   @media (min-width: 500px) {
     display: flex;
@@ -39,10 +58,8 @@ export const Header = styled.div`
   border-bottom: 1px solid ${props => props.theme.colors.separator};
 
   @media (min-width: 1025px) {
-    & {
-      justify-content: flex-start;
-      padding: 0 0 0 24px;
-    }
+    justify-content: flex-start;
+    padding: 0 0 0 24px;
   }
 
   > h1 {
@@ -54,6 +71,10 @@ export const Header = styled.div`
     @media (max-width: 1024px) {
       display: none;
     }
+
+    @media (max-width: 500px) {
+      display: inherit;
+    }
   }
 `;
 
@@ -62,7 +83,9 @@ export const Menu = styled.div`
   padding-top: 32px;
   overflow-y: auto;
   scrollbar-width: none;
-  ::-webkit-scrollbar { display: none; }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const MenuButton = styled.div<MenuButtonProps>`
@@ -97,9 +120,15 @@ export const MenuButton = styled.div<MenuButtonProps>`
   }
 
   > div {
-    ${props => props.isActive && css`
-      background-color: ${props => props.theme.colors.hover};
-    `}
+    @media (max-width: 500px) {
+      background-color: transparent;
+    }
+
+    ${props =>
+      props.isActive &&
+      css`
+        background-color: ${props.theme.colors.hover};
+      `}
 
     @media (min-width: 500px) {
       width: 52px;
@@ -124,18 +153,21 @@ export const MenuButton = styled.div<MenuButtonProps>`
       border-bottom-left-radius: 36px;
     }
 
-
     > svg {
       color: ${props => props.theme.colors.text1};
       font-size: 16px;
 
-      ${props => props.isActive && css`
-        color: ${props => props.theme.colors.accent};
-      `}
+      ${props =>
+        props.isActive &&
+        css`
+          color: ${props.theme.colors.accent};
+        `}
     }
 
     > h1 {
-      display: none;
+      @media (min-width: 500px) {
+        display: none;
+      }
 
       @media (min-width: 1025px) {
         display: inherit;
@@ -146,21 +178,25 @@ export const MenuButton = styled.div<MenuButtonProps>`
       font-weight: 400;
       font-size: 16px;
 
-      ${props => props.isActive && css`
-        color: ${props => props.theme.colors.accent};
-      `}
+      ${props =>
+        props.isActive &&
+        css`
+          color: ${props.theme.colors.accent};
+        `}
     }
   }
 
   @media (min-width: 1025px) {
-    ${props => !props.isActive && css`
-      &:hover {
-        padding-left: 32px;
+    ${props =>
+      !props.isActive &&
+      css`
+        &:hover {
+          padding-left: 32px;
 
-        > span {
-          left: 10px;
+          > span {
+            left: 10px;
+          }
         }
-      }
-    `}
+      `}
   }
 `;

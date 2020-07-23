@@ -1,17 +1,33 @@
 import React from 'react';
-import { FiHome, FiCalendar, FiUsers, FiActivity, FiArchive, FiDollarSign } from 'react-icons/fi';
+import {
+  FiHome,
+  FiCalendar,
+  FiUsers,
+  FiActivity,
+  FiArchive,
+  FiDollarSign,
+} from 'react-icons/fi';
 
 import { useTheme } from '../../hooks/theme';
 
 import { PlusOdontoIcon, Container, Header, Menu, MenuButton } from './styles';
 
-const Sidebar: React.FC = () => {
+interface Props {
+  isVisibleInMobile: boolean;
+}
+
+// eslint-disable-next-line react/prop-types
+const Sidebar: React.FC<Props> = ({ isVisibleInMobile }) => {
   const theme = useTheme();
 
   return (
-    <Container>
+    <Container isVisibleInMobile={isVisibleInMobile}>
       <Header>
-        <PlusOdontoIcon color={theme.selectedTheme.colors.accent} width="32px" height="32px"/>
+        <PlusOdontoIcon
+          color={theme.selectedTheme.colors.accent}
+          width="32px"
+          height="32px"
+        />
         <h1>Plus Odonto</h1>
       </Header>
 
