@@ -5,7 +5,9 @@ interface NotificationProps {
 }
 
 export const Container = styled.div`
+  max-width: 100%;
   height: 60px;
+  overflow: hidden;
   display: flex;
   justify-content: space-between;
 
@@ -100,19 +102,21 @@ export const ProfileButton = styled.button`
   }
 
   > div {
+    @media (max-width: 500px) {
+      display: none;
+    }
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-left: 12px;
 
     strong {
-      color: ${props => props.theme.colors.text1};
-      max-width: 98px;
-
       @media (min-width: 1025px) {
         max-width: 130px;
       }
 
+      color: ${props => props.theme.colors.text1};
       white-space: pre;
       text-overflow: ellipsis;
       overflow: hidden;

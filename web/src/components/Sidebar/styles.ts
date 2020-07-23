@@ -19,7 +19,6 @@ export const Container = styled.aside<ContainerProps>`
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 60px;
     transition: 0.2s ease-in-out;
 
     ${props =>
@@ -50,6 +49,7 @@ export const Container = styled.aside<ContainerProps>`
 `;
 
 export const Header = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,6 +75,17 @@ export const Header = styled.div`
     @media (max-width: 500px) {
       display: inherit;
     }
+  }
+`;
+
+export const CloseSideNavButton = styled.button`
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+
+  > svg {
+    font-size: 20px;
+    color: ${props => props.theme.colors.text1};
   }
 `;
 

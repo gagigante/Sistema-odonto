@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  FiX,
   FiHome,
   FiCalendar,
   FiUsers,
@@ -10,14 +11,26 @@ import {
 
 import { useTheme } from '../../hooks/theme';
 
-import { PlusOdontoIcon, Container, Header, Menu, MenuButton } from './styles';
+import {
+  PlusOdontoIcon,
+  Container,
+  Header,
+  CloseSideNavButton,
+  Menu,
+  MenuButton,
+} from './styles';
 
 interface Props {
   isVisibleInMobile: boolean;
+  handleToggleSideNav(): void;
 }
 
-// eslint-disable-next-line react/prop-types
-const Sidebar: React.FC<Props> = ({ isVisibleInMobile }) => {
+const Sidebar: React.FC<Props> = ({
+  // eslint-disable-next-line react/prop-types
+  isVisibleInMobile,
+  // eslint-disable-next-line react/prop-types
+  handleToggleSideNav,
+}) => {
   const theme = useTheme();
 
   return (
@@ -29,6 +42,10 @@ const Sidebar: React.FC<Props> = ({ isVisibleInMobile }) => {
           height="32px"
         />
         <h1>Plus Odonto</h1>
+
+        <CloseSideNavButton onClick={handleToggleSideNav}>
+          <FiX />
+        </CloseSideNavButton>
       </Header>
 
       <Menu>
