@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import Switch from 'react-switch';
 import Hamburger from 'hamburger-react';
 import { FiSun, FiMoon, FiBell, FiChevronDown } from 'react-icons/fi';
