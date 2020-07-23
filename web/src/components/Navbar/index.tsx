@@ -1,29 +1,50 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import Switch from 'react-switch';
+import Hamburger from 'hamburger-react';
 import { FiSun, FiMoon, FiBell, FiChevronDown } from 'react-icons/fi';
 
 import { useTheme } from '../../hooks/theme';
 
 import {
   Container,
+  InputContainer,
   Actions,
+  HamburguerButton,
   ThemeSwitcherContainer,
   NotificationsButton,
   ProfileButton,
 } from './styles';
 
-const Navbar: React.FC = () => {
+interface Props {
+  isVisibleInMobile: boolean;
+  handleToggleSideNav(): void;
+}
+
+const Navbar: React.FC<Props> = ({
+  // eslint-disable-next-line react/prop-types
+  isVisibleInMobile,
+  // eslint-disable-next-line react/prop-types
+  handleToggleSideNav,
+}) => {
   const theme = useTheme();
 
-  function changeTheme() {
+  const changeTheme = useCallback(() => {
     theme.toggleTheme();
-  }
+  }, [theme]);
 
   return (
     <Container>
-      <div />
+      <InputContainer />
 
       <Actions>
+        <HamburguerButton>
+          <Hamburger
+            color={theme.selectedTheme.colors.text1}
+            toggled={isVisibleInMobile}
+            toggle={handleToggleSideNav}
+            size={24}
+          />
+        </HamburguerButton>
         <ThemeSwitcherContainer>
           <FiSun
             className={theme.selectedTheme.title === 'light' ? 'active' : ''}
@@ -57,7 +78,7 @@ const Navbar: React.FC = () => {
           />
 
           <div>
-            <strong>Gabriel Gigante</strong>
+            <strong>Gabriel Henrique Gigante</strong>
             <FiChevronDown />
           </div>
         </ProfileButton>
