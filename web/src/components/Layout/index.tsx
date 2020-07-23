@@ -14,7 +14,10 @@ const Layout: React.FC = () => {
 
   return (
     <Container>
-      <Sidebar isVisibleInMobile={toggle} />
+      <Sidebar
+        isVisibleInMobile={toggle}
+        handleToggleSideNav={handleToggleSideNav}
+      />
       <Grid>
         <Navbar
           isVisibleInMobile={toggle}
