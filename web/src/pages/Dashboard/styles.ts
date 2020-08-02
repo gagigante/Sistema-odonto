@@ -17,5 +17,5 @@ export const Grid = styled.div`
 export const Content = styled.div`
   display: flex;
   flex: 1;
-  background-color: ${props => props.theme.colors.content};
+  background-color: ${(props) => props.theme.colors.content};
 `;
