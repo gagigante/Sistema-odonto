@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
+
 import { PlusOdontoIcon as Icon } from '../PlusOdontoIcon';
 
 interface ContainerProps {
@@ -21,7 +23,7 @@ export const Container = styled.aside<ContainerProps>`
     height: 100%;
     transition: 0.2s ease-in-out;
 
-    ${props =>
+    ${(props) =>
       props.isVisibleInMobile
         ? css`
             left: 0;
@@ -41,10 +43,11 @@ export const Container = styled.aside<ContainerProps>`
   }
 
   flex-direction: column;
-  background-color: ${props => props.theme.colors.foreground};
-  box-shadow: 6px 0px 32px 10px ${props => props.theme.colors.boxShadow};
-  -webkit-box-shadow: 6px 0px 32px 10px ${props => props.theme.colors.boxShadow};
-  -moz-box-shadow: 6px 0px 32px 10px ${props => props.theme.colors.boxShadow};
+  background-color: ${(props) => props.theme.colors.foreground};
+  box-shadow: 6px 0px 32px 10px ${(props) => props.theme.colors.boxShadow};
+  -webkit-box-shadow: 6px 0px 32px 10px
+    ${(props) => props.theme.colors.boxShadow};
+  -moz-box-shadow: 6px 0px 32px 10px ${(props) => props.theme.colors.boxShadow};
   z-index: 10;
 `;
 
@@ -55,7 +58,7 @@ export const Header = styled.div`
   align-items: center;
   height: 60.5px;
   padding: 0 16px;
-  border-bottom: 1px solid ${props => props.theme.colors.separator};
+  border-bottom: 1px solid ${(props) => props.theme.colors.separator};
 
   @media (min-width: 1025px) {
     justify-content: flex-start;
@@ -66,7 +69,7 @@ export const Header = styled.div`
     margin-left: 12px;
     font-size: 18px;
     font-weight: 500;
-    color: ${props => props.theme.colors.text1};
+    color: ${(props) => props.theme.colors.text1};
 
     @media (max-width: 1024px) {
       display: none;
@@ -79,27 +82,50 @@ export const Header = styled.div`
 `;
 
 export const CloseSideNavButton = styled.button`
+  @media (min-width: 500px) {
+    display: none;
+  }
+
   background-color: transparent;
   position: absolute;
   right: 10px;
 
   > svg {
     font-size: 20px;
-    color: ${props => props.theme.colors.text1};
+    color: ${(props) => props.theme.colors.text1};
   }
 `;
 
 export const Menu = styled.div`
-  flex: 1;
   padding-top: 32px;
   overflow-y: auto;
   scrollbar-width: none;
   ::-webkit-scrollbar {
     display: none;
   }
+
+  @media (max-width: 500px) {
+    padding-top: 0;
+    height: calc(100% - 60.5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const MenuLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  & + a {
+    margin-top: 8px;
+  }
 `;
 
 export const MenuButton = styled.div<MenuButtonProps>`
+  flex: 1;
   position: relative;
   padding: 8px;
   transition: 0.15s ease-in-out;
@@ -108,9 +134,9 @@ export const MenuButton = styled.div<MenuButtonProps>`
     padding: 0 0 0 16px;
   }
 
-  & + div {
-    margin-top: 8px;
-  }
+  /* & + div {
+    margin-top: 10px;
+  } */
 
   > span {
     display: none;
@@ -126,7 +152,7 @@ export const MenuButton = styled.div<MenuButtonProps>`
     width: 12px;
     height: 12px;
     border-radius: 6px;
-    background: ${props => props.theme.colors.accent};
+    background: ${(props) => props.theme.colors.accent};
     transition: 0.08s ease-in-out;
   }
 
@@ -135,7 +161,7 @@ export const MenuButton = styled.div<MenuButtonProps>`
       background-color: transparent;
     }
 
-    ${props =>
+    ${(props) =>
       props.isActive &&
       css`
         background-color: ${props.theme.colors.hover};
@@ -165,10 +191,10 @@ export const MenuButton = styled.div<MenuButtonProps>`
     }
 
     > svg {
-      color: ${props => props.theme.colors.text1};
+      color: ${(props) => props.theme.colors.text1};
       font-size: 16px;
 
-      ${props =>
+      ${(props) =>
         props.isActive &&
         css`
           color: ${props.theme.colors.accent};
@@ -184,12 +210,12 @@ export const MenuButton = styled.div<MenuButtonProps>`
         display: inherit;
       }
 
-      color: ${props => props.theme.colors.text1};
+      color: ${(props) => props.theme.colors.text1};
       margin-left: 18px;
       font-weight: 400;
       font-size: 16px;
 
-      ${props =>
+      ${(props) =>
         props.isActive &&
         css`
           color: ${props.theme.colors.accent};
@@ -198,7 +224,7 @@ export const MenuButton = styled.div<MenuButtonProps>`
   }
 
   @media (min-width: 1025px) {
-    ${props =>
+    ${(props) =>
       !props.isActive &&
       css`
         &:hover {

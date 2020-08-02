@@ -1,17 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Browser } from 'react-router-dom';
 
 import AppProvider from './hooks';
 
-import Layout from './components/Layout';
+import Routes from './routes';
 
 import GlobalStyles from './styles/GlobalStyle';
 
 const App: React.FC = () => {
   return (
-    <AppProvider>
-      <Layout />
+    <Browser>
+      <AppProvider>
+        <Routes />
+      </AppProvider>
+
       <GlobalStyles />
-    </AppProvider>
+    </Browser>
   );
 };
 

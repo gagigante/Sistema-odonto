@@ -8,6 +8,7 @@ import {
   FiArchive,
   FiDollarSign,
 } from 'react-icons/fi';
+import { useLocation } from 'react-router-dom';
 
 import { useTheme } from '../../hooks/theme';
 
@@ -17,6 +18,7 @@ import {
   Header,
   CloseSideNavButton,
   Menu,
+  MenuLink,
   MenuButton,
 } from './styles';
 
@@ -26,12 +28,11 @@ interface Props {
 }
 
 const Sidebar: React.FC<Props> = ({
-  // eslint-disable-next-line react/prop-types
   isVisibleInMobile,
-  // eslint-disable-next-line react/prop-types
   handleToggleSideNav,
 }) => {
   const theme = useTheme();
+  const location = useLocation();
 
   return (
     <Container isVisibleInMobile={isVisibleInMobile}>
@@ -49,59 +50,81 @@ const Sidebar: React.FC<Props> = ({
       </Header>
 
       <Menu>
-        <MenuButton isActive>
-          <span />
+        <MenuLink to="/dashboard">
+          <MenuButton isActive={location.pathname === '/dashboard' && true}>
+            <span />
 
-          <div>
-            <FiHome />
-            <h1>Dashboard</h1>
-          </div>
-        </MenuButton>
+            <div>
+              <FiHome />
+              <h1>Dashboard</h1>
+            </div>
+          </MenuButton>
+        </MenuLink>
 
-        <MenuButton>
-          <span />
+        <MenuLink to="/dashboard/schedule">
+          <MenuButton
+            isActive={location.pathname === '/dashboard/schedule' && true}
+          >
+            <span />
 
-          <div>
-            <FiCalendar />
-            <h1>Agenda</h1>
-          </div>
-        </MenuButton>
+            <div>
+              <FiCalendar />
+              <h1>Agenda</h1>
+            </div>
+          </MenuButton>
+        </MenuLink>
 
-        <MenuButton>
-          <span />
+        <MenuLink to="/dashboard/patients">
+          <MenuButton
+            isActive={location.pathname === '/dashboard/patients' && true}
+          >
+            <span />
 
-          <div>
-            <FiUsers />
-            <h1>Pacientes</h1>
-          </div>
-        </MenuButton>
+            <div>
+              <FiUsers />
+              <h1>Pacientes</h1>
+            </div>
+          </MenuButton>
+        </MenuLink>
 
-        <MenuButton>
-          <span />
+        <MenuLink to="/dashboard/treatments">
+          <MenuButton
+            isActive={location.pathname === '/dashboard/treatments' && true}
+          >
+            <span />
 
-          <div>
-            <FiActivity />
-            <h1>Tratamentos</h1>
-          </div>
-        </MenuButton>
+            <div>
+              <FiActivity />
+              <h1>Tratamentos</h1>
+            </div>
+          </MenuButton>
+        </MenuLink>
 
-        <MenuButton>
-          <span />
+        <MenuLink to="/dashboard/stock">
+          <MenuButton
+            isActive={location.pathname === '/dashboard/stock' && true}
+          >
+            <span />
 
-          <div>
-            <FiArchive />
-            <h1>Estoque</h1>
-          </div>
-        </MenuButton>
+            <div>
+              <FiArchive />
+              <h1>Estoque</h1>
+            </div>
+          </MenuButton>
+        </MenuLink>
 
-        <MenuButton>
-          <span />
+        <MenuLink to="/dashboard/financial">
+          <MenuButton
+            isActive={location.pathname === '/dashboard/financial' && true}
+          >
+            <span />
 
-          <div>
-            <FiDollarSign />
-            <h1>Financeiro</h1>
-          </div>
-        </MenuButton>
+            <div>
+              <FiDollarSign />
+              <h1>Financeiro</h1>
+            </div>
+          </MenuButton>
+        </MenuLink>
       </Menu>
     </Container>
   );

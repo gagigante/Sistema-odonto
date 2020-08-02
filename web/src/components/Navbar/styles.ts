@@ -22,7 +22,7 @@ export const Container = styled.div`
 export const InputContainer = styled.div`
   display: flex;
 
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
     display: none;
   }
 
