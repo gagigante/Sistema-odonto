@@ -51,7 +51,10 @@ const Sidebar: React.FC<Props> = ({
 
       <Menu>
         <MenuLink to="/dashboard">
-          <MenuButton isActive={location.pathname === '/dashboard' && true}>
+          <MenuButton
+            isActive={location.pathname === '/dashboard' && true}
+            onClick={handleToggleSideNav}
+          >
             <span />
 
             <div>
@@ -64,6 +67,7 @@ const Sidebar: React.FC<Props> = ({
         <MenuLink to="/dashboard/schedule">
           <MenuButton
             isActive={location.pathname === '/dashboard/schedule' && true}
+            onClick={handleToggleSideNav}
           >
             <span />
 
@@ -77,6 +81,7 @@ const Sidebar: React.FC<Props> = ({
         <MenuLink to="/dashboard/patients">
           <MenuButton
             isActive={location.pathname === '/dashboard/patients' && true}
+            onClick={handleToggleSideNav}
           >
             <span />
 
@@ -90,6 +95,7 @@ const Sidebar: React.FC<Props> = ({
         <MenuLink to="/dashboard/treatments">
           <MenuButton
             isActive={location.pathname === '/dashboard/treatments' && true}
+            onClick={handleToggleSideNav}
           >
             <span />
 
@@ -103,6 +109,7 @@ const Sidebar: React.FC<Props> = ({
         <MenuLink to="/dashboard/stock">
           <MenuButton
             isActive={location.pathname === '/dashboard/stock' && true}
+            onClick={handleToggleSideNav}
           >
             <span />
 
@@ -116,6 +123,7 @@ const Sidebar: React.FC<Props> = ({
         <MenuLink to="/dashboard/financial">
           <MenuButton
             isActive={location.pathname === '/dashboard/financial' && true}
+            onClick={handleToggleSideNav}
           >
             <span />
 
