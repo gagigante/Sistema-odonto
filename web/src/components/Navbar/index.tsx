@@ -21,9 +21,7 @@ interface Props {
 }
 
 const Navbar: React.FC<Props> = ({
-  // eslint-disable-next-line react/prop-types
   isVisibleInMobile,
-  // eslint-disable-next-line react/prop-types
   handleToggleSideNav,
 }) => {
   const theme = useTheme();
