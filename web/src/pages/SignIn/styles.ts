@@ -103,6 +103,13 @@ export const AnimationContainer = styled.div`
           bottom: 16px;
         }
 
+        label {
+          color: #c1bccc;
+          position: absolute;
+          pointer-events: none;
+          transition: 0.2s;
+        }
+
         input {
           font-size: 16px;
           height: 24px;
@@ -142,6 +149,33 @@ export const AnimationContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
+
+    div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      input {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+
+      label {
+        color: #9c98a6;
+        margin-left: 8px;
+        cursor: pointer;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #9c98a6;
+      transition: 0.2s;
+
+      &:hover {
+        color: ${shade(0.3, '#9C98A6')};
+      }
+    }
   }
 
   > a {
@@ -173,15 +207,62 @@ export const AnimationContainer = styled.div`
       background-color: ${shade(0.2, '#04d361')};
     }
   }
+
+  div.footer {
+    display: flex;
+    align-self: flex-start;
+    width: 340px;
+    margin: 0 auto;
+
+    @media (max-width: 1024px) {
+      max-width: 100%;
+      padding: 8px;
+    }
+
+    p {
+      line-height: 26px;
+      color: #6a6180;
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+        transition: 0.2s;
+
+        &:hover {
+          color: ${shade(0.3, '#007bff')};
+        }
+      }
+    }
+  }
 `;
 
 export const Background = styled.div`
-  background-color: #007bff;
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(${SignInBackground}) no-repeat center;
   background-size: cover;
 
-  @media (max-width: 1024px) {
-    height: 100px;
+  h1 {
+    font-size: 64px;
+    color: #fff;
   }
-  /* background: url(${SignInBackground}) no-repeat center; */
+
+  svg {
+    margin-left: 16px;
+  }
+
+  @media (max-width: 1024px) {
+    background: #007bff;
+    height: 100px;
+
+    h1 {
+      display: none;
+    }
+
+    svg {
+      display: none;
+    }
+  }
 `;
