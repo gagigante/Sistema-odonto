@@ -8,6 +8,7 @@ declare module 'styled-components' {
       accent: string;
       hover: string;
       foreground: string;
+      background: string;
       content: string;
       separator: string;
       text1: string;

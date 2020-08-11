@@ -12,10 +12,11 @@ export const Container = styled.div`
   justify-content: space-between;
 
   align-items: center;
-  background-color: ${props => props.theme.colors.content};
-  box-shadow: 0px 6px 16px 0px ${props => props.theme.colors.boxShadow};
-  -webkit-box-shadow: 0px 6px 16px 0px ${props => props.theme.colors.boxShadow};
-  -moz-box-shadow: 0px 6px 16px 0px ${props => props.theme.colors.boxShadow};
+  background-color: ${(props) => props.theme.colors.foreground};
+  box-shadow: 0px 6px 16px 0px ${(props) => props.theme.colors.boxShadow};
+  -webkit-box-shadow: 0px 6px 16px 0px
+    ${(props) => props.theme.colors.boxShadow};
+  -moz-box-shadow: 0px 6px 16px 0px ${(props) => props.theme.colors.boxShadow};
   z-index: 5;
 `;
 
@@ -28,7 +29,6 @@ export const InputContainer = styled.div`
 
   height: 100%;
   width: 120px;
-  background-color: red;
 `;
 
 export const Actions = styled.div`
@@ -55,17 +55,17 @@ export const ThemeSwitcherContainer = styled.div`
   align-items: center;
 
   @media (max-width: 500px) {
-    border-left: 0.5px solid ${props => props.theme.colors.separator};
+    border-left: 0.5px solid ${(props) => props.theme.colors.separator};
   }
 
   svg {
-    color: ${props => props.theme.colors.text1};
+    color: ${(props) => props.theme.colors.text1};
     font-size: 18px;
     margin: 0 6px;
   }
 
   svg.active {
-    color: ${props => props.theme.colors.accent};
+    color: ${(props) => props.theme.colors.accent};
   }
 `;
 
@@ -77,12 +77,12 @@ export const NotificationsButton = styled.button<NotificationProps>`
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  border-left: 0.5px solid ${props => props.theme.colors.separator};
+  border-left: 0.5px solid ${(props) => props.theme.colors.separator};
   cursor: pointer;
 
   > svg {
     font-size: 20px;
-    color: ${props => props.theme.colors.text1};
+    color: ${(props) => props.theme.colors.text1};
   }
 `;
 
@@ -92,7 +92,7 @@ export const ProfileButton = styled.button`
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  border-left: 0.5px solid ${props => props.theme.colors.separator};
+  border-left: 0.5px solid ${(props) => props.theme.colors.separator};
   cursor: pointer;
 
   > img {
@@ -116,7 +116,7 @@ export const ProfileButton = styled.button`
         max-width: 130px;
       }
 
-      color: ${props => props.theme.colors.text1};
+      color: ${(props) => props.theme.colors.text1};
       white-space: pre;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -124,7 +124,7 @@ export const ProfileButton = styled.button`
 
     svg {
       margin-left: 6px;
-      color: ${props => props.theme.colors.text1};
+      color: ${(props) => props.theme.colors.text1};
     }
   }
 `;
